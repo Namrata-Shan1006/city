@@ -8,40 +8,26 @@
 body {
   background: #f5f5f5;
   color: #333;
+  text-align: center;
 }
 
 /* HERO SECTION */
 .hero {
   height: 70vh;
-  background: url('https://images.unsplash.com/photo-1505739777853-2728f6801061?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-  position: relative;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideIn 2s ease-in-out;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-content {
-  position: relative;
   color: white;
-  text-align: center;
-  animation: fadeIn 2s ease-in-out;
+  flex-direction: column;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-  margin-top: 10px;
   font-size: 1.3rem;
   font-weight: 300;
 }
@@ -49,8 +35,7 @@ body {
 /* ABOUT CITY */
 .about-city {
   padding: 50px 20px;
-  text-align: center;
-  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  background: #e0f7fa;
 }
 
 .about-city h2 {
@@ -67,7 +52,6 @@ body {
 /* FEATURES */
 .features {
   padding: 50px 20px;
-  text-align: center;
   background: #f0f0f0;
 }
 
@@ -79,46 +63,37 @@ body {
 .feature-cards {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .feature-card {
-  width: 280px;
-  background: white;
-  border-radius: 15px;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 50% 20% 50% 20% / 30% 50% 30% 50%; /* creative blob shape */
+  padding: 40px 20px;
   box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
-  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
 }
 
-.feature-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
 .feature-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #222;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .feature-card p {
   font-size: 1rem;
+  line-height: 1.4;
 }
 
 /* TEAM SECTION */
 .team {
   padding: 50px 20px;
-  text-align: center;
   background: #ffffff;
 }
 
@@ -135,36 +110,28 @@ body {
 }
 
 .member-card {
-  width: 250px;
-  background: white;
-  border-radius: 15px;
+  width: 220px;
+  background: #00bcd4;
+  color: white;
+  border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%; /* organic blob shape */
+  padding: 40px 20px;
   box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
-  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.member-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
-}
-
-.member-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
 .member-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .member-card p {
   font-size: 1rem;
-  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
@@ -172,43 +139,4 @@ footer {
   background: #222;
   color: #fff;
   padding: 25px 20px;
-  text-align: center;
-}
-
-footer .socials {
-  margin-top: 10px;
-}
-
-footer .socials a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer .socials a:hover {
-  color: #00bcd4;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes slideIn {
-  from {opacity: 0; transform: translateX(-50px);}
-  to {opacity: 1; transform: translateX(0);}
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .team-container, .feature-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
 }
