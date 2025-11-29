@@ -1,36 +1,47 @@
 body {
     margin: 0;
     padding: 0;
-    background: #f3e9ff;
+    background: linear-gradient(135deg, #e7d2ff, #c9b2e8);
     font-family: "Poppins", sans-serif;
 }
 
+/* MAIN SPLIT LAYOUT */
 .container {
     display: flex;
-    width: 100%;
     height: 100vh;
-    box-shadow: 0 0 40px rgba(0,0,0,0.1);
-    background: linear-gradient(to bottom right, #e8d7f9, #c9b2e8);
 }
 
+/* LEFT PANEL */
 .left-panel {
     width: 40%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border-right: 2px solid rgba(255,255,255,0.4);
-    backdrop-filter: blur(6px);
+    justify-content: flex-start;
+    padding-top: 40px;
 }
 
-.left-panel img {
-    width: 70%;
+.flower-img {
+    width: 75%;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+.about-short {
+    background: rgba(255,255,255,0.4);
+    margin-top: 20px;
+    padding: 20px;
+    width: 75%;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* RIGHT PANEL */
 .right-panel {
     width: 60%;
-    padding: 40px 60px;
+    padding: 40px 50px;
     color: #4c2e73;
 }
 
@@ -38,41 +49,33 @@ body {
     font-family: "Playfair Display", serif;
     font-size: 32px;
     margin-bottom: 25px;
-    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
+/* INFO BOXES */
 .info-box {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.5);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.info-box h2 {
-    margin: 0 0 10px;
-    font-size: 20px;
-}
-
+/* TEAM CARDS */
 .team-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .team-card {
     width: 30%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.6);
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.team-card h3 {
-    margin-bottom: 10px;
-    font-family: "Playfair Display", serif;
+    font-size: 14px;
 }
