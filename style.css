@@ -21,21 +21,34 @@ body {
     padding-top: 40px;
 }
 
-.flower-img {
-    width: 75%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+/* FLOWER IMAGE STYLING */
+.flower-container {
+    width: 80%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
 }
 
+.flower-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.flower-img:hover {
+    transform: scale(1.05);
+}
+
+/* ABOUT BOX */
 .about-short {
     background: rgba(255,255,255,0.4);
-    margin-top: 20px;
     padding: 20px;
-    width: 75%;
-    border-radius: 20px;
+    width: 80%;
+    border-radius: 25px;
     text-align: center;
     backdrop-filter: blur(6px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* RIGHT PANEL */
@@ -57,7 +70,7 @@ body {
     background: rgba(255,255,255,0.5);
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
@@ -73,7 +86,7 @@ body {
     width: 30%;
     background: rgba(255,255,255,0.6);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     text-align: center;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
