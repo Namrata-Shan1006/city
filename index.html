@@ -1,280 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>City Design Project</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Design Project</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-    body {
-      background: #f5f5f5;
-      color: #333;
-    }
+    body {
+      background: #f5f5f5;
+      color: #333;
+    }
 
-    /* HERO SECTION */
-    .hero {
-      height: 60vh;
-      background: url('https://images.unsplash.com/photo-1505739777853-2728f6801061?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /* HERO SECTION */
+    .hero {
+      height: 60vh;
+      background: url('https://images.unsplash.com/photo-1505739777853-2728f6801061?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.45);
-    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+    }
 
-    .hero-content {
-      position: relative;
-      color: white;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
+    .hero-content {
+      position: relative;
+      color: white;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
 
-    .hero-content p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
+    .hero-content p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
 
-    /* ABOUT CITY */
-    .about-city {
-      padding: 50px 20px;
-      text-align: center;
-    }
+    /* ABOUT CITY */
+    .about-city {
+      padding: 50px 20px;
+      text-align: center;
+    }
 
-    .about-city h2 {
-      font-size: 2.5rem;
-      margin-bottom: 25px;
-      color: #0d3b66;
-    }
+    .about-city h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #0d3b66;
+    }
 
-    .about-city ul {
-      list-style-type: disc;
-      margin: 20px auto;
-      max-width: 600px;
-      text-align: left;
-      color: #333;
-    }
+    .about-city ul {
+      list-style-type: disc;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+      color: #333;
+    }
 
-    .about-city li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
+    .about-city li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
 
-    /* FEATURES SECTION */
-    .features {
-      padding: 60px 20px;
-      text-align: center;
-      background: #f0f4f8; /* subtle section background */
-    }
+    /* FEATURES SECTION */
+    .features {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f0f4f8; /* subtle section background */
+    }
 
-    .features h2 {
-      font-size: 2.8rem;
-      margin-bottom: 50px;
-      color: #0d3b66;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+    .features h2 {
+      font-size: 2.8rem;
+      margin-bottom: 50px;
+      color: #0d3b66;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-    .feature-cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+    .feature-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
 
-    .feature-card {
-      width: 300px;
-      background: linear-gradient(145deg, #ffecd2, #fcb69f); /* colorful gradient */
-      border-radius: 20px; /* rounded corners */
-      overflow: hidden;
-      padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
+    .feature-card {
+      width: 300px;
+      background: linear-gradient(145deg, #ffecd2, #fcb69f); /* colorful gradient */
+      border-radius: 20px; /* rounded corners */
+      overflow: hidden;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
 
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
 
-    .feature-img {
-      width: 100%;
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
+    .feature-img {
+      width: 100%;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
 
-    .feature-card:hover .feature-img {
-      transform: scale(1.05);
-    }
+    .feature-card:hover .feature-img {
+      transform: scale(1.05);
+    }
 
-    .feature-card h3 {
-      margin: 10px 0 10px 0;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #3e1f47;
-    }
+    .feature-card h3 {
+      margin: 10px 0 10px 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3e1f47;
+    }
 
-    .feature-card p {
-      font-size: 1rem;
-      color: #3b3b3b;
-      line-height: 1.5;
-    }
+    .feature-card p {
+      font-size: 1rem;
+      color: #3b3b3b;
+      line-height: 1.5;
+    }
 
-    /* TEAM SECTION */
-    .team {
-      padding: 60px 20px;
-      text-align: center;
-    }
+    /* TEAM SECTION (UPDATED) */
+    .team {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-    .team h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: #0d3b66;
-    }
+    .team h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0d3b66;
+    }
 
-    .team-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px; /* Spacing between cards */
+      flex-wrap: wrap;
+    }
 
-    .member-card {
-      width: 280px;
-      background: linear-gradient(145deg, #d3f8e2, #a8e6cf);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    .member-card {
+      width: 300px; /* Setting a fixed width to align with the feature cards */
+      background: white; /* Use white background for clean, minimal look */
+      padding: 25px;
+      border-radius: 10px; /* Slightly less rounded than feature cards */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left; /* Align text to the left */
+      border-top: 5px solid #0d3b66; /* Add a distinct color border */
+    }
 
-    .member-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 8px 22px rgba(0,0,0,0.2);
-    }
+    .member-card:hover {
+      transform: translateY(-5px); /* Less dramatic hover effect */
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
-    .member-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #222;
-    }
+    .member-card h3 {
+      margin-bottom: 5px;
+      font-size: 1.4rem; /* Slightly larger name */
+      font-weight: 700;
+      color: #0d3b66; /* Match the main project color */
+    }
 
-    .member-card p {
-      margin: 4px 0;
-      font-size: 1rem;
-    }
+    .member-card .details {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed #ccc; /* Separator line for details */
+    }
 
-    /* FOOTER */
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: #0d3b66;
-      color: white;
-      font-weight: 500;
-    }
-  </style>
+    .member-card p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #0d3b66;
+      color: white;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Bellasagaram City Design Project</h1>
-      <p>Smart, sustainable, and beautifully planned for the future 🌆</p>
-    </div>
-  </header>
+    <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Bellasagaram City Design Project</h1>
+      <p>Smart, sustainable, and beautifully planned for the future 🌆</p>
+    </div>
+  </header>
 
-  <!-- ABOUT CITY -->
-  <section class="about-city">
-    <h2>About Our City</h2>
-    <p>Bellasagaram is a model city designed to balance modern infrastructure with sustainability. It aims to:</p>
-    <ul>
-      <li>Promote eco-friendly residential and commercial zones</li>
-      <li>Ensure optimized traffic and transportation systems using smart algorithms</li>
-      <li>Maintain green spaces and recreational areas for citizens</li>
-      <li>Incorporate renewable energy and sustainable resource management</li>
-      <li>Leverage technology for efficient city services</li>
-    </ul>
-  </section>
+    <section class="about-city">
+    <h2>About Our City</h2>
+    <p>Bellasagaram is a model city designed to balance modern infrastructure with sustainability. It aims to:</p>
+    <ul>
+      <li>Promote eco-friendly residential and commercial zones</li>
+      <li>Ensure optimized traffic and transportation systems using smart algorithms</li>
+      <li>Maintain green spaces and recreational areas for citizens</li>
+      <li>Incorporate renewable energy and sustainable resource management</li>
+      <li>Leverage technology for efficient city services</li>
+    </ul>
+  </section>
 
-  <!-- FEATURES SECTION -->
-  <section class="features">
-    <h2>City Highlights</h2>
-    <div class="feature-cards">
-      <div class="feature-card">
-        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1508051123996-69f8caf4891f?auto=format&fit=crop&w=800&q=80');"></div>
-        <h3>Transportation Sector</h3>
-        <p>Roads, flyovers, bridges, bus stands, and railway systems are designed for smooth connectivity across the city.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1562184647-8c7d0a8c29e0?auto=format&fit=crop&w=800&q=80');"></div>
-        <h3>Residential Zone</h3>
-        <p>Includes houses, societies, apartments, and empty plots planned to support sustainable living for citizens.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');"></div>
-        <h3>Utility & Sustainable Infrastructure</h3>
-        <p>Focus on water purification, drainage systems, solar energy plants, and electric power generation for eco-friendly urban living.</p>
-      </div>
-    </div>
-  </section>
+    <section class="features">
+    <h2>City Highlights</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1508051123996-69f8caf4891f?auto=format&fit=crop&w=800&q=80');"></div>
+        <h3>Transportation Sector</h3>
+        <p>Roads, flyovers, bridges, bus stands, and railway systems are designed for smooth connectivity across the city.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1562184647-8c7d0a8c29e0?auto=format&fit=crop&w=800&q=80');"></div>
+        <h3>Residential Zone</h3>
+        <p>Includes houses, societies, apartments, and empty plots planned to support sustainable living for citizens.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');"></div>
+        <h3>Utility & Sustainable Infrastructure</h3>
+        <p>Focus on water purification, drainage systems, solar energy plants, and electric power generation for eco-friendly urban living.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- TEAM SECTION -->
-  <section class="team">
-    <h2>Our Team Members</h2>
-    <div class="team-container">
-      <div class="member-card">
-        <h3>Sonika Kalgutkar</h3>
-        <p>Roll No: 210 | USN: 01FE24BCS029</p>
-      </div>
+    <section class="team">
+    <h2>Our Team Members</h2>
+    <div class="team-container">
+      <div class="member-card">
+        <h3>Sonika Kalgutkar</h3>
+        <div class="details">
+          <p>Roll No: 210</p>
+          <p>USN: 01FE24BCS029</p>
+        </div>
+      </div>
 
-      <div class="member-card">
-        <h3>Anoosha Hokrani</h3>
-        <p>Roll No: 266 | USN: 01FE24BCS208</p>
-      </div>
+      <div class="member-card">
+        <h3>Anoosha Hokrani</h3>
+        <div class="details">
+          <p>Roll No: 266</p>
+          <p>USN: 01FE24BCS208</p>
+        </div>
+      </div>
 
-      <div class="member-card">
-        <h3>Namrata Shanbhag</h3>
-        <p>Roll No: 227 | USN: 01FE24BCS101</p>
-      </div>
-    </div>
-  </section>
+      <div class="member-card">
+        <h3>Namrata Shanbhag</h3>
+        <div class="details">
+          <p>Roll No: 227</p>
+          <p>USN: 01FE24BCS101</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Bellasagaram Smart City Project</p>
-  </footer>
+    <footer>
+    <p>© 2025 Bellasagaram Smart City Project</p>
+  </footer>
 
 </body>
 </html>
