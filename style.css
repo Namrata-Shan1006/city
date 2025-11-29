@@ -1,142 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #f5f5f5;
-  color: #333;
+/* FEATURES SECTION */
+.features {
+  padding: 50px 20px;
   text-align: center;
 }
 
-/* HERO SECTION */
-.hero {
-  height: 70vh;
-  background: linear-gradient(to right, #2193b0, #6dd5ed);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  flex-direction: column;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.3rem;
-  font-weight: 300;
-}
-
-/* ABOUT CITY */
-.about-city {
-  padding: 50px 20px;
-  background: #e0f7fa;
-}
-
-.about-city h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.about-city ul {
-  list-style: disc inside;
-  margin-top: 15px;
-  line-height: 1.6;
-}
-
-/* FEATURES */
-.features {
-  padding: 50px 20px;
-  background: #f0f0f0;
-}
-
 .features h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 .feature-cards {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 25px;
 }
 
 .feature-card {
-  width: 220px;
-  background: #ffffff;
-  border-radius: 50% 20% 50% 20% / 30% 50% 30% 50%; /* creative blob shape */
-  padding: 40px 20px;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+  width: 300px;
+  background: white;
+  border-radius: 20px; /* rounded corners */
+  overflow: hidden;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .feature-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
 }
 
+.feature-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Feature card content */
 .feature-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin: 15px 0 10px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .feature-card p {
+  padding: 0 15px 20px 15px;
   font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* TEAM SECTION */
-.team {
-  padding: 50px 20px;
-  background: #ffffff;
-}
-
-.team h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-}
-
-.team-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.member-card {
-  width: 220px;
-  background: #00bcd4;
-  color: white;
-  border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%; /* organic blob shape */
-  padding: 40px 20px;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.member-card p {
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.member-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
-}
-
-/* FOOTER */
-footer {
-  background: #222;
-  color: #fff;
-  padding: 25px 20px;
+  color: #555;
 }
