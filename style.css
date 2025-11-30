@@ -6,139 +6,185 @@
 }
 
 body {
-  background: linear-gradient(135deg, #E6E6FA, #D8BFD8, #F8F8FF);
-  overflow-x: hidden;
+  background: linear-gradient(135deg, #ffd4e0, #ffe7d8, #ffffff);
+  padding-top: 90px;
 }
 
-/* HERO SECTION */
-.hero {
+
+
+/* NAVBAR */
+header {
   width: 100%;
-  padding: 80px 10%;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 45px;
 }
 
-.hero-left {
-  max-width: 50%;
-}
-
-.hero-left h1 {
-  font-size: 42px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #4B0082; /* Darker lavender for text */
-  line-height: 55px;
-}
-
-.hero-desc {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #555;
-  width: 85%;
-}
-
-/* RIGHT INFO CARD */
-.info-card {
-  background: #F3E8FF; /* Soft lavender card */
-  padding: 30px;
-  border-radius: 15px;
-  width: 320px;
-  box-shadow: 0px 6px 20px rgba(75, 0, 130, 0.2); /* Lavender shadow */
-}
-
-.info-card h2 {
+.logo {
   font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #4B0082;
+  font-weight: 700;
+  color: #4d2d73;
 }
 
-.info-card p {
-  margin-bottom: 8px;
-  color: #555;
-  font-size: 15px;
-}
-
-/* SHORT INFO SECTION */
-.short-info {
-  padding: 50px 10%;
+.nav-links {
+  list-style: none;
   display: flex;
   gap: 30px;
 }
 
-.info-box {
-  background: #EDE6FF; /* Light lavender */
-  padding: 25px;
-  border-radius: 15px;
-  width: 50%;
-  box-shadow: 0px 6px 18px rgba(75, 0, 130, 0.1);
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #4d2d73;
+  transition: 0.3s ease-in-out;
 }
 
-.info-box h3 {
+.nav-links a:hover {
+  color: black;
+  transform: scale(1.07);
+}
+
+
+
+/* INTRO SECTION */
+.intro-section {
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.intro-card {
+  background: white;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0px 6px 22px rgba(0,0,0,0.1);
+}
+
+.intro-card h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+
+/* COURSE DETAILS */
+.course-section {
+  padding: 50px 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.course-card {
+  background: white;
+  padding: 30px;
+  width: 380px;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.course-card h2 {
   margin-bottom: 10px;
-  font-size: 20px;
-  color: #4B0082;
 }
 
-.info-box p {
-  color: #555;
-  line-height: 1.6;
-}
 
-/* ABOUT CITY */
-.about-city {
+
+/* ABOUT SECTION */
+.about-section {
   padding: 60px 10%;
   text-align: center;
 }
 
-.about-city h2 {
+.about-section h2 {
   font-size: 28px;
-  font-weight: 600;
   margin-bottom: 15px;
-  color: #4B0082;
 }
 
-.about-city p {
-  max-width: 900px;
-  margin: 10px auto;
-  color: #555;
+.about-section p {
+  max-width: 850px;
+  margin: 12px auto;
   line-height: 1.7;
 }
 
-/* TEAM SECTION */
-.team {
-  padding: 60px 10%;
+
+
+/* PROJECT SECTION */
+.project-section {
+  padding: 70px 10%;
   text-align: center;
 }
 
-.team h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-  color: #4B0082;
+.project-section h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.project-desc {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.github-btn {
+  background: #4d2d73;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.github-btn:hover {
+  background: #341c58;
+}
+
+.business-list {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.business-item {
+  background: white;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+
+
+/* TEAM SECTION */
+.team {
+  padding: 70px 10%;
+  text-align: center;
 }
 
 .team-container {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .team-card {
-  background: #F3E8FF; /* Soft lavender card */
+  background: white;
   width: 260px;
   padding: 25px;
   border-radius: 18px;
   text-align: left;
-  box-shadow: 0px 8px 22px rgba(75, 0, 130, 0.1);
-}
-
-.team-card h3 {
-  margin-bottom: 15px;
-  color: #4B0082;
-}
-
-.team-card p {
-  margin-bottom: 8px;
-  color: #555;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
 }
