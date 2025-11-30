@@ -1,224 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bellasagaram Smart City</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellasagaram City Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body{
-      background: #f5e6ff;
-      color: #222;
-    }
-
-    header{
-      background: #b37dff;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-
-    nav{
-      margin-top: 10px;
-    }
-
-    nav a{
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
-      padding-bottom: 4px;
-    }
-
-    nav a.active{
-      border-bottom: 2px solid white;
-    }
-
-    .hero{
-      height: 60vh;
-      background: url('https://images.unsplash.com/photo-1505739777853-2728f6801061?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .overlay{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.45);
-    }
-
-    .hero-content{
-      position: relative;
-      color: white;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero-content h1{
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    .hero-content p{
-      margin-top: 10px;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-
-    @keyframes fadeIn{
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .about-city{
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .about-city h2{
-      font-size: 2.5rem;
-      margin-bottom: 25px;
-      color: #0d3b66;
-    }
-
-    .about-city ul{
-      list-style-type: disc;
-      margin: 20px auto;
-      max-width: 600px;
-      text-align: left;
-      color: #333;
-    }
-
-    .about-city li{
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    /* TEAM SECTION */
-    .team {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .team h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: #0d3b66;
-    }
-
-    .team-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .member-card {
-      width: 280px;
-      background: #d9b3ff; /* lavender theme */
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .member-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 8px 22px rgba(0,0,0,0.2);
-    }
-
-    .member-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #222;
-    }
-
-    .member-card p {
-      margin: 4px 0;
-      font-size: 1rem;
-    }
-
-    footer{
-      padding: 20px;
-      text-align: center;
-      background: #b37dff;
-      color: white;
-      font-weight: 500;
-      margin-top: 50px;
-    }
-  </style>
 </head>
+
 <body>
 
-  <!-- HEADER & NAVBAR -->
-  <header>
-    <h1>Bellasagaram Smart City</h1>
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="sonika.html">Sonika</a>
-        <a href="anoosha.html">Anoosha</a>
-        <a href="namrata.html">Namrata</a>
-    </nav>
-  </header>
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="sonika.html">Sonika</a>
+      <a href="anoosha.html">Anoosha</a>
+      <a href="namrata.html">Namrata</a>
+  </nav>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Welcome to Bellasagaram</h1>
-      <p>Smart, sustainable, and beautifully planned for the future 🌆</p>
+
+    <div class="hero-left">
+      <h1>INTRODUCTION TO <br> BELLASAGARAM CITY DESIGN</h1>
+      <p class="hero-desc">
+        A creative and analytical approach to designing a sustainable coastal city through 
+        the concepts of Design & Analysis of Algorithms.
+      </p>
+    </div>
+
+    <div class="hero-right">
+      <div class="info-card">
+        <h2>Course Details</h2>
+        <p><strong>Course:</strong> DAA</p>
+        <p><strong>Course Code:</strong> 24ECSC2O5</p>
+        <p><strong>Instructor:</strong> Prof. Prakash Hegade</p>
+        <p><strong>University:</strong> KLE Technological University</p>
+        <p><strong>Topic:</strong> City Design</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SHORT COURSE DETAILS -->
+  <section class="short-info">
+    <div class="info-box">
+      <h3>What is the course about?</h3>
+      <p>
+        DAA helps us understand how complex real-world problems can be broken into simple,
+        logical steps. It encourages curiosity and analytical thinking by revealing patterns
+        hidden in nature, technology, and daily life.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>Real-time Applications</h3>
+      <p>
+        Algorithms guide everything around us — GPS routes, search engine suggestions,
+        fraud detection, recommendations, and more. They transform small logical ideas into
+        powerful systems used by millions.
+      </p>
     </div>
   </section>
 
-  <!-- ABOUT CITY SECTION -->
+  <!-- ABOUT CITY -->
   <section class="about-city">
     <h2>About Bellasagaram</h2>
-    <p>Bellasagaram is a model city designed to balance modern infrastructure with sustainability. Our vision includes:</p>
-    <ul>
-      <li>Eco-friendly residential and commercial zones</li>
-      <li>Optimized traffic and transportation systems using smart algorithms</li>
-      <li>Green spaces and recreational areas for citizens</li>
-      <li>Renewable energy and sustainable resource management</li>
-      <li>Leveraging technology for efficient city services</li>
-    </ul>
+    <p>
+      Bellasagaram, meaning “The Sweet Coastal City,” is inspired by Anakapalli’s heritage, 
+      jaggery market, fertile lands, and coastal power. The city blends tradition with modern
+      infrastructure to create a sustainable and smart coastal hub.
+    </p>
+    <p>
+      Its development model integrates ports, fisheries, solar energy systems, and recycling
+      industries. By using its coastal advantage, the city aims to boost exports, generate
+      employment, and build a green and self-sustaining economy where culture and innovation
+      flourish together.
+    </p>
   </section>
 
-  <!-- TEAM SECTION -->
+  <!-- TEAM MEMBERS -->
   <section class="team">
-    <h2>Our Team Members</h2>
+    <h2>Team Members</h2>
+
     <div class="team-container">
-      <div class="member-card">
-        <h3>Sonika Kalgutkar</h3>
-        <p>Roll No: 210 | USN: 01FE24BCS029</p>
+
+      <div class="team-card">
+        <h3>Team Member 1</h3>
+        <p><strong>Name:</strong> Sonika Kalgutkar</p>
+        <p><strong>Roll:</strong> 210</p>
+        <p><strong>USN:</strong> 01FE24BCS029</p>
       </div>
-      <div class="member-card">
-        <h3>Anoosha Hokrani</h3>
-        <p>Roll No: 266 | USN: 01FE24BCS208</p>
+
+      <div class="team-card">
+        <h3>Team Member 2</h3>
+        <p><strong>Name:</strong> Anoosha Hokrani</p>
+        <p><strong>Roll:</strong> 266</p>
+        <p><strong>USN:</strong> 01FE24BCS208</p>
       </div>
-      <div class="member-card">
-        <h3>Namrata Shanbhag</h3>
-        <p>Roll No: 227 | USN: 01FE24BCS101</p>
+
+      <div class="team-card">
+        <h3>Team Member 3</h3>
+        <p><strong>Name:</strong> Namrata Shanbhag</p>
+        <p><strong>Roll:</strong> 227</p>
+        <p><strong>USN:</strong> 01FE24BCS101</p>
       </div>
+
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Bellasagaram Smart City Project</p>
-  </footer>
 
 </body>
 </html>
