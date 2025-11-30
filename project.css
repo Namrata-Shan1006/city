@@ -1,82 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Portfolio</title>
-    <link rel="stylesheet" href="projects.css">
-</head>
-<body>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html" class="active">Projects</a>
-        </nav>
-    </header>
+body{
+    background: #f5e6ff;
+    color: #222;
+}
 
-    <section class="main-section">
-        <h2 class="big-title">BUSINESS CASES</h2>
+header{
+    background: #b37dff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
 
-        <!-- ANOOSHA -->
-        <div class="project-card">
-            <h3>ANOOSHA</h3>
-            <ul>
-                <li>Smart Waste Collection & Recycling Management</li>
-                <li>Smart Parking System for Commercial & Entertainment Zone</li>
-                <li>Renewable Energy Grid Management (Solar + Wind)</li>
-                <li>Port Cargo Scheduling & Container Allocation</li>
-                <li>Public Transport Fleet Optimization</li>
-                <li>Water Distribution System</li>
-                <li>Emergency Response Dispatch System</li>
-                <li>Smart Housing Allocation System (Residential Zone)</li>
-                <li>Smart Market & Commercial Zone Price Analyzer</li>
-                <li>Industrial Logistics & Supply Chain Manager</li>
-            </ul>
+nav{
+    margin-top: 10px;
+}
 
-            <a href="https://github.com/Namrata-Shan1006/city" class="btn" target="_blank">View on GitHub</a>
-        </div>
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+}
 
-        <!-- NAMRATA -->
-        <div class="project-card">
-            <h3>NAMRATA</h3>
-            <ul>
-                <li>Smart Surveillance & CCTV Command Center</li>
-                <li>GPS Tracking & Fleet Management for Police Vehicles</li>
-                <li>Sewage Treatment Plant (STP) Operation & Maintenance</li>
-                <li>Smart Pedestrian & Cycle Tracks</li>
-                <li>Public utilities: billing, meter reading, water distribution</li>
-                <li>Foreign Exchange & Remittance Centre</li>
-                <li>Tax & Accounting Service</li>
-                <li>Banking services</li>
-                <li>Hospital Network & Intelligent Bed Allocation System</li>
-                <li>Ambulance Allocation Based on City Zones</li>
-            </ul>
+nav a.active{
+    border-bottom: 2px solid white;
+}
 
-            <a href="https://github.com/Namrata-Shan1006/city" class="btn" target="_blank">View on GitHub</a>
-        </div>
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
 
-        <!-- SONIKA -->
-        <div class="project-card">
-            <h3>SONIKA</h3>
-            <ul>
-                <li>University Admission & Hostel Allocation System</li>
-                <li>Urban Forest & Green Coverage Management</li>
-                <li>Smart Tourism Planner for Bellasagram Coastal Zone</li>
-                <li>Land Record Digitization</li>
-                <li>Food Quality & Contamination Detection System</li>
-                <li>Smart Tourism Management System</li>
-                <li>E-Governance Smart Queue Management System (all licences)</li>
-                <li>Public Library</li>
-                <li>ATM & Kiosk Maintenance Business</li>
-                <li>Agriculture and irrigation maintenance</li>
-            </ul>
+.title{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #6b2fb9;
+}
 
-            <a href="https://github.com/Namrata-Shan1006/city" class="btn" target="_blank">View on GitHub</a>
-        </div>
+.card{
+    background: #e8d8ff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-    </section>
+.card h3{
+    font-size: 24px;
+    color: #5a1fa2;
+    margin-bottom: 15px;
+}
 
-</body>
-</html>
+.card ul{
+    margin-left: 20px;
+    line-height: 1.7;
+}
