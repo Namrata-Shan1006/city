@@ -742,6 +742,57 @@ body[data-theme="dark"] .footer {
     padding-right: 7%;
   }
 }
+/* ============ NAMRATA PAGE IDEA GRID ============ */
+
+.ideas-grid-nam {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.idea-box {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-md);
+  padding: 16px 16px 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--accent-soft);
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.idea-box h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--accent-strong);
+}
+
+.idea-desc,
+.idea-algo,
+.idea-why {
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.idea-code {
+  margin-top: 6px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 6px 8px;
+  overflow-x: auto;
+}
+
+body[data-theme="dark"] .idea-code {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.idea-code code {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: var(--text);
+}
 
 @media (max-width: 650px) {
   .nav-links {
