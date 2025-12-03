@@ -1,81 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="projects.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project | Bellasagaram City Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
 
-  <!-- NAVIGATION BAR -->
-  <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="sonika.html">Sonika</a>
-      <a href="anoosha.html">Anoosha</a>
-      <a href="namrata.html">Namrata</a>
-  </nav>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Bellasagaram</div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="anoosha.html">Anoosha</a></li>
+        <li><a href="namrata.html">Namrata</a></li>
+        <li><a href="sonika.html">Sonika</a></li>
+        <li><a href="collabz.html">Collabz</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- PROJECTS SECTION -->
-  <section class="projects">
-      <h2 class="title">BUSINESS CASES</h2>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
-      <div class="project-cards">
-          <!-- Anoosha -->
-          <div class="project-card">
-              <h3>ANOOSHA</h3>
-              <ul>
-                  <li>Smart Waste Collection & Recycling Management</li>
-                  <li>Smart Parking System for Commercial & Entertainment Zone</li>
-                  <li>Renewable Energy Grid Management (Solar + Wind)</li>
-                  <li>Port Cargo Scheduling & Container Allocation</li>
-                  <li>Public Transport Fleet Optimization</li>
-                  <li>Water Distribution System</li>
-                  <li>Emergency Response Dispatch System</li>
-                  <li>Smart Housing Allocation System (Residential Zone)</li>
-                  <li>Smart Market & Commercial Zone Price Analyzer</li>
-                  <li>Industrial Logistics & Supply Chain Manager</li>
-              </ul>
-          </div>
+  <main>
+    <!-- CITY DESIGN INTRO -->
+    <section class="project-hero section-wrapper">
+      <h1 class="section-heading animated-heading">City Design</h1>
 
-          <!-- Namrata -->
-          <div class="project-card">
-              <h3>NAMRATA</h3>
-              <ul>
-                  <li>Smart Surveillance & CCTV Command Center</li>
-                  <li>GPS Tracking & Fleet Management for Police Vehicles</li>
-                  <li>Sewage Treatment Plant (STP) Operation & Maintenance</li>
-                  <li>Smart Pedestrian & Cycle Tracks</li>
-                  <li>Public utilities: billing, meter reading, water distribution</li>
-                  <li>Foreign Exchange & Remittance Centre</li>
-                  <li>Tax & Accounting Service</li>
-                  <li>Banking services</li>
-                  <li>Hospital Network & Intelligent Bed Allocation System</li>
-                  <li>Ambulance Allocation Based on City Zones</li>
-              </ul>
-          </div>
+      <div class="project-card glass-card">
+        <p>
+          Our Bellasagaram city design imagines a modern coastal city that is clean, efficient,
+          and people-friendly. The plan focuses on reducing waste, saving energy, improving
+          transportation, and creating safe public spaces for everyone.
+        </p>
+        <p>
+          Using the ideas from Design and Analysis of Algorithms, we treat the city like a large
+          problem to be solved step by step — from traffic flow and resource allocation to
+          emergency services and housing. Each decision is made to balance sustainability,
+          economy, and quality of life.
+        </p>
 
-          <!-- Sonika -->
-          <div class="project-card">
-              <h3>SONIKA</h3>
-              <ul>
-                  <li>University Admission & Hostel Allocation System</li>
-                  <li>Urban Forest & Green Coverage Management</li>
-                  <li>Smart Tourism Planner for Bellasagram Coastal Zone</li>
-                  <li>Land Record Digitization</li>
-                  <li>Food Quality & Contamination Detection System</li>
-                  <li>Smart Tourism Management System</li>
-                  <li>E-Governance Smart Queue Management System</li>
-                  <li>Public Library</li>
-                  <li>ATM & Kiosk Maintenance Business</li>
-                  <li>Agriculture and irrigation maintenance</li>
-              </ul>
-          </div>
+        <a
+          class="btn primary-btn"
+          href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Find this project on GitHub
+        </a>
       </div>
-  </section>
+    </section>
 
+    <!-- PHASE 1 -->
+    <section class="phase-section section-wrapper">
+      <h2 class="section-subheading">PHASE 1: City Map &amp; Topography</h2>
+
+      <div class="phase-card bracket-card">
+        <!-- change src to your actual image name -->
+        <img src="phase1-map.jpg" alt="City map and topography of Bellasagaram">
+        <p>
+          Phase 1 shows the overall layout of Bellasagaram — zones for housing, industry,
+          education, tourism, green cover, transport routes, and coastal areas mapped on
+          the city grid.
+        </p>
+      </div>
+    </section>
+
+    <!-- PHASE 2 -->
+    <section class="phase-section section-wrapper">
+      <h2 class="section-subheading">PHASE 2: Business Idea Generation</h2>
+
+      <p class="phase-intro">
+        In Phase 2, each team member proposes business and service ideas that can grow
+        inside Bellasagaram. These ideas are connected to different zones of the city and
+        can be modeled and optimized using algorithms.
+      </p>
+
+      <div class="ideas-row horizontal-scroll">
+        <!-- SONIKA CARD -->
+        <div class="idea-card bracket-card">
+          <h3>Sonika Kalgutkar</h3>
+          <h4>Business Ideas</h4>
+          <ul>
+            <li>University Admission &amp; Hostel Allocation System</li>
+            <li>Urban Forest &amp; Green Coverage Management</li>
+            <li>Smart Tourism Planner for Bellasagaram Coastal Zone</li>
+            <li>Land Record Digitization</li>
+            <li>Food Quality &amp; Contamination Detection System</li>
+            <li>Vital Statistics &amp; Civil Records (birth, death, citizenship, voter records)</li>
+            <li>E-Governance Smart Queue Management System (all licences)</li>
+            <li>Public Library Services</li>
+            <li>ATM &amp; Kiosk Maintenance Business</li>
+            <li>Agriculture and Irrigation Maintenance Services</li>
+          </ul>
+        </div>
+
+        <!-- ANOOSHA CARD -->
+        <div class="idea-card bracket-card">
+          <h3>Anoosha Hokrani</h3>
+          <h4>Business Ideas</h4>
+          <ul>
+            <li>Smart Waste Collection &amp; Recycling Management</li>
+            <li>Smart Parking System for Commercial &amp; Entertainment Zone</li>
+            <li>Renewable Energy Grid Management (Solar + Wind)</li>
+            <li>Port Cargo Scheduling &amp; Container Allocation</li>
+            <li>Public Transport Fleet Optimization</li>
+            <li>Water Distribution System</li>
+            <li>Emergency Response Dispatch System</li>
+            <li>Smart Housing Allocation System (Residential Zone)</li>
+            <li>Smart Market &amp; Commercial Zone Price Analyzer</li>
+            <li>Industrial Logistics &amp; Supply Chain Manager</li>
+          </ul>
+        </div>
+
+        <!-- NAMRATA CARD -->
+        <div class="idea-card bracket-card">
+          <h3>Namrata Shanbhag</h3>
+          <h4>Business Ideas</h4>
+          <ul>
+            <li>Smart Surveillance &amp; CCTV Command Center</li>
+            <li>GPS Tracking &amp; Fleet Management for Police Vehicles</li>
+            <li>Sewage Treatment Plant (STP) Operation &amp; Maintenance</li>
+            <li>Smart Pedestrian &amp; Cycle Tracks</li>
+            <li>Public Utilities: billing, meter reading, water distribution</li>
+            <li>Foreign Exchange &amp; Remittance Centre</li>
+            <li>Tax &amp; Accounting Service</li>
+            <li>Banking Services</li>
+            <li>Hospital Network &amp; Intelligent Bed Allocation System</li>
+            <li>Ambulance Allocation Based on City Zones</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
