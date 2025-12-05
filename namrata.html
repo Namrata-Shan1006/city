@@ -6,14 +6,25 @@
   <title>Namrata | Bellasagaram Team</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* small additions for idea cards and code blocks */
+    .ideas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .idea-box { background: var(--card-bg); border-radius: 14px; padding: 18px; box-shadow: var(--shadow-soft); border: 1px solid var(--accent-soft); height: 100%; display:flex; flex-direction:column; }
+    .idea-title { font-size:16px; font-weight:700; color:var(--accent-strong); margin-bottom:6px }
+    .idea-summary { font-size:13px; color:var(--text-soft); margin-bottom:8px; flex:0 0 auto }
+    .idea-meta { font-size:13px; margin-top:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+    .sdg { background: linear-gradient(90deg,#6b5bff,#b669d9); color:#fff; padding:6px 10px; border-radius:999px; font-size:12px }
+    .algo { font-weight:600; color:var(--accent-strong); font-size:13px }
+    .code-block { max-height:220px; overflow:auto; background:#0d1117; color:#e6eef8; padding:12px; border-radius:8px; font-family:monospace; font-size:13px }
+    details summary { cursor:pointer; font-weight:600; margin-top:8px }
+  </style>
 </head>
 <body data-theme="light">
-
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀️</span>
+        <span class="sun">☀</span>
         <span class="moon">🌙</span>
       </button>
       <ul class="nav-links">
@@ -42,19 +53,212 @@
         <p><strong>USN:</strong> 01FE24BCS101</p>
         <p><strong>Role in Project:</strong> Documentation &amp; Analysis</p>
 
-        <h2>Business Ideas</h2>
-        <ul>
-          <li>Smart Surveillance &amp; CCTV Command Center</li>
-          <li>GPS Tracking &amp; Fleet Management for Police Vehicles</li>
-          <li>Sewage Treatment Plant (STP) Operation &amp; Maintenance</li>
-          <li>Smart Pedestrian &amp; Cycle Tracks</li>
-          <li>Public Utilities: billing, meter reading, water distribution</li>
-          <li>Foreign Exchange &amp; Remittance Centre</li>
-          <li>Tax &amp; Accounting Service</li>
-          <li>Banking Services</li>
-          <li>Hospital Network &amp; Intelligent Bed Allocation System</li>
-          <li>Ambulance Allocation Based on City Zones</li>
-        </ul>
+        <h2>Business Ideas — Summaries, Algorithms &amp; Code</h2>
+
+        <div class="ideas-grid">
+
+          <!-- 1 -->
+          <div class="idea-box">
+            <div class="idea-title">Smart Surveillance &amp; CCTV Command Center</div>
+            <div class="idea-summary">A centralized system to monitor cameras, detect anomalies (crowding, accidents) and prioritize alerts to operators.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: Computer Vision (YOLO/SSD), streaming + priority queue</div>
+              <div class="sdg">SDG 11: Sustainable Cities</div>
+              <div class="sdg">SDG 16: Peace &amp; Justice</div>
+            </div>
+
+            <details>
+              <summary>Open example (pseudo)code</summary>
+              <pre class="code-block">// Simplified: detect object & push high-priority alert
+while(stream.read(frame)){
+  objects = detect(frame);              // CNN/YOLO model
+  if(objects.contains('crowd')||objects.contains('fire')){
+    alerts.push({priority:HIGH, frame});
+  } else if(objects.contains('vehicle')){
+    alerts.push({priority:MEDIUM, frame});
+  }
+}
+// process queue
+while(alerts.pop()) handle(alert);
+              </pre>
+            </details>
+          </div>
+
+          <!-- 2 -->
+          <div class="idea-box">
+            <div class="idea-title">GPS Tracking &amp; Fleet Management for Police Vehicles</div>
+            <div class="idea-summary">Real-time location, route history, and nearest-vehicle dispatch for quick response.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: K-d tree / spatial index for nearest neighbor, Dijkstra for routing</div>
+              <div class="sdg">SDG 11: Sustainable Cities</div>
+            </div>
+
+            <details>
+              <summary>Open example (JS snippet)</summary>
+              <pre class="code-block">// Find nearest vehicle by Haversine distance
+function nearestVehicle(vehicles, incident){
+  let best = null; let bestD = Infinity;
+  for(v of vehicles){ d = haversine(v.lat,v.lon,incident.lat,incident.lon);
+    if(d < bestD){ bestD = d; best = v; }}
+  return best;
+}
+              </pre>
+            </details>
+          </div>
+
+          <!-- 3 -->
+          <div class="idea-box">
+            <div class="idea-title">Sewage Treatment Plant (STP) Operation &amp; Maintenance</div>
+            <div class="idea-summary">Scheduling maintenance, predicting failures and optimizing pump schedules to save energy.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: Time-series forecasting (ARIMA/LSTM), scheduling with priority queues</div>
+              <div class="sdg">SDG 6: Clean Water</div>
+              <div class="sdg">SDG 7: Affordable Energy</div>
+            </div>
+
+            <details>
+              <summary>Open example (pseudo)code</summary>
+              <pre class="code-block">// Predictive alarm
+model = loadModel('pump_fail_predictor');
+for(reading of sensorStream){
+  p = model.predict(reading.features);
+  if(p>0.7) scheduleMaintenance(reading.unit);
+}
+              </pre>
+            </details>
+          </div>
+
+          <!-- 4 -->
+          <div class="idea-box">
+            <div class="idea-title">Smart Pedestrian &amp; Cycle Tracks</div>
+            <div class="idea-summary">Designing safe routes, optimizing signal timings and dynamic signage for pedestrians/cyclists.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: Shortest-path (Dijkstra), simulation (agent-based)</div>
+              <div class="sdg">SDG 11: Sustainable Cities</div>
+            </div>
+
+            <details>
+              <summary>Open example (C++ snippet)</summary>
+              <pre class="code-block">// Dijkstra (adj list) — return dist to nodes
+// (shortened)
+vector<int> dijkstra(int s){
+  priority_queue<pair<int,int>>pq; pq.push({0,s});
+  while(!pq.empty()){ auto [dist,u]=pq.top(); pq.pop(); /* relax edges */ }
+}
+              </pre>
+            </details>
+          </div>
+
+          <!-- 5 -->
+          <div class="idea-box">
+            <div class="idea-title">Public Utilities: billing, meter reading, water distribution</div>
+            <div class="idea-summary">Automate meter-reading ingestion, anomaly detection (leak/fraud) and billing generation.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: anomaly detection (z-score, isolation forest), ETL pipelines</div>
+              <div class="sdg">SDG 6: Clean Water</div>
+              <div class="sdg">SDG 9: Industry &amp; Infrastructure</div>
+            </div>
+
+            <details>
+              <summary>Open example (Python snippet)</summary>
+              <pre class="code-block"># detect sudden spike
+if current_reading - avg_past > threshold:
+  flag_anomaly(meter_id)
+# then create bill
+bill = generate_bill(customer_id, consumption)
+              </pre>
+            </details>
+          </div>
+
+          <!-- 6 -->
+          <div class="idea-box">
+            <div class="idea-title">Foreign Exchange &amp; Remittance Centre</div>
+            <div class="idea-summary">A portal to route currency exchange and remittances with best rates and low fees.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: best-rate selection (greedy, graph of exchange rates), secure queueing</div>
+              <div class="sdg">SDG 8: Decent Work &amp; Growth</div>
+            </div>
+
+            <details>
+              <summary>Open example (pseudo)code</summary>
+              <pre class="code-block">// Build graph of rates and find best path
+// nodes: currencies, edges: rate
+best = bellmanFord(graph, start)
+              </pre>
+            </details>
+          </div>
+
+          <!-- 7 -->
+          <div class="idea-box">
+            <div class="idea-title">Tax &amp; Accounting Service</div>
+            <div class="idea-summary">Automated report generation, tax computation rules engine and document validation.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: rule-engine, expression evaluation, document OCR + NLP</div>
+              <div class="sdg">SDG 8: Decent Work</div>
+            </div>
+
+            <details>
+              <summary>Open example (JS snippet)</summary>
+              <pre class="code-block">// evaluate tax rules
+const taxable = calculateIncome(records);
+const tax = applyRules(taxable, ruleset);
+              </pre>
+            </details>
+          </div>
+
+          <!-- 8 -->
+          <div class="idea-box">
+            <div class="idea-title">Banking Services</div>
+            <div class="idea-summary">Online banking UI, transaction ledger, fraud-detection on transactions.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: ledger (append-only), ML for fraud, consensus for audit trail</div>
+              <div class="sdg">SDG 8: Decent Work</div>
+            </div>
+
+            <details>
+              <summary>Open example (pseudo)code</summary>
+              <pre class="code-block">// append transaction
+ledger.push({from,to,amt,timestamp});
+if(fraudModel.predict(tx) > 0.8) flag(tx)
+              </pre>
+            </details>
+          </div>
+
+          <!-- 9 -->
+          <div class="idea-box">
+            <div class="idea-title">Hospital Network &amp; Intelligent Bed Allocation System</div>
+            <div class="idea-summary">Match patients to nearest hospitals with available beds and required specialities.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: bipartite matching / flow (max flow), nearest neighbor routing</div>
+              <div class="sdg">SDG 3: Good Health</div>
+            </div>
+
+            <details>
+              <summary>Open example (pseudo)code</summary>
+              <pre class="code-block">// bipartite matching: patients -> beds
+result = maxFlow(source, sink, capacityGraph)
+              </pre>
+            </details>
+          </div>
+
+          <!-- 10 -->
+          <div class="idea-box">
+            <div class="idea-title">Ambulance Allocation Based on City Zones</div>
+            <div class="idea-summary">A dispatch system that routes nearest available ambulance and optimizes coverage across zones.</div>
+            <div class="idea-meta">
+              <div class="algo">Algorithms: dynamic routing (A*), coverage optimization (set cover / greedy)</div>
+              <div class="sdg">SDG 3: Good Health</div>
+            </div>
+
+            <details>
+              <summary>Open example (C++ snippet)</summary>
+              <pre class="code-block">// A* pseudocode: open set, gScore, fScore
+// (see typical A* implementation)
+              </pre>
+            </details>
+          </div>
+
+        </div><!-- ideas-grid -->
       </div>
     </section>
   </main>
