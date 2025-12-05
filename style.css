@@ -823,3 +823,127 @@ body[data-theme="dark"] .idea-code {
     align-items: flex-start;
   }
 }
+/* ============================
+   NAMRATA: enhanced aesthetic cards
+   Append this to the end of style.css
+   ============================ */
+
+.member-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-left: 6px;
+}
+
+.member-meta.meta-inline {
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin:14px 8% 20px;
+  padding:12px 18px;
+  border-radius:14px;
+}
+
+/* Lead paragraph centered */
+.lead { text-align:center; color:var(--text-soft); max-width:980px; margin:6px auto 22px; }
+
+/* Grid layout for varied shapes */
+.nam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 10px 8%;
+  align-items: start;
+}
+
+/* base idea card */
+.idea-card {
+  position: relative;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,240,255,0.9));
+  box-shadow: 0 14px 40px rgba(122,60,255,0.08);
+  border: 1px solid rgba(122,60,255,0.08);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.idea-card:hover { transform: translateY(-8px); box-shadow: 0 18px 48px rgba(122,60,255,0.14); }
+
+/* card header area */
+.card-head { display:flex; flex-direction: column; gap:8px; margin-bottom:8px; }
+.card-head.rect { align-items:flex-start; }
+.card-title {
+  font-weight:700;
+  font-size:15px;
+  color: #3b165f;
+  background: linear-gradient(90deg,#fff0ff,#f8e9ff);
+  padding:6px 10px;
+  border-radius:12px;
+  display:inline-block;
+  box-shadow:0 6px 18px rgba(122,60,255,0.06);
+}
+
+/* Algorithm badge */
+.algo-badge { font-size:12px; color:var(--text-soft); }
+.algo-badge .badge {
+  display:inline-block;
+  background: linear-gradient(90deg,#f3e7ff,#e9d7ff);
+  color: #502a7a;
+  padding:3px 8px;
+  border-radius:999px;
+  font-weight:600;
+  margin-left:6px;
+  box-shadow:0 6px 18px rgba(120,70,220,0.04);
+}
+
+/* body text */
+.card-body { margin-top:6px; flex:1; display:flex; flex-direction:column; gap:8px; }
+.desc { color:var(--text-soft); line-height:1.55; font-size:13px; }
+.why { color:var(--text-soft); font-size:13px; }
+
+/* Code block styling with gentle pastel syntax colors */
+.code-block {
+  background: linear-gradient(180deg, rgba(240,236,255,0.6), rgba(249,246,255,0.6));
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 12px;
+  overflow-x: auto;
+  border: 1px solid rgba(122,60,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+  color: #2b0b45;
+}
+
+/* Simulated syntax highlighting using spans (see HTML) */
+.code-block .kw { color:#7d26ff; font-weight:700; }      /* keywords: int, void, return, for, while, if */
+.code-block .num { color:#d948ff; }                      /* numbers/const */
+.code-block .str { color:#ff6fa3; }                      /* strings (if any) */
+.code-block .comment { color:#6b6b6b; font-style:italic; }/* comments */
+.code-block code { white-space: pre; display:block; }
+
+/* SHAPES */
+
+/* circle card */
+.card-circle { border-radius: 999px; min-height:300px; }
+
+/* triangle card: use clip-path for a soft triangle */
+.card-triangle {
+  clip-path: polygon(50% 0%, 100% 85%, 0% 85%);
+  padding-top: 28px;
+  min-height: 320px;
+}
+
+/* rectify text inside clipped element by adding inner wrapper */
+.card-triangle .card-body, .card-triangle .card-head { transform: translateY(10%); }
+
+/* rectangle (rounded) */
+.card-rect { border-radius: 26px; }
+
+/* small responsiveness tweak */
+@media (max-width:900px){
+  .member-meta.meta-inline{ flex-direction:column; gap:8px; align-items:flex-start; padding-left:7%; padding-right:7%;}
+  .nam-grid { padding-left:6%; padding-right:6%; }
+  .card-triangle { clip-path: none; border-radius: 20px; }
+}
