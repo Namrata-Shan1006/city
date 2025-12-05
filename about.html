@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Our Team | Bellasagaram City Design</title>
+  <title>Bellasagaram City Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-theme="light">
 
+  <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
+
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀️</span>
+        <span class="sun">☀</span>
         <span class="moon">🌙</span>
       </button>
+
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="project.html">Project</a></li>
         <li><a href="anoosha.html">Anoosha</a></li>
         <li><a href="namrata.html">Namrata</a></li>
@@ -28,71 +32,123 @@
     </nav>
   </header>
 
+  <!-- BACK TO TOP BUTTON -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
+  <!-- HERO SECTION -->
   <main>
-    <section class="about-header">
-      <h1 class="section-heading animated-heading">About Our Team</h1>
-      <p class="about-intro-text">
-        We are a creative and dedicated team of computer science students working together
-        to design <strong>Bellasagaram</strong> — a modern, sustainable coastal city built using
-        principles of Design and Analysis of Algorithms. Our vision is to blend technology,
-        logic, and creativity to build systems that are efficient, scalable, and people-friendly.
-      </p>
+    <section class="hero">
+
+      <div class="hero-left">
+        <h1 class="hero-title">
+          <span class="hero-tag">City Plan • Team 09</span>
+          INTRODUCTION TO <br> BELLASAGARAM CITY DESIGN
+        </h1>
+
+        <p class="hero-desc">
+          A creative and analytical approach to designing a sustainable coastal city through 
+          the concepts of Design &amp; Analysis of Algorithms.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="project.html" class="btn primary-btn">View Project</a>
+          <a href="about.html" class="btn ghost-btn">Meet Our Team</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="info-card glass-card">
+          <h2>Course Details</h2>
+          <div class="info-row"><span>Course</span><strong>DAA</strong></div>
+          <div class="info-row"><span>Course Code</span><strong>24ECSC2O5</strong></div>
+          <div class="info-row"><span>Instructor</span><strong>Prof. Prakash Hegade</strong></div>
+          <div class="info-row"><span>University</span><strong>KLE Technological University, Hubballi</strong></div>
+          <div class="info-row"><span>Topic</span><strong>City Design</strong></div>
+        </div>
+      </div>
+
     </section>
 
-    <section class="about-team-section section-wrapper">
-      <h2 class="section-subheading">Meet the Team</h2>
+    <!-- SHORT COURSE DETAILS -->
+    <section class="short-info">
 
-      <div class="about-team-grid">
-        <a href="sonika.html" class="about-team-card bracket-card link-card">
+      <div class="info-box bracket-card">
+        <h3>What is the course about?</h3>
+        <p>
+          DAA helps us understand how complex real-world problems can be broken into simple,
+          logical steps. It encourages curiosity and analytical thinking by revealing patterns
+          hidden in nature, technology, and daily life.
+        </p>
+      </div>
+
+      <div class="info-box bracket-card">
+        <h3>Real-time Applications</h3>
+        <p>
+          Algorithms guide everything around us — GPS routes, search engine suggestions,
+          fraud detection, recommendations, and more. They transform small logical ideas into
+          powerful systems used by millions.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT CITY -->
+    <section class="about-city section-wrapper">
+      <h2 class="section-heading">About Bellasagaram</h2>
+      <div class="section-card bracket-card">
+        <p>
+          Bellasagaram, meaning “The Sweet Coastal City,” is a newly proposed urban development 
+          inspired by the rich heritage and natural potential of Anakapalli, Andhra Pradesh. Known
+          for its famous jaggery (bellam) market, fertile agricultural lands, and proximity to the
+          Bay of Bengal, this region provides the perfect foundation for blending tradition with modern 
+          infrastructure. The city’s name represents this fusion — “Bellam” symbolizing Anakapalli’s 
+          sweetness and agricultural identity, and “Sagara” reflecting its sea-based growth through 
+          ports and coastal industries. The vision is to transform the area into a sustainable, smart,
+          and economically vibrant coastal city that preserves culture while embracing progress.
+        </p>
+        <p>
+          Bellasagaram’s development model focuses on the integration of ports, fisheries, recycling 
+          industries, cold storage, and solar energy systems. By utilizing its coastal advantage, the 
+          city aims to boost exports, generate employment, and attract investments through efficient 
+          transport and industrial networks. Solar-powered operations, marine-based industries, and 
+          value-added fisheries create a self-sustaining revenue ecosystem, ensuring long-term economic 
+          stability. This transformation establishes Bellasagaram as a model marine-industrial hub, where 
+          industry, environment, and livelihood thrive together in perfect&nbsp;balance.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM MEMBERS SECTION ON HOME -->
+    <section class="team section-wrapper">
+      <h2 class="section-heading">Team Members</h2>
+
+      <div class="team-container">
+
+        <a href="sonika.html" class="team-card link-card">
           <h3>Sonika Kalgutkar</h3>
-          <p class="about-usn">Roll: 210 | USN: 01FE24BCS029</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Works on visualization, layout planning, and presentation flow — ensuring that
-            the Bellasagaram city design is aesthetic, well-structured, and easy to understand.
-          </p>
-          <span class="profile-link">Open profile →</span>
+          <p><strong>Roll:</strong> 210</p>
+          <p><strong>USN:</strong> 01FE24BCS029</p>
+          <span class="profile-link">View profile →</span>
         </a>
 
-        <a href="anoosha.html" class="about-team-card bracket-card link-card">
+        <a href="anoosha.html" class="team-card link-card">
           <h3>Anoosha Hokrani</h3>
-          <p class="about-usn">Roll: 266 | USN: 01FE24BCS208</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Specializes in algorithm design — traffic optimization, resource allocation,
-            emergency routing, and eco-efficient smart city planning.
-          </p>
-          <span class="profile-link">Open profile →</span>
+          <p><strong>Roll:</strong> 266</p>
+          <p><strong>USN:</strong> 01FE24BCS208</p>
+          <span class="profile-link">View profile →</span>
         </a>
 
-        <a href="namrata.html" class="about-team-card bracket-card link-card">
+        <a href="namrata.html" class="team-card link-card">
           <h3>Namrata Shanbhag</h3>
-          <p class="about-usn">Roll: 227 | USN: 01FE24BCS101</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Handles documentation, complexity analysis, and structured reporting — making sure
-            every DAA concept is clearly and correctly presented.
-          </p>
-          <span class="profile-link">Open profile →</span>
+          <p><strong>Roll:</strong> 227</p>
+          <p><strong>USN:</strong> 01FE24BCS101</p>
+          <span class="profile-link">View profile →</span>
         </a>
+
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>
       © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
