@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project | Bellasagaram City Design</title>
+  <title>Bellasagaram City Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-theme="light">
 
+  <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
+
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀️</span>
+        <span class="sun">☀</span>
         <span class="moon">🌙</span>
       </button>
+
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="project.html">Project</a></li>
         <li><a href="anoosha.html">Anoosha</a></li>
         <li><a href="namrata.html">Namrata</a></li>
         <li><a href="sonika.html">Sonika</a></li>
@@ -28,120 +32,123 @@
     </nav>
   </header>
 
+  <!-- BACK TO TOP BUTTON -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
+  <!-- HERO SECTION -->
   <main>
-    <!-- CITY DESIGN INTRO -->
-    <section class="project-hero section-wrapper">
-      <h1 class="section-heading animated-heading">City Design</h1>
+    <section class="hero">
 
-      <div class="project-card glass-card">
-        <p>
-          Our Bellasagaram city design imagines a modern coastal city that is clean, efficient,
-          and people-friendly. The plan focuses on reducing waste, saving energy, improving
-          transportation, and creating safe public spaces for everyone.
-        </p>
-        <p>
-          Using the ideas from Design and Analysis of Algorithms, we treat the city like a large
-          problem to be solved step by step — from traffic flow and resource allocation to
-          emergency services and housing. Each decision is made to balance sustainability,
-          economy, and quality of life.
+      <div class="hero-left">
+        <h1 class="hero-title">
+          <span class="hero-tag">City Plan • Team 09</span>
+          INTRODUCTION TO <br> BELLASAGARAM CITY DESIGN
+        </h1>
+
+        <p class="hero-desc">
+          A creative and analytical approach to designing a sustainable coastal city through 
+          the concepts of Design &amp; Analysis of Algorithms.
         </p>
 
-        <a
-          class="btn primary-btn"
-          href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Find this project on GitHub
-        </a>
+        <div class="hero-buttons">
+          <a href="project.html" class="btn primary-btn">View Project</a>
+          <a href="about.html" class="btn ghost-btn">Meet Our Team</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="info-card glass-card">
+          <h2>Course Details</h2>
+          <div class="info-row"><span>Course</span><strong>DAA</strong></div>
+          <div class="info-row"><span>Course Code</span><strong>24ECSC2O5</strong></div>
+          <div class="info-row"><span>Instructor</span><strong>Prof. Prakash Hegade</strong></div>
+          <div class="info-row"><span>University</span><strong>KLE Technological University, Hubballi</strong></div>
+          <div class="info-row"><span>Topic</span><strong>City Design</strong></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SHORT COURSE DETAILS -->
+    <section class="short-info">
+
+      <div class="info-box bracket-card">
+        <h3>What is the course about?</h3>
+        <p>
+          DAA helps us understand how complex real-world problems can be broken into simple,
+          logical steps. It encourages curiosity and analytical thinking by revealing patterns
+          hidden in nature, technology, and daily life.
+        </p>
+      </div>
+
+      <div class="info-box bracket-card">
+        <h3>Real-time Applications</h3>
+        <p>
+          Algorithms guide everything around us — GPS routes, search engine suggestions,
+          fraud detection, recommendations, and more. They transform small logical ideas into
+          powerful systems used by millions.
+        </p>
       </div>
     </section>
 
-    <!-- PHASE 1 -->
-    <section class="phase-section section-wrapper">
-      <h2 class="section-subheading">PHASE 1: City Map &amp; Topography</h2>
-
-      <div class="phase-card bracket-card">
-        <!-- change src to your actual image name -->
-        <img src="phase1-map.jpg" alt="City map and topography of Bellasagaram">
+    <!-- ABOUT CITY -->
+    <section class="about-city section-wrapper">
+      <h2 class="section-heading">About Bellasagaram</h2>
+      <div class="section-card bracket-card">
         <p>
-          Phase 1 shows the overall layout of Bellasagaram — zones for housing, industry,
-          education, tourism, green cover, transport routes, and coastal areas mapped on
-          the city grid.
+          Bellasagaram, meaning “The Sweet Coastal City,” is a newly proposed urban development 
+          inspired by the rich heritage and natural potential of Anakapalli, Andhra Pradesh. Known
+          for its famous jaggery (bellam) market, fertile agricultural lands, and proximity to the
+          Bay of Bengal, this region provides the perfect foundation for blending tradition with modern 
+          infrastructure. The city’s name represents this fusion — “Bellam” symbolizing Anakapalli’s 
+          sweetness and agricultural identity, and “Sagara” reflecting its sea-based growth through 
+          ports and coastal industries. The vision is to transform the area into a sustainable, smart,
+          and economically vibrant coastal city that preserves culture while embracing progress.
+        </p>
+        <p>
+          Bellasagaram’s development model focuses on the integration of ports, fisheries, recycling 
+          industries, cold storage, and solar energy systems. By utilizing its coastal advantage, the 
+          city aims to boost exports, generate employment, and attract investments through efficient 
+          transport and industrial networks. Solar-powered operations, marine-based industries, and 
+          value-added fisheries create a self-sustaining revenue ecosystem, ensuring long-term economic 
+          stability. This transformation establishes Bellasagaram as a model marine-industrial hub, where 
+          industry, environment, and livelihood thrive together in perfect&nbsp;balance.
         </p>
       </div>
     </section>
 
-    <!-- PHASE 2 -->
-    <section class="phase-section section-wrapper">
-      <h2 class="section-subheading">PHASE 2: Business Idea Generation</h2>
+    <!-- TEAM MEMBERS SECTION ON HOME -->
+    <section class="team section-wrapper">
+      <h2 class="section-heading">Team Members</h2>
 
-      <p class="phase-intro">
-        In Phase 2, each team member proposes business and service ideas that can grow
-        inside Bellasagaram. These ideas are connected to different zones of the city and
-        can be modeled and optimized using algorithms.
-      </p>
+      <div class="team-container">
 
-      <div class="ideas-row horizontal-scroll">
-        <!-- SONIKA CARD -->
-        <div class="idea-card bracket-card">
+        <a href="sonika.html" class="team-card link-card">
           <h3>Sonika Kalgutkar</h3>
-          <h4>Business Ideas</h4>
-          <ul>
-            <li>University Admission &amp; Hostel Allocation System</li>
-            <li>Urban Forest &amp; Green Coverage Management</li>
-            <li>Smart Tourism Planner for Bellasagaram Coastal Zone</li>
-            <li>Land Record Digitization</li>
-            <li>Food Quality &amp; Contamination Detection System</li>
-            <li>Vital Statistics &amp; Civil Records (birth, death, citizenship, voter records)</li>
-            <li>E-Governance Smart Queue Management System (all licences)</li>
-            <li>Public Library Services</li>
-            <li>ATM &amp; Kiosk Maintenance Business</li>
-            <li>Agriculture and Irrigation Maintenance Services</li>
-          </ul>
-        </div>
+          <p><strong>Roll:</strong> 210</p>
+          <p><strong>USN:</strong> 01FE24BCS029</p>
+          <span class="profile-link">View profile →</span>
+        </a>
 
-        <!-- ANOOSHA CARD -->
-        <div class="idea-card bracket-card">
+        <a href="anoosha.html" class="team-card link-card">
           <h3>Anoosha Hokrani</h3>
-          <h4>Business Ideas</h4>
-          <ul>
-            <li>Smart Waste Collection &amp; Recycling Management</li>
-            <li>Smart Parking System for Commercial &amp; Entertainment Zone</li>
-            <li>Renewable Energy Grid Management (Solar + Wind)</li>
-            <li>Port Cargo Scheduling &amp; Container Allocation</li>
-            <li>Public Transport Fleet Optimization</li>
-            <li>Water Distribution System</li>
-            <li>Emergency Response Dispatch System</li>
-            <li>Smart Housing Allocation System (Residential Zone)</li>
-            <li>Smart Market &amp; Commercial Zone Price Analyzer</li>
-            <li>Industrial Logistics &amp; Supply Chain Manager</li>
-          </ul>
-        </div>
+          <p><strong>Roll:</strong> 266</p>
+          <p><strong>USN:</strong> 01FE24BCS208</p>
+          <span class="profile-link">View profile →</span>
+        </a>
 
-        <!-- NAMRATA CARD -->
-        <div class="idea-card bracket-card">
+        <a href="namrata.html" class="team-card link-card">
           <h3>Namrata Shanbhag</h3>
-          <h4>Business Ideas</h4>
-          <ul>
-            <li>Smart Surveillance &amp; CCTV Command Center</li>
-            <li>GPS Tracking &amp; Fleet Management for Police Vehicles</li>
-            <li>Sewage Treatment Plant (STP) Operation &amp; Maintenance</li>
-            <li>Smart Pedestrian &amp; Cycle Tracks</li>
-            <li>Public Utilities: billing, meter reading, water distribution</li>
-            <li>Foreign Exchange &amp; Remittance Centre</li>
-            <li>Tax &amp; Accounting Service</li>
-            <li>Banking Services</li>
-            <li>Hospital Network &amp; Intelligent Bed Allocation System</li>
-            <li>Ambulance Allocation Based on City Zones</li>
-          </ul>
-        </div>
+          <p><strong>Roll:</strong> 227</p>
+          <p><strong>USN:</strong> 01FE24BCS101</p>
+          <span class="profile-link">View profile →</span>
+        </a>
+
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>
       © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
