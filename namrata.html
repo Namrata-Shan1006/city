@@ -45,13 +45,13 @@
       </div>
 
       <h2 class="section-heading center">Business Ideas — Namrata</h2>
-      <p class="section-lead center">Below are ten curated service ideas for Bellasagaram. Each card shows: short description, the chosen algorithm (highlighted), why that algorithm fits, and a compact code snippet with colored tokens for clarity.</p>
+      <p class="section-lead center">Below are ten curated service ideas for Bellasagaram. Each card shows: short description, the chosen algorithm (highlighted), why that algorithm fits, and a compact code snippet with coloured tokens for clarity.</p>
 
-      <!-- GRID -->
+      <!-- GRID: all cards are rectangular -->
       <div class="nam-cards">
 
-        <!-- Card 1 -->
-        <article class="nam-card gradient-1 shape-square">
+        <!-- 1 -->
+        <article class="nam-card card-rect gradient-1">
           <div class="card-top">
             <h3 class="card-title">🎥 Smart Surveillance &amp; CCTV Command Center</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Priority Queue (Min-Heap)</span></div>
@@ -59,43 +59,36 @@
           <div class="card-body">
             <p class="card-desc">Central dashboard that prioritizes camera alerts (fire, intrusion) so critical events are handled first and routed to nearest responders.</p>
             <p class="card-why"><strong>Why:</strong> Priority queue returns highest-priority alerts in <em>O(log n)</em>, ideal for large alert streams.</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> push(<span class="ty">int</span> heap[], <span class="ty">int</span> *n, <span class="ty">int</span> val) {
+            <pre class="code"><code><span class="kw">void</span> push(<span class="ty">int</span> heap[], <span class="ty">int</span> *n, <span class="ty">int</span> val) {
   <span class="ty">int</span> i = ++(*n);
   heap[i] = val;
   <span class="kw">while</span> (i &gt; 1 &amp;&amp; heap[i/2] &gt; heap[i]) {
     <span class="ty">int</span> t = heap[i]; heap[i] = heap[i/2]; heap[i/2] = t;
     i /= 2;
   }
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="nam-card gradient-2 shape-rounded">
+        <!-- 2 -->
+        <article class="nam-card card-rect gradient-2">
           <div class="card-top">
             <h3 class="card-title">🚓 GPS Tracking &amp; Fleet Management</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dijkstra</span></div>
           </div>
           <div class="card-body">
-            <p class="card-desc">Route police vehicles along minimum-travel-time paths on a weighted road graph to reach emergencies quickly.</p>
+            <p class="card-desc">Routes police vehicles along minimum-travel-time paths on a weighted road graph to reach emergencies quickly.</p>
             <p class="card-why"><strong>Why:</strong> Dijkstra finds shortest paths with non-negative edge weights — perfect for travel time minimisation.</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> dijkstra(<span class="ty">int</span> src) {
-  // dist[] init
+            <pre class="code"><code><span class="kw">void</span> dijkstra(<span class="ty">int</span> src) {
   <span class="kw">for</span>(<span class="ty">int</span> i=0;i&lt;n;i++) dist[i]=INF;
   dist[src]=0;
-  // priority queue processing ...
-}
-            </code></pre>
+  <span class="cm">// priority queue processing ...</span>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="nam-card gradient-3 shape-pill">
+        <!-- 3 -->
+        <article class="nam-card card-rect gradient-3">
           <div class="card-top">
             <h3 class="card-title">💧 Sewage Treatment Plant (STP)</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Greedy Scheduling</span></div>
@@ -103,19 +96,16 @@
           <div class="card-body">
             <p class="card-desc">Schedules sensor checks and maintenance cycles, prioritizing urgent tasks before they cause failure or overflow.</p>
             <p class="card-why"><strong>Why:</strong> Greedy scheduling by earliest-deadline helps avoid missed maintenance windows efficiently.</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> sortByDeadline(<span class="ty">int</span> d[], <span class="ty">int</span> n){
+            <pre class="code"><code><span class="kw">void</span> sortByDeadline(<span class="ty">int</span> d[], <span class="ty">int</span> n){
   <span class="kw">for</span>(<span class="ty">int</span> i=0;i&lt;n-1;i++)
     <span class="kw">for</span>(<span class="ty">int</span> j=0;j&lt;n-1-i;j++)
       <span class="kw">if</span>(d[j] &gt; d[j+1]) { <span class="cm">/* swap */</span> }
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 4 -->
-        <article class="nam-card gradient-4 shape-triangle">
+        <!-- 4 -->
+        <article class="nam-card card-rect gradient-4">
           <div class="card-top">
             <h3 class="card-title">🚶‍♀️ Smart Pedestrian &amp; Cycle Tracks</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">BFS (Grid)</span></div>
@@ -123,18 +113,15 @@
           <div class="card-body">
             <p class="card-desc">Shortest safe walking/cycling routes on dedicated tracks — avoids heavy-traffic roads and finds minimal-step paths.</p>
             <p class="card-why"><strong>Why:</strong> BFS finds shortest number-of-edges path in an unweighted grid — ideal for tracks.</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> bfs(<span class="ty">int</span> s){
+            <pre class="code"><code><span class="kw">void</span> bfs(<span class="ty">int</span> s){
   <span class="ty">int</span> q[1000], f=0, r=0; vis[s]=1; q[r++]=s;
   <span class="kw">while</span>(f&lt;r){ <span class="ty">int</span> u=q[f++]; /* explore */ }
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 5 -->
-        <article class="nam-card gradient-5 shape-square">
+        <!-- 5 -->
+        <article class="nam-card card-rect gradient-5">
           <div class="card-top">
             <h3 class="card-title">💡 Public Utilities: Billing &amp; Water</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Binary Search + Greedy</span></div>
@@ -142,55 +129,46 @@
           <div class="card-body">
             <p class="card-desc">Automatic meter-reading, slab-based billing detection and balanced water distribution across zones based on demand.</p>
             <p class="card-why"><strong>Why:</strong> Binary search quickly finds billing slab; greedy helps distribute scarce water supply fairly.</p>
-
-            <pre class="code"><code>
-<span class="kw">int</span> findSlab(<span class="ty">int</span> slabs[], <span class="ty">int</span> n, <span class="ty">int</span> units){
+            <pre class="code"><code><span class="kw">int</span> findSlab(<span class="ty">int</span> slabs[], <span class="ty">int</span> n, <span class="ty">int</span> units){
   <span class="ty">int</span> l=0, r=n-1;
   <span class="kw">while</span>(l&lt;=r){ <span class="ty">int</span> m=(l+r)/2; /* ... */ }
   <span class="kw">return</span> -1;
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 6 -->
-        <article class="nam-card gradient-6 shape-rounded">
+        <!-- 6 -->
+        <article class="nam-card card-rect gradient-6">
           <div class="card-top">
             <h3 class="card-title">💱 Foreign Exchange &amp; Remittance</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Bellman–Ford</span></div>
           </div>
           <div class="card-body">
-            <p class="card-desc">Computes best exchange paths and detects arbitrage cycles by modeling currency pairs as directed weighted edges.</p>
+            <p class="card-desc">Computes best exchange paths and detects arbitrage cycles by modelling currency pairs as directed weighted edges.</p>
             <p class="card-why"><strong>Why:</strong> Bellman–Ford handles negative weights (log rates) and detects negative cycles (arbitrage).</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> relax(<span class="ty">int</span> u,<span class="ty">int</span> v,<span class="ty">int</span> w){
+            <pre class="code"><code><span class="kw">void</span> relax(<span class="ty">int</span> u,<span class="ty">int</span> v,<span class="ty">int</span> w){
   <span class="kw">if</span>(dist[u]!=INF &amp;&amp; dist[u]+w &lt; dist[v]) dist[v]=dist[u]+w;
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 7 -->
-        <article class="nam-card gradient-2 shape-pill">
+        <!-- 7 -->
+        <article class="nam-card card-rect gradient-2">
           <div class="card-top">
             <h3 class="card-title">📊 Tax &amp; Accounting Service</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dynamic Programming</span></div>
           </div>
           <div class="card-body">
-            <p class="card-desc">Optimizes deduction combinations and precomputes results so citizens legally minimize tax liability.</p>
+            <p class="card-desc">Optimizes deduction combinations and precomputes results so citizens legally minimise tax liability.</p>
             <p class="card-why"><strong>Why:</strong> DP avoids recomputing subproblems for different deduction combinations.</p>
-
-            <pre class="code"><code>
-<span class="kw">int</span> knapSack(<span class="ty">int</span> W,<span class="ty">int</span> wt[],<span class="ty">int</span> val[],<span class="ty">int</span> n){
+            <pre class="code"><code><span class="kw">int</span> knapSack(<span class="ty">int</span> W,<span class="ty">int</span> wt[],<span class="ty">int</span> val[],<span class="ty">int</span> n){
   <span class="kw">if</span>(n==0||W==0) <span class="kw">return</span> 0;
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 8 -->
-        <article class="nam-card gradient-4 shape-triangle">
+        <!-- 8 -->
+        <article class="nam-card card-rect gradient-4">
           <div class="card-top">
             <h3 class="card-title">🏦 Banking Services</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">AVL / Balanced BST</span></div>
@@ -198,16 +176,12 @@
           <div class="card-body">
             <p class="card-desc">Efficient account lookup and update operations with guaranteed <em>O(log n)</em> performance for large user bases.</p>
             <p class="card-why"><strong>Why:</strong> Balanced trees keep operations predictable and fast even at scale.</p>
-
-            <pre class="code"><code>
-<span class="kw">struct</span> Node{ <span class="kw">int</span> key; <span class="kw">struct</span> Node *l,*r; };
-<span class="kw">struct</span> Node* newNode(<span class="kw">int</span> k){ /* ... */ }
-            </code></pre>
+            <pre class="code"><code><span class="kw">struct</span> Node{ <span class="kw">int</span> key; <span class="kw">struct</span> Node *l,*r; };</code></pre>
           </div>
         </article>
 
-        <!-- Card 9 -->
-        <article class="nam-card gradient-5 shape-rounded">
+        <!-- 9 -->
+        <article class="nam-card card-rect gradient-5">
           <div class="card-top">
             <h3 class="card-title">🏥 Hospital Network &amp; Bed Allocation</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dijkstra + Min-Heap</span></div>
@@ -215,30 +189,23 @@
           <div class="card-body">
             <p class="card-desc">Find nearest hospital with required specialty and allocate the best matching bed from a prioritized pool.</p>
             <p class="card-why"><strong>Why:</strong> Dijkstra for distance + heap for fastest bed retrieval when many requests arrive simultaneously.</p>
-
-            <pre class="code"><code>
-<span class="kw">void</span> initDist(<span class="ty">int</span> dist[],<span class="ty">int</span> n,<span class="ty">int</span> src){
+            <pre class="code"><code><span class="kw">void</span> initDist(<span class="ty">int</span> dist[],<span class="ty">int</span> n,<span class="ty">int</span> src){
   <span class="kw">for</span>(<span class="ty">int</span> i=0;i&lt;n;i++) dist[i]=INF;
   dist[src]=0;
-}
-            </code></pre>
+}</code></pre>
           </div>
         </article>
 
-        <!-- Card 10 -->
-        <article class="nam-card gradient-1 shape-square">
+        <!-- 10 -->
+        <article class="nam-card card-rect gradient-1">
           <div class="card-top">
             <h3 class="card-title">🚑 Ambulance Allocation by Zone</h3>
             <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Greedy + Priority Queue</span></div>
           </div>
           <div class="card-body">
-            <p class="card-desc">Choose the nearest available ambulance for each emergency; queue ambulances by distance and zone to minimize response times.</p>
+            <p class="card-desc">Choose the nearest available ambulance for each emergency; queue ambulances by distance and zone to minimise response times.</p>
             <p class="card-why"><strong>Why:</strong> Greedy + min-heap gives very fast selection of the nearest ambulance in practice.</p>
-
-            <pre class="code"><code>
-<span class="kw">struct</span> Amb{ <span class="ty">int</span> dist,id; };
-<span class="cm">/* push/pop by dist in min-heap */</span>
-            </code></pre>
+            <pre class="code"><code><span class="kw">struct</span> Amb{ <span class="ty">int</span> dist,id; };</code></pre>
           </div>
         </article>
 
