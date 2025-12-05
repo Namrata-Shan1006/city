@@ -1,277 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Namrata Shanbhag — Bellasagaram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namrata | Bellasagaram Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
 
-  <header class="site-header">
-    <div class="wrap">
-      <div class="brand">Bellasagaram</div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="project.html">Project</a>
-        <a href="anoosha.html">Anoosha</a>
-        <a class="active" href="namrata.html">Namrata</a>
-        <a href="sonika.html">Sonika</a>
-        <a href="collabz.html">Collabz</a>
-      </nav>
-    </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Bellasagaram</div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="anoosha.html">Anoosha</a></li>
+        <li><a href="namrata.html" class="active">Namrata</a></li>
+        <li><a href="sonika.html">Sonika</a></li>
+        <li><a href="collabz.html">Collabz</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
   <main>
-    <section class="hero-compact">
-      <div class="wrap">
-        <button class="back" onclick="history.back()">← Back</button>
-        <h1>Namrata Shanbhag</h1>
-        <p class="meta">Roll: 227 &nbsp; • &nbsp; USN: 01FE24BCS101 &nbsp; • &nbsp; Role: Documentation &amp; Analysis</p>
-        <h2 class="section-title">Business Ideas — Clean, Aesthetic Cards (with SDG badges)</h2>
-        <p class="lead">Ten practical, algorithm-backed business ideas for Bellasagaram. Each card includes the algorithm chosen, why it fits, a short sample of code, and relevant SDG badges.</p>
+    <section class="member-section section-wrapper">
+      <div class="member-header">
+        <button class="back-btn" onclick="history.back()">← Back</button>
+        <h1 class="section-heading">Namrata Shanbhag</h1>
       </div>
-    </section>
 
-    <section class="ideas-section">
-      <div class="wrap">
-        <div class="ideas-grid">
+      <div class="member-card glass-card">
+        <p><strong>Roll:</strong> 227</p>
+        <p><strong>USN:</strong> 01FE24BCS101</p>
+        <p><strong>Role in Project:</strong> Documentation &amp; Analysis</p>
 
-          <!-- Card 1 -->
-          <article class="idea-card">
-            <div class="card-left-accent">1</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Smart Surveillance &amp; CCTV Command Center</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Priority Queue (Min-Heap)</span></div>
-              </div>
-
-              <p class="desc">Central dashboard that prioritizes alarms (fire, intrusion) and routes highest-priority events to nearest responders.</p>
-              <p class="why"><strong>Why:</strong> Priority queues give O(log n) insertion/removal and ensure urgent events are handled first.</p>
-
-              <pre class="code"><code><span class="kw">void</span> push(<span class="ty">int</span> heap[], <span class="ty">int</span> *n, <span class="ty">int</span> val) { int i = ++(*n); heap[i]=val; while(i>1 && heap[i/2]>heap[i]){ int t=heap[i]; heap[i]=heap[i/2]; heap[i/2]=t; i/=2; } }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 11</span>
-                <span class="sdg">SDG 16</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-teal">2</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>GPS Tracking &amp; Fleet Management</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dijkstra</span></div>
-              </div>
-
-              <p class="desc">Compute shortest travel-time paths for emergency and patrolling vehicles across the city road network.</p>
-              <p class="why"><strong>Why:</strong> Dijkstra is ideal for graphs with non-negative weights (travel time) and yields exact shortest paths.</p>
-
-              <pre class="code"><code><span class="kw">void</span> dijkstra(<span class="ty">int</span> src){ /* dist[] init; push src to pq; relax edges */ }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 9</span>
-                <span class="sdg">SDG 11</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-green">3</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Sewage Treatment Plant (STP) Operation</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Greedy Scheduling</span></div>
-              </div>
-
-              <p class="desc">Schedule maintenance and sensor checks to avoid overflow and downtime using earliest-deadline-first strategies.</p>
-              <p class="why"><strong>Why:</strong> Greedy EDF allows simple, fast scheduling to guarantee deadlines for periodic tasks.</p>
-
-              <pre class="code"><code><span class="kw">void</span> schedule(int tasks[],int n){ /* sort by deadline, run in order */ }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 6</span>
-                <span class="sdg">SDG 11</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-blue">4</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Smart Pedestrian &amp; Cycle Tracks</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">BFS (Grid)</span></div>
-              </div>
-
-              <p class="desc">Find safest shortest-step routes along pedestrian paths and cycling tracks inside the city grid.</p>
-              <p class="why"><strong>Why:</strong> BFS gives shortest path in unweighted grids (min steps), efficient and deterministic.</p>
-
-              <pre class="code"><code><span class="kw">void</span> bfs(int s){ /* queue; visit neighbors; shortest in steps */ }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 3</span>
-                <span class="sdg">SDG 11</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 5 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-coral">5</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Public Utilities: Billing &amp; Water Distribution</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Binary Search + Greedy</span></div>
-              </div>
-
-              <p class="desc">Automatic slab-finding for billing and greedy allocation of limited water supply across zones by priority.</p>
-              <p class="why"><strong>Why:</strong> Binary search finds billing slabs fast; greedy allocates remaining resources quickly.</p>
-
-              <pre class="code"><code><span class="kw">int</span> slabLookup(int slabs[],int n,int units){ /* binary search */ }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 6</span>
-                <span class="sdg">SDG 12</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 6 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-amber">6</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Foreign Exchange &amp; Remittance Center</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Bellman–Ford</span></div>
-              </div>
-
-              <p class="desc">Compute best conversion paths and detect arbitrage cycles by modelling currencies as weighted edges.</p>
-              <p class="why"><strong>Why:</strong> Bellman–Ford handles negative log-rates and reveals profitable cycles (arbitrage).</p>
-
-              <pre class="code"><code><span class="kw">void</span> relax(int u,int v,int w){ if(dist[u]!=INF && dist[u]+w<dist[v]) dist[v]=dist[u]+w; }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 8</span>
-                <span class="sdg">SDG 17</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 7 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-indigo">7</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Tax &amp; Accounting Service</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dynamic Programming</span></div>
-              </div>
-
-              <p class="desc">Precompute optimal deduction combinations and provide legal minimization of tax burden using DP techniques.</p>
-              <p class="why"><strong>Why:</strong> DP avoids recomputation and is efficient when combining many dependent options.</p>
-
-              <pre class="code"><code><span class="kw">int</span> dpKnap(int W,int wt[],int val[],int n){ /* standard knap DP */ }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 8</span>
-                <span class="sdg">SDG 16</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 8 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-navy">8</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Banking Services</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Balanced BST / AVL</span></div>
-              </div>
-
-              <p class="desc">Fast account lookup &amp; updates with guaranteed O(log n) performance using balanced trees for scalability.</p>
-              <p class="why"><strong>Why:</strong> AVL/Red-Black trees give consistent performance and low latency for read/write operations.</p>
-
-              <pre class="code"><code><span class="kw">struct</span> Node{ <span class="kw">int</span> key; struct Node* l,*r; };</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 8</span>
-                <span class="sdg">SDG 9</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 9 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-lime">9</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Hospital Network &amp; Intelligent Bed Allocation</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Dijkstra + Min-Heap</span></div>
-              </div>
-
-              <p class="desc">Find nearest hospital with required specialty then allocate best available bed from priority pool.</p>
-              <p class="why"><strong>Why:</strong> Dijkstra for distance plus min-heap for quick selection of best bed among candidates.</p>
-
-              <pre class="code"><code><span class="kw">void</span> initDist(int dist[],int n,int src){ for(int i=0;i<n;i++) dist[i]=INF; dist[src]=0; }</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 3</span>
-                <span class="sdg">SDG 10</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 10 -->
-          <article class="idea-card">
-            <div class="card-left-accent accent-rose">10</div>
-            <div class="card-main">
-              <div class="card-header">
-                <h3>Ambulance Allocation by City Zone</h3>
-                <div class="algo"><strong>Algorithm:</strong> <span class="algo-pill">Greedy + Priority Queue</span></div>
-              </div>
-
-              <p class="desc">Assign closest available ambulance to emergencies using a min-heap prioritized by distance &amp; ETA.</p>
-              <p class="why"><strong>Why:</strong> Greedy selection plus heap yields very fast decisions under heavy load.</p>
-
-              <pre class="code"><code><span class="kw">struct</span> Amb{ <span class="ty">int</span> dist,id; };</code></pre>
-
-              <div class="sdg-row">
-                <span class="sdg">SDG 3</span>
-                <span class="sdg">SDG 11</span>
-              </div>
-            </div>
-          </article>
-
-        </div> <!-- ideas-grid -->
+        <h2>Business Ideas</h2>
+        <ul>
+          <li>Smart Surveillance &amp; CCTV Command Center</li>
+          <li>GPS Tracking &amp; Fleet Management for Police Vehicles</li>
+          <li>Sewage Treatment Plant (STP) Operation &amp; Maintenance</li>
+          <li>Smart Pedestrian &amp; Cycle Tracks</li>
+          <li>Public Utilities: billing, meter reading, water distribution</li>
+          <li>Foreign Exchange &amp; Remittance Centre</li>
+          <li>Tax &amp; Accounting Service</li>
+          <li>Banking Services</li>
+          <li>Hospital Network &amp; Intelligent Bed Allocation System</li>
+          <li>Ambulance Allocation Based on City Zones</li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi. All rights reserved.</p>
-    </div>
+  <footer class="footer">
+    <p>
+      © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
+      All rights reserved.
+    </p>
   </footer>
 
-  <script>
-    // small script: reveal back-to-top if scroll
-    (function(){
-      const b2t = document.createElement('button');
-      b2t.textContent = '↑';
-      b2t.className = 'floating-top';
-      b2t.onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
-      document.body.appendChild(b2t);
-      window.addEventListener('scroll', ()=> {
-        if(window.scrollY > 300) b2t.style.opacity = '1'; else b2t.style.opacity = '0';
-      });
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
