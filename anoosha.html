@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anoosha | Bellasagaram Team</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .ideas-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; }
-    .idea-box{ background:var(--card-bg); padding:18px; border-radius:14px; border:1px solid var(--accent-soft); box-shadow:var(--shadow-soft);}
-    .code-block{ max-height:220px; overflow:auto; background:#0d1117; color:#e6eef8; padding:12px; border-radius:8px; font-family:monospace; font-size:13px; }
+    .ideas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .idea-box { background: var(--card-bg); border-radius: 14px; padding: 18px; box-shadow: var(--shadow-soft); border: 1px solid var(--accent-soft); height: 100%; display:flex; flex-direction:column; }
+    .idea-title { font-size:16px; font-weight:700; color:var(--accent-strong); margin-bottom:6px }
+    .idea-summary { font-size:13px; color:var(--text-soft); margin-bottom:8px; flex:0 0 auto }
+    .idea-meta { font-size:13px; margin-top:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+    .sdg { background: linear-gradient(90deg,#2fb6a5,#6bd3c0); color:#073; padding:6px 10px; border-radius:999px; font-size:12px }
+    .algo { font-weight:600; color:var(--accent-strong); font-size:13px }
+    .code-block { max-height:220px; overflow:auto; background:#0d1117; color:#e6eef8; padding:12px; border-radius:8px; font-family:monospace; font-size:13px }
   </style>
 </head>
 <body data-theme="light">
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="sun">☀</span>
+        <span class="moon">🌙</span>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -23,39 +32,135 @@
         <li><a href="anoosha.html" class="active">Anoosha</a></li>
         <li><a href="namrata.html">Namrata</a></li>
         <li><a href="sonika.html">Sonika</a></li>
+        <li><a href="collabz.html">Collabz</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="section-wrapper" style="padding-top:100px">
-    <h1 class="section-heading">Anoosha Hokrani — Business Ideas & Algorithms (C++)</h1>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
-    <div class="ideas-grid">
-      <div class="idea-box">
-        <h3>Smart Waste Collection — Dijkstra + Heap</h3>
-        <p>Find shortest routes per vehicle (Dijkstra). Use a heap for scheduling tasks.</p>
-        <details><summary>Open C++ snippet</summary>
-          <pre class="code-block">// anoosha_waste_dijkstra.cpp
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-using pii = pair&lt;int,int&gt;;
-vector&lt;int&gt; dijkstra(int n, vector<vector&lt;pii&gt;>>& adj, int src){
-  const int INF=1e9; vector&lt;int&gt; dist(n,INF); dist[src]=0;
-  priority_queue&lt;pii, vector&lt;pii&gt;, greater&lt;pii&gt;&gt; pq; pq.push({0,src});
-  while(!pq.empty()){
-    auto [d,u]=pq.top(); pq.pop();
-    if(d!=dist[u]) continue;
-    for(auto &e: adj[u]){ int v=e.first,w=e.second; if(dist[v]>d+w){ dist[v]=d+w; pq.push({dist[v],v}); } }
-  }
-  return dist;
-}
-int main(){ return 0; }</pre>
-        </details>
+  <main>
+    <section class="member-section section-wrapper">
+      <div class="member-header">
+        <button class="back-btn" onclick="history.back()">← Back</button>
+        <h1 class="section-heading">Anoosha Hokrani</h1>
       </div>
-    </div>
+
+      <div class="member-card glass-card">
+        <p><strong>Roll:</strong> 266</p>
+        <p><strong>USN:</strong> 01FE24BCS208</p>
+        <p><strong>Role in Project:</strong> Algorithm Planning &amp; Logic Developer</p>
+
+        <h2>Business Ideas — Summaries, Algorithms &amp; Code</h2>
+
+        <div class="ideas-grid">
+
+          <div class="idea-box">
+            <div class="idea-title">Smart Waste Collection &amp; Recycling Management</div>
+            <div class="idea-summary">Optimize collection routes and bin-emptying schedule using fill-level sensors and fleet data.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: capacitated vehicle routing (CVRP), clustering + route optimization</div><div class="sdg">SDG 11, SDG 12</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// cluster bins -> solve VRP per vehicle
+clusters = kmeans(bins, numVehicles);
+for(c of clusters) route = solveCVRP(c);
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Smart Parking System for Commercial &amp; Entertainment Zone</div>
+            <div class="idea-summary">Real-time occupancy, reservations and dynamic pricing to reduce circling traffic.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: occupancy detection, multilevel hashing for slots, dynamic pricing (bandit)</div><div class="sdg">SDG 11</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// assign nearest free slot
+slot = findFreeSlot(zone);
+reserve(slot,userId);
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Renewable Energy Grid Management (Solar + Wind)</div>
+            <div class="idea-summary">Balance supply-demand, schedule battery charge/discharge and forecast generation.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: time-series forecasting, optimization (linear programming)</div><div class="sdg">SDG 7: Clean Energy</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// simple dispatch optimization (sketch)
+minimize cost = sum(purchase*price - sell*price)
+subject to: supply + discharge >= demand
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Port Cargo Scheduling &amp; Container Allocation</div>
+            <div class="idea-summary">Allocate berths and cranes, sequence shipments to minimize delays and handling costs.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: scheduling (job-shop), min-cost flow for allocation</div><div class="sdg">SDG 8</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// min cost flow: containers->berths
+flow = minCostMaxFlow(graph)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Public Transport Fleet Optimization</div>
+            <div class="idea-summary">Plan fleet sizes, frequencies and assign vehicles to routes to reduce waiting and overcrowding.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: demand forecasting + integer programming for fleet assignment</div><div class="sdg">SDG 11</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// integer program sketch: minimize vehicles while meeting demand
+solveIP(objective, constraints)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Water Distribution System</div>
+            <div class="idea-summary">Model pipes, pumps and reservoirs to meet pressure and flow constraints while minimizing energy.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: max-flow/min-cost flow, hydraulic simulation</div><div class="sdg">SDG 6</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// max-flow skeleton
+maxflow = edmondsKarp(graph, s, t);
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Emergency Response Dispatch System</div>
+            <div class="idea-summary">Prioritise incidents, allocate nearest resources, and handle concurrent high-priority demands.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: priority queues, A* for routing, resource allocation via matching</div><div class="sdg">SDG 3</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// event handling loop
+if(incident.priority>HIGH) allocate(nearestResources)
+else enqueue(incident)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Smart Housing Allocation System (Residential Zone)</div>
+            <div class="idea-summary">Match applicants to houses based on constraints (size, income, distance to work/school).</div>
+            <div class="idea-meta"><div class="algo">Algorithms: constrained matching, integer programming</div><div class="sdg">SDG 11</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// sample constraint solve
+solve(IP: minimize dissatisfaction)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Smart Market &amp; Commercial Zone Price Analyzer</div>
+            <div class="idea-summary">Collect prices, detect anomalies, and recommend price points or discounts to vendors.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: time-series, anomaly detection, simple econometrics</div><div class="sdg">SDG 8</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// detect price spike
+if(price > movingAvg*1.2) flag(item)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Industrial Logistics &amp; Supply Chain Manager</div>
+            <div class="idea-summary">Optimize inventory locations, shipments and just-in-time flows for factories and warehouses.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: network flow, vehicle routing, inventory optimization</div><div class="sdg">SDG 9</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// network flow for shipments
+flow = minCostFlow(network)
+</pre></details>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">© 2025 City Plan Bellasagaram — Team 09</footer>
+  <footer class="footer">
+    <p>
+      © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
+      All rights reserved.
+    </p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
