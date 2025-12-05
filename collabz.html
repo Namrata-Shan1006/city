@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collabz | Anoosha - Namrata - Sonika</title>
+  <title>Sonika | Bellasagaram Team</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* reuse same small styles */
+    .ideas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .idea-box { background: var(--card-bg); border-radius: 14px; padding: 18px; box-shadow: var(--shadow-soft); border: 1px solid var(--accent-soft); height: 100%; display:flex; flex-direction:column; }
+    .idea-title { font-size:16px; font-weight:700; color:var(--accent-strong); margin-bottom:6px }
+    .idea-summary { font-size:13px; color:var(--text-soft); margin-bottom:8px; flex:0 0 auto }
+    .idea-meta { font-size:13px; margin-top:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+    .sdg { background: linear-gradient(90deg,#1e9bd1,#4a66ff); color:#fff; padding:6px 10px; border-radius:999px; font-size:12px }
+    .algo { font-weight:600; color:var(--accent-strong); font-size:13px }
+    .code-block { max-height:220px; overflow:auto; background:#0d1117; color:#e6eef8; padding:12px; border-radius:8px; font-family:monospace; font-size:13px }
+  </style>
 </head>
 <body data-theme="light">
-
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀️</span>
+        <span class="sun">☀</span>
         <span class="moon">🌙</span>
       </button>
       <ul class="nav-links">
@@ -22,8 +32,8 @@
         <li><a href="project.html">Project</a></li>
         <li><a href="anoosha.html">Anoosha</a></li>
         <li><a href="namrata.html">Namrata</a></li>
-        <li><a href="sonika.html">Sonika</a></li>
-        <li><a href="collabz.html" class="active">Collabz</a></li>
+        <li><a href="sonika.html" class="active">Sonika</a></li>
+        <li><a href="collabz.html">Collabz</a></li>
       </ul>
     </nav>
   </header>
@@ -31,38 +41,116 @@
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
   <main>
-    <section class="team section-wrapper">
-      <h2 class="section-heading">Anoosha - Namrata - Sonika Collabz</h2>
-      <p class="collabz-intro">
-        Three minds, one city. This collaboration brings together creativity, logic, 
-        and documentation to design Bellasagaram – a city that balances tradition, technology,
-        and sustainability.
-      </p>
+    <section class="member-section section-wrapper">
+      <div class="member-header">
+        <button class="back-btn" onclick="history.back()">← Back</button>
+        <h1 class="section-heading">Sonika Kalgutkar</h1>
+      </div>
 
-      <div class="team-container">
-        <a href="sonika.html" class="team-card link-card">
-          <h3>Sonika Kalgutkar</h3>
-          <p><strong>Roll:</strong> 210</p>
-          <p><strong>USN:</strong> 01FE24BCS029</p>
-          <p><strong>Role:</strong> Concept &amp; Layout Design</p>
-          <span class="profile-link">View profile →</span>
-        </a>
+      <div class="member-card glass-card">
+        <p><strong>Roll:</strong> 210</p>
+        <p><strong>USN:</strong> 01FE24BCS029</p>
+        <p><strong>Role in Project:</strong> Concept &amp; Layout Design</p>
 
-        <a href="anoosha.html" class="team-card link-card">
-          <h3>Anoosha Hokrani</h3>
-          <p><strong>Roll:</strong> 266</p>
-          <p><strong>USN:</strong> 01FE24BCS208</p>
-          <p><strong>Role:</strong> Algorithm Planning &amp; Logic</p>
-          <span class="profile-link">View profile →</span>
-        </a>
+        <h2>Business Ideas — Summaries, Algorithms &amp; Code</h2>
 
-        <a href="namrata.html" class="team-card link-card">
-          <h3>Namrata Shanbhag</h3>
-          <p><strong>Roll:</strong> 227</p>
-          <p><strong>USN:</strong> 01FE24BCS101</p>
-          <p><strong>Role:</strong> Documentation &amp; Analysis</p>
-          <span class="profile-link">View profile →</span>
-        </a>
+        <div class="ideas-grid">
+          <!-- Sonika's 10 ideas -->
+
+          <div class="idea-box">
+            <div class="idea-title">University Admission &amp; Hostel Allocation System</div>
+            <div class="idea-summary">Match students to rooms and courses using preferences and capacities; ensure fair allocation.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: Gale–Shapley (stable matching), bipartite matching</div><div class="sdg">SDG 4: Quality Education</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// stable matching: students -> hostels (sketch)
+while(unmatched_students){ s = dequeue(); c = s.nextPreference(); if(hostel.hasSlot()) assign(s,hostel); else handleReplacement(); }
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Urban Forest &amp; Green Coverage Management</div>
+            <div class="idea-summary">Plan tree-planting, maintenance schedule, and choose species based on soil/space.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: spatial clustering (k-means), greedy allocation</div><div class="sdg">SDG 15: Life on Land</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// k-means to cluster planting sites (pseudo)
+clusters = kmeans(points,k); assignSpecies(clusters)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Smart Tourism Planner for Bellasagaram Coastal Zone</div>
+            <div class="idea-summary">Create itineraries that balance travel time, interests and local capacity constraints.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: variant of TSP with time windows, greedy heuristics</div><div class="sdg">SDG 8: Decent Work &amp; Growth</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// greedy TSP heuristic: nearest neighbor
+route = [start]; while(unvisited){ next = nearest(current); route.push(next); }
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Land Record Digitization</div>
+            <div class="idea-summary">Convert old land records to searchable digital format with verifiable history.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: OCR + NLP, Merkle-tree for audit trail</div><div class="sdg">SDG 16: Strong Institutions</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// OCR pipeline: scan -> OCR -> verify
+text = ocr(image); meta = extractFields(text); storeRecord(meta);
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Food Quality &amp; Contamination Detection System</div>
+            <div class="idea-summary">Sensor-based system to detect contaminants and flag batches for inspection.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: classification (SVM/CNN), thresholding</div><div class="sdg">SDG 2: Zero Hunger</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// simple classifier pseudocode
+pred = model.predict(sample_features); if(pred == 'contaminated') quarantine(batch)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Vital Statistics &amp; Civil Records</div>
+            <div class="idea-summary">Manage birth/death/citizenship records securely with role-based access and search.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: secure indexing, role-based access control (RBAC)</div><div class="sdg">SDG 16: Strong Institutions</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// store record with signer
+record = {data, signer:govKey}; ledger.push(record)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">E-Governance Smart Queue Management System</div>
+            <div class="idea-summary">Reduce waiting via priority queues, appointment slots and live updates.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: priority queue, sliding-window for throughput</div><div class="sdg">SDG 9: Industry &amp; Infrastructure</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// ticket handling
+if(priority) queue.push_front(ticket); else queue.push_back(ticket);
+processNext();
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Public Library Services</div>
+            <div class="idea-summary">Catalog, search and recommendation engine for books and resources.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: inverted index for search, collaborative filtering for recs</div><div class="sdg">SDG 4: Quality Education</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// inverted index add
+for(word in tokenize(doc)) index[word].add(docId)
+// recommend: k-NN on user ratings
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">ATM &amp; Kiosk Maintenance Business</div>
+            <div class="idea-summary">Schedule field visits, predict failures and manage spare parts inventory.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: predictive maintenance (time-series), inventory reorder (EOQ)</div><div class="sdg">SDG 8: Economic Growth</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// reorder when stock low
+if(stock < reorder_level) createPO(parts)
+</pre></details>
+          </div>
+
+          <div class="idea-box">
+            <div class="idea-title">Agriculture and Irrigation Maintenance Services</div>
+            <div class="idea-summary">Optimize irrigation schedules based on soil moisture, forecast and crop type.</div>
+            <div class="idea-meta"><div class="algo">Algorithms: control logic + ML forecasting, constraint optimization</div><div class="sdg">SDG 2: Zero Hunger</div></div>
+            <details><summary>Open example code</summary><pre class="code-block">// simple control: if soilMoisture<target then runPump(duration)
+if(moisture < cropTarget) runPump(estimatedTime)
+</pre></details>
+          </div>
+
+        </div><!-- ideas-grid -->
+
       </div>
     </section>
   </main>
