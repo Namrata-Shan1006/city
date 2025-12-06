@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Our Team | Bellasagaram City Design</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Bellasagaram City Design</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
 
+  <!-- NAVBAR (same as index) -->
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
+
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀</span>
-        <span class="moon">🌙</span>
+        <span class="sun">☀</span><span class="moon">🌙</span>
       </button>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -28,76 +30,91 @@
     </nav>
   </header>
 
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-
   <main>
-    <section class="about-header">
-      <h1 class="section-heading animated-heading">About Our Team</h1>
-      <p class="about-intro-text">
-        We are a creative and dedicated team of computer science students working together
-        to design <strong>Bellasagaram</strong> — a modern, sustainable coastal city built using
-        principles of Design and Analysis of Algorithms. Our vision is to blend technology,
-        logic, and creativity to build systems that are efficient, scalable, and people-friendly.
+
+    <!-- Page heading -->
+    <section class="section-wrapper">
+      <h1 class="section-heading">About Our Team</h1>
+
+      <p class="lead" style="max-width:1000px;margin:0 auto 28px;text-align:center;color:var(--text-soft);">
+        We are a creative and dedicated team of computer science students working together to design
+        <strong>Bellasagaram</strong> — a modern, sustainable coastal city built using principles of
+        Design &amp; Analysis of Algorithms. Our vision is to blend technology, logic, and creativity
+        to build systems that are efficient, scalable, and people-friendly.
       </p>
+
+      <!-- Meet the team header -->
+      <h2 style="text-align:center;margin-top:8px;color:var(--accent-strong);font-size:22px;font-weight:700">Meet the Team</h2>
+
+      <!-- Team cards grid -->
+      <div class="team-grid" aria-label="Team members">
+
+        <!-- Sonika -->
+        <article class="team-card">
+          <div class="card-accent">SK</div>
+          <div class="card-content">
+            <h3 class="member-name">Sonika Kalgutkar</h3>
+            <div class="meta">Roll: <strong>210</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS029</strong></div>
+
+            <h4 class="subhead">Skills</h4>
+            <ul class="skill-list">
+              <li>C, C++</li>
+              <li>Data Structures &amp; Algorithms</li>
+            </ul>
+
+            <p class="member-desc">Works on visualization, layout planning, and presentation flow — ensuring the Bellasagaram city design is aesthetic, well-structured, and easy to understand for viewers.</p>
+
+            <a class="btn ghost-btn" href="sonika.html" aria-label="Open Sonika profile">Open profile →</a>
+          </div>
+        </article>
+
+        <!-- Anoosha -->
+        <article class="team-card">
+          <div class="card-accent">AH</div>
+          <div class="card-content">
+            <h3 class="member-name">Anoosha Hokrani</h3>
+            <div class="meta">Roll: <strong>266</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS208</strong></div>
+
+            <h4 class="subhead">Skills</h4>
+            <ul class="skill-list">
+              <li>C, C++</li>
+              <li>Data Structures &amp; Algorithms</li>
+            </ul>
+
+            <p class="member-desc">Specializes in algorithm design — traffic optimization, resource allocation, emergency routing, and eco-efficient smart city planning.</p>
+
+            <a class="btn ghost-btn" href="anoosha.html" aria-label="Open Anoosha profile">Open profile →</a>
+          </div>
+        </article>
+
+        <!-- Namrata -->
+        <article class="team-card">
+          <div class="card-accent">NS</div>
+          <div class="card-content">
+            <h3 class="member-name">Namrata Shanbhag</h3>
+            <div class="meta">Roll: <strong>227</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS101</strong></div>
+
+            <h4 class="subhead">Skills</h4>
+            <ul class="skill-list">
+              <li>C, C++</li>
+              <li>Data Structures &amp; Algorithms</li>
+            </ul>
+
+            <p class="member-desc">Handles documentation, complexity analysis, and structured reporting — making sure every idea is technically sound and well-explained.</p>
+
+            <a class="btn ghost-btn" href="namrata.html" aria-label="Open Namrata profile">Open profile →</a>
+          </div>
+        </article>
+
+      </div> <!-- /.team-grid -->
+
     </section>
 
-    <section class="about-team-section section-wrapper">
-      <h2 class="section-subheading">Meet the Team</h2>
-
-      <div class="about-team-grid">
-        <a href="sonika.html" class="about-team-card bracket-card link-card">
-          <h3>Sonika Kalgutkar</h3>
-          <p class="about-usn">Roll: 210 | USN: 01FE24BCS029</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Works on visualization, layout planning, and presentation flow — ensuring that
-            the Bellasagaram city design is aesthetic, well-structured, and easy to understand.
-          </p>
-          <span class="profile-link">Open profile →</span>
-        </a>
-
-        <a href="anoosha.html" class="about-team-card bracket-card link-card">
-          <h3>Anoosha Hokrani</h3>
-          <p class="about-usn">Roll: 266 | USN: 01FE24BCS208</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Specializes in algorithm design — traffic optimization, resource allocation,
-            emergency routing, and eco-efficient smart city planning.
-          </p>
-          <span class="profile-link">Open profile →</span>
-        </a>
-
-        <a href="namrata.html" class="about-team-card bracket-card link-card">
-          <h3>Namrata Shanbhag</h3>
-          <p class="about-usn">Roll: 227 | USN: 01FE24BCS101</p>
-          <p class="about-role-label">Skills</p>
-          <ul class="about-skills">
-            <li>C, C++</li>
-            <li>Data Structures &amp; Algorithms</li>
-          </ul>
-          <p class="about-desc">
-            Handles documentation, complexity analysis, and structured reporting — making sure
-            every DAA concept is clearly and correctly presented.
-          </p>
-          <span class="profile-link">Open profile →</span>
-        </a>
-      </div>
-    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>
-      © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
-      All rights reserved.
-    </p>
+    <p>© 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
