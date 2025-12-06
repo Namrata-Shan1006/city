@@ -1,128 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Bellasagaram City Design</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Team — Bellasagaram</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
 
-  <!-- NAVBAR (same as index) -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Bellasagaram</div>
+<body>
 
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀</span><span class="moon">🌙</span>
-      </button>
+<!-- NAVBAR -->
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">Bellasagaram</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="anoosha.html">Anoosha</a></li>
+      <li><a href="namrata.html">Namrata</a></li>
+      <li><a href="sonika.html">Sonika</a></li>
+      <li><a href="collabz.html">Collabz</a></li>
+    </ul>
+  </nav>
+</header>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="anoosha.html">Anoosha</a></li>
-        <li><a href="namrata.html">Namrata</a></li>
-        <li><a href="sonika.html">Sonika</a></li>
-        <li><a href="collabz.html">Collabz</a></li>
+<section class="section-wrapper">
+  <h2 class="section-heading">About Our Team</h2>
+
+  <div class="about-intro pastel-card">
+    <p>
+      We are a small team of creative computer science students who love building meaningful 
+      solutions using algorithms and logic. Bellasagaram is our way of combining creativity,  
+      city planning, and structured DAA concepts into one project.
+    </p>
+    <p>
+      Each of us brings a different strength — visual design, storytelling, routing optimisation,  
+      documentation, and complexity analysis — making our team balanced and efficient.
+    </p>
+  </div>
+
+  <h2 class="section-heading">Meet the Team</h2>
+
+  <div class="team-grid">
+    
+    <!-- ★ SONIKA -->
+    <div class="team-card plus-card">
+      <h3 class="member-name">👩‍💻 Sonika Kalgutkar</h3>
+      <p class="meta">Roll: 210 | USN: 01FE24BCS029</p>
+
+      <p class="subhead">🎓 Skills</p>
+      <ul class="skill-list">
+        <li>C, C++</li>
+        <li>Data Structures & Algorithms</li>
       </ul>
-    </nav>
-  </header>
 
-  <main>
-
-    <!-- PAGE HEADING -->
-    <section class="section-wrapper">
-      <h1 class="section-heading">About Our Team</h1>
-
-      <p class="lead" style="max-width:1000px;margin:0 auto 28px;text-align:center;color:var(--text-soft);">
-        We are a creative and dedicated team of computer science students working together to design
-        <strong>Bellasagaram</strong> — a modern, sustainable coastal city built using principles of
-        Design &amp; Analysis of Algorithms. Our vision is to blend technology, logic, and creativity
-        to build systems that are efficient, scalable, and people-friendly.
+      <p class="member-desc">
+        Works on the entire visual identity and flow of the Bellasagaram project — ensuring 
+        that the city map, storytelling, and presentation feel neat, structured, and easy to understand.
       </p>
+    </div>
 
-      <!-- Meet the team -->
-      <h2 style="text-align:center;margin-top:8px;color:var(--accent-strong);font-size:22px;font-weight:700">Meet the Team</h2>
+    <!-- ★ ANOOSHA -->
+    <div class="team-card plus-card">
+      <h3 class="member-name">👩‍💻 Anoosha Hokrani</h3>
+      <p class="meta">Roll: 266 | USN: 01FE24BCS208</p>
 
-      <!-- TEAM GRID: 3 cards side-by-side -->
-      <div class="team-grid" role="list">
+      <p class="subhead">🎓 Skills</p>
+      <ul class="skill-list">
+        <li>C, C++</li>
+        <li>Data Structures & Algorithms</li>
+      </ul>
 
-        <!-- SONIKA -->
-        <article class="team-card" role="listitem" aria-labelledby="sonika-name">
-          <div class="card-content">
-            <h3 id="sonika-name" class="member-name">Sonika Kalgutkar</h3>
-            <p class="meta"><strong>Roll:</strong> 210 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS029</p>
+      <p class="member-desc">
+        Focuses on the algorithmic backbone of our project — choosing appropriate approaches  
+        for routing, graph problems, resource optimisation, and city-based planning.
+      </p>
+    </div>
 
-            <p class="subhead">Skills</p>
-            <ul class="skill-list">
-              <li>C, C++</li>
-              <li>Data Structures &amp; Algorithms</li>
-            </ul>
+    <!-- ★ NAMRATA -->
+    <div class="team-card plus-card">
+      <h3 class="member-name">👩‍💻 Namrata Shanbhag</h3>
+      <p class="meta">Roll: 227 | USN: 01FE24BCS101</p>
 
-            <p class="member-desc">
-              Works on visualization, layout planning, and presentation flow — ensuring that the Bellasagaram city design 
-              is aesthetic, well-structured, and easy to understand for viewers.
-            </p>
+      <p class="subhead">🎓 Skills</p>
+      <ul class="skill-list">
+        <li>C, C++</li>
+        <li>Data Structures & Algorithms</li>
+      </ul>
 
-            <a class="profile-link" href="sonika.html">Open profile →</a>
-          </div>
-        </article>
+      <p class="member-desc">
+        Handles all documentation, complexity analysis, and structured reporting — ensuring 
+        every idea is technically correct, well-explained, and connected to algorithmic concepts.
+      </p>
+    </div>
 
-        <!-- ANOOSHA -->
-        <article class="team-card" role="listitem" aria-labelledby="anoosha-name">
-          <div class="card-content">
-            <h3 id="anoosha-name" class="member-name">Anoosha Hokrani</h3>
-            <p class="meta"><strong>Roll:</strong> 266 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS208</p>
+  </div>
+</section>
 
-            <p class="subhead">Skills</p>
-            <ul class="skill-list">
-              <li>C, C++</li>
-              <li>Data Structures &amp; Algorithms</li>
-            </ul>
+<footer class="footer">
+  © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
+</footer>
 
-            <p class="member-desc">
-              Specializes in algorithm design — traffic optimization, resource allocation, emergency routing,
-              and eco-efficient smart city planning.
-            </p>
-
-            <a class="profile-link" href="anoosha.html">Open profile →</a>
-          </div>
-        </article>
-
-        <!-- NAMRATA -->
-        <article class="team-card" role="listitem" aria-labelledby="namrata-name">
-          <div class="card-content">
-            <h3 id="namrata-name" class="member-name">Namrata Shanbhag</h3>
-            <p class="meta"><strong>Roll:</strong> 227 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS101</p>
-
-            <p class="subhead">Skills</p>
-            <ul class="skill-list">
-              <li>C, C++</li>
-              <li>Data Structures &amp; Algorithms</li>
-            </ul>
-
-            <p class="member-desc">
-              Handles documentation, complexity analysis, and structured reporting — making sure every idea is
-              technically sound and well-explained.
-            </p>
-
-            <a class="profile-link" href="namrata.html">Open profile →</a>
-          </div>
-        </article>
-
-      </div> <!-- /.team-grid -->
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
