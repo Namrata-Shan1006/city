@@ -1,1297 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Namrata Shanbhag - Business Ideas | Bellasagaram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #6366f1;
-      --secondary: #ec4899;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --info: #06b6d4;
-      --bg-light: #faf5ff;
-      --bg-card: #ffffff;
-      --text-dark: #1e1b4b;
-      --text-muted: #6b7280;
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.1);
-      --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
-      --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.2);
-    }
-
-    body[data-theme="dark"] {
-      --primary: #818cf8;
-      --secondary: #f472b6;
-      --accent: #fbbf24;
-      --bg-light: #0f0a1f;
-      --bg-card: #1a1333;
-      --text-dark: #f3f4f6;
-      --text-muted: #9ca3af;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      transition: all 0.3s ease;
-      overflow-x: hidden;
-    }
-
-    .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    .bg-animation .shape {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: float 20s infinite ease-in-out;
-    }
-
-    .shape1 {
-      width: 500px;
-      height: 500px;
-      background: var(--gradient-3);
-      top: -200px;
-      left: -200px;
-    }
-
-    .shape2 {
-      width: 400px;
-      height: 400px;
-      background: var(--gradient-3);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 5s;
-    }
-
-    .shape3 {
-      width: 350px;
-      height: 350px;
-      background: var(--gradient-1);
-      top: 50%;
-      right: 10%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(50px, -50px) scale(1.1); }
-      66% { transform: translate(-30px, 30px) scale(0.9); }
-    }
-
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem 6%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-sm);
-      z-index: 1000;
-    }
-
-    body[data-theme="dark"] .header {
-      background: rgba(26, 19, 51, 0.8);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: var(--gradient-1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      cursor: pointer;
-    }
-
-    .nav-center {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .theme-toggle {
-      background: var(--bg-card);
-      border: 2px solid var(--primary);
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.3rem;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      transform: rotate(180deg);
-    }
-
-    .sun { display: inline; }
-    .moon { display: none; }
-    body[data-theme="dark"] .sun { display: none; }
-    body[data-theme="dark"] .moon { display: inline; }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 0.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      padding: 0.6rem 1.2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      background: rgba(99, 102, 241, 0.1);
-    }
-
-    main {
-      padding-top: 100px;
-    }
-
-    .hero-section {
-      padding: 6rem 6% 4rem;
-      background: var(--gradient-3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
-    }
-
-    .hero-content {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 4rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2rem;
-    }
-
-    .hero-meta {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      border-radius: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      font-weight: 600;
-    }
-
-    .content-section {
-      padding: 4rem 6%;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .ideas-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-
-    .business-idea {
-      background: var(--bg-card);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-lg);
-      border-left: 6px solid #4facfe;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .business-idea::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
-      opacity: 0.05;
-      border-radius: 50%;
-      transform: translate(50%, -50%);
-      background: var(--gradient-3);
-    }
-
-    .business-idea:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 70px rgba(79, 172, 254, 0.3);
-    }
-
-    .idea-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .idea-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: var(--gradient-3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      min-width: 60px;
-    }
-
-    .idea-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      flex: 1;
-      line-height: 1.3;
-    }
-
-    .sdg-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-top: 1rem;
-      width: fit-content;
-    }
-
-    .section-block {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    .section-icon {
-      font-size: 1.5rem;
-    }
-
-    .explanation-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .algorithm-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-    }
-
-    .algorithm-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--info);
-      margin-bottom: 0.6rem;
-    }
-
-    .algorithm-desc {
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .code-container {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .code-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .code-lang {
-      color: #4facfe;
-      font-weight: 700;
-      font-size: 1rem;
-      font-family: "Fira Code", monospace;
-    }
-
-    .copy-btn {
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 0.85rem;
-    }
-
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
-    }
-
-    .code-block {
-      font-family: "Fira Code", monospace;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #d4d4d4;
-      overflow-x: auto;
-    }
-
-    .code-block pre {
-      margin: 0;
-      white-space: pre;
-    }
-
-    .keyword { color: #569cd6; }
-    .function { color: #dcdcaa; }
-    .number { color: #b5cea8; }
-    .comment { color: #6a9955; font-style: italic; }
-    .operator { color: #d4d4d4; }
-    .bracket { color: #ffd700; }
-
-    .divider {
-      height: 2px;
-      background: var(--gradient-3);
-      border-radius: 2px;
-      margin: 1.5rem 0;
-      opacity: 0.2;
-    }
-
-    .footer {
-      padding: 2rem 6%;
-      text-align: center;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
-      margin-top: 4rem;
-    }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: var(--shadow-lg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-
-    .back-to-top.show {
-      display: flex;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-5px) scale(1.1);
-    }
-
-    @media (max-width: 1200px) {
-      .ideas-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .idea-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .code-block {
-        font-size: 0.75rem;
-      }
-    }
-  </style>
-</head>
-<body data-theme="light">
-  <div class="bg-animation">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-  </div>
-
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Bellasagaram</div>
-      <div class="nav-center">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="sun">☀</span>
-          <span class="moon">🌙</span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="project.html">Project</a></li>
-          <li><a href="anoosha.html">Anoosha</a></li>
-          <li><a href="namrata.html" class="active">Namrata</a></li>
-          <li><a href="sonika.html">Sonika</a></li>
-          <li><a href="collabz.html">Collabz</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-
-  <main>
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Namrata Shanbhag</h1>
-        <p class="hero-subtitle">Business Ideas & Algorithm Solutions</p>
-        <div class="hero-meta">
-          📋 Roll: 227 | 🎓 USN: 01FE24BCS101
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="ideas-grid">
-
-        <!-- IDEA 1 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">01</div>
-            <h2 class="idea-title">City-wide Traffic Signal Optimization System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Optimize traffic flow by dynamically adjusting signal timings at intersections based on congestion levels.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Heapification (Priority Queue / Greedy)</div>
-              <div class="algorithm-desc">
-                You can maintain a heap of intersections with max congestion to decide which signals to change first.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">for</span>(<span class="keyword">int</span> i = n/<span class="number">2</span>; i >= <span class="number">1</span>; i--) <span class="bracket">{</span>
-    <span class="keyword">int</span> k = i;
-    <span class="keyword">int</span> v = H[k];
-    <span class="keyword">bool</span> heap = <span class="keyword">false</span>;
-
-    <span class="keyword">while</span>(!heap && <span class="number">2</span>*k <= n) <span class="bracket">{</span>
-        <span class="keyword">int</span> j = <span class="number">2</span>*k;
-        <span class="keyword">if</span>(j < n && H[j] < H[j+<span class="number">1</span>]) j = j+<span class="number">1</span>;
-
-        <span class="keyword">if</span>(v >= H[j]) heap = <span class="keyword">true</span>;
-        <span class="keyword">else</span> <span class="bracket">{</span>
-            H[k] = H[j];
-            k = j;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    H[k] = v;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 11: Sustainable Cities and Communities
-          </div>
-        </div>
-
-        <!-- IDEA 2 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">02</div>
-            <h2 class="idea-title">Disaster Management & Evacuation Route Planner</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Find the safest and fastest routes for evacuation during emergencies, minimizing travel time and avoiding hazards.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                Evacuation is a shortest-path problem on weighted road networks; Dijkstra efficiently finds minimal travel distance from source to all destinations.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">int</span> dist[MAXN], path[MAXN], visited[MAXN];
-
-<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-    dist[i] = cost[source][i];
-    path[i] = source;
-    visited[i] = <span class="number">0</span>;
-<span class="bracket">}</span>
-visited[source] = <span class="number">1</span>;
-
-<span class="keyword">for</span>(<span class="keyword">int</span> iter = <span class="number">0</span>; iter < n-<span class="number">1</span>; iter++) <span class="bracket">{</span>
-    <span class="keyword">int</span> u = -<span class="number">1</span>, min = INF + <span class="number">1</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-        <span class="keyword">if</span>(!visited[i] && dist[i] < min) <span class="bracket">{</span> min = dist[i]; u = i; <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    <span class="keyword">if</span>(u == -<span class="number">1</span>) <span class="keyword">break</span>;
-    visited[u] = <span class="number">1</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v < n; v++) <span class="bracket">{</span>
-        <span class="keyword">if</span>(!visited[v] && cost[u][v] != INF) <span class="bracket">{</span>
-            <span class="keyword">if</span>(dist[u] + cost[u][v] < dist[v]) <span class="bracket">{</span>
-                dist[v] = dist[u] + cost[u][v];
-                path[v] = u;
-            <span class="bracket">}</span>
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 11: Sustainable Cities and Communities
-          </div>
-        </div>
-
-        <!-- IDEA 3 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">03</div>
-            <h2 class="idea-title">Smart Warehouse Inventory Sorting & Retrieval System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system uses real-time data to track the location of all inventory items and plans the most efficient paths for robotic or human systems to retrieve specific items.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                The primary function is instantaneous look-up. Hashing allows mapping a unique item ID (the key) to its precise physical location (the value) in O(1) average time, which is essential for rapid retrieval and sorting.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// key is the Item ID. hashFunction(key) gives the starting index.</span>
-<span class="keyword">int</span> index = <span class="function">hashFunction</span>(key);
-<span class="keyword">int</span> start_index = index;
-<span class="comment">// Search loop using linear probing</span>
-<span class="keyword">while</span> (hashTable[index].key != EMPTY_KEY) <span class="bracket">{</span>
-    <span class="keyword">if</span> (hashTable[index].key == key) <span class="bracket">{</span>
-        <span class="keyword">return</span> hashTable[index].value; <span class="comment">// Found the item location</span>
-    <span class="bracket">}</span>
-    index = (index + <span class="number">1</span>) % TABLE_SIZE;
-    <span class="keyword">if</span> (index == start_index) <span class="bracket">{</span>
-        <span class="keyword">break</span>; 
-    <span class="bracket">}</span>
-<span class="bracket">}</span>
-<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// Item not found</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
-          </div>
-        </div>
-
-        <!-- IDEA 4 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">04</div>
-            <h2 class="idea-title">City-Wide Electricity Grid Fault Detection System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Monitors the entire power network in real-time to instantly detect line breaks or faults and identifies which substations or homes have lost connection due to the event.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Union-Find</div>
-              <div class="algorithm-desc">
-                Union-Find (Disjoint Set Union) is perfectly suited for efficiently tracking the connectivity of the grid (a graph). It can quickly determine if two components (e.g., a power plant and a neighborhood) are still in the same connected set after a fault occurs.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// parent[] stores the parent of each node.</span>
-<span class="keyword">int</span> <span class="function">find_set</span>(i) <span class="bracket">{</span>
-    <span class="keyword">if</span>(parent[i] == i)
-        <span class="keyword">return</span> i;
-    <span class="keyword">return</span> parent[i] = <span class="function">find_set</span>(parent[i]);
-<span class="bracket">}</span>
-
-<span class="keyword">void</span> <span class="function">union_set</span>(<span class="keyword">int</span> i, <span class="keyword">int</span> j) <span class="bracket">{</span>
-    <span class="keyword">int</span> root_i = <span class="function">find_set</span>(i);
-    <span class="keyword">int</span> root_j = <span class="function">find_set</span>(j);
-    <span class="keyword">if</span>(root_i != root_j) <span class="bracket">{</span>
-        parent[root_i] = root_j;
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 7: Affordable and Clean Energy
-          </div>
-        </div>
-
-        <!-- IDEA 5 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">05</div>
-            <h2 class="idea-title">Smart Toll Collection & Highway Traffic Management</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system automatically charges vehicles by reading their IDs (tags/plates) at highway gates and monitors overall flow to dynamically adjust speed limits or alert drivers to congestion.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                The tolling process requires instantaneous identification of the vehicle's account from its ID. Hashing provides the necessary O(1) average time complexity for this high-volume, real-time look-up task.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// Retrieves the account balance for a given Vehicle ID</span>
-<span class="keyword">float</span> <span class="function">getBalance</span>(<span class="keyword">long long</span> key) <span class="bracket">{</span>
-    <span class="keyword">int</span> index = <span class="function">hashFunction</span>(key);
-    <span class="keyword">int</span> start_index = index;
-
-    <span class="comment">// Search loop using linear probing</span>
-    <span class="keyword">do</span> <span class="bracket">{</span>
-        <span class="keyword">if</span> (tollTable[index].key == key) <span class="bracket">{</span>
-            <span class="keyword">return</span> tollTable[index].balance;
-        <span class="bracket">}</span>
-        <span class="keyword">if</span> (tollTable[index].key == EMPTY_KEY) <span class="bracket">{</span>
-            <span class="keyword">return</span> -<span class="number">1</span>.<span class="number">0</span>f;
-        <span class="bracket">}</span>
-        index = (index + <span class="number">1</span>) % TABLE_SIZE;
-    <span class="bracket">}</span> <span class="keyword">while</span> (index != start_index);
-    
-    <span class="keyword">return</span> -<span class="number">1</span>.<span class="number">0</span>f;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
-          </div>
-        </div>
-
-        <!-- IDEA 6 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">06</div>
-            <h2 class="idea-title">Digital Land Parcel Mapping & Fraud Detection</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system digitizes all land boundaries and ownership records. It uses the records for quick access and runs automated checks to detect suspicious overlaps or fraudulent property claims.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                To maintain land title integrity, every parcel must be uniquely identifiable and quickly retrievable from a massive database using its unique parcel ID, which is optimized by Hashing.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// Simple hash function for a string (Parcel ID)</span>
-<span class="keyword">inline int</span> <span class="function">stringHash</span>(<span class="keyword">const char</span> *str) <span class="bracket">{</span>
-    <span class="keyword">unsigned long</span> hash = <span class="number">5381</span>;
-    <span class="keyword">int</span> c;
-    <span class="keyword">while</span> ((c = *str++))
-        hash = ((hash << <span class="number">5</span>) + hash) + c;
-    <span class="keyword">return</span> (int)(hash % TABLE_SIZE);
-<span class="bracket">}</span>
-
-<span class="keyword">void</span> <span class="function">insert_parcel</span>(<span class="keyword">const char</span> *id, <span class="keyword">int</span> owner) <span class="bracket">{</span>
-    <span class="keyword">int</span> index = <span class="function">stringHash</span>(id);
-    <span class="keyword">if</span> (parcelTable[index].ownerId == <span class="number">0</span>) <span class="bracket">{</span>
-        strncpy(parcelTable[index].id, id, <span class="number">19</span>);
-        parcelTable[index].id[<span class="number">19</span>] = <span class="number">0</span>;
-        parcelTable[index].ownerId = owner;
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 16: Peace, Justice, and Strong Institutions
-          </div>
-        </div>
-
-        <!-- IDEA 7 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">07</div>
-            <h2 class="idea-title">Smart Flood Prediction & Drainage Network Optimizer</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              The system models the city's drainage network to predict which low-lying areas will flood based on rainfall and calculates the quickest path sequence to clear existing blockages.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Floyd-Warshall Algorithm</div>
-              <div class="algorithm-desc">
-                Flood modeling requires determining all-pairs reachability (which point can reach which) or all-pairs shortest paths to see how blockages affect the entire flow network simultaneously, efficiently handled by Floyd-Warshall (O(V³)).
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">void</span> <span class="function">floyd_warshall</span>(<span class="keyword">int</span> n) <span class="bracket">{</span>
-    <span class="comment">// k is the intermediate node</span>
-    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k < n; k++) <span class="bracket">{</span>
-        <span class="comment">// i is the source node</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-            <span class="comment">// j is the destination node</span>
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j < n; j++) <span class="bracket">{</span>
-                <span class="keyword">if</span> (dist[i][k] != INF && dist[k][j] != INF) <span class="bracket">{</span>
-                    <span class="keyword">if</span> (dist[i][k] + dist[k][j] < dist[i][j]) <span class="bracket">{</span>
-                        dist[i][j] = dist[i][k] + dist[k][j];
-                    <span class="bracket">}</span>
-                <span class="bracket">}</span>
-            <span class="bracket">}</span>
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 13: Climate Action
-          </div>
-        </div>
-
-        <!-- IDEA 8 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">08</div>
-            <h2 class="idea-title">Cargo Drone Routing & Path Planning System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system computes the optimal 3D routes for autonomous delivery drones, minimizing flight time and battery consumption while safely navigating airspace restrictions and other traffic.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                This is a classic shortest-path problem in a large, weighted graph (the airspace grid). Dijkstra efficiently finds the path that minimizes the total weighted cost (e.g., flight time/fuel) from the depot to the delivery point.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// dist is distance array, cost[u][v] is edge weight</span>
-<span class="keyword">void</span> <span class="function">relax</span>(<span class="keyword">int</span> u, <span class="keyword">int</span> v) <span class="bracket">{</span>
-    <span class="comment">// Check unvisited neighbor v and ensure path exists</span>
-    <span class="keyword">if</span> (!visited[v] && cost[u][v] != INF) <span class="bracket">{</span>
-        <span class="comment">// If path through u is shorter</span>
-        <span class="keyword">if</span> (dist[u] + cost[u][v] < dist[v]) <span class="bracket">{</span>
-            dist[v] = dist[u] + cost[u][v];
-            path[v] = u;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
-          </div>
-        </div>
-
-        <!-- IDEA 9 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">09</div>
-            <h2 class="idea-title">Automated Job Matching & Skill Mapping Portal</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              The portal calculates a compatibility score between job descriptions and candidate profiles based on skill mapping. It then presents the highest-scoring job matches to the user.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Quick Sort</div>
-              <div class="algorithm-desc">
-                After match scores are generated, the results must be rapidly ranked in descending order. Quick Sort is one of the fastest general-purpose comparison sorts with O(n log n) average complexity.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">int</span> <span class="function">partition</span>(<span class="keyword">float</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high) <span class="bracket">{</span>
-    <span class="keyword">float</span> pivot = arr[high]; 
-    <span class="keyword">int</span> i = (low - <span class="number">1</span>); 
-
-    <span class="keyword">for</span> (<span class="keyword">int</span> j = low; j <= high - <span class="number">1</span>; j++) <span class="bracket">{</span>
-        <span class="keyword">if</span> (arr[j] > pivot) <span class="bracket">{</span>
-            i++;
-            <span class="function">swap</span>(&arr[i], &arr[j]);
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    <span class="function">swap</span>(&arr[i + <span class="number">1</span>], &arr[high]);
-    <span class="keyword">return</span> (i + <span class="number">1</span>);
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 8: Decent Work and Economic Growth
-          </div>
-        </div>
-
-        <!-- IDEA 10 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">10</div>
-            <h2 class="idea-title">Smart City Public Complaint Prioritization System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system automatically scores incoming public complaints based on urgency and impact. It then feeds them into a dynamic queue to ensure the most critical issues are routed to service teams first.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Heapification (Max-Heap)</div>
-              <div class="algorithm-desc">
-                The system requires a Priority Queue where the highest score (most urgent complaint) is always extracted first. Heapification is the efficient process (O(n)) used to build or maintain the Max-Heap structure for this queue.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// n is the size of the heap, k is the index to sift down</span>
-<span class="keyword">void</span> <span class="function">max_heapify</span>(<span class="keyword">int</span> n, <span class="keyword">int</span> k) <span class="bracket">{</span>
-    <span class="keyword">int</span> v = H[k];
-    <span class="keyword">int</span> j = <span class="number">2</span> * k;
-
-    <span class="keyword">while</span> (j <= n) <span class="bracket">{</span>
-        <span class="comment">// Find the larger child</span>
-        <span class="keyword">if</span> (j < n && H[j] < H[j + <span class="number">1</span>]) <span class="bracket">{</span>
-            j = j + <span class="number">1</span>;
-        <span class="bracket">}</span>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namrata Shanbhag - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f4d 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        /* Updated to dark theme with navy/purple background */
         
-        <span class="keyword">if</span> (v >= H[j]) <span class="bracket">{</span>
-            <span class="keyword">break</span>;
-        <span class="bracket">}</span> <span class="keyword">else</span> <span class="bracket">{</span>
-            H[k] = H[j];
-            k = j;
-            j = <span class="number">2</span> * k;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    H[k] = v;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
+        /* Header Navigation */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
 
-          <!-- Added SDG Badge -->
-          <div class="sdg-badge">
-            🎯 SDG 16: Peace, Justice, and Strong Institutions
-          </div>
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #6495ff;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #6495ff;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid #6495ff;
+            color: #6495ff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(100, 150, 255, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(100, 150, 255, 0.2);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(100, 150, 255, 0.1);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            color: #6495ff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Ideas Grid */
+        .ideas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .idea-card {
+            background: rgba(30, 40, 80, 0.6);
+            border: 1px solid rgba(100, 150, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .idea-card:hover {
+            border-color: rgba(100, 150, 255, 0.5);
+            box-shadow: 0 10px 40px rgba(100, 150, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .idea-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6495ff;
+            margin-bottom: 5px;
+        }
+
+        .idea-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .idea-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            border-left: 3px solid rgba(100, 150, 255, 0.3);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6495ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .algorithm {
+            background: rgba(15, 20, 40, 0.8);
+            border: 1px solid rgba(100, 150, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            color: #80d0ff;
+            overflow-x: auto;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: rgba(15, 20, 40, 0.8);
+            border: 1px solid rgba(100, 150, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            color: #80d0ff;
+            overflow-x: auto;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .copy-btn {
+            background: rgba(100, 150, 255, 0.2);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            color: #6495ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .copy-btn:hover {
+            background: rgba(100, 150, 255, 0.4);
+            border-color: #6495ff;
+        }
+
+        .complexity {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(100, 150, 255, 0.1);
+        }
+
+        .complexity-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .complexity-label {
+            color: #80a0ff;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .complexity-value {
+            color: #6495ff;
+            font-weight: 600;
+        }
+
+        /* SDG Badge */
+        .sdg-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #20b2aa 0%, #00d9b2 100%);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .sdg-number {
+            display: block;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ideas-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Bellasagaram</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="index.html#projects">Project</a>
+            <a href="anoosha.html">Anoosha</a>
+            <a href="namrata.html" class="active">Namrata</a>
+            <a href="sonika.html">Sonika</a>
+            <a href="collabz.html">Collabz</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Namrata Shanbhag</h1>
+            <p>Business Ideas & Algorithm Solutions</p>
+            <div class="hero-badge">
+                📋 Roll: 227 | 🏷️ USN: 01FE24BCS101
+            </div>
         </div>
 
-      </div>
-    </section>
+        <div class="ideas-container">
+            <!-- Idea 1 -->
+            <div class="idea-card">
+                <div class="idea-number">IDEA 1</div>
+                <div class="idea-title">🚦 City-wide Traffic Signal Optimization System</div>
+                <div class="idea-description">
+                    Optimize traffic flow by dynamically adjusting signal timings at intersections based on real-time congestion levels.
+                </div>
 
-    <footer class="footer">
-      <p>&copy; 2025 Namrata Shanbhag - Portfolio. All rights reserved.</p>
-    </footer>
-  </main>
+                <div class="section-title">⚙️ Algorithm</div>
+                <div class="algorithm">
+Algorithm: Adaptive Signal Timing Algorithm
+1. Input: Traffic density at each intersection
+2. Calculate vehicle count from sensor data
+3. Determine optimal green signal duration
+4. Adjust timings every 30 seconds
+5. Minimize waiting time and emissions
+6. Output: Updated signal timing parameters
+                </div>
 
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.setAttribute('data-theme', 
-        document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
-    });
+                <div class="section-title">💻 C++ Code</div>
+                <div class="code-block">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
 
-    // Copy Code
-    function copyCode(button) {
-      const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
-      navigator.clipboard.writeText(codeBlock).then(() => {
-        button.innerText = 'Copied!';
-        setTimeout(() => button.innerText = 'Copy Code', 2000);
-      });
+int optimizeSignal(vector&lt;int&gt; traffic) {
+    int maxTraffic = 0;
+    for (int t : traffic) {
+        if (t &gt; maxTraffic) maxTraffic = t;
     }
+    return (maxTraffic * 2) + 15;
+}
 
-    // Back to Top
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
+int main() {
+    vector&lt;int&gt; trafficDensity = {45, 60, 40};
+    int greenTime = optimizeSignal(trafficDensity);
+    cout &lt;&lt; "Green Signal Duration: " &lt;&lt; greenTime &lt;&lt; "s" &lt;&lt; endl;
+    return 0;
+}
+                </div>
 
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+                <div class="complexity">
+                    <div class="complexity-item">
+                        <span class="complexity-label">Time Complexity:</span>
+                        <span class="complexity-value">O(n)</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">Space Complexity:</span>
+                        <span class="complexity-value">O(1)</span>
+                    </div>
+                </div>
+
+                <div class="sdg-badge">
+                    SDG 11<br>
+                    <span class="sdg-number">Sustainable Cities & Communities</span>
+                </div>
+            </div>
+
+            <!-- Idea 2 -->
+            <div class="idea-card">
+                <div class="idea-number">IDEA 2</div>
+                <div class="idea-title">🚨 Disaster Management & Evacuation Route Planner</div>
+                <div class="idea-description">
+                    Find the safest and fastest routes for evacuation during emergencies, minimizing travel time and avoiding hazards.
+                </div>
+
+                <div class="section-title">⚙️ Algorithm</div>
+                <div class="algorithm">
+Algorithm: Modified Dijkstra's Shortest Path
+1. Input: Disaster location and intensity map
+2. Mark hazard zones with high weights
+3. Calculate shortest safe path using Dijkstra
+4. Consider population density in evacuation zones
+5. Prioritize routes away from incident center
+6. Output: Optimized evacuation routes
+                </div>
+
+                <div class="section-title">💻 C++ Code</div>
+                <div class="code-block">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+struct Route {
+    int id, distance, safety;
+};
+
+Route findSafeRoute(vector&lt;Route&gt; routes) {
+    Route best = routes[0];
+    for (auto r : routes) {
+        if (r.distance &lt; best.distance &amp;&amp; r.safety &gt; best.safety) {
+            best = r;
+        }
+    }
+    return best;
+}
+
+int main() {
+    vector&lt;Route&gt; available = {{1, 5, 8}, {2, 8, 9}, {3, 3, 6}};
+    Route evacRoute = findSafeRoute(available);
+    cout &lt;&lt; "Best Route ID: " &lt;&lt; evacRoute.id &lt;&lt; endl;
+    return 0;
+}
+                </div>
+
+                <div class="complexity">
+                    <div class="complexity-item">
+                        <span class="complexity-label">Time Complexity:</span>
+                        <span class="complexity-value">O(E log V)</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">Space Complexity:</span>
+                        <span class="complexity-value">O(V + E)</span>
+                    </div>
+                </div>
+
+                <div class="sdg-badge">
+                    SDG 11<br>
+                    <span class="sdg-number">Sustainable Cities & Communities</span>
+                </div>
+            </div>
+
+            <!-- Idea 3 -->
+            <div class="idea-card">
+                <div class="idea-number">IDEA 3</div>
+                <div class="idea-title">📦 Smart Warehouse Inventory Management</div>
+                <div class="idea-description">
+                    Optimize warehouse space allocation and inventory tracking using efficient data structures for real-time product location and stock monitoring.
+                </div>
+
+                <div class="section-title">⚙️ Algorithm</div>
+                <div class="algorithm">
+Algorithm: Hash Table Based Inventory System
+1. Input: Product SKU and quantity
+2. Create hash table for O(1) lookups
+3. Store bin location for each product
+4. Update quantities on stock changes
+5. Alert when stock falls below threshold
+6. Output: Real-time inventory status
+                </div>
+
+                <div class="section-title">💻 C++ Code</div>
+                <div class="code-block">
+#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+struct Product {
+    string sku;
+    int quantity;
+    string bin;
+};
+
+class Warehouse {
+    unordered_map&lt;string, Product&gt; inventory;
+public:
+    void addProduct(string sku, int qty, string bin) {
+        inventory[sku] = {sku, qty, bin};
+    }
+    
+    int getStock(string sku) {
+        return inventory[sku].quantity;
+    }
+};
+
+int main() {
+    Warehouse wh;
+    wh.addProduct("SKU001", 50, "A1");
+    cout &lt;&lt; "Stock: " &lt;&lt; wh.getStock("SKU001") &lt;&lt; endl;
+    return 0;
+}
+                </div>
+
+                <div class="complexity">
+                    <div class="complexity-item">
+                        <span class="complexity-label">Time Complexity:</span>
+                        <span class="complexity-value">O(1) avg</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">Space Complexity:</span>
+                        <span class="complexity-value">O(n)</span>
+                    </div>
+                </div>
+
+                <div class="sdg-badge">
+                    SDG 9<br>
+                    <span class="sdg-number">Industry, Innovation & Infrastructure</span>
+                </div>
+            </div>
+
+            <!-- Idea 4 -->
+            <div class="idea-card">
+                <div class="idea-number">IDEA 4</div>
+                <div class="idea-title">⚡ Electricity Grid Fault Detection & Recovery</div>
+                <div class="idea-description">
+                    Detect and isolate faulty sections in the electricity grid using graph algorithms to maintain continuous power distribution.
+                </div>
+
+                <div class="section-title">⚙️ Algorithm</div>
+                <div class="algorithm">
+Algorithm: Breadth-First Search (BFS) for Fault Isolation
+1. Input: Grid node status (active/faulty)
+2. Identify fault location using sensors
+3. Perform BFS to map fault propagation
+4. Isolate affected nodes using circuit breakers
+5. Reroute power through alternate paths
+6. Output: Recovery sequence and restored routes
+                </div>
+
+                <div class="section-title">💻 C++ Code</div>
+                <div class="code-block">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void detectFault(vector&lt;vector&lt;int&gt;&gt;&amp; grid) {
+    queue&lt;pair&lt;int,int&gt;&gt; q;
+    q.push({0, 0});
+    vector&lt;vector&lt;bool&gt;&gt; visited(grid.size(), vector&lt;bool&gt;(grid[0].size(), false));
+    
+    while (!q.empty()) {
+        auto [x, y] = q.front();
+        q.pop();
+        if (grid[x][y] == 0) continue; // faulty node
+        visited[x][y] = true;
+    }
+}
+
+int main() {
+    vector&lt;vector&lt;int&gt;&gt; grid = {{1,1,0},{1,1,1},{0,1,1}};
+    detectFault(grid);
+    return 0;
+}
+                </div>
+
+                <div class="complexity">
+                    <div class="complexity-item">
+                        <span class="complexity-label">Time Complexity:</span>
+                        <span class="complexity-value">O(V + E)</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">Space Complexity:</span>
+                        <span class="complexity-value">O(V)</span>
+                    </div>
+                </div>
+
+                <div class="sdg-badge">
+                    SDG 7<br>
+                    <span class="sdg-number">Affordable & Clean Energy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', function() {
+            document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'none' : 'invert(1)';
+            this.textContent = this.textContent === '🌙' ? '☀️' : '🌙';
+        });
+
+        // Copy to Clipboard
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeBlock = this.nextElementSibling;
+                const text = codeBlock.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+
+        // Set active nav link
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
