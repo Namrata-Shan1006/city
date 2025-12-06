@@ -313,4 +313,66 @@ body[data-theme="dark"] .glass-card {
   color: var(--text-soft);
   margin-top: 40px;
 }
+/* -------------------------
+   About page — team cards
+   Append to style.css
+   ------------------------- */
+
+.lead { font-size:15px; color:var(--text-soft); }
+
+.team-grid {
+  max-width:1200px;
+  margin: 28px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 18px 2%;
+}
+
+.team-card {
+  display: flex;
+  gap: 14px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+  border: var(--border-soft);
+  min-height: 220px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.team-card:hover { transform: translateY(-8px); box-shadow: 0 18px 44px rgba(83,42,151,0.08) }
+
+.card-accent {
+  min-width:72px;
+  min-height:72px;
+  border-radius:12px;
+  background: linear-gradient(180deg,#fff0ff,#f8e9ff);
+  color:var(--accent-strong);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:18px;
+  box-shadow: 0 10px 28px rgba(83,42,151,0.05);
+  flex-shrink:0;
+}
+
+.card-content { flex:1; display:flex; flex-direction:column; gap:8px; }
+
+.member-name { margin:0; font-size:18px; color:var(--accent-strong); font-weight:700; }
+.meta { font-size:13px; color:var(--text-soft); }
+.subhead { margin:0; font-size:13px; color:var(--accent-strong); font-weight:700; margin-top:6px; }
+.skill-list { margin:6px 0 0 18px; color:var(--text); }
+.member-desc { color:var(--text-soft); margin-top:6px; line-height:1.5; font-size:14px; }
+
+@media (max-width:980px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); padding-left:6%; padding-right:6%; gap:18px; }
+}
+
+@media (max-width:640px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .card-accent { min-width:56px; min-height:56px; font-size:15px; }
+}
 
