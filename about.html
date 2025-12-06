@@ -4,103 +4,242 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Our Team — Bellasagaram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
-<!-- NAVBAR -->
-<header class="header">
-  <nav class="navbar">
-    <div class="logo">Bellasagaram</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="project.html">Project</a></li>
-      <li><a href="anoosha.html">Anoosha</a></li>
-      <li><a href="namrata.html">Namrata</a></li>
-      <li><a href="sonika.html">Sonika</a></li>
-      <li><a href="collabz.html">Collabz</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="section-wrapper">
-  <h2 class="section-heading">About Our Team</h2>
-
-  <div class="about-intro pastel-card">
-    <p>
-      We are a small team of creative computer science students who love building meaningful 
-      solutions using algorithms and logic. Bellasagaram is our way of combining creativity,  
-      city planning, and structured DAA concepts into one project.
-    </p>
-    <p>
-      Each of us brings a different strength — visual design, storytelling, routing optimisation,  
-      documentation, and complexity analysis — making our team balanced and efficient.
-    </p>
+<body data-theme="light">
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
   </div>
 
-  <h2 class="section-heading">Meet the Team</h2>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Bellasagaram</div>
 
-  <div class="team-grid">
-    
-    <!-- ★ SONIKA -->
-    <div class="team-card plus-card">
-      <h3 class="member-name">👩‍💻 Sonika Kalgutkar</h3>
-      <p class="meta">Roll: 210 | USN: 01FE24BCS029</p>
+      <div class="nav-center">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="sun">☀</span>
+          <span class="moon">🌙</span>
+        </button>
 
-      <p class="subhead">🎓 Skills</p>
-      <ul class="skill-list">
-        <li>C, C++</li>
-        <li>Data Structures & Algorithms</li>
-      </ul>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="anoosha.html">Anoosha</a></li>
+          <li><a href="namrata.html">Namrata</a></li>
+          <li><a href="sonika.html">Sonika</a></li>
+          <li><a href="collabz.html">Collabz</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-      <p class="member-desc">
-        Works on the entire visual identity and flow of the Bellasagaram project — ensuring 
-        that the city map, storytelling, and presentation feel neat, structured, and easy to understand.
-      </p>
-    </div>
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
-    <!-- ★ ANOOSHA -->
-    <div class="team-card plus-card">
-      <h3 class="member-name">👩‍💻 Anoosha Hokrani</h3>
-      <p class="meta">Roll: 266 | USN: 01FE24BCS208</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="hero-tag">Our Story • Team 09</span>
+        <h1 class="page-title">About Our Team</h1>
+        <p class="page-subtitle">
+          A collaborative journey combining creativity, algorithms, and innovation
+        </p>
+      </div>
+    </section>
 
-      <p class="subhead">🎓 Skills</p>
-      <ul class="skill-list">
-        <li>C, C++</li>
-        <li>Data Structures & Algorithms</li>
-      </ul>
+    <!-- TEAM INTRO -->
+    <section class="team-intro">
+      <div class="intro-container">
+        <div class="intro-card">
+          <div class="intro-icon">🚀</div>
+          <h3>Our Mission</h3>
+          <p>
+            We are a small team of creative computer science students who love building meaningful 
+            solutions using algorithms and logic. Bellasagaram is our way of combining creativity,  
+            city planning, and structured DAA concepts into one project.
+          </p>
+        </div>
 
-      <p class="member-desc">
-        Focuses on the algorithmic backbone of our project — choosing appropriate approaches  
-        for routing, graph problems, resource optimisation, and city-based planning.
-      </p>
-    </div>
+        <div class="intro-card">
+          <div class="intro-icon">💡</div>
+          <h3>Our Approach</h3>
+          <p>
+            Each of us brings a different strength — visual design, storytelling, routing optimisation,  
+            documentation, and complexity analysis — making our team balanced and efficient.
+          </p>
+        </div>
 
-    <!-- ★ NAMRATA -->
-    <div class="team-card plus-card">
-      <h3 class="member-name">👩‍💻 Namrata Shanbhag</h3>
-      <p class="meta">Roll: 227 | USN: 01FE24BCS101</p>
+        <div class="intro-card">
+          <div class="intro-icon">🎯</div>
+          <h3>Our Goal</h3>
+          <p>
+            To create a sustainable coastal city design that showcases the real-world applications 
+            of algorithms while preserving culture and embracing technological progress.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <p class="subhead">🎓 Skills</p>
-      <ul class="skill-list">
-        <li>C, C++</li>
-        <li>Data Structures & Algorithms</li>
-      </ul>
+    <!-- TEAM MEMBERS -->
+    <section class="team-showcase">
+      <h2 class="section-heading">Meet the Team</h2>
+      <p class="section-subheading">The brilliant minds behind Bellasagaram</p>
 
-      <p class="member-desc">
-        Handles all documentation, complexity analysis, and structured reporting — ensuring 
-        every idea is technically correct, well-explained, and connected to algorithmic concepts.
-      </p>
-    </div>
+      <div class="team-members-grid">
+        
+        <!-- SONIKA -->
+        <div class="member-card">
+          <div class="member-header">
+            <div class="member-avatar">
+              <span class="avatar-emoji">👩‍💻</span>
+            </div>
+            <div class="member-badge">Visual Designer</div>
+          </div>
+          
+          <div class="member-body">
+            <h3 class="member-name">Sonika Kalgutkar</h3>
+            <div class="member-meta">
+              <span class="meta-item">📋 Roll: 210</span>
+              <span class="meta-item">🎓 USN: 01FE24BCS029</span>
+            </div>
 
-  </div>
-</section>
+            <div class="skills-section">
+              <h4 class="skills-title">💪 Skills & Expertise</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Algorithms</span>
+              </div>
+            </div>
 
-<footer class="footer">
-  © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
-</footer>
+            <div class="member-description">
+              <h4 class="desc-title">🎨 Role & Contribution</h4>
+              <p>
+                Works on the entire visual identity and flow of the Bellasagaram project — ensuring 
+                that the city map, storytelling, and presentation feel neat, structured, and easy to understand.
+              </p>
+            </div>
+          </div>
+        </div>
 
+        <!-- ANOOSHA -->
+        <div class="member-card">
+          <div class="member-header">
+            <div class="member-avatar">
+              <span class="avatar-emoji">👩‍💻</span>
+            </div>
+            <div class="member-badge">Algorithm Expert</div>
+          </div>
+          
+          <div class="member-body">
+            <h3 class="member-name">Anoosha Hokrani</h3>
+            <div class="member-meta">
+              <span class="meta-item">📋 Roll: 266</span>
+              <span class="meta-item">🎓 USN: 01FE24BCS208</span>
+            </div>
+
+            <div class="skills-section">
+              <h4 class="skills-title">💪 Skills & Expertise</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Algorithms</span>
+              </div>
+            </div>
+
+            <div class="member-description">
+              <h4 class="desc-title">🎨 Role & Contribution</h4>
+              <p>
+                Focuses on the algorithmic backbone of our project — choosing appropriate approaches  
+                for routing, graph problems, resource optimisation, and city-based planning.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAMRATA -->
+        <div class="member-card">
+          <div class="member-header">
+            <div class="member-avatar">
+              <span class="avatar-emoji">👩‍💻</span>
+            </div>
+            <div class="member-badge">Documentation Lead</div>
+          </div>
+          
+          <div class="member-body">
+            <h3 class="member-name">Namrata Shanbhag</h3>
+            <div class="member-meta">
+              <span class="meta-item">📋 Roll: 227</span>
+              <span class="meta-item">🎓 USN: 01FE24BCS101</span>
+            </div>
+
+            <div class="skills-section">
+              <h4 class="skills-title">💪 Skills & Expertise</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Algorithms</span>
+              </div>
+            </div>
+
+            <div class="member-description">
+              <h4 class="desc-title">🎨 Role & Contribution</h4>
+              <p>
+                Handles all documentation, complexity analysis, and structured reporting — ensuring 
+                every idea is technically correct, well-explained, and connected to algorithmic concepts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TEAM STATS -->
+    <section class="team-stats">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Team Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Coastal City</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Creative Ideas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedication</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      © 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 </body>
 </html>
