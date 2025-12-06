@@ -4,10 +4,524 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project | Bellasagaram City Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #6366f1;
+      --secondary: #ec4899;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --info: #06b6d4;
+      --bg-light: #faf5ff;
+      --bg-card: #ffffff;
+      --text-dark: #1e1b4b;
+      --text-muted: #6b7280;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.1);
+      --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
+      --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.2);
+    }
+
+    body[data-theme="dark"] {
+      --primary: #818cf8;
+      --secondary: #f472b6;
+      --accent: #fbbf24;
+      --bg-light: #0f0a1f;
+      --bg-card: #1a1333;
+      --text-dark: #f3f4f6;
+      --text-muted: #9ca3af;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    .bg-animation .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape1 {
+      width: 500px;
+      height: 500px;
+      background: var(--gradient-1);
+      top: -200px;
+      left: -200px;
+    }
+
+    .shape2 {
+      width: 400px;
+      height: 400px;
+      background: var(--gradient-2);
+      bottom: -150px;
+      right: -150px;
+      animation-delay: 5s;
+    }
+
+    .shape3 {
+      width: 350px;
+      height: 350px;
+      background: var(--gradient-3);
+      top: 50%;
+      right: 10%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -50px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 6%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-sm);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    body[data-theme="dark"] .header {
+      background: rgba(26, 19, 51, 0.8);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 2px solid var(--primary);
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(180deg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .sun { display: inline; }
+    .moon { display: none; }
+    body[data-theme="dark"] .sun { display: none; }
+    body[data-theme="dark"] .moon { display: inline; }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    main {
+      padding-top: 100px;
+    }
+
+    .project-hero {
+      padding: 6rem 6% 4rem;
+      background: var(--gradient-1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .section-heading {
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      line-height: 1.9;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .primary-btn {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .phase-section {
+      padding: 4rem 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-subheading {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .phase-intro {
+      text-align: center;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .image-container {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.4s ease;
+    }
+
+    .image-container:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .image-container:nth-child(1) {
+      border-top: 4px solid #667eea;
+    }
+
+    .image-container:nth-child(2) {
+      border-top: 4px solid #f093fb;
+    }
+
+    .image-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-description {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(99, 102, 241, 0.05);
+      border-radius: 12px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      border-left: 4px solid var(--primary);
+    }
+
+    .business-ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .idea-card {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .idea-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    .idea-card:nth-child(1)::before {
+      background: var(--gradient-2);
+    }
+
+    .idea-card:nth-child(2)::before {
+      background: var(--gradient-1);
+    }
+
+    .idea-card:nth-child(3)::before {
+      background: var(--gradient-3);
+    }
+
+    .idea-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 70px rgba(99, 102, 241, 0.25);
+    }
+
+    .idea-card:nth-child(1) {
+      background: linear-gradient(135deg, rgba(240, 147, 251, 0.05) 0%, rgba(245, 87, 108, 0.05) 100%);
+    }
+
+    .idea-card:nth-child(2) {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    }
+
+    .idea-card:nth-child(3) {
+      background: linear-gradient(135deg, rgba(79, 172, 254, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%);
+    }
+
+    .idea-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .idea-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .idea-card h4::before {
+      content: '💡';
+      font-size: 1.5rem;
+    }
+
+    .idea-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .idea-card li {
+      padding: 0.8rem 0;
+      padding-left: 1.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      position: relative;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .idea-card li:last-child {
+      border-bottom: none;
+    }
+
+    .idea-card li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .idea-card li:hover {
+      padding-left: 2rem;
+      color: var(--text-dark);
+    }
+
+    .footer {
+      padding: 2rem 6%;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(99, 102, 241, 0.1);
+      margin-top: 4rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-1);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.show {
+      display: flex;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    @media (max-width: 1024px) {
+      .image-grid,
+      .business-ideas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-heading {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .image-grid,
+      .business-ideas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        font-size: 2.5rem;
+      }
+
+      .section-subheading {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body data-theme="light">
+  <div class="bg-animation">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
 
   <header class="header">
     <nav class="navbar">
@@ -31,10 +545,10 @@
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
   <main>
-    <section class="project-hero section-wrapper">
-      <h1 class="section-heading animated-heading">City Design</h1>
+    <section class="project-hero">
+      <h1 class="section-heading">City Design</h1>
 
-      <div class="project-card glass-card">
+      <div class="project-card">
         <p>
           Our Bellasagaram city design imagines a modern coastal city that is clean, efficient,
           and people-friendly. The plan focuses on reducing waste, saving energy, improving
@@ -59,22 +573,30 @@
     </section>
 
     <!-- PHASE 1 -->
-    <section class="phase-section section-wrapper">
-      <h2 class="section-subheading">PHASE 1: City Map &amp; Topography</h2>
+    <section class="phase-section">
+      <h2 class="section-subheading">PHASE 1: City Map & Topography</h2>
 
-      <div class="phase-card bracket-card">
-        <img src="ph1.jpg" alt="City map and topography of Bellasagaram">
-        <img src="ph2.jpg" alt="City map and topography of Bellasagaram">
-        <p>
-          Phase 1 shows the overall layout of Bellasagaram — zones for housing, industry,
-          education, tourism, green cover, transport routes, and coastal areas mapped on
-          the city grid.
-        </p>
+      <div class="image-grid">
+        <div class="image-container">
+          <h3 class="image-title">🗺️ City Map</h3>
+          <img src="ph1.jpg" alt="City map of Bellasagaram">
+          <div class="image-description">
+            The city map shows the overall layout of Bellasagaram with zones for housing, industry, education, tourism, and coastal areas mapped on the city grid.
+          </div>
+        </div>
+
+        <div class="image-container">
+          <h3 class="image-title">⛰️ Topography</h3>
+          <img src="ph2.jpg" alt="Topography of Bellasagaram">
+          <div class="image-description">
+            The topographical view illustrates the terrain features, elevation levels, green cover, transport routes, and geographical characteristics of Bellasagaram.
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PHASE 2 -->
-    <section class="phase-section section-wrapper">
+    <section class="phase-section">
       <h2 class="section-subheading">PHASE 2: Business Idea Generation</h2>
 
       <p class="phase-intro">
@@ -83,57 +605,57 @@
         can be modeled and optimized using algorithms.
       </p>
 
-      <div class="ideas-row horizontal-scroll">
-        <!-- SONIKA CARD -->
-        <div class="idea-card bracket-card">
-          <h3>Sonika Kalgutkar</h3>
-          <h4>Business Ideas</h4>
-          <ul>
-            <li>University Admission &amp; Hostel Allocation System</li>
-            <li>Urban Forest &amp; Green Coverage Management</li>
-            <li>Smart Tourism Planner for Bellasagaram Coastal Zone</li>
-            <li>Land Record Digitization</li>
-            <li>Food Quality &amp; Contamination Detection System</li>
-            <li>Vital Statistics &amp; Civil Records (birth, death, citizenship, voter records)</li>
-            <li>E-Governance Smart Queue Management System (all licences)</li>
-            <li>Public Library Services</li>
-            <li>ATM &amp; Kiosk Maintenance Business</li>
-            <li>Agriculture and Irrigation Maintenance Services</li>
-          </ul>
-        </div>
-
+      <div class="business-ideas-grid">
         <!-- ANOOSHA CARD -->
-        <div class="idea-card bracket-card">
+        <div class="idea-card">
           <h3>Anoosha Hokrani</h3>
           <h4>Business Ideas</h4>
           <ul>
-            <li>Smart Waste Collection &amp; Recycling Management</li>
-            <li>Smart Parking System for Commercial &amp; Entertainment Zone</li>
+            <li>Smart Waste Collection & Recycling Management</li>
+            <li>Smart Parking System for Commercial & Entertainment Zone</li>
             <li>Renewable Energy Grid Management (Solar + Wind)</li>
-            <li>Port Cargo Scheduling &amp; Container Allocation</li>
+            <li>Port Cargo Scheduling & Container Allocation</li>
             <li>Public Transport Fleet Optimization</li>
             <li>Water Distribution System</li>
             <li>Emergency Response Dispatch System</li>
             <li>Smart Housing Allocation System (Residential Zone)</li>
-            <li>Smart Market &amp; Commercial Zone Price Analyzer</li>
-            <li>Industrial Logistics &amp; Supply Chain Manager</li>
+            <li>Smart Market & Commercial Zone Price Analyzer</li>
+            <li>Industrial Logistics & Supply Chain Manager</li>
+          </ul>
+        </div>
+
+        <!-- SONIKA CARD -->
+        <div class="idea-card">
+          <h3>Sonika Kalgutkar</h3>
+          <h4>Business Ideas</h4>
+          <ul>
+            <li>University Admission & Hostel Allocation System</li>
+            <li>Urban Forest & Green Coverage Management</li>
+            <li>Smart Tourism Planner for Bellasagaram Coastal Zone</li>
+            <li>Land Record Digitization</li>
+            <li>Food Quality & Contamination Detection System</li>
+            <li>Vital Statistics & Civil Records (birth, death, citizenship, voter records)</li>
+            <li>E-Governance Smart Queue Management System (all licences)</li>
+            <li>Public Library Services</li>
+            <li>ATM & Kiosk Maintenance Business</li>
+            <li>Agriculture and Irrigation Maintenance Services</li>
           </ul>
         </div>
 
         <!-- NAMRATA CARD -->
-        <div class="idea-card bracket-card">
+        <div class="idea-card">
           <h3>Namrata Shanbhag</h3>
           <h4>Business Ideas</h4>
           <ul>
-            <li>Smart Surveillance &amp; CCTV Command Center</li>
-            <li>GPS Tracking &amp; Fleet Management for Police Vehicles</li>
-            <li>Sewage Treatment Plant (STP) Operation &amp; Maintenance</li>
-            <li>Smart Pedestrian &amp; Cycle Tracks</li>
+            <li>Smart Surveillance & CCTV Command Center</li>
+            <li>GPS Tracking & Fleet Management for Police Vehicles</li>
+            <li>Sewage Treatment Plant (STP) Operation & Maintenance</li>
+            <li>Smart Pedestrian & Cycle Tracks</li>
             <li>Public Utilities: billing, meter reading, water distribution</li>
-            <li>Foreign Exchange &amp; Remittance Centre</li>
-            <li>Tax &amp; Accounting Service</li>
+            <li>Foreign Exchange & Remittance Centre</li>
+            <li>Tax & Accounting Service</li>
             <li>Banking Services</li>
-            <li>Hospital Network &amp; Intelligent Bed Allocation System</li>
+            <li>Hospital Network & Intelligent Bed Allocation System</li>
             <li>Ambulance Allocation Based on City Zones</li>
           </ul>
         </div>
