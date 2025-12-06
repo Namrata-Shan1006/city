@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — Bellasagaram City Design</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -32,7 +33,7 @@
 
   <main>
 
-    <!-- Page heading -->
+    <!-- PAGE HEADING -->
     <section class="section-wrapper">
       <h1 class="section-heading">About Our Team</h1>
 
@@ -43,66 +44,72 @@
         to build systems that are efficient, scalable, and people-friendly.
       </p>
 
-      <!-- Meet the team header -->
+      <!-- Meet the team -->
       <h2 style="text-align:center;margin-top:8px;color:var(--accent-strong);font-size:22px;font-weight:700">Meet the Team</h2>
 
-      <!-- Team cards grid -->
-      <div class="team-grid" aria-label="Team members">
+      <!-- TEAM GRID: 3 cards side-by-side -->
+      <div class="team-grid" role="list">
 
-        <!-- Sonika -->
-        <article class="team-card">
-          <div class="card-accent">SK</div>
+        <!-- SONIKA -->
+        <article class="team-card" role="listitem" aria-labelledby="sonika-name">
           <div class="card-content">
-            <h3 class="member-name">Sonika Kalgutkar</h3>
-            <div class="meta">Roll: <strong>210</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS029</strong></div>
+            <h3 id="sonika-name" class="member-name">Sonika Kalgutkar</h3>
+            <p class="meta"><strong>Roll:</strong> 210 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS029</p>
 
-            <h4 class="subhead">Skills</h4>
+            <p class="subhead">Skills</p>
             <ul class="skill-list">
               <li>C, C++</li>
               <li>Data Structures &amp; Algorithms</li>
             </ul>
 
-            <p class="member-desc">Works on visualization, layout planning, and presentation flow — ensuring the Bellasagaram city design is aesthetic, well-structured, and easy to understand for viewers.</p>
+            <p class="member-desc">
+              Works on visualization, layout planning, and presentation flow — ensuring that the Bellasagaram city design 
+              is aesthetic, well-structured, and easy to understand for viewers.
+            </p>
 
-            <a class="btn ghost-btn" href="sonika.html" aria-label="Open Sonika profile">Open profile →</a>
+            <a class="profile-link" href="sonika.html">Open profile →</a>
           </div>
         </article>
 
-        <!-- Anoosha -->
-        <article class="team-card">
-          <div class="card-accent">AH</div>
+        <!-- ANOOSHA -->
+        <article class="team-card" role="listitem" aria-labelledby="anoosha-name">
           <div class="card-content">
-            <h3 class="member-name">Anoosha Hokrani</h3>
-            <div class="meta">Roll: <strong>266</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS208</strong></div>
+            <h3 id="anoosha-name" class="member-name">Anoosha Hokrani</h3>
+            <p class="meta"><strong>Roll:</strong> 266 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS208</p>
 
-            <h4 class="subhead">Skills</h4>
+            <p class="subhead">Skills</p>
             <ul class="skill-list">
               <li>C, C++</li>
               <li>Data Structures &amp; Algorithms</li>
             </ul>
 
-            <p class="member-desc">Specializes in algorithm design — traffic optimization, resource allocation, emergency routing, and eco-efficient smart city planning.</p>
+            <p class="member-desc">
+              Specializes in algorithm design — traffic optimization, resource allocation, emergency routing,
+              and eco-efficient smart city planning.
+            </p>
 
-            <a class="btn ghost-btn" href="anoosha.html" aria-label="Open Anoosha profile">Open profile →</a>
+            <a class="profile-link" href="anoosha.html">Open profile →</a>
           </div>
         </article>
 
-        <!-- Namrata -->
-        <article class="team-card">
-          <div class="card-accent">NS</div>
+        <!-- NAMRATA -->
+        <article class="team-card" role="listitem" aria-labelledby="namrata-name">
           <div class="card-content">
-            <h3 class="member-name">Namrata Shanbhag</h3>
-            <div class="meta">Roll: <strong>227</strong> &nbsp; | &nbsp; USN: <strong>01FE24BCS101</strong></div>
+            <h3 id="namrata-name" class="member-name">Namrata Shanbhag</h3>
+            <p class="meta"><strong>Roll:</strong> 227 &nbsp;|&nbsp; <strong>USN:</strong> 01FE24BCS101</p>
 
-            <h4 class="subhead">Skills</h4>
+            <p class="subhead">Skills</p>
             <ul class="skill-list">
               <li>C, C++</li>
               <li>Data Structures &amp; Algorithms</li>
             </ul>
 
-            <p class="member-desc">Handles documentation, complexity analysis, and structured reporting — making sure every idea is technically sound and well-explained.</p>
+            <p class="member-desc">
+              Handles documentation, complexity analysis, and structured reporting — making sure every idea is
+              technically sound and well-explained.
+            </p>
 
-            <a class="btn ghost-btn" href="namrata.html" aria-label="Open Namrata profile">Open profile →</a>
+            <a class="profile-link" href="namrata.html">Open profile →</a>
           </div>
         </article>
 
@@ -112,7 +119,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 City Plan Bellasagaram — Team 09, KLE Technological University, Hubballi. All rights reserved.</p>
   </footer>
