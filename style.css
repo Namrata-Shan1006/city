@@ -313,6 +313,7 @@ body[data-theme="dark"] .glass-card {
   color: var(--text-soft);
   margin-top: 40px;
 }
+
 /* -------------------------
    About page — team cards
    Append to style.css
@@ -375,4 +376,3 @@ body[data-theme="dark"] .glass-card {
   .team-grid { grid-template-columns: 1fr; }
   .card-accent { min-width:56px; min-height:56px; font-size:15px; }
 }
-
