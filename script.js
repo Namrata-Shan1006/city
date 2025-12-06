@@ -1,25 +1,32 @@
-// script.js — theme toggle + back-to-top
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
-  const backToTop = document.getElementById("backToTop");
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
 
-  const saved = localStorage.getItem("bellasagaram-theme");
-  body.setAttribute("data-theme", saved === "dark" ? "dark" : "light");
+themeToggle.addEventListener('click', () => {
+  const currentTheme = body.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  body.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const t = body.getAttribute("data-theme") === "light" ? "dark" : "light";
-      body.setAttribute("data-theme", t);
-      localStorage.setItem("bellasagaram-theme", t);
-    });
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', savedTheme);
+
+// Back to Top Button Functionality
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
   }
+});
 
-  if (backToTop) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) backToTop.classList.add("show");
-      else backToTop.classList.remove("show");
-    });
-    backToTop.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-  }
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ 
+    top: 0, 
+    behavior: 'smooth' 
+  });
 });
