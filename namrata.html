@@ -158,10 +158,11 @@
       transform: rotate(180deg);
     }
 
-    .sun { display: inline; }
-    .moon { display: none; }
-    body[data-theme="dark"] .sun { display: none; }
-    body[data-theme="dark"] .moon { display: inline; }
+    /* Show moon in light mode (to switch to dark), sun in dark mode (to switch to light) */
+    .sun { display: none; }
+    .moon { display: inline; }
+    body[data-theme="dark"] .sun { display: inline; }
+    body[data-theme="dark"] .moon { display: none; }
 
     .nav-links {
       display: flex;
@@ -494,7 +495,9 @@
     }
   </style>
 </head>
-<body data-theme="light">
+
+<!-- IMPORTANT: no hard-coded data-theme here -->
+<body>
   <div class="bg-animation">
     <div class="shape shape1"></div>
     <div class="shape shape2"></div>
@@ -604,7 +607,6 @@
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 11: Sustainable Cities and Communities
           </div>
@@ -684,7 +686,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 11: Sustainable Cities and Communities
           </div>
@@ -753,7 +754,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 9: Industry, Innovation, and Infrastructure
           </div>
@@ -822,7 +822,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 7: Affordable and Clean Energy
           </div>
@@ -895,7 +894,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 9: Industry, Innovation, and Infrastructure
           </div>
@@ -967,7 +965,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 16: Peace, Justice, and Strong Institutions
           </div>
@@ -1038,7 +1035,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 13: Climate Action
           </div>
@@ -1104,7 +1100,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 9: Industry, Innovation, and Infrastructure
           </div>
@@ -1172,7 +1167,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 8: Decent Work and Economic Growth
           </div>
@@ -1248,7 +1242,6 @@ visited[source] = <span class="number">1</span>;
             </div>
           </div>
 
-          <!-- Added SDG Badge -->
           <div class="sdg-badge">
             🎯 SDG 16: Peace, Justice, and Strong Institutions
           </div>
@@ -1263,35 +1256,59 @@ visited[source] = <span class="number">1</span>;
   </main>
 
   <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.setAttribute('data-theme', 
-        document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  // ---------- Copy Code (used in Namrata page) ----------
+  function copyCode(button) {
+    const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
+    navigator.clipboard.writeText(codeBlock).then(() => {
+      button.innerText = 'Copied!';
+      setTimeout(() => button.innerText = 'Copy Code', 2000);
     });
+  }
 
-    // Copy Code
-    function copyCode(button) {
-      const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
-      navigator.clipboard.writeText(codeBlock).then(() => {
-        button.innerText = 'Copied!';
-        setTimeout(() => button.innerText = 'Copy Code', 2000);
+  // ---------- Theme + Back-to-Top (shared for all pages) ----------
+  (function () {
+    // 1) Initialise theme from localStorage or system preference
+    const storedTheme = localStorage.getItem('theme');
+    let initialTheme;
+
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      initialTheme = storedTheme;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      initialTheme = 'dark';
+    } else {
+      initialTheme = 'light';
+    }
+
+    document.body.setAttribute('data-theme', initialTheme);
+
+    // 2) Theme toggle button
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'light' ? 'dark' : 'light';
+        document.body.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
       });
     }
 
-    // Back to Top
+    // 3) Back to Top (only if the button exists on the page)
     const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
+    if (backToTopButton) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
 
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    })();
+</script>
+
 </body>
 </html>
