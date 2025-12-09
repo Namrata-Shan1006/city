@@ -758,5 +758,569 @@
         </div>
 
         <!-- IDEA 4 -->
-                  <div class="business-idea"> <div class="idea-header"> <div class="idea-number">01</div> <h2 class="idea-title">University Admission & Hostel Allocation System</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> The system handles student application ranking based on merit scores, assigns admissions, and then efficiently allocates limited hostel rooms based on student priority (rank, distance, or preference) to maximize resource utilization. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Binary Search</div> <div class="algorithm-desc"> Binary Search gives O(log N) time for fast lookups. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span> <span class="keyword">int</span> low = <span class="number">0</span>; <span class="keyword">int</span> high = N - <span class="number">1</span>; <span class="keyword">while</span> (low <= high) <span class="bracket">{</span> <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>; <span class="keyword">if</span> (IDs[mid] == targetID) <span class="keyword">return</span> mid; <span class="keyword">else if</span> (IDs[mid] < targetID) low = mid + <span class="number">1</span>; <span class="keyword">else</span> high = mid - <span class="number">1</span>; <span class="bracket">}</span> <span class="keyword">return</span> -<span class="number">1</span>; <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div> <div class="sdg-badge secondary">🎯 SDG 1: No Poverty</div> </div> </div> <!-- IDEA 5 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">05</div> <h2 class="idea-title">Food Quality & Contamination Detection System</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> The system checks if contaminant levels in a food sample exceed regulatory threshold limits. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Linear Search</div> <div class="algorithm-desc"> List is small → O(N) is sufficient and simple. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">#include</span> <span class="string">&lt;string.h&gt;</span> <span class="keyword">const int</span> MAX_CONTAMINANTS = <span class="number">5</span>; <span class="keyword">typedef struct</span> <span class="bracket">{</span> <span class="keyword">char</span> contaminant[<span class="number">20</span>]; <span class="keyword">double</span> maxPPM; <span class="bracket">}</span> Threshold; <span class="keyword">int</span> <span class="function">checkContamination</span>(<span class="keyword">const</span> Threshold limits[], <span class="keyword">const char</span>* name, <span class="keyword">double</span> samplePPM) <span class="bracket">{</span> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < MAX_CONTAMINANTS; i++) <span class="bracket">{</span> <span class="keyword">if</span> (<span class="function">strcmp</span>(limits[i].contaminant, name) == <span class="number">0</span>) <span class="bracket">{</span> <span class="keyword">if</span> (samplePPM > limits[i].maxPPM) <span class="keyword">return</span> <span class="number">1</span>; <span class="keyword">return</span> <span class="number">0</span>; <span class="bracket">}</span> <span class="bracket">}</span> <span class="keyword">return</span> -<span class="number">1</span>; <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 3: Good Health and Well-being</div> <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div> </div> </div> <!-- IDEA 6 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">06</div> <h2 class="idea-title">Vital Statistics & Civil Records</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> Organizing huge civil datasets reliably while maintaining stability and consistency. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Merge Sort</div> <div class="algorithm-desc"> Stable, guaranteed O(N log N). </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">void</span> <span class="function">mergeSort</span>(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) <span class="bracket">{</span> <span class="keyword">if</span> (l < r) <span class="bracket">{</span> <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>; <span class="function">mergeSort</span>(arr, l, m); <span class="function">mergeSort</span>(arr, m + <span class="number">1</span>, r); <span class="function">merge</span>(arr, l, m, r); <span class="bracket">}</span> <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div> <div class="sdg-badge secondary">🎯 SDG 17: Partnerships for the Goals</div> </div> </div> <!-- IDEA 7 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">07</div> <h2 class="idea-title">E-Governance Smart Queue Management System</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> Manages citizen queues using priority handling to minimize wait times and improve service. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Max-Heap</div> <div class="algorithm-desc"> Highest priority citizen always served first. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">const int</span> N = <span class="number">5</span>; <span class="keyword">int</span> H[N + <span class="number">1</span>] = <span class="bracket">{</span><span class="number">0</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">7</span><span class="bracket">}</span>; <span class="keyword">void</span> <span class="function">maxHeapify</span>(<span class="keyword">int</span> H[], <span class="keyword">int</span> k, <span class="keyword">int</span> n) <span class="bracket">{</span> <span class="keyword">int</span> v = H[k]; <span class="keyword">int</span> heap = <span class="number">0</span>; <span class="keyword">while</span> (!heap && <span class="number">2</span> * k <= n) <span class="bracket">{</span> <span class="keyword">int</span> j = <span class="number">2</span> * k; <span class="keyword">if</span> (j < n && H[j] < H[j + <span class="number">1</span>]) j = j + <span class="number">1</span>; <span class="keyword">if</span> (v >= H[j]) heap = <span class="number">1</span>; <span class="keyword">else</span> <span class="bracket">{</span> H[k] = H[j]; k = j; <span class="bracket">}</span> <span class="bracket">}</span> H[k] = v; <span class="bracket">}</span> <span class="keyword">void</span> <span class="function">serveNextCitizen</span>(<span class="keyword">int</span> H[], <span class="keyword">int</span> *n) <span class="bracket">{</span> <span class="keyword">if</span> (*n < <span class="number">1</span>) <span class="bracket">{</span> <span class="function">printf</span>(<span class="string">"Queue is empty.\n"</span>); <span class="keyword">return</span>; <span class="bracket">}</span> <span class="function">printf</span>(<span class="string">"Now Serving Priority: %d\n"</span>, H[<span class="number">1</span>]); H[<span class="number">1</span>] = H[*n]; (*n)--; <span class="function">maxHeapify</span>(H, <span class="number">1</span>, *n); <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div> <div class="sdg-badge secondary">🎯 SDG 10: Reduced Inequalities</div> </div> </div> <!-- IDEA 8 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">08</div> <h2 class="idea-title">Public Library Services</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> Fast searching for books by ID using a sorted catalogue. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Binary Search</div> <div class="algorithm-desc"> O(log N) lookup time for sorted book catalogue. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span> <span class="keyword">int</span> low = <span class="number">0</span>, high = N - <span class="number">1</span>; <span class="keyword">while</span> (low <= high) <span class="bracket">{</span> <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>; <span class="keyword">if</span> (IDs[mid] == targetID) <span class="keyword">return</span> mid; <span class="keyword">else if</span> (IDs[mid] < targetID) low = mid + <span class="number">1</span>; <span class="keyword">else</span> high = mid - <span class="number">1</span>; <span class="bracket">}</span> <span class="keyword">return</span> -<span class="number">1</span>; <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 4: Quality Education</div> <div class="sdg-badge secondary">🎯 SDG 11: Sustainable Cities and Communities</div> </div> </div> <!-- IDEA 9 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">09</div> <h2 class="idea-title">ATM & Kiosk Maintenance Business</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> Minimizes total cable length or travel cost across ATM/Kiosk locations. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Prim's Algorithm</div> <div class="algorithm-desc"> For MST generation to minimize total connection cost. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">const int</span> V = <span class="number">4</span>; <span class="keyword">int</span> <span class="function">primMST</span>(<span class="keyword">int</span> adj[V][V]) <span class="bracket">{</span> <span class="keyword">int</span> key[V]; <span class="keyword">int</span> mstSet[V] = <span class="bracket">{</span><span class="number">0</span><span class="bracket">}</span>; <span class="keyword">int</span> totalCost = <span class="number">0</span>; <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < V; i++) key[i] = <span class="number">99999</span>; key[<span class="number">0</span>] = <span class="number">0</span>; <span class="keyword">for</span> (<span class="keyword">int</span> count = <span class="number">0</span>; count < V; count++) <span class="bracket">{</span> <span class="keyword">int</span> u = <span class="function">minKey</span>(key, mstSet); <span class="keyword">if</span> (u == -<span class="number">1</span>) <span class="keyword">break</span>; mstSet[u] = <span class="number">1</span>; totalCost += key[u]; <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v < V; v++) <span class="bracket">{</span> <span class="keyword">if</span> (adj[u][v] != <span class="number">0</span> && !mstSet[v] && adj[u][v] < key[v]) <span class="bracket">{</span> key[v] = adj[u][v]; <span class="bracket">}</span> <span class="bracket">}</span> <span class="bracket">}</span> <span class="keyword">return</span> totalCost; <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 9: Industry, Innovation, and Infrastructure</div> <div class="sdg-badge secondary">🎯 SDG 8: Decent Work and Economic Growth</div> </div> </div> <!-- IDEA 10 --> <div class="business-idea"> <div class="idea-header"> <div class="idea-number">10</div> <h2 class="idea-title">Agriculture and Irrigation Maintenance Services</h2> </div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">⭐</span> Explanation </h3> <div class="explanation-box"> Checks if water flow is possible between points in an irrigation network. </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">🧮</span> Algorithm Used </h3> <div class="algorithm-box"> <div class="algorithm-name">Union-Find (DSU)</div> <div class="algorithm-desc"> Efficiently tracks connectivity in irrigation networks. </div> </div> </div> <div class="divider"></div> <div class="section-block"> <h3 class="section-title"> <span class="section-icon">💻</span> C++ Code </h3> <div class="code-container"> <div class="code-header"> <span class="code-lang">C++</span> <button class="copy-btn" onclick="copyCode(this)">Copy Code</button> </div> <div class="code-block"> <pre><span class="keyword">const int</span> NODES = <span class="number">5</span>; <span class="keyword">int</span> parent[NODES]; <span class="keyword">int</span> <span class="function">find</span>(<span class="keyword">int</span> i) <span class="bracket">{</span> <span class="keyword">if</span> (parent[i] == i) <span class="keyword">return</span> i; parent[i] = <span class="function">find</span>(parent[i]); <span class="keyword">return</span> parent[i]; <span class="bracket">}</span> <span class="keyword">void</span> <span class="function">unite</span>(<span class="keyword">int</span> i, <span class="keyword">int</span> j) <span class="bracket">{</span> <span class="keyword">int</span> root_i = <span class="function">find</span>(i); <span class="keyword">int</span> root_j = <span class="function">find</span>(j); <span class="keyword">if</span> (root_i != root_j) parent[root_i] = root_j; <span class="bracket">}</span></pre> </div> </div> </div> <div class="sdg-badges"> <div class="sdg-badge">🎯 SDG 6: Clean Water and Sanitation</div> <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div> </div> </div> </div> </section> <footer class="footer"> <p>&copy; 2025 Sonika - Portfolio. All rights reserved.</p> </footer> </main> <script> function copyCode(button) { const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText; navigator.clipboard.writeText(codeBlock).then(() => { button.innerText = 'Copied!'; setTimeout(() => button.innerText = 'Copy Code', 2000); }); } (function () { const storedTheme = localStorage.getItem('theme'); let initialTheme; if (storedTheme === 'light' || storedTheme === 'dark') { initialTheme = storedTheme; } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { initialTheme = 'dark'; } else { initialTheme = 'light'; } document.body.setAttribute('data-theme', initialTheme); const themeToggle = document.getElementById('themeToggle'); if (themeToggle) { themeToggle.addEventListener('click', () => { const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; const next = current === 'light' ? 'dark' : 'light'; document.body.setAttribute('data-theme', next); localStorage.setItem('theme', next); }); } const backToTopButton = document.getElementById('backToTop'); if (backToTopButton) { window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); } }); backToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); }); } })(); </script>
-        
+                   <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">01</div>
+            <h2 class="idea-title">Land Record Digitization </h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              The system facilitates fast and accurate retrieval of land records from a massive digital database using a unique, sequential Property ID or similarly sorted index.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Binary Search</div>
+              <div class="algorithm-desc">
+                Binary Search gives O(log N) time for fast lookups.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span>
+    <span class="keyword">int</span> low = <span class="number">0</span>;
+    <span class="keyword">int</span> high = N - <span class="number">1</span>;
+
+    <span class="keyword">while</span> (low <= high) <span class="bracket">{</span>
+        <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;
+
+        <span class="keyword">if</span> (IDs[mid] == targetID) <span class="keyword">return</span> mid;
+        <span class="keyword">else if</span> (IDs[mid] < targetID) low = mid + <span class="number">1</span>;
+        <span class="keyword">else</span> high = mid - <span class="number">1</span>;
+    <span class="bracket">}</span>
+    <span class="keyword">return</span> -<span class="number">1</span>;
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
+            <div class="sdg-badge secondary">🎯 SDG 1: No Poverty</div>
+          </div>
+        </div>
+
+        <!-- IDEA 5 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">05</div>
+            <h2 class="idea-title">Food Quality & Contamination Detection System</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              The system checks if contaminant levels in a food sample exceed regulatory threshold limits.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Linear Search</div>
+              <div class="algorithm-desc">
+                List is small → O(N) is sufficient and simple.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">#include</span> <span class="string">&lt;string.h&gt;</span>
+
+<span class="keyword">const int</span> MAX_CONTAMINANTS = <span class="number">5</span>;
+
+<span class="keyword">typedef struct</span> <span class="bracket">{</span>
+    <span class="keyword">char</span> contaminant[<span class="number">20</span>]; 
+    <span class="keyword">double</span> maxPPM;
+<span class="bracket">}</span> Threshold;
+
+<span class="keyword">int</span> <span class="function">checkContamination</span>(<span class="keyword">const</span> Threshold limits[], 
+                          <span class="keyword">const char</span>* name, 
+                          <span class="keyword">double</span> samplePPM) <span class="bracket">{</span>
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < MAX_CONTAMINANTS; i++) <span class="bracket">{</span>
+        <span class="keyword">if</span> (<span class="function">strcmp</span>(limits[i].contaminant, name) == <span class="number">0</span>) <span class="bracket">{</span>
+            <span class="keyword">if</span> (samplePPM > limits[i].maxPPM) <span class="keyword">return</span> <span class="number">1</span>;
+            <span class="keyword">return</span> <span class="number">0</span>;
+        <span class="bracket">}</span>
+    <span class="bracket">}</span>
+    <span class="keyword">return</span> -<span class="number">1</span>;
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 3: Good Health and Well-being</div>
+            <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div>
+          </div>
+        </div>
+
+        <!-- IDEA 6 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">06</div>
+            <h2 class="idea-title">Vital Statistics & Civil Records</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              Organizing huge civil datasets reliably while maintaining stability and consistency.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Merge Sort</div>
+              <div class="algorithm-desc">
+                Stable, guaranteed O(N log N).
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">void</span> <span class="function">mergeSort</span>(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) <span class="bracket">{</span>
+    <span class="keyword">if</span> (l < r) <span class="bracket">{</span>
+        <span class="keyword">int</span> m = l + (r - l) / <span class="number">2</span>;
+        <span class="function">mergeSort</span>(arr, l, m);
+        <span class="function">mergeSort</span>(arr, m + <span class="number">1</span>, r);
+        <span class="function">merge</span>(arr, l, m, r);
+    <span class="bracket">}</span>
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
+            <div class="sdg-badge secondary">🎯 SDG 17: Partnerships for the Goals</div>
+          </div>
+        </div>
+
+        <!-- IDEA 7 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">07</div>
+            <h2 class="idea-title">E-Governance Smart Queue Management System</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              Manages citizen queues using priority handling to minimize wait times and improve service.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Max-Heap</div>
+              <div class="algorithm-desc">
+                Highest priority citizen always served first.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">const int</span> N = <span class="number">5</span>;
+<span class="keyword">int</span> H[N + <span class="number">1</span>] = <span class="bracket">{</span><span class="number">0</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">7</span><span class="bracket">}</span>;
+
+<span class="keyword">void</span> <span class="function">maxHeapify</span>(<span class="keyword">int</span> H[], <span class="keyword">int</span> k, <span class="keyword">int</span> n) <span class="bracket">{</span>
+    <span class="keyword">int</span> v = H[k];
+    <span class="keyword">int</span> heap = <span class="number">0</span>;
+
+    <span class="keyword">while</span> (!heap && <span class="number">2</span> * k <= n) <span class="bracket">{</span>
+        <span class="keyword">int</span> j = <span class="number">2</span> * k;
+        <span class="keyword">if</span> (j < n && H[j] < H[j + <span class="number">1</span>]) j = j + <span class="number">1</span>;
+
+        <span class="keyword">if</span> (v >= H[j]) heap = <span class="number">1</span>;
+        <span class="keyword">else</span> <span class="bracket">{</span>
+            H[k] = H[j];
+            k = j;
+        <span class="bracket">}</span>
+    <span class="bracket">}</span>
+    H[k] = v;
+<span class="bracket">}</span>
+
+<span class="keyword">void</span> <span class="function">serveNextCitizen</span>(<span class="keyword">int</span> H[], <span class="keyword">int</span> *n) <span class="bracket">{</span>
+    <span class="keyword">if</span> (*n < <span class="number">1</span>) <span class="bracket">{</span>
+        <span class="function">printf</span>(<span class="string">"Queue is empty.\n"</span>);
+        <span class="keyword">return</span>;
+    <span class="bracket">}</span>
+    
+    <span class="function">printf</span>(<span class="string">"Now Serving Priority: %d\n"</span>, H[<span class="number">1</span>]);
+    H[<span class="number">1</span>] = H[*n];
+    (*n)--;
+    <span class="function">maxHeapify</span>(H, <span class="number">1</span>, *n);
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
+            <div class="sdg-badge secondary">🎯 SDG 10: Reduced Inequalities</div>
+          </div>
+        </div>
+
+        <!-- IDEA 8 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">08</div>
+            <h2 class="idea-title">Public Library Services</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              Fast searching for books by ID using a sorted catalogue.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Binary Search</div>
+              <div class="algorithm-desc">
+                O(log N) lookup time for sorted book catalogue.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span>
+    <span class="keyword">int</span> low = <span class="number">0</span>, high = N - <span class="number">1</span>;
+
+    <span class="keyword">while</span> (low <= high) <span class="bracket">{</span>
+        <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;
+
+        <span class="keyword">if</span> (IDs[mid] == targetID) <span class="keyword">return</span> mid;
+        <span class="keyword">else if</span> (IDs[mid] < targetID) low = mid + <span class="number">1</span>;
+        <span class="keyword">else</span> high = mid - <span class="number">1</span>;
+    <span class="bracket">}</span>
+    <span class="keyword">return</span> -<span class="number">1</span>;
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 4: Quality Education</div>
+            <div class="sdg-badge secondary">🎯 SDG 11: Sustainable Cities and Communities</div>
+          </div>
+        </div>
+
+        <!-- IDEA 9 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">09</div>
+            <h2 class="idea-title">ATM & Kiosk Maintenance Business</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              Minimizes total cable length or travel cost across ATM/Kiosk locations.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Prim's Algorithm</div>
+              <div class="algorithm-desc">
+                For MST generation to minimize total connection cost.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">const int</span> V = <span class="number">4</span>;
+
+<span class="keyword">int</span> <span class="function">primMST</span>(<span class="keyword">int</span> adj[V][V]) <span class="bracket">{</span>
+    <span class="keyword">int</span> key[V];
+    <span class="keyword">int</span> mstSet[V] = <span class="bracket">{</span><span class="number">0</span><span class="bracket">}</span>;
+    <span class="keyword">int</span> totalCost = <span class="number">0</span>;
+
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < V; i++) key[i] = <span class="number">99999</span>;
+    key[<span class="number">0</span>] = <span class="number">0</span>;
+
+    <span class="keyword">for</span> (<span class="keyword">int</span> count = <span class="number">0</span>; count < V; count++) <span class="bracket">{</span>
+        <span class="keyword">int</span> u = <span class="function">minKey</span>(key, mstSet);
+        <span class="keyword">if</span> (u == -<span class="number">1</span>) <span class="keyword">break</span>;
+
+        mstSet[u] = <span class="number">1</span>;
+        totalCost += key[u];
+
+        <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v < V; v++) <span class="bracket">{</span>
+            <span class="keyword">if</span> (adj[u][v] != <span class="number">0</span> && !mstSet[v] && 
+                adj[u][v] < key[v]) <span class="bracket">{</span>
+                key[v] = adj[u][v];
+            <span class="bracket">}</span>
+        <span class="bracket">}</span>
+    <span class="bracket">}</span>
+    <span class="keyword">return</span> totalCost;
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 9: Industry, Innovation, and Infrastructure</div>
+            <div class="sdg-badge secondary">🎯 SDG 8: Decent Work and Economic Growth</div>
+          </div>
+        </div>
+
+        <!-- IDEA 10 -->
+        <div class="business-idea">
+          <div class="idea-header">
+            <div class="idea-number">10</div>
+            <h2 class="idea-title">Agriculture and Irrigation Maintenance Services</h2>
+          </div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">⭐</span>
+              Explanation
+            </h3>
+            <div class="explanation-box">
+              Checks if water flow is possible between points in an irrigation network.
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">🧮</span>
+              Algorithm Used
+            </h3>
+            <div class="algorithm-box">
+              <div class="algorithm-name">Union-Find (DSU)</div>
+              <div class="algorithm-desc">
+                Efficiently tracks connectivity in irrigation networks.
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="section-block">
+            <h3 class="section-title">
+              <span class="section-icon">💻</span>
+              C++ Code
+            </h3>
+            <div class="code-container">
+              <div class="code-header">
+                <span class="code-lang">C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+              </div>
+              <div class="code-block">
+<pre><span class="keyword">const int</span> NODES = <span class="number">5</span>;
+<span class="keyword">int</span> parent[NODES];
+
+<span class="keyword">int</span> <span class="function">find</span>(<span class="keyword">int</span> i) <span class="bracket">{</span>
+    <span class="keyword">if</span> (parent[i] == i) <span class="keyword">return</span> i;
+    parent[i] = <span class="function">find</span>(parent[i]);
+    <span class="keyword">return</span> parent[i];
+<span class="bracket">}</span>
+
+<span class="keyword">void</span> <span class="function">unite</span>(<span class="keyword">int</span> i, <span class="keyword">int</span> j) <span class="bracket">{</span>
+    <span class="keyword">int</span> root_i = <span class="function">find</span>(i);
+    <span class="keyword">int</span> root_j = <span class="function">find</span>(j);
+
+    <span class="keyword">if</span> (root_i != root_j) parent[root_i] = root_j;
+<span class="bracket">}</span></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="sdg-badges">
+            <div class="sdg-badge">🎯 SDG 6: Clean Water and Sanitation</div>
+            <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Sonika - Portfolio. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    function copyCode(button) {
+      const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        button.innerText = 'Copied!';
+        setTimeout(() => button.innerText = 'Copy Code', 2000);
+      });
+    }
+
+    (function () {
+      const storedTheme = localStorage.getItem('theme');
+      let initialTheme;
+
+      if (storedTheme === 'light' || storedTheme === 'dark') {
+        initialTheme = storedTheme;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        initialTheme = 'dark';
+      } else {
+        initialTheme = 'light';
+      }
+
+      document.body.setAttribute('data-theme', initialTheme);
+
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          const next = current === 'light' ? 'dark' : 'light';
+          document.body.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      }
+
+      const backToTopButton = document.getElementById('backToTop');
+      if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
+          }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
