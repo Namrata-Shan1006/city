@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sonika - Business Ideas | Bellasagaram</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* ===== keep your original styles exactly (copied from your file) ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --primary: #6366f1;
-      --secondary: #ec4899;
-      --accent: #f59e0b;
-      --success: #10b981;
-      --info: #06b6d4;
-      --bg-light: #faf5ff;
-      --bg-card: #ffffff;
-      --text-dark: #1e1b4b;
-      --text-muted: #6b7280;
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --primary: #6366f1; --secondary: #ec4899; --accent: #f59e0b; --success: #10b981;
+      --info: #06b6d4; --bg-light: #faf5ff; --bg-card: #ffffff; --text-dark: #1e1b4b;
+      --text-muted: #6b7280; --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
       --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
@@ -30,481 +19,82 @@
       --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
       --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.2);
     }
-
     body[data-theme="dark"] {
-      --primary: #818cf8;
-      --secondary: #f472b6;
-      --accent: #fbbf24;
-      --bg-light: #0f0a1f;
-      --bg-card: #1a1333;
-      --text-dark: #f3f4f6;
-      --text-muted: #9ca3af;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+      --primary: #818cf8; --secondary: #f472b6; --accent: #fbbf24;
+      --bg-light: #0f0a1f; --bg-card: #1a1333; --text-dark: #f3f4f6; --text-muted: #9ca3af;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3); --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
       --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
+    body { font-family: "Poppins", sans-serif; background: var(--bg-light); color: var(--text-dark); transition: all 0.3s ease; overflow-x: hidden; }
+    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4; }
+    .bg-animation .shape { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 20s infinite ease-in-out; }
+    .shape1 { width: 500px; height: 500px; background: var(--gradient-3); top: -200px; left: -200px; }
+    .shape2 { width: 400px; height: 400px; background: var(--gradient-3); bottom: -150px; right: -150px; animation-delay: 5s; }
+    .shape3 { width: 350px; height: 350px; background: var(--gradient-1); top: 50%; right: 10%; animation-delay: 10s; }
+    @keyframes float { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(50px,-50px) scale(1.1);} 66%{transform:translate(-30px,30px) scale(0.9);} }
+    .header { position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 6%; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); box-shadow: var(--shadow-sm); z-index: 1000; }
+    body[data-theme="dark"] .header { background: rgba(26,19,51,0.8); }
+    .navbar { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.8rem; font-weight:800; background:var(--gradient-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; cursor:pointer; }
+    .nav-center { display:flex; align-items:center; gap:2rem; }
+    .theme-toggle { background:var(--bg-card); border:2px solid var(--primary); padding:0.5rem; border-radius:50%; cursor:pointer; font-size:1.3rem; width:45px; height:45px; display:flex; align-items:center; justify-content:center; transition:all .3s; }
+    .theme-toggle:hover { transform: rotate(180deg); }
+    .sun { display:none; } .moon { display:inline; } body[data-theme="dark"] .sun{display:inline;} body[data-theme="dark"] .moon{display:none;}
+    .nav-links { display:flex; list-style:none; gap:0.5rem; }
+    .nav-links a { text-decoration:none; color:var(--text-dark); padding:0.6rem 1.2rem; border-radius:12px; font-weight:600; font-size:0.95rem; transition:all .3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: rgba(99,102,241,0.1); }
+    main { padding-top:100px; }
+    .hero-section { padding:6rem 6% 4rem; background: var(--gradient-3); position:relative; overflow:hidden; }
+    .hero-section::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.3; }
+    .hero-content { text-align:center; position:relative; z-index:1; }
+    .hero-title { font-family:"Playfair Display", serif; font-size:4rem; font-weight:800; color:white; margin-bottom:1rem; text-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .hero-subtitle { font-size:1.3rem; color:rgba(255,255,255,0.95); margin-bottom:2rem; }
+    .hero-meta { display:inline-block; background:rgba(255,255,255,0.2); backdrop-filter:blur(10px); padding:1rem 2rem; border-radius:20px; border:2px solid rgba(255,255,255,0.3); color:white; font-weight:600; }
+    .content-section { padding:4rem 6%; max-width:1600px; margin:0 auto; }
+    .ideas-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2.5rem; }
+    .business-idea { background:var(--bg-card); border-radius:24px; padding:2.5rem; box-shadow:var(--shadow-lg); border-left:6px solid #4facfe; transition:all 0.4s ease; position:relative; overflow:hidden; }
+    .business-idea::before { content:''; position:absolute; top:0; right:0; width:200px; height:200px; opacity:0.05; border-radius:50%; transform:translate(50%,-50%); background:var(--gradient-3); }
+    .business-idea:hover { transform: translateY(-8px); box-shadow:0 30px 70px rgba(79,172,254,0.3); }
+    .idea-header { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
+    .idea-number { font-size:2.5rem; font-weight:800; background:var(--gradient-3); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; min-width:60px; }
+    .idea-title { font-size:1.5rem; font-weight:700; color:var(--text-dark); flex:1; line-height:1.3; }
+    .sdg-badges { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+    .sdg-badge { display:inline-block; background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:700; }
+    .sdg-badge.secondary { background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+    .section-block { margin-bottom:1.5rem; }
+    .section-title { display:flex; align-items:center; gap:0.8rem; font-size:1.2rem; font-weight:700; margin-bottom:0.8rem; color:var(--primary); }
+    .section-icon { font-size:1.5rem; }
+    .explanation-box { background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); padding:1.2rem; border-radius:12px; border-left:4px solid var(--info); color:var(--text-muted); line-height:1.7; font-size:0.95rem; }
+    .algorithm-box { background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); padding:1.2rem; border-radius:12px; border-left:4px solid var(--info); }
+    .algorithm-name { font-size:1.1rem; font-weight:700; color:var(--info); margin-bottom:0.6rem; }
+    .algorithm-desc { color:var(--text-muted); line-height:1.7; font-size:0.95rem; }
+    .code-container { background:#1e1e1e; border-radius:12px; padding:1.5rem; position:relative; overflow:hidden; }
+    .code-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .code-lang { color:#4facfe; font-weight:700; font-size:1rem; font-family:"Fira Code", monospace; }
+    .copy-btn { background:var(--gradient-3); color:white; border:none; padding:0.4rem 1rem; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s ease; font-size:0.85rem; }
+    .copy-btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(79,172,254,0.4); }
+    .code-block { font-family:"Fira Code", monospace; font-size:0.85rem; line-height:1.5; color:#d4d4d4; overflow-x:auto; }
+    .code-block pre { margin:0; white-space:pre; }
+    .keyword { color:#569cd6; } .function { color:#dcdcaa; } .number { color:#b5cea8; } .comment { color:#6a9955; font-style:italic; } .operator { color:#d4d4d4; } .bracket { color:#ffd700; } .string { color:#ce9178; }
+    .divider { height:2px; background:var(--gradient-3); border-radius:2px; margin:1.5rem 0; opacity:0.2; }
+    .footer { padding:2rem 6%; text-align:center; color:var(--text-muted); border-top:1px solid rgba(99,102,241,0.1); margin-top:4rem; }
+    .back-to-top { position:fixed; bottom:2rem; right:2rem; background:var(--gradient-3); color:white; border:none; border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; box-shadow:var(--shadow-lg); display:none; align-items:center; justify-content:center; transition:all 0.3s ease; z-index:999; }
+    .back-to-top.show { display:flex; } .back-to-top:hover { transform:translateY(-5px) scale(1.1); }
+    @media (max-width:1200px) { .ideas-grid { grid-template-columns:1fr; } }
+    @media (max-width:768px) { .nav-links { display:none; } .hero-title { font-size:2.5rem; } .idea-header { flex-direction:column; align-items:flex-start; } .code-block { font-size:0.75rem; } }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      transition: all 0.3s ease;
-      overflow-x: hidden;
-    }
-
-    .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    .bg-animation .shape {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: float 20s infinite ease-in-out;
-    }
-
-    .shape1 {
-      width: 500px;
-      height: 500px;
-      background: var(--gradient-3);
-      top: -200px;
-      left: -200px;
-    }
-
-    .shape2 {
-      width: 400px;
-      height: 400px;
-      background: var(--gradient-3);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 5s;
-    }
-
-    .shape3 {
-      width: 350px;
-      height: 350px;
-      background: var(--gradient-1);
-      top: 50%;
-      right: 10%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(50px, -50px) scale(1.1); }
-      66% { transform: translate(-30px, 30px) scale(0.9); }
-    }
-
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem 6%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-sm);
-      z-index: 1000;
-    }
-
-    body[data-theme="dark"] .header {
-      background: rgba(26, 19, 51, 0.8);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: var(--gradient-1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      cursor: pointer;
-    }
-
-    .nav-center {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .theme-toggle {
-      background: var(--bg-card);
-      border: 2px solid var(--primary);
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.3rem;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      transform: rotate(180deg);
-    }
-
-    .sun { display: none; }
-    .moon { display: inline; }
-    body[data-theme="dark"] .sun { display: inline; }
-    body[data-theme="dark"] .moon { display: none; }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 0.5rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      padding: 0.6rem 1.2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      background: rgba(99, 102, 241, 0.1);
-    }
-
-    main {
-      padding-top: 100px;
-    }
-
-    .hero-section {
-      padding: 6rem 6% 4rem;
-      background: var(--gradient-3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
-    }
-
-    .hero-content {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 4rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2rem;
-    }
-
-    .hero-meta {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      border-radius: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      font-weight: 600;
-    }
-
-    .content-section {
-      padding: 4rem 6%;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .ideas-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-
-    .business-idea {
-      background: var(--bg-card);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-lg);
-      border-left: 6px solid #4facfe;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .business-idea::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
-      opacity: 0.05;
-      border-radius: 50%;
-      transform: translate(50%, -50%);
-      background: var(--gradient-3);
-    }
-
-    .business-idea:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 70px rgba(79, 172, 254, 0.3);
-    }
-
-    .idea-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .idea-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: var(--gradient-3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      min-width: 60px;
-    }
-
-    .idea-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      flex: 1;
-      line-height: 1.3;
-    }
-
-    .sdg-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .sdg-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .sdg-badge.secondary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .section-block {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    .section-icon {
-      font-size: 1.5rem;
-    }
-
-    .explanation-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .algorithm-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-    }
-
-    .algorithm-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--info);
-      margin-bottom: 0.6rem;
-    }
-
-    .algorithm-desc {
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .code-container {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .code-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .code-lang {
-      color: #4facfe;
-      font-weight: 700;
-      font-size: 1rem;
-      font-family: "Fira Code", monospace;
-    }
-
-    .copy-btn {
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 0.85rem;
-    }
-
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
-    }
-
-    .code-block {
-      font-family: "Fira Code", monospace;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #d4d4d4;
-      overflow-x: auto;
-    }
-
-    .code-block pre {
-      margin: 0;
-      white-space: pre;
-    }
-
-    .keyword { color: #569cd6; }
-    .function { color: #dcdcaa; }
-    .number { color: #b5cea8; }
-    .comment { color: #6a9955; font-style: italic; }
-    .operator { color: #d4d4d4; }
-    .bracket { color: #ffd700; }
-    .string { color: #ce9178; }
-
-    .divider {
-      height: 2px;
-      background: var(--gradient-3);
-      border-radius: 2px;
-      margin: 1.5rem 0;
-      opacity: 0.2;
-    }
-
-    .footer {
-      padding: 2rem 6%;
-      text-align: center;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
-      margin-top: 4rem;
-    }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: var(--shadow-lg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-
-    .back-to-top.show {
-      display: flex;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-5px) scale(1.1);
-    }
-
-    @media (max-width: 1200px) {
-      .ideas-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .idea-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .code-block {
-        font-size: 0.75rem;
-      }
-    }
+    /* ===== new modal styles (kept minimal & consistent with design) ===== */
+    .modal-backdrop { position:fixed; inset:0; background:rgba(13,12,30,0.6); display:none; align-items:center; justify-content:center; z-index:2000; padding:2rem; }
+    .modal { background:var(--bg-card); max-width:1100px; width:100%; border-radius:12px; padding:1rem 1.25rem; box-shadow:var(--shadow-lg); max-height:90vh; overflow:auto; }
+    .modal .modal-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .modal .modal-body { padding-top:0.8rem; }
+    .btn-outline { background:transparent; border:2px solid var(--primary); color:var(--primary); padding:.45rem .85rem; border-radius:10px; cursor:pointer; font-weight:700; }
+    .btn-primary { background:var(--gradient-3); color:#fff; border:none; padding:.5rem .95rem; border-radius:10px; cursor:pointer; font-weight:700; }
+    table.csv-preview { width:100%; border-collapse:collapse; font-family: "Fira Code", monospace; font-size:0.9rem; }
+    table.csv-preview th, table.csv-preview td { border:1px solid rgba(0,0,0,0.06); padding:.35rem .5rem; text-align:left; }
+    .modal-pre { background:#0f1724; color:#e6eef8; padding:1rem; border-radius:8px; overflow:auto; font-family:"Fira Code", monospace; font-size:0.85rem; white-space:pre; }
   </style>
 </head>
-
 <body>
   <div class="bg-animation">
     <div class="shape shape1"></div>
@@ -540,16 +130,17 @@
       <div class="hero-content">
         <h1 class="hero-title">Sonika</h1>
         <p class="hero-subtitle">Business Ideas & Algorithm Solutions</p>
-        <div class="hero-meta">
-          📋 Roll: [Roll Number] | 🎓 USN: [USN]
-        </div>
+        <div class="hero-meta">📋 Roll: [Roll Number] | 🎓 USN: [USN]</div>
       </div>
     </section>
 
     <section class="content-section">
       <div class="ideas-grid">
 
-        <!-- IDEA 1 -->
+        <!-- note: each idea preserved exactly, with two new buttons added inside code-section area:
+             "View C++ Code" and "View Dataset" which open modals. -->
+
+        <!-- IDEA 01 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">01</div>
@@ -557,10 +148,7 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
             <div class="explanation-box">
               The system handles student application ranking based on merit scores, assigns admissions, and then efficiently allocates limited hostel rooms based on student priority (rank, distance, or preference) to maximize resource utilization.
             </div>
@@ -569,29 +157,25 @@
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
             <div class="algorithm-box">
               <div class="algorithm-name">Quick Sort / Max-Heap</div>
-              <div class="algorithm-desc">
-                The system uses Quick Sort (O(N log N) average) for efficient ranking of applicants. The subsequent hostel allocation is managed by a Max-Heap (O(log N)) to consistently retrieve the highest-priority student for room assignment.
-              </div>
+              <div class="algorithm-desc">The system uses Quick Sort (O(N log N) average) for efficient ranking of applicants. The subsequent hostel allocation is managed by a Max-Heap (O(log N)) to consistently retrieve the highest-priority student for room assignment.</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-01')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-01')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">void</span> <span class="function">quickSort</span>(<span class="keyword">int</span> H[], <span class="keyword">int</span> low, <span class="keyword">int</span> high) <span class="bracket">{</span>
@@ -611,7 +195,7 @@
           </div>
         </div>
 
-        <!-- IDEA 2 -->
+        <!-- IDEA 02 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">02</div>
@@ -619,10 +203,7 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
             <div class="explanation-box">
               The system tracks the inventory, location, species, and health status of individual trees. It must support near-instantaneous lookups and updates to data using a unique Tree ID for maintenance crews.
             </div>
@@ -631,29 +212,25 @@
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
             <div class="algorithm-box">
               <div class="algorithm-name">Hashing (Direct Address Table)</div>
-              <div class="algorithm-desc">
-                Hashing provides O(1) average time complexity for storing, retrieving, and updating tree data based on a unique Tree ID, essential for fast field operations and inventory management.
-              </div>
+              <div class="algorithm-desc">Hashing provides O(1) average time complexity for storing, retrieving, and updating tree data based on a unique Tree ID, essential for fast field operations and inventory management.</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-02')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-02')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">const int</span> MAX_TREES = <span class="number">100</span>;
@@ -682,7 +259,7 @@
           </div>
         </div>
 
-        <!-- IDEA 3 -->
+        <!-- IDEA 03 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">03</div>
@@ -690,10 +267,7 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
             <div class="explanation-box">
               The system finds the shortest route sequence between a starting point and multiple Points of Interest (POIs), calculating the minimum travel time or distance to optimize the tourist's itinerary.
             </div>
@@ -702,29 +276,25 @@
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
             <div class="algorithm-box">
               <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                Dijkstra efficiently finds the Single-Source Shortest Path (O(E + V log V)) with non-negative weights.
-              </div>
+              <div class="algorithm-desc">Dijkstra efficiently finds the Single-Source Shortest Path (O(E + V log V)) with non-negative weights.</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-03')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-03')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">const int</span> V = <span class="number">4</span>;
@@ -757,18 +327,15 @@
           </div>
         </div>
 
-        <!-- IDEA 4 -->
-                   <div class="business-idea">
+        <!-- IDEA 04 -->
+        <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">04</div>
-            <h2 class="idea-title">Land Record Digitization </h2>
+            <h2 class="idea-title">Land Record Digitization</h2>
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
             <div class="explanation-box">
               The system facilitates fast and accurate retrieval of land records from a massive digital database using a unique, sequential Property ID or similarly sorted index.
             </div>
@@ -777,29 +344,25 @@
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
             <div class="algorithm-box">
               <div class="algorithm-name">Binary Search</div>
-              <div class="algorithm-desc">
-                Binary Search gives O(log N) time for fast lookups.
-              </div>
+              <div class="algorithm-desc">Binary Search gives O(log N) time for fast lookups.</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-04')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-04')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span>
@@ -825,7 +388,7 @@
           </div>
         </div>
 
-        <!-- IDEA 5 -->
+        <!-- IDEA 05 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">05</div>
@@ -833,10 +396,7 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
             <div class="explanation-box">
               The system checks if contaminant levels in a food sample exceed regulatory threshold limits.
             </div>
@@ -845,29 +405,25 @@
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
             <div class="algorithm-box">
               <div class="algorithm-name">Linear Search</div>
-              <div class="algorithm-desc">
-                List is small → O(N) is sufficient and simple.
-              </div>
+              <div class="algorithm-desc">List is small → O(N) is sufficient and simple.</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-05')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-05')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">#include</span> <span class="string">&lt;string.h&gt;</span>
@@ -900,7 +456,7 @@
           </div>
         </div>
 
-        <!-- IDEA 6 -->
+        <!-- IDEA 06 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">06</div>
@@ -908,41 +464,29 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Organizing huge civil datasets reliably while maintaining stability and consistency.
-            </div>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
+            <div class="explanation-box">Organizing huge civil datasets reliably while maintaining stability and consistency.</div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Merge Sort</div>
-              <div class="algorithm-desc">
-                Stable, guaranteed O(N log N).
-              </div>
-            </div>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
+            <div class="algorithm-box"><div class="algorithm-name">Merge Sort</div><div class="algorithm-desc">Stable, guaranteed O(N log N).</div></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-06')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-06')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">void</span> <span class="function">mergeSort</span>(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) <span class="bracket">{</span>
@@ -963,7 +507,7 @@
           </div>
         </div>
 
-        <!-- IDEA 7 -->
+        <!-- IDEA 07 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">07</div>
@@ -971,41 +515,29 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Manages citizen queues using priority handling to minimize wait times and improve service.
-            </div>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
+            <div class="explanation-box">Manages citizen queues using priority handling to minimize wait times and improve service.</div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Max-Heap</div>
-              <div class="algorithm-desc">
-                Highest priority citizen always served first.
-              </div>
-            </div>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
+            <div class="algorithm-box"><div class="algorithm-name">Max-Heap</div><div class="algorithm-desc">Highest priority citizen always served first.</div></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-07')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-07')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">const int</span> N = <span class="number">5</span>;
@@ -1049,7 +581,7 @@
           </div>
         </div>
 
-        <!-- IDEA 8 -->
+        <!-- IDEA 08 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">08</div>
@@ -1057,41 +589,29 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Fast searching for books by ID using a sorted catalogue.
-            </div>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
+            <div class="explanation-box">Fast searching for books by ID using a sorted catalogue.</div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Binary Search</div>
-              <div class="algorithm-desc">
-                O(log N) lookup time for sorted book catalogue.
-              </div>
-            </div>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
+            <div class="algorithm-box"><div class="algorithm-name">Binary Search</div><div class="algorithm-desc">O(log N) lookup time for sorted book catalogue.</div></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-08')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-08')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">int</span> <span class="function">binarySearch</span>(<span class="keyword">const int</span> IDs[], <span class="keyword">int</span> N, <span class="keyword">int</span> targetID) <span class="bracket">{</span>
@@ -1116,7 +636,7 @@
           </div>
         </div>
 
-        <!-- IDEA 9 -->
+        <!-- IDEA 09 -->
         <div class="business-idea">
           <div class="idea-header">
             <div class="idea-number">09</div>
@@ -1124,41 +644,29 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Minimizes total cable length or travel cost across ATM/Kiosk locations.
-            </div>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
+            <div class="explanation-box">Minimizes total cable length or travel cost across ATM/Kiosk locations.</div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Prim's Algorithm</div>
-              <div class="algorithm-desc">
-                For MST generation to minimize total connection cost.
-              </div>
-            </div>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
+            <div class="algorithm-box"><div class="algorithm-name">Prim's Algorithm</div><div class="algorithm-desc">For MST generation to minimize total connection cost.</div></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-09')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-09')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">const int</span> V = <span class="number">4</span>;
@@ -1205,41 +713,29 @@
           </div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Checks if water flow is possible between points in an irrigation network.
-            </div>
+            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
+            <div class="explanation-box">Checks if water flow is possible between points in an irrigation network.</div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Union-Find (DSU)</div>
-              <div class="algorithm-desc">
-                Efficiently tracks connectivity in irrigation networks.
-              </div>
-            </div>
+            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
+            <div class="algorithm-box"><div class="algorithm-name">Union-Find (DSU)</div><div class="algorithm-desc">Efficiently tracks connectivity in irrigation networks.</div></div>
           </div>
 
           <div class="divider"></div>
 
           <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
+            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
             <div class="code-container">
               <div class="code-header">
                 <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                <div>
+                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                  <button class="btn-primary" onclick="openModal('modal-code-10')">View C++ Code</button>
+                  <button class="btn-outline" onclick="openModal('modal-csv-10')">View Dataset</button>
+                </div>
               </div>
               <div class="code-block">
 <pre><span class="keyword">const int</span> NODES = <span class="number">5</span>;
@@ -1275,19 +771,610 @@
     </footer>
   </main>
 
+  <!-- ====== Modals for Code & CSV previews (10 ideas) ====== -->
+  <!-- Modal structure is duplicated per idea: modal-code-XX and modal-csv-XX -->
+  <!-- Replace CSV href with your GitHub raw link if you want public hosting -->
+  <div id="modal-backdrop" class="modal-backdrop" onclick="closeModal(event)"></div>
+
+  <!-- Idea 01 code modal -->
+  <div id="modal-code-01" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 01 — University Admission & Hostel Allocation (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('01_university.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-01')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 01_university.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// QuickSort for applicants by score and a simple allocation using priority queue (max-heap)
+struct Applicant { int id; string name; double score; string pref; int distance; };
+int partition(vector&lt;Applicant&gt;&amp; A,int l,int r){
+    double pivot=A[r].score; int i=l-1;
+    for(int j=l;j<r;j++){ if(A[j].score>=pivot){ i++; swap(A[i],A[j]); } }
+    swap(A[i+1],A[r]); return i+1;
+}
+void quickSort(vector&lt;Applicant&gt;&amp; A,int l,int r){ if(l<r){ int p=partition(A,l,r); quickSort(A,l,p-1); quickSort(A,p+1,r);} }
+int main(){
+    vector&lt;Applicant&gt; apps={{1001,"Alice",92.5,"HostelA",12},{1002,"Bob",88.0,"HostelB",45},{1003,"Chitra",95.0,"HostelA",5}};
+    quickSort(apps,0,apps.size()-1);
+    cout<<"Sorted by score (desc):\\n";
+    for(auto &a:apps) cout<<a.id<<' '<<a.name<<' '<<a.score<<'\\n';
+    // allocate using max-heap by score
+    priority_queue&lt;pair&lt;double,int&gt;&gt; pq;
+    for(auto &a:apps) pq.push({a.score,a.id});
+    cout<<"Allocation order (by priority):\\n";
+    while(!pq.empty()){ auto p=pq.top(); pq.pop(); cout<<p.second<<' '<<p.first<<'\\n'; }
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <!-- Idea 01 CSV modal -->
+  <div id="modal-csv-01" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 01_university_admission.csv</h3>
+      <div>
+        <!-- Example: replace href with GitHub raw link you provided -->
+        <a class="btn-outline" id="dl-01" href="01_university_admission.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-01')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>applicant_id</th><th>name</th><th>score</th><th>preference</th><th>distance_km</th></tr></thead>
+        <tbody>
+          <tr><td>1001</td><td>Alice</td><td>92.5</td><td>HostelA</td><td>12</td></tr>
+          <tr><td>1002</td><td>Bob</td><td>88.0</td><td>HostelB</td><td>45</td></tr>
+          <tr><td>1003</td><td>Chitra</td><td>95.0</td><td>HostelA</td><td>5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Repeat modals for ideas 02..10 -->
+  <!-- Idea 02 code modal -->
+  <div id="modal-code-02" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 02 — Urban Forest (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('02_urban_forest.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-02')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 02_urban_forest.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Direct address table (map) for tree health lookup by integer TreeID
+int main(){
+    unordered_map&lt;int,string&gt; treeInfo;
+    treeInfo[201]="Neem|Good|2025-11-10";
+    treeInfo[202]="Mango|Fair|2025-10-05";
+    int query=201;
+    if(treeInfo.count(query)) cout<<"Tree "<<query<<": "<<treeInfo[query]<<'\\n';
+    else cout<<"Tree not found\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-02" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 02_urban_forest.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-02" href="02_urban_forest.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-02')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>tree_id</th><th>species</th><th>latitude</th><th>longitude</th><th>health_status</th></tr></thead>
+        <tbody>
+          <tr><td>201</td><td>Neem</td><td>12.9716</td><td>77.5946</td><td>Good</td></tr>
+          <tr><td>202</td><td>Mango</td><td>12.9750</td><td>77.5900</td><td>Fair</td></tr>
+          <tr><td>203</td><td>Jackfruit</td><td>12.9800</td><td>77.6000</td><td>Poor</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 03 -->
+  <div id="modal-code-03" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 03 — Smart Tourism (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('03_smart_tourism.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-03')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 03_smart_tourism.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Dijkstra on adjacency matrix example (small)
+const int V=4; const int INF=1e9;
+int minDistance(vector&lt;int&gt;&amp; dist, vector&lt;bool&gt;&amp; spt){
+    int mn=INF,idx=-1; for(int i=0;i<V;i++) if(!spt[i] && dist[i]<mn){mn=dist[i];idx=i;} return idx;
+}
+void dijkstra(int src, int adj[V][V], int dist[V]){
+    vector&lt;bool&gt; spt(V,false);
+    for(int i=0;i<V;i++) dist[i]=INF;
+    dist[src]=0;
+    for(int count=0;count<V-1;count++){
+        int u=minDistance(*(new vector&lt;int&gt;(dist,dist+V)), spt);
+        if(u==-1) break;
+        spt[u]=true;
+        for(int v=0;v<V;v++){
+            if(!spt[v] && adj[u][v] && dist[u]+adj[u][v] < dist[v]) dist[v]=dist[u]+adj[u][v];
+        }
+    }
+}
+int main(){
+    int adj[V][V] = {{0,10,0,30},{10,0,50,0},{0,50,0,20},{30,0,20,0}};
+    int dist[V];
+    dijkstra(0,adj,dist);
+    cout<<"Distances from source:\\n";
+    for(int i=0;i<V;i++) cout<<i<<" -> "<<dist[i]<<"\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-03" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 03_smart_tourism.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-03" href="03_smart_tourism.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-03')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>poi_id</th><th>name</th><th>lat</th><th>lon</th><th>visit_time_min</th></tr></thead>
+        <tbody>
+          <tr><td>301</td><td>Beach Promenade</td><td>12.9500</td><td>77.6000</td><td>90</td></tr>
+          <tr><td>302</td><td>Lighthouse</td><td>12.9550</td><td>77.6050</td><td>40</td></tr>
+          <tr><td>303</td><td>Aquarium</td><td>12.9600</td><td>77.6100</td><td>80</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 04 -->
+  <div id="modal-code-04" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 04 — Land Record Digitization (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('04_land_records.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-04')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 04_land_records.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Binary search on sorted property IDs
+int binarySearch(const vector&lt;int&gt;&amp; IDs, int target){
+    int low=0, high=IDs.size()-1;
+    while(low<=high){
+        int mid = low + (high-low)/2;
+        if(IDs[mid]==target) return mid;
+        else if(IDs[mid]<target) low = mid+1;
+        else high = mid-1;
+    }
+    return -1;
+}
+int main(){
+    vector&lt;int&gt; ids = {4001,4002,4003,4004};
+    int t=4003;
+    int pos=binarySearch(ids,t);
+    if(pos!=-1) cout<<"Found at index "<<pos<<"\\n"; else cout<<"Not found\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-04" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 04_land_records.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-04" href="04_land_records.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-04')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>property_id</th><th>owner_name</th><th>area_sqm</th><th>location</th><th>record_year</th></tr></thead>
+        <tbody>
+          <tr><td>4001</td><td>Ramesh</td><td>120.5</td><td>Bellapuram</td><td>2019</td></tr>
+          <tr><td>4002</td><td>Sudha</td><td>85.0</td><td>Bellasagaram</td><td>2021</td></tr>
+          <tr><td>4003</td><td>Ajay</td><td>200.0</td><td>Bellapuram</td><td>2018</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 05 -->
+  <div id="modal-code-05" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 05 — Food Quality (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('05_food_quality.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-05')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 05_food_quality.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Linear search across small list of thresholds
+struct Threshold{ string name; double maxPPM; };
+int checkContamination(const vector&lt;Threshold&gt;&amp; limits, const string&amp; name, double ppm){
+    for(size_t i=0;i<limits.size();++i){
+        if(limits[i].name==name) return ppm>limits[i].maxPPM ? 1 : 0;
+    }
+    return -1;
+}
+int main(){
+    vector&lt;Threshold&gt; limits={{"Lead",0.1},{"Pesticide",0.05},{"Bacteria",100}};
+    cout<<checkContamination(limits,"Bacteria",120)<<" (1 means contaminated)\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-05" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 05_food_quality.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-05" href="05_food_quality.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-05')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>sample_id</th><th>contaminant</th><th>measured_ppm</th><th>threshold_ppm</th><th>pass</th></tr></thead>
+        <tbody>
+          <tr><td>5001</td><td>Lead</td><td>0.05</td><td>0.1</td><td>Yes</td></tr>
+          <tr><td>5002</td><td>Bacteria</td><td>120</td><td>100</td><td>No</td></tr>
+          <tr><td>5003</td><td>Pesticide</td><td>0.02</td><td>0.05</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 06 -->
+  <div id="modal-code-06" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 06 — Vital Statistics (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('06_vital_stats.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-06')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 06_vital_stats.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// MergeSort for stable sorting of records by name (stable)
+void merge(vector&lt;pair&lt;string,int&gt;&gt;&amp; a,int l,int m,int r){
+    vector&lt;pair&lt;string,int&gt;&gt; L(a.begin()+l,a.begin()+m+1), R(a.begin()+m+1,a.begin()+r+1);
+    int i=0,j=0,k=l;
+    while(i&lt;L.size() && j&lt;R.size()){
+        if(L[i].first <= R[j].first) a[k++]=L[i++]; else a[k++]=R[j++];
+    }
+    while(i&lt;L.size()) a[k++]=L[i++];
+    while(j&lt;R.size()) a[k++]=R[j++];
+}
+void mergeSort(vector&lt;pair&lt;string,int&gt;&gt;&amp; a,int l,int r){
+    if(l&lt;r){ int m=(l+r)/2; mergeSort(a,l,m); mergeSort(a,m+1,r); merge(a,l,m,r); }
+}
+int main(){
+    vector&lt;pair&lt;string,int&gt;&gt; recs={{"Anita",6001},{"Sunil",6002},{"Kavya",6003}};
+    mergeSort(recs,0,recs.size()-1);
+    for(auto &p:recs) cout<<p.first<<" "<<p.second<<"\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-06" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 06_vital_stats.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-06" href="06_vital_stats.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-06')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>record_id</th><th>name</th><th>dob</th><th>gender</th><th>census_area</th></tr></thead>
+        <tbody>
+          <tr><td>6001</td><td>Anita</td><td>1990-05-12</td><td>F</td><td>Bellapuram</td></tr>
+          <tr><td>6002</td><td>Sunil</td><td>1985-03-22</td><td>M</td><td>Bellasagaram</td></tr>
+          <tr><td>6003</td><td>Kavya</td><td>2000-11-01</td><td>F</td><td>HarborTown</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 07 -->
+  <div id="modal-code-07" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 07 — Smart Queue (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('07_smart_queue.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-07')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 07_smart_queue.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Simple max-heap priority queue serving highest priority first
+int main(){
+    vector&lt;pair&lt;int,string&gt;&gt; people = {{5,"Mr. Rao"},{10,"Ambulance"},{6,"Mrs. Silva"}};
+    priority_queue&lt;pair&lt;int,string&gt;&gt; pq;
+    for(auto &p:people) pq.push(p);
+    while(!pq.empty()){ auto t=pq.top(); pq.pop(); cout<<t.second<<" served (priority "<<t.first<<")\\n"; }
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-07" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 07_smart_queue.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-07" href="07_smart_queue.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-07')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>ticket_id</th><th>name</th><th>priority</th><th>service_type</th><th>arrival_time</th></tr></thead>
+        <tbody>
+          <tr><td>7001</td><td>Mr. Rao</td><td>5</td><td>Pension</td><td>2025-12-08T09:10:00</td></tr>
+          <tr><td>7002</td><td>Ambulance</td><td>10</td><td>Emergency</td><td>2025-12-08T09:12:00</td></tr>
+          <tr><td>7003</td><td>Mrs. Silva</td><td>6</td><td>ID Card</td><td>2025-12-08T09:20:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 08 -->
+  <div id="modal-code-08" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 08 — Public Library (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('08_library.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-08')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 08_library.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Binary search in sorted book IDs
+int binarySearch(const vector<int>& IDs,int target){
+    int low=0,high=IDs.size()-1;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(IDs[mid]==target) return mid;
+        else if(IDs[mid]<target) low=mid+1;
+        else high=mid-1;
+    }
+    return -1;
+}
+int main(){
+    vector<int> books={8001,8002,8003};
+    cout<<binarySearch(books,8002)<<"\\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-08" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 08_library.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-08" href="08_library.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-08')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>book_id</th><th>title</th><th>author</th><th>isbn</th><th>available</th></tr></thead>
+        <tbody>
+          <tr><td>8001</td><td>Data Structures</td><td>Sharma</td><td>978-1-23-456789-7</td><td>Yes</td></tr>
+          <tr><td>8002</td><td>Algorithms</td><td>Kumar</td><td>978-1-23-456790-3</td><td>No</td></tr>
+          <tr><td>8003</td><td>Networks</td><td>Lee</td><td>978-1-23-456791-0</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 09 -->
+  <div id="modal-code-09" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 09 — ATM MST (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('09_atm_mst.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-09')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 09_atm_mst.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Prim's algorithm (naive) for MST on small graph
+int primMST(const vector<vector<int>>& graph){
+    int V=graph.size();
+    vector<int> key(V,INT_MAX); vector<bool> inMST(V,false);
+    key[0]=0; int total=0;
+    for(int count=0;count<V;count++){
+        int u=-1; for(int v=0;v<V;v++) if(!inMST[v] && (u==-1 || key[v]<key[u])) u=v;
+        if(u==-1) break;
+        inMST[u]=true; total += (key[u]==INT_MAX?0:key[u]);
+        for(int v=0;v<V;v++) if(graph[u][v] && !inMST[v] && graph[u][v] < key[v]) key[v]=graph[u][v];
+    }
+    return total;
+}
+int main(){
+    vector<vector<int>> g = {
+        {0,2,0,6},
+        {2,0,3,8},
+        {0,3,0,0},
+        {6,8,0,0}
+    };
+    cout<<"MST cost: "<<primMST(g)<<"\n";
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-09" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 09_atm_mst.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-09" href="09_atm_mst.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-09')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>node_id</th><th>location</th><th>x_coord</th><th>y_coord</th></tr></thead>
+        <tbody>
+          <tr><td>9001</td><td>Depot</td><td>12.9716</td><td>77.5946</td></tr>
+          <tr><td>9002</td><td>ATM1</td><td>12.9725</td><td>77.5950</td></tr>
+          <tr><td>9003</td><td>ATM2</td><td>12.9760</td><td>77.5980</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Idea 10 -->
+  <div id="modal-code-10" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Idea 10 — Irrigation DSU (C++ full code)</h3>
+      <div>
+        <button class="btn-outline" onclick="downloadCPP('10_irrigation.cpp')">Download .cpp</button>
+        <button class="btn-primary" onclick="closeModalById('modal-code-10')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-pre">
+// 10_irrigation.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Union-Find (DSU)
+struct DSU{ vector<int> p; DSU(int n):p(n){ iota(p.begin(),p.end(),0);} int find(int x){ return p[x]==x?x:p[x]=find(p[x]); } void unite(int a,int b){ a=find(a); b=find(b); if(a!=b) p[a]=b;} };
+int main(){
+    DSU dsu(6); dsu.unite(1,2); dsu.unite(2,3); // sample unions
+    cout<< (dsu.find(1)==dsu.find(3) ? "Connected\n" : "Not connected\n");
+    return 0;
+}
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-csv-10" class="modal" style="display:none;">
+    <div class="modal-header">
+      <h3>Dataset — 10_irrigation.csv</h3>
+      <div>
+        <a class="btn-outline" id="dl-10" href="10_irrigation.csv" download>Download CSV</a>
+        <button class="btn-primary" onclick="closeModalById('modal-csv-10')">Close</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <table class="csv-preview">
+        <thead><tr><th>edge_id</th><th>u</th><th>v</th><th>status</th></tr></thead>
+        <tbody>
+          <tr><td>10001</td><td>1</td><td>2</td><td>operational</td></tr>
+          <tr><td>10002</td><td>2</td><td>3</td><td>operational</td></tr>
+          <tr><td>10003</td><td>3</td><td>4</td><td>broken</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <script>
-    function copyCode(button) {
-      const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
-      navigator.clipboard.writeText(codeBlock).then(() => {
-        button.innerText = 'Copied!';
-        setTimeout(() => button.innerText = 'Copy Code', 2000);
+    // ===== Utility JS: open/close modals =====
+    function openModal(id){
+      // show modal backdrop and specific modal
+      document.getElementById('modal-backdrop').style.display = 'flex';
+      const modal = document.getElementById(id);
+      if(modal) {
+        modal.style.display = 'block';
+        modal.style.zIndex = 2010;
+      }
+      // prevent background scroll
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(event){
+      // if clicked on backdrop, close all
+      if(event.target.id === 'modal-backdrop'){
+        document.getElementById('modal-backdrop').style.display = 'none';
+        // hide all modal elements
+        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+        document.body.style.overflow = '';
+      }
+    }
+    function closeModalById(id){
+      document.getElementById('modal-backdrop').style.display = 'none';
+      const m = document.getElementById(id); if(m) m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // allow clicking ESC to close
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        document.getElementById('modal-backdrop').style.display = 'none';
+        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ===== Copy code button (uses nearest code block inside same business-idea) =====
+    function copyCode(btn){
+      // find nearest .code-container and grab the first .code-block pre text
+      const container = btn.closest('.code-container');
+      if(!container) return;
+      const pre = container.querySelector('.code-block pre');
+      if(!pre) return;
+      const text = pre.innerText;
+      navigator.clipboard.writeText(text).then(()=>{
+        const old = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(()=> btn.innerText = old, 1600);
       });
     }
 
-    (function () {
+    // ===== Theme toggle (preserve original behavior) =====
+    (function(){
       const storedTheme = localStorage.getItem('theme');
       let initialTheme;
-
       if (storedTheme === 'light' || storedTheme === 'dark') {
         initialTheme = storedTheme;
       } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -1295,9 +1382,7 @@
       } else {
         initialTheme = 'light';
       }
-
       document.body.setAttribute('data-theme', initialTheme);
-
       const themeToggle = document.getElementById('themeToggle');
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
@@ -1307,20 +1392,42 @@
           localStorage.setItem('theme', next);
         });
       }
+    })();
 
+    // ===== Back to top button =====
+    (function(){
       const backToTopButton = document.getElementById('backToTop');
       if (backToTopButton) {
         window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-          } else {
-            backToTopButton.classList.remove('show');
-          }
+          if (window.pageYOffset > 300) backToTopButton.classList.add('show');
+          else backToTopButton.classList.remove('show');
         });
-
         backToTopButton.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
     })();
+
+    // ===== Download .cpp helper: creates a blob and triggers download with content from modal-pre block =====
+    function downloadCPP(filename){
+      // find open modal's .modal-pre content
+      const openModal = Array.from(document.querySelectorAll('.modal')).find(m => m.style.display === 'block');
+      if(!openModal) {
+        // fallback: create an empty file
+        const blob = new Blob(["// file not found"], {type: 'text/plain'});
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+        return;
+      }
+      const pre = openModal.querySelector('.modal-pre');
+      const text = pre ? pre.innerText : '';
+      const blob = new Blob([text], {type: 'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
   </script>
+</body>
+</html>
