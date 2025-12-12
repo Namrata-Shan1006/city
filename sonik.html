@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sonika — Business Ideas (Final, with code & flowcharts)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#6366f1; --bg:#faf5ff; --card:#fff; --text:#1e1b4b; --muted:#6b7280;
+      --gradient: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+      --shadow: 0 10px 30px rgba(16,24,40,0.06);
+    }
+    body[data-theme="dark"]{--bg:#0f0a1f;--card:#1a1333;--text:#f3f4f6;--muted:#9ca3af}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--bg);color:var(--text);padding:2rem}
+    .container{max-width:1200px;margin:0 auto}
+    .header{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);padding:0.9rem;border-radius:8px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .logo{font-weight:800;font-size:1.4rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+    .nav-links{display:flex;gap:.5rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--text);padding:.5rem .9rem;border-radius:8px;font-weight:600}
+    .nav-links a.active{background:rgba(99,102,241,0.06);color:var(--primary)}
+    .theme-toggle{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--primary);background:var(--card);cursor:pointer}
+    @media (max-width:768px){ .nav-links{display:none} .mobile-menu{display:inline-block} .mobile-menu-panel{display:none} .mobile-menu-panel.open{display:block;padding:1rem;background:var(--card);border-radius:8px;margin-top:.6rem} }
+    main{padding-top:1rem}
+    .hero{padding:1.6rem;border-radius:10px;background:var(--gradient);color:#fff;margin-bottom:1.2rem}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    @media(max-width:1000px){ .grid{grid-template-columns:1fr} }
+    .card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:var(--shadow);border-left:6px solid #4facfe}
+    h2{font-size:1.15rem;margin-bottom:.4rem}
+    .small{color:var(--muted);font-size:.9rem}
+    pre.code{background:#0f1724;color:#e6eef8;padding:1rem;border-radius:8px;overflow:auto;font-family:"Fira Code",monospace;font-size:0.9rem}
+    .csv-link, .svg-link{display:inline-block;margin-right:.6rem;color:var(--primary);text-decoration:none;font-weight:600}
+    .flowchart{margin-top:.8rem;border:1px solid #eee;border-radius:8px;padding:.4rem;background:#fff}
+    footer{margin-top:2rem;color:var(--muted);text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <a class="logo" href="index.html">Bellasagaram</a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="menubar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="sonika.html" class="active">Sonika</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 style="font-family: 'Fira Code', monospace; font-size:1.6rem">Sonika — Business Ideas & Algorithm Solutions</h1>
+        <p class="small" style="margin-top:.4rem">Roll: [Roll Number] | USN: [USN] · Full C++ programs + sample CSVs + flowcharts + PDF page refs included below.</p>
+      </section>
+
+      <section class="grid">
+
+        <!-- Idea 01 -->
+        <article class="card" id="idea01">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h2>01 — University Admission & Hostel Allocation System <span class="small">(PDF page 1)</span></h2>
+              <p class="small">Core Design & Principles: Divide and Conquer, Partitioning Principle, Comparison Principle. Data Structures: Array. How Algorithm is Used: Quick Sort for ranking; Max-Heap for allocation. :contentReference[oaicite:0]{index=0}</p>
+            </div>
+          </div>
+
+          <p style="margin-top:.6rem">
+            <a class="csv-link" href="01_university_admission.csv" download>Download CSV: 01_university_admission.csv</a>
+            <a class="svg-link" href="01_university_flow.svg" download>Download Flowchart: 01_university_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <!-- Inline SVG flowchart (simple) -->
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="20" width="230" height="60" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Read applicant records (scores)</text>
+              <rect x="300" y="20" width="230" height="60" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">QuickSort by score (desc)</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+              <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_01.cpp</code>)</h4>
+          <pre class="code">
+// idea_01.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// QuickSort for applicants by score and a simple allocation using priority queue (max-heap)
+struct Applicant { int id; string name; double score; string pref; int distance; };
+int partition(vector<Applicant>& A,int l,int r){
+    double pivot=A[r].score; int i=l-1;
+    for(int j=l;j<r;j++){ if(A[j].score>=pivot){ i++; swap(A[i],A[j]); } }
+    swap(A[i+1],A[r]); return i+1;
+}
+void quickSort(vector<Applicant>& A,int l,int r){ if(l<r){ int p=partition(A,l,r); quickSort(A,l,p-1); quickSort(A,p+1,r);} }
+int main(){
+    vector<Applicant> apps={{1001,"Alice",92.5,"HostelA",12},{1002,"Bob",88.0,"HostelB",45},{1003,"Chitra",95.0,"HostelA",5}};
+    quickSort(apps,0,apps.size()-1);
+    cout<<"Sorted by score (desc):\n";
+    for(auto &a:apps) cout<<a.id<<' '<<a.name<<' '<<a.score<<'\n';
+    // allocate using max-heap by score
+    priority_queue<pair<double,int>> pq;
+    for(auto &a:apps) pq.push({a.score,a.id});
+    cout<<"Allocation order (by priority):\n";
+    while(!pq.empty()){ auto p=pq.top(); pq.pop(); cout<<p.second<<' '<<p.first<<'\n'; }
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 02 -->
+        <article class="card" id="idea02">
+          <h2>02 — Urban Forest & Green Coverage Management <span class="small">(PDF page 2)</span></h2>
+          <p class="small">Core Principles: Space/Time trade-off, Direct Mapping; Data structure: Direct-address/Array/Hash table. How used: O(1) lookups by TreeID for maintenance crews. :contentReference[oaicite:1]{index=1}</p>
+          <p>
+            <a class="csv-link" href="02_urban_forest.csv" download>02_urban_forest.csv</a>
+            <a class="svg-link" href="02_urban_forest_flow.svg" download>02_urban_forest_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#43e97b" stroke-width="2"/>
+              <text x="40" y="55" font-family="sans-serif" font-size="14" fill="#111">Tree field update (TreeID)</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#43e97b" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Direct-address table lookup (O(1))</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+              <defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_02.cpp</code>)</h4>
+          <pre class="code">
+// idea_02.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Direct address table (map) for tree health lookup by integer TreeID
+int main(){
+    unordered_map<int,string> treeInfo;
+    treeInfo[201]="Neem|Good|2025-11-10";
+    treeInfo[202]="Mango|Fair|2025-10-05";
+    int query=201;
+    if(treeInfo.count(query)) cout<<"Tree "<<query<<": "<<treeInfo[query]<<'\n';
+    else cout<<"Tree not found\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 03 -->
+        <article class="card" id="idea03">
+          <h2>03 — Smart Tourism Planner for Coastal Zone <span class="small">(PDF page 3)</span></h2>
+          <p class="small">Algorithm: Dijkstra — Greedy, Edge Relaxation, adjacency matrix/list; used to compute shortest travel times from a source to multiple POIs. :contentReference[oaicite:2]{index=2}</p>
+          <p>
+            <a class="csv-link" href="03_smart_tourism.csv" download>03_smart_tourism.csv</a>
+            <a class="svg-link" href="03_smart_tourism_flow.svg" download>03_smart_tourism_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#764ba2" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Build graph (POIs & distances)</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#764ba2" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Run Dijkstra from start</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow3)"/>
+              <defs><marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_03.cpp</code>)</h4>
+          <pre class="code">
+// idea_03.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Dijkstra on adjacency matrix example (small)
+const int V=4; const int INF=1e9;
+int minDistance(vector<int>& dist, vector<bool>& spt){
+    int mn=INF,idx=-1; for(int i=0;i<V;i++) if(!spt[i] && dist[i]<mn){mn=dist[i];idx=i;} return idx;
+}
+void dijkstra(int src, int adj[V][V], int dist[V]){
+    vector<bool> spt(V,false);
+    for(int i=0;i<V;i++) dist[i]=INF;
+    dist[src]=0;
+    for(int count=0;count<V-1;count++){
+        int u=minDistance(*(new vector<int>(dist,dist+V)), spt);
+        if(u==-1) break;
+        spt[u]=true;
+        for(int v=0;v<V;v++){
+            if(!spt[v] && adj[u][v] && dist[u]+adj[u][v] < dist[v]) dist[v]=dist[u]+adj[u][v];
+        }
+    }
+}
+int main(){
+    int adj[V][V] = {{0,10,0,30},{10,0,50,0},{0,50,0,20},{30,0,20,0}};
+    int dist[V];
+    dijkstra(0,adj,dist);
+    cout<<"Distances from source:\n";
+    for(int i=0;i<V;i++) cout<<i<<" -> "<<dist[i]<<"\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 04 -->
+        <article class="card" id="idea04">
+          <h2>04 — Land Record Digitization <span class="small">(PDF page 4)</span></h2>
+          <p class="small">Algorithm: Binary Search — Decrease & Conquer; data: pre-sorted array of Property IDs; used for efficient O(log N) lookups. :contentReference[oaicite:3]{index=3}</p>
+          <p>
+            <a class="csv-link" href="04_land_records.csv" download>04_land_records.csv</a>
+            <a class="svg-link" href="04_land_records_flow.svg" download>04_land_records_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#ffd700" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Sorted property ID list</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#ffd700" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Binary search (O(log N))</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow4)"/>
+              <defs><marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_04.cpp</code>)</h4>
+          <pre class="code">
+// idea_04.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Binary search on sorted property IDs
+int binarySearch(const vector<int>& IDs, int target){
+    int low=0, high=IDs.size()-1;
+    while(low<=high){
+        int mid = low + (high-low)/2;
+        if(IDs[mid]==target) return mid;
+        else if(IDs[mid]<target) low = mid+1;
+        else high = mid-1;
+    }
+    return -1;
+}
+int main(){
+    vector<int> ids = {4001,4002,4003,4004};
+    int t=4003;
+    int pos=binarySearch(ids,t);
+    if(pos!=-1) cout<<"Found at index "<<pos<<"\n"; else cout<<"Not found\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 05 -->
+        <article class="card" id="idea05">
+          <h2>05 — Food Quality & Contamination Detection System <span class="small">(PDF page 5)</span></h2>
+          <p class="small">Algorithm: Linear Search — list of regulatory thresholds scanned to check sample ppm against limits. Best for small fixed lists. :contentReference[oaicite:4]{index=4}</p>
+          <p>
+            <a class="csv-link" href="05_food_quality.csv" download>05_food_quality.csv</a>
+            <a class="svg-link" href="05_food_quality_flow.svg" download>05_food_quality_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Read thresholds list</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Linear scan compare sample PPM</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow5)"/>
+              <defs><marker id="arrow5" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_05.cpp</code>)</h4>
+          <pre class="code">
+// idea_05.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Linear search across small list of thresholds
+struct Threshold{ string name; double maxPPM; };
+int checkContamination(const vector<Threshold>& limits, const string& name, double ppm){
+    for(size_t i=0;i<limits.size();++i){
+        if(limits[i].name==name) return ppm>limits[i].maxPPM ? 1 : 0;
+    }
+    return -1;
+}
+int main(){
+    vector<Threshold> limits={{"Lead",0.1},{"Pesticide",0.05},{"Bacteria",100}};
+    cout<<checkContamination(limits,"Bacteria",120)<<" (1 means contaminated)\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 06 -->
+        <article class="card" id="idea06">
+          <h2>06 — Vital Statistics & Civil Records <span class="small">(PDF page 6)</span></h2>
+          <p class="small">Algorithm: Merge Sort — stable O(N log N) sort for large civil datasets; preserves ordering of equal keys. :contentReference[oaicite:5]{index=5}</p>
+          <p>
+            <a class="csv-link" href="06_vital_stats.csv" download>06_vital_stats.csv</a>
+            <a class="svg-link" href="06_vital_stats_flow.svg" download>06_vital_stats_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#667eea" stroke-width="2"/>
+              <text x="40" y="55" font-family="sans-serif" font-size="14" fill="#111">Split records (divide)</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#667eea" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Merge sorted halves (stable)</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow6)"/>
+              <defs><marker id="arrow6" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_06.cpp</code>)</h4>
+          <pre class="code">
+// idea_06.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// MergeSort for stable sorting of records by name (stable)
+void merge(vector<pair<string,int>>& a,int l,int m,int r){
+    vector<pair<string,int>> L(a.begin()+l,a.begin()+m+1), R(a.begin()+m+1,a.begin()+r+1);
+    int i=0,j=0,k=l;
+    while(i<L.size() && j<R.size()){
+        if(L[i].first <= R[j].first) a[k++]=L[i++]; else a[k++]=R[j++];
+    }
+    while(i<L.size()) a[k++]=L[i++];
+    while(j<R.size()) a[k++]=R[j++];
+}
+void mergeSort(vector<pair<string,int>>& a,int l,int r){
+    if(l<r){ int m=(l+r)/2; mergeSort(a,l,m); mergeSort(a,m+1,r); merge(a,l,m,r); }
+}
+int main(){
+    vector<pair<string,int>> recs={{"Anita",6001},{"Sunil",6002},{"Kavya",6003}};
+    mergeSort(recs,0,recs.size()-1);
+    for(auto &p:recs) cout<<p.first<<" "<<p.second<<"\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 07 -->
+        <article class="card" id="idea07">
+          <h2>07 — E-Governance Smart Queue Management System <span class="small">(PDF page 7)</span></h2>
+          <p class="small">Algorithm: Max-Heap (priority queue) — Greedy; heap ensures highest-priority citizen served next in O(log N). :contentReference[oaicite:6]{index=6}</p>
+          <p>
+            <a class="csv-link" href="07_smart_queue.csv" download>07_smart_queue.csv</a>
+            <a class="svg-link" href="07_smart_queue_flow.svg" download>07_smart_queue_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Insert citizen with priority</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#4facfe" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Extract max-priority (serve)</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow7)"/>
+              <defs><marker id="arrow7" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_07.cpp</code>)</h4>
+          <pre class="code">
+// idea_07.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Simple max-heap priority queue serving highest priority first
+int main(){
+    vector<pair<int,string>> people = {{5,"Mr. Rao"},{10,"Ambulance"},{6,"Mrs. Silva"}};
+    priority_queue<pair<int,string>> pq;
+    for(auto &p:people) pq.push(p);
+    while(!pq.empty()){ auto t=pq.top(); pq.pop(); cout<<t.second<<" served (priority "<<t.first<<")\n"; }
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 08 -->
+        <article class="card" id="idea08">
+          <h2>08 — Public Library Services <span class="small">(PDF page 8)</span></h2>
+          <p class="small">Algorithm: Binary Search — pre-sorted catalogue for O(log N) lookups by ISBN/Call Number. :contentReference[oaicite:7]{index=7}</p>
+          <p>
+            <a class="csv-link" href="08_library.csv" download>08_library.csv</a>
+            <a class="svg-link" href="08_library_flow.svg" download>08_library_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#667eea" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Sorted catalogue (ISBNs)</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#667eea" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Binary search to find book</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow8)"/>
+              <defs><marker id="arrow8" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_08.cpp</code>)</h4>
+          <pre class="code">
+// idea_08.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Binary search in sorted book IDs
+int binarySearch(const vector<int>& IDs,int target){
+    int low=0,high=IDs.size()-1;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(IDs[mid]==target) return mid;
+        else if(IDs[mid]<target) low=mid+1;
+        else high=mid-1;
+    }
+    return -1;
+}
+int main(){
+    vector<int> books={8001,8002,8003};
+    cout<<binarySearch(books,8002)<<"\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 09 -->
+        <article class="card" id="idea09">
+          <h2>09 — ATM & Kiosk Maintenance Business <span class="small">(PDF page 9)</span></h2>
+          <p class="small">Algorithm: Prim's MST — Greedy, cut/cycle properties; builds minimum-cost network connecting ATMs to depot. :contentReference[oaicite:8]{index=8}</p>
+          <p>
+            <a class="csv-link" href="09_atm_mst.csv" download>09_atm_mst.csv</a>
+            <a class="svg-link" href="09_atm_flow.svg" download>09_atm_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#43a047" stroke-width="2"/>
+              <text x="40" y="55" font-family="sans-serif" font-size="14" fill="#111">Build graph (locations & weights)</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#43a047" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Run Prim's -> MST</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow9)"/>
+              <defs><marker id="arrow9" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_09.cpp</code>)</h4>
+          <pre class="code">
+// idea_09.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Prim's algorithm (naive) for MST on small graph
+int primMST(const vector<vector<int>>& graph){
+    int V=graph.size();
+    vector<int> key(V,INT_MAX); vector<bool> inMST(V,false);
+    key[0]=0; int total=0;
+    for(int count=0;count<V;count++){
+        int u=-1; for(int v=0;v<V;v++) if(!inMST[v] && (u==-1 || key[v]<key[u])) u=v;
+        if(u==-1) break;
+        inMST[u]=true; total += (key[u]==INT_MAX?0:key[u]);
+        for(int v=0;v<V;v++) if(graph[u][v] && !inMST[v] && graph[u][v] < key[v]) key[v]=graph[u][v];
+    }
+    return total;
+}
+int main(){
+    vector<vector<int>> g = {
+        {0,2,0,6},
+        {2,0,3,8},
+        {0,3,0,0},
+        {6,8,0,0}
+    };
+    cout<<"MST cost: "<<primMST(g)<<"\n";
+    return 0;
+}
+          </pre>
+        </article>
+
+        <!-- Idea 10 -->
+        <article class="card" id="idea10">
+          <h2>10 — Agriculture and Irrigation Maintenance Services <span class="small">(PDF page 10)</span></h2>
+          <p class="small">Algorithm: Union-Find (DSU) — Invariants, connectivity checks; near-constant time connectivity queries for irrigation networks/fault diagnosis. :contentReference[oaicite:9]{index=9}</p>
+          <p>
+            <a class="csv-link" href="10_irrigation.csv" download>10_irrigation.csv</a>
+            <a class="svg-link" href="10_irrigation_flow.svg" download>10_irrigation_flow.svg</a>
+          </p>
+
+          <div class="flowchart" aria-hidden="true">
+            <svg width="100%" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#10b981" stroke-width="2"/>
+              <text x="30" y="55" font-family="sans-serif" font-size="14" fill="#111">Represent pipes as edges</text>
+              <rect x="300" y="20" width="220" height="60" rx="10" fill="#fff" stroke="#10b981" stroke-width="2"/>
+              <text x="320" y="55" font-family="sans-serif" font-size="14" fill="#111">Use DSU to check connectivity</text>
+              <line x1="240" y1="50" x2="300" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow10)"/>
+              <defs><marker id="arrow10" markerWidth="8" markerHeight="8" refX="6" refY="4"><path d="M0,0 L0,8 L8,4 z" fill="#333"/></marker></defs>
+            </svg>
+          </div>
+
+          <h4 style="margin-top:.8rem">Full C++ program (copy into <code>idea_10.cpp</code>)</h4>
+          <pre class="code">
+// idea_10.cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// Union-Find (DSU)
+struct DSU{ vector<int> p; DSU(int n):p(n){ iota(p.begin(),p.end(),0);} int find(int x){ return p[x]==x?x:p[x]=find(p[x]); } void unite(int a,int b){ a=find(a); b=find(b); if(a!=b) p[a]=b;} };
+int main(){
+    DSU dsu(6); dsu.unite(1,2); dsu.unite(2,3); // sample unions
+    cout<< (dsu.find(1)==dsu.find(3) ? "Connected\n" : "Not connected\n");
+    return 0;
+}
+          </pre>
+        </article>
+
+      </section>
+
+      <footer>
+        <p class="small">All idea descriptions and algorithm choices are taken from your uploaded PDF (exact pages are shown above). PDF citation markers are included next to each idea for traceability. © 2025 Sonika</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // theme toggle (preserves in localStorage)
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = (stored === 'dark' || stored === 'light') ? stored : (prefersDark ? 'dark' : 'light');
+      document.body.setAttribute('data-theme', initial);
+      btn.textContent = initial === 'dark' ? '☀' : '🌙';
+      btn.addEventListener('click', () => {
+        const cur = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.body.setAttribute('data-theme', next);
+        btn.textContent = next === 'dark' ? '☀' : '🌙';
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+</body>
+</html>
