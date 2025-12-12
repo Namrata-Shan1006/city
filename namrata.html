@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Namrata Shanbhag - Business Ideas | Bellasagaram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -18,88 +21,32 @@
       --accent: #f59e0b;
       --success: #10b981;
       --info: #06b6d4;
-      --bg-light: #faf5ff;
-      --bg-card: #ffffff;
-      --text-dark: #1e1b4b;
-      --text-muted: #6b7280;
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.1);
-      --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
-      --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.2);
+      --bg-main: #020617;
+      --bg-hero: #0f172a;
+      --bg-card: #020617;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --shadow-card: 0 22px 70px rgba(15, 23, 42, 0.9);
     }
 
-    body[data-theme="dark"] {
-      --primary: #818cf8;
-      --secondary: #f472b6;
-      --accent: #fbbf24;
-      --bg-light: #0f0a1f;
-      --bg-card: #1a1333;
-      --text-dark: #f3f4f6;
-      --text-muted: #9ca3af;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+    body[data-theme="light"] {
+      --bg-main: #f3f4ff;
+      --bg-hero: #e5e7ff;
+      --bg-card: #ffffff;
+      --text-main: #020617;
+      --text-muted: #6b7280;
+      --shadow-card: 0 18px 55px rgba(15, 23, 42, 0.2);
     }
 
     body {
       font-family: "Poppins", sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      transition: all 0.3s ease;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text-main);
       overflow-x: hidden;
+      transition: background 0.35s ease, color 0.35s ease;
     }
 
-    .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    .bg-animation .shape {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: float 20s infinite ease-in-out;
-    }
-
-    .shape1 {
-      width: 500px;
-      height: 500px;
-      background: var(--gradient-3);
-      top: -200px;
-      left: -200px;
-    }
-
-    .shape2 {
-      width: 400px;
-      height: 400px;
-      background: var(--gradient-3);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 5s;
-    }
-
-    .shape3 {
-      width: 350px;
-      height: 350px;
-      background: var(--gradient-1);
-      top: 50%;
-      right: 10%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(50px, -50px) scale(1.1); }
-      66% { transform: translate(-30px, 30px) scale(0.9); }
-    }
+    /* ---------- NAVBAR (same items: Home, About, Project, Anoosha, Namrata, Sonika, Collabz) ---------- */
 
     .header {
       position: fixed;
@@ -107,14 +54,14 @@
       left: 0;
       width: 100%;
       padding: 1rem 6%;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(15, 23, 42, 0.88);
       backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-sm);
       z-index: 1000;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
-    body[data-theme="dark"] .header {
-      background: rgba(26, 19, 51, 0.8);
+    body[data-theme="light"] .header {
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .navbar {
@@ -124,394 +71,507 @@
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 800;
-      background: var(--gradient-1);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, #6366f1, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
       cursor: pointer;
     }
 
     .nav-center {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.6rem;
     }
 
     .theme-toggle {
-      background: var(--bg-card);
-      border: 2px solid var(--primary);
-      padding: 0.5rem;
-      border-radius: 50%;
+      background: transparent;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
       cursor: pointer;
-      font-size: 1.3rem;
-      width: 45px;
-      height: 45px;
+      font-size: 1.1rem;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #e5e7eb;
       transition: all 0.3s ease;
     }
 
     .theme-toggle:hover {
+      border-color: #facc15;
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.6);
       transform: rotate(180deg);
     }
 
-    /* Show moon in light mode (to switch to dark), sun in dark mode (to switch to light) */
     .sun { display: none; }
     .moon { display: inline; }
-    body[data-theme="dark"] .sun { display: inline; }
-    body[data-theme="dark"] .moon { display: none; }
+    body[data-theme="light"] .sun { display: inline; }
+    body[data-theme="light"] .moon { display: none; }
 
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: var(--text-dark);
-      padding: 0.6rem 1.2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
+      color: #e5e7eb;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--primary);
-      background: rgba(99, 102, 241, 0.1);
+      border-color: rgba(129, 140, 248, 0.9);
+      background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.26), rgba(15, 23, 42, 0.95));
+      box-shadow: 0 10px 28px rgba(79, 70, 229, 0.7);
+    }
+
+    body[data-theme="light"] .nav-links a {
+      color: #020617;
+    }
+
+    body[data-theme="light"] .nav-links a:hover,
+    body[data-theme="light"] .nav-links a.active {
+      background: rgba(129, 140, 248, 0.15);
+      border-color: rgba(129, 140, 248, 0.9);
+      box-shadow: 0 8px 22px rgba(79, 70, 229, 0.4);
     }
 
     main {
-      padding-top: 100px;
+      padding-top: 96px;
     }
 
-    .hero-section {
-      padding: 6rem 6% 4rem;
-      background: var(--gradient-3);
+    /* ---------- HERO SECTION ---------- */
+
+    .hero {
+      min-height: 80vh;
+      padding: 4.5rem 8% 3rem;
+      background: radial-gradient(circle at top left, #4f46e5, #020617 55%);
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-section::before {
-      content: '';
+    .hero::before {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
+      inset: -200px;
+      background:
+        radial-gradient(circle at 5% 10%, rgba(129, 140, 248, 0.25), transparent 55%),
+        radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.3), transparent 55%),
+        radial-gradient(circle at 95% 80%, rgba(56, 189, 248, 0.2), transparent 55%);
+      z-index: 0;
     }
 
-    .hero-content {
-      text-align: center;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 2.8rem;
+      max-width: 1160px;
+      width: 100%;
       position: relative;
       z-index: 1;
+      align-items: center;
+    }
+
+    .hero-left {
+      color: #f9fafb;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
     }
 
     .hero-title {
       font-family: "Playfair Display", serif;
-      font-size: 4rem;
-      font-weight: 800;
-      color: white;
+      font-size: clamp(2.8rem, 4vw, 3.6rem);
+      line-height: 1.05;
       margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #fbbf24, #f97316, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2rem;
+      font-size: 1.03rem;
+      max-width: 440px;
+      color: #e5e7eb;
+      opacity: 0.9;
+      margin-bottom: 1.4rem;
     }
 
-    .hero-meta {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      border-radius: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: white;
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.86rem;
+    }
+
+    .hero-badge strong {
       font-weight: 600;
     }
 
-    .content-section {
-      padding: 4rem 6%;
-      max-width: 1600px;
-      margin: 0 auto;
+    .highlight-badge {
+      background: linear-gradient(120deg, #6366f1, #ec4899);
+      box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.1), 0 14px 36px rgba(129, 140, 248, 0.7);
+      border: none;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-primary {
+      padding: 0.8rem 1.7rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(130deg, #6366f1, #ec4899);
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(129, 140, 248, 0.9);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 55px rgba(79, 70, 229, 1);
+    }
+
+    .btn-outline {
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: transparent;
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.8);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .profile-card {
+      background: rgba(15, 23, 42, 0.88);
+      border-radius: 2.1rem;
+      padding: 1.8rem 1.7rem;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body[data-theme="light"] .profile-card {
+      background: #f9fafb;
+    }
+
+    .profile-banner {
+      height: 110px;
+      border-radius: 1.6rem;
+      background: linear-gradient(135deg, #6366f1, #ec4899, #f97316);
+      margin-bottom: 1.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.2), transparent 60%),
+        radial-gradient(circle at 75% 80%, rgba(15, 23, 42, 0.7), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.75;
+    }
+
+    .profile-main {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: -70px;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 1.6rem;
+      border: 3px solid #0f172a;
+      background: radial-gradient(circle at 30% 0, #fde68a, #f97316 45%, #b91c1c 80%);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fefce8;
+    }
+
+    .profile-text h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-text p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.35rem;
+    }
+
+    .tag-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.7rem;
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item span {
+      display: block;
+    }
+
+    .meta-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .meta-value {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ---------- BUSINESS IDEAS SECTION ---------- */
+
+    .section {
+      padding: 3.5rem 7% 3rem;
+      background: radial-gradient(circle at top, #020617 0, #020617 60%);
+    }
+
+    body[data-theme="light"] .section {
+      background: #f3f4ff;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
     }
 
     .ideas-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-
-    .business-idea {
-      background: var(--bg-card);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-lg);
-      border-left: 6px solid #4facfe;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .business-idea::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
-      opacity: 0.05;
-      border-radius: 50%;
-      transform: translate(50%, -50%);
-      background: var(--gradient-3);
-    }
-
-    .business-idea:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 70px rgba(79, 172, 254, 0.3);
-    }
-
-    .idea-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
       margin-bottom: 2rem;
     }
 
-    .idea-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: var(--gradient-3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      min-width: 60px;
-    }
-
-    .idea-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      flex: 1;
-      line-height: 1.3;
-    }
-
-    .sdg-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-top: 1rem;
-      width: fit-content;
-    }
-
-    .section-block {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    .section-icon {
-      font-size: 1.5rem;
-    }
-
-    .explanation-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .algorithm-box {
-      background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--info);
-    }
-
-    .algorithm-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--info);
-      margin-bottom: 0.6rem;
-    }
-
-    .algorithm-desc {
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .code-container {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 1.5rem;
+    .idea-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 1.6rem;
+      padding: 1.4rem 1.5rem 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
       position: relative;
       overflow: hidden;
     }
 
-    .code-header {
+    body[data-theme="light"] .idea-card {
+      background: #ffffff;
+    }
+
+    .idea-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.7rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .idea-chip span {
+      font-size: 0.7rem;
+    }
+
+    .idea-title {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .idea-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .idea-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.45);
+      padding-top: 0.6rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
+      gap: 0.8rem;
+      flex-wrap: wrap;
     }
 
-    .code-lang {
-      color: #4facfe;
-      font-weight: 700;
-      font-size: 1rem;
-      font-family: "Fira Code", monospace;
+    .idea-meta span strong {
+      color: var(--text-main);
     }
 
-    .copy-btn {
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 0.85rem;
-    }
-
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
-    }
-
-    .code-block {
-      font-family: "Fira Code", monospace;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #d4d4d4;
-      overflow-x: auto;
-    }
-
-    .code-block pre {
-      margin: 0;
-      white-space: pre;
-    }
-
-    .keyword { color: #569cd6; }
-    .function { color: #dcdcaa; }
-    .number { color: #b5cea8; }
-    .comment { color: #6a9955; font-style: italic; }
-    .operator { color: #d4d4d4; }
-    .bracket { color: #ffd700; }
-
-    .divider {
-      height: 2px;
-      background: var(--gradient-3);
-      border-radius: 2px;
-      margin: 1.5rem 0;
-      opacity: 0.2;
-    }
+    /* ---------- FOOTER ---------- */
 
     .footer {
-      padding: 2rem 6%;
+      padding: 1.4rem 8%;
       text-align: center;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
-      margin-top: 4rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      background: #020617;
     }
 
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--gradient-3);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: var(--shadow-lg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 999;
+    body[data-theme="light"] .footer {
+      background: #e5e7ff;
     }
 
-    .back-to-top.show {
-      display: flex;
-    }
+    /* ---------- RESPONSIVE ---------- */
 
-    .back-to-top:hover {
-      transform: translateY(-5px) scale(1.1);
-    }
-
-    @media (max-width: 1200px) {
-      .ideas-grid {
+    @media (max-width: 900px) {
+      .hero-grid {
         grid-template-columns: 1fr;
       }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
+      .navbar {
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
       .nav-links {
-        display: none;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .idea-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .code-block {
-        font-size: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
 </head>
-
-<!-- IMPORTANT: no hard-coded data-theme here -->
-<body>
-  <div class="bg-animation">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-  </div>
-
+<body data-theme="dark">
+  <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
       <div class="logo">Bellasagaram</div>
+
       <div class="nav-center">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="sun">🌙</span>
-          <span class="moon">☀</span>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="moon">🌙</span>
+          <span class="sun">☀️</span>
         </button>
+
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -525,790 +585,240 @@
     </nav>
   </header>
 
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-
   <main>
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Namrata Shanbhag</h1>
-        <p class="hero-subtitle">Business Ideas & Algorithm Solutions</p>
-        <div class="hero-meta">
-          📋 Roll: 227 | 🎓 USN: 01FE24BCS101
+    <!-- HERO / PROFILE -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-kicker">
+            <span class="hero-kicker-dot"></span>
+            <span>Business Ideas & Algorithm Solutions</span>
+          </div>
+
+          <h1 class="hero-title">
+            Namrata <span>Shanbhag</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Designing algorithm-driven solutions for Bellasagaram – from traffic optimisation and smart tolling to disaster‑aware evacuation planning.
+          </p>
+
+          <div class="hero-badge-row">
+            <div class="hero-badge highlight-badge">
+              📘 <strong>Roll: 227</strong> | <strong>USN: 01FE24BCS101</strong>
+            </div>
+            <div class="hero-badge">
+              💻 Core Focus: Data Structures & Algorithms
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <button class="btn-primary" onclick="document.getElementById('ideas').scrollIntoView({behavior:'smooth'})">
+              View 10 Business Cases
+            </button>
+            <button class="btn-outline" onclick="window.location.href='project.html'">
+              Back to Project Overview
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="profile-card">
+            <div class="profile-banner"></div>
+            <div class="profile-main">
+              <div class="avatar">N</div>
+              <div class="profile-text">
+                <h2>Algorithm Architect for Bellasagaram</h2>
+                <p>Connecting real‑world smart‑city problems with classic DSA techniques in C++.</p>
+                <div class="tag-row">
+                  <span class="tag-pill">C++</span>
+                  <span class="tag-pill">DSA</span>
+                  <span class="tag-pill">Smart City</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="meta-row">
+              <div class="meta-item">
+                <span class="meta-label">Campus</span>
+                <span class="meta-value">1st Year B.Tech CSE</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Algorithms Used</span>
+                <span class="meta-value">Search · Sort · Graph · Union‑Find</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">City</span>
+                <span class="meta-value">Bellasagaram (Virtual)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="content-section">
+    <!-- BUSINESS IDEAS SUMMARY: you can expand later with code/SDG etc. -->
+    <section id="ideas" class="section">
+      <div class="section-header">
+        <div class="section-kicker">10 Business Case Studies</div>
+        <h2 class="section-title">Smart‑City Ideas & Matching Algorithms</h2>
+        <p class="section-subtitle">
+          Each idea is solved using only the allowed algorithms: searches, sorts, recursion, heapification, shortest‑path and spanning‑tree techniques.
+        </p>
+      </div>
+
       <div class="ideas-grid">
-
-        <!-- IDEA 1 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">01</div>
-            <h2 class="idea-title">City-wide Traffic Signal Optimization System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Optimize traffic flow by dynamically adjusting signal timings at intersections based on congestion levels.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Heapification (Priority Queue / Greedy)</div>
-              <div class="algorithm-desc">
-                You can maintain a heap of intersections with max congestion to decide which signals to change first.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">for</span>(<span class="keyword">int</span> i = n/<span class="number">2</span>; i >= <span class="number">1</span>; i--) <span class="bracket">{</span>
-    <span class="keyword">int</span> k = i;
-    <span class="keyword">int</span> v = H[k];
-    <span class="keyword">bool</span> heap = <span class="keyword">false</span>;
-
-    <span class="keyword">while</span>(!heap && <span class="number">2</span>*k <= n) <span class="bracket">{</span>
-        <span class="keyword">int</span> j = <span class="number">2</span>*k;
-        <span class="keyword">if</span>(j < n && H[j] < H[j+<span class="number">1</span>]) j = j+<span class="number">1</span>;
-
-        <span class="keyword">if</span>(v >= H[j]) heap = <span class="keyword">true</span>;
-        <span class="keyword">else</span> <span class="bracket">{</span>
-            H[k] = H[j];
-            k = j;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    H[k] = v;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 11: Sustainable Cities and Communities
+        <div class="idea-card">
+          <div class="idea-chip">🚦 Idea 1</div>
+          <h3 class="idea-title">City‑Wide Traffic Signal Optimisation</h3>
+          <p class="idea-desc">
+            Coordinate signals between junctions to reduce waiting time and long queues on Bellasagaram roads.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Dijkstra, Floyd‑Warshall, Prim’s</span>
+            <span><strong>SDG:</strong> 11 – Sustainable Cities</span>
           </div>
         </div>
 
-        <!-- IDEA 2 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">02</div>
-            <h2 class="idea-title">Disaster Management & Evacuation Route Planner</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Find the safest and fastest routes for evacuation during emergencies, minimizing travel time and avoiding hazards.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                Evacuation is a shortest-path problem on weighted road networks; Dijkstra efficiently finds minimal travel distance from source to all destinations.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">int</span> dist[MAXN], path[MAXN], visited[MAXN];
-
-<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-    dist[i] = cost[source][i];
-    path[i] = source;
-    visited[i] = <span class="number">0</span>;
-<span class="bracket">}</span>
-visited[source] = <span class="number">1</span>;
-
-<span class="keyword">for</span>(<span class="keyword">int</span> iter = <span class="number">0</span>; iter < n-<span class="number">1</span>; iter++) <span class="bracket">{</span>
-    <span class="keyword">int</span> u = -<span class="number">1</span>, min = INF + <span class="number">1</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-        <span class="keyword">if</span>(!visited[i] && dist[i] < min) <span class="bracket">{</span> min = dist[i]; u = i; <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    <span class="keyword">if</span>(u == -<span class="number">1</span>) <span class="keyword">break</span>;
-    visited[u] = <span class="number">1</span>;
-    <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v < n; v++) <span class="bracket">{</span>
-        <span class="keyword">if</span>(!visited[v] && cost[u][v] != INF) <span class="bracket">{</span>
-            <span class="keyword">if</span>(dist[u] + cost[u][v] < dist[v]) <span class="bracket">{</span>
-                dist[v] = dist[u] + cost[u][v];
-                path[v] = u;
-            <span class="bracket">}</span>
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 11: Sustainable Cities and Communities
+        <div class="idea-card">
+          <div class="idea-chip">🛟 Idea 2</div>
+          <h3 class="idea-title">Disaster Management & Evacuation Planner</h3>
+          <p class="idea-desc">
+            Find safest evacuation routes during floods or fires with hazard‑aware weighted graphs.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Dijkstra, Bellman‑Ford</span>
+            <span><strong>SDG:</strong> 11 – Resilient Cities</span>
           </div>
         </div>
 
-        <!-- IDEA 3 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">03</div>
-            <h2 class="idea-title">Smart Warehouse Inventory Sorting & Retrieval System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system uses real-time data to track the location of all inventory items and plans the most efficient paths for robotic or human systems to retrieve specific items.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                The primary function is instantaneous look-up. Hashing allows mapping a unique item ID (the key) to its precise physical location (the value) in O(1) average time, which is essential for rapid retrieval and sorting.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// key is the Item ID. hashFunction(key) gives the starting index.</span>
-<span class="keyword">int</span> index = <span class="function">hashFunction</span>(key);
-<span class="keyword">int</span> start_index = index;
-<span class="comment">// Search loop using linear probing</span>
-<span class="keyword">while</span> (hashTable[index].key != EMPTY_KEY) <span class="bracket">{</span>
-    <span class="keyword">if</span> (hashTable[index].key == key) <span class="bracket">{</span>
-        <span class="keyword">return</span> hashTable[index].value; <span class="comment">// Found the item location</span>
-    <span class="bracket">}</span>
-    index = (index + <span class="number">1</span>) % TABLE_SIZE;
-    <span class="keyword">if</span> (index == start_index) <span class="bracket">{</span>
-        <span class="keyword">break</span>; 
-    <span class="bracket">}</span>
-<span class="bracket">}</span>
-<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// Item not found</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
+        <div class="idea-card">
+          <div class="idea-chip">📦 Idea 3</div>
+          <h3 class="idea-title">Smart Warehouse Inventory System</h3>
+          <p class="idea-desc">
+            Sort and retrieve items by demand so that popular products are accessed in minimum time.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Quick Sort, Heapification, Insertion Sort</span>
+            <span><strong>SDG:</strong> 9 – Industry & Innovation</span>
           </div>
         </div>
 
-        <!-- IDEA 4 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">04</div>
-            <h2 class="idea-title">City-Wide Electricity Grid Fault Detection System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              Monitors the entire power network in real-time to instantly detect line breaks or faults and identifies which substations or homes have lost connection due to the event.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Union-Find</div>
-              <div class="algorithm-desc">
-                Union-Find (Disjoint Set Union) is perfectly suited for efficiently tracking the connectivity of the grid (a graph). It can quickly determine if two components (e.g., a power plant and a neighborhood) are still in the same connected set after a fault occurs.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// parent[] stores the parent of each node.</span>
-<span class="keyword">int</span> <span class="function">find_set</span>(i) <span class="bracket">{</span>
-    <span class="keyword">if</span>(parent[i] == i)
-        <span class="keyword">return</span> i;
-    <span class="keyword">return</span> parent[i] = <span class="function">find_set</span>(parent[i]);
-<span class="bracket">}</span>
-
-<span class="keyword">void</span> <span class="function">union_set</span>(<span class="keyword">int</span> i, <span class="keyword">int</span> j) <span class="bracket">{</span>
-    <span class="keyword">int</span> root_i = <span class="function">find_set</span>(i);
-    <span class="keyword">int</span> root_j = <span class="function">find_set</span>(j);
-    <span class="keyword">if</span>(root_i != root_j) <span class="bracket">{</span>
-        parent[root_i] = root_j;
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 7: Affordable and Clean Energy
+        <div class="idea-card">
+          <div class="idea-chip">⚡ Idea 4</div>
+          <h3 class="idea-title">Electricity Grid Fault Detection</h3>
+          <p class="idea-desc">
+            Model the grid as a graph to quickly detect disconnected components and fault locations.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Union‑Find, Dijkstra</span>
+            <span><strong>SDG:</strong> 7 – Affordable & Clean Energy</span>
           </div>
         </div>
 
-        <!-- IDEA 5 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">05</div>
-            <h2 class="idea-title">Smart Toll Collection & Highway Traffic Management</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system automatically charges vehicles by reading their IDs (tags/plates) at highway gates and monitors overall flow to dynamically adjust speed limits or alert drivers to congestion.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                The tolling process requires instantaneous identification of the vehicle's account from its ID. Hashing provides the necessary O(1) average time complexity for this high-volume, real-time look-up task.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// Retrieves the account balance for a given Vehicle ID</span>
-<span class="keyword">float</span> <span class="function">getBalance</span>(<span class="keyword">long long</span> key) <span class="bracket">{</span>
-    <span class="keyword">int</span> index = <span class="function">hashFunction</span>(key);
-    <span class="keyword">int</span> start_index = index;
-
-    <span class="comment">// Search loop using linear probing</span>
-    <span class="keyword">do</span> <span class="bracket">{</span>
-        <span class="keyword">if</span> (tollTable[index].key == key) <span class="bracket">{</span>
-            <span class="keyword">return</span> tollTable[index].balance;
-        <span class="bracket">}</span>
-        <span class="keyword">if</span> (tollTable[index].key == EMPTY_KEY) <span class="bracket">{</span>
-            <span class="keyword">return</span> -<span class="number">1</span>.<span class="number">0</span>f;
-        <span class="bracket">}</span>
-        index = (index + <span class="number">1</span>) % TABLE_SIZE;
-    <span class="bracket">}</span> <span class="keyword">while</span> (index != start_index);
-    
-    <span class="keyword">return</span> -<span class="number">1</span>.<span class="number">0</span>f;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
+        <div class="idea-card">
+          <div class="idea-chip">🚗 Idea 5</div>
+          <h3 class="idea-title">Smart Toll Collection & Highway Flow</h3>
+          <p class="idea-desc">
+            Use automatic vehicle identification and optimal paths to reduce toll‑booth congestion.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Hashing, Binary Search, Dijkstra</span>
+            <span><strong>SDG:</strong> 9 – Infrastructure</span>
           </div>
         </div>
 
-        <!-- IDEA 6 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">06</div>
-            <h2 class="idea-title">Digital Land Parcel Mapping & Fraud Detection</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system digitizes all land boundaries and ownership records. It uses the records for quick access and runs automated checks to detect suspicious overlaps or fraudulent property claims.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing</div>
-              <div class="algorithm-desc">
-                To maintain land title integrity, every parcel must be uniquely identifiable and quickly retrievable from a massive database using its unique parcel ID, which is optimized by Hashing.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// Simple hash function for a string (Parcel ID)</span>
-<span class="keyword">inline int</span> <span class="function">stringHash</span>(<span class="keyword">const char</span> *str) <span class="bracket">{</span>
-    <span class="keyword">unsigned long</span> hash = <span class="number">5381</span>;
-    <span class="keyword">int</span> c;
-    <span class="keyword">while</span> ((c = *str++))
-        hash = ((hash << <span class="number">5</span>) + hash) + c;
-    <span class="keyword">return</span> (int)(hash % TABLE_SIZE);
-<span class="bracket">}</span>
-
-<span class="keyword">void</span> <span class="function">insert_parcel</span>(<span class="keyword">const char</span> *id, <span class="keyword">int</span> owner) <span class="bracket">{</span>
-    <span class="keyword">int</span> index = <span class="function">stringHash</span>(id);
-    <span class="keyword">if</span> (parcelTable[index].ownerId == <span class="number">0</span>) <span class="bracket">{</span>
-        strncpy(parcelTable[index].id, id, <span class="number">19</span>);
-        parcelTable[index].id[<span class="number">19</span>] = <span class="number">0</span>;
-        parcelTable[index].ownerId = owner;
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 16: Peace, Justice, and Strong Institutions
+        <div class="idea-card">
+          <div class="idea-chip">🧭 Idea 6</div>
+          <h3 class="idea-title">Digital Land Parcel Mapping & Fraud Check</h3>
+          <p class="idea-desc">
+            Maintain unique parcel IDs and ownership sets to detect duplicate or fake registrations.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Hashing, Union‑Find, Linear Search</span>
+            <span><strong>SDG:</strong> 16 – Peace & Justice</span>
           </div>
         </div>
 
-        <!-- IDEA 7 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">07</div>
-            <h2 class="idea-title">Smart Flood Prediction & Drainage Network Optimizer</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              The system models the city's drainage network to predict which low-lying areas will flood based on rainfall and calculates the quickest path sequence to clear existing blockages.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Floyd-Warshall Algorithm</div>
-              <div class="algorithm-desc">
-                Flood modeling requires determining all-pairs reachability (which point can reach which) or all-pairs shortest paths to see how blockages affect the entire flow network simultaneously, efficiently handled by Floyd-Warshall (O(V³)).
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">void</span> <span class="function">floyd_warshall</span>(<span class="keyword">int</span> n) <span class="bracket">{</span>
-    <span class="comment">// k is the intermediate node</span>
-    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k < n; k++) <span class="bracket">{</span>
-        <span class="comment">// i is the source node</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++) <span class="bracket">{</span>
-            <span class="comment">// j is the destination node</span>
-            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j < n; j++) <span class="bracket">{</span>
-                <span class="keyword">if</span> (dist[i][k] != INF && dist[k][j] != INF) <span class="bracket">{</span>
-                    <span class="keyword">if</span> (dist[i][k] + dist[k][j] < dist[i][j]) <span class="bracket">{</span>
-                        dist[i][j] = dist[i][k] + dist[k][j];
-                    <span class="bracket">}</span>
-                <span class="bracket">}</span>
-            <span class="bracket">}</span>
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 13: Climate Action
+        <div class="idea-card">
+          <div class="idea-chip">🌧️ Idea 7</div>
+          <h3 class="idea-title">Flood Prediction & Drainage Optimiser</h3>
+          <p class="idea-desc">
+            Sort rainfall data and compute fastest water‑flow paths through the drainage network.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Merge Sort, Dijkstra</span>
+            <span><strong>SDG:</strong> 11 – Disaster Reduction</span>
           </div>
         </div>
 
-        <!-- IDEA 8 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">08</div>
-            <h2 class="idea-title">Cargo Drone Routing & Path Planning System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system computes the optimal 3D routes for autonomous delivery drones, minimizing flight time and battery consumption while safely navigating airspace restrictions and other traffic.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                This is a classic shortest-path problem in a large, weighted graph (the airspace grid). Dijkstra efficiently finds the path that minimizes the total weighted cost (e.g., flight time/fuel) from the depot to the delivery point.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// dist is distance array, cost[u][v] is edge weight</span>
-<span class="keyword">void</span> <span class="function">relax</span>(<span class="keyword">int</span> u, <span class="keyword">int</span> v) <span class="bracket">{</span>
-    <span class="comment">// Check unvisited neighbor v and ensure path exists</span>
-    <span class="keyword">if</span> (!visited[v] && cost[u][v] != INF) <span class="bracket">{</span>
-        <span class="comment">// If path through u is shorter</span>
-        <span class="keyword">if</span> (dist[u] + cost[u][v] < dist[v]) <span class="bracket">{</span>
-            dist[v] = dist[u] + cost[u][v];
-            path[v] = u;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 9: Industry, Innovation, and Infrastructure
+        <div class="idea-card">
+          <div class="idea-chip">🚁 Idea 8</div>
+          <h3 class="idea-title">Cargo Drone Routing & Path Planning</h3>
+          <p class="idea-desc">
+            Plan shortest safe routes between delivery points using graph‑based path search.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Dijkstra, Recursion (backtracking)</span>
+            <span><strong>SDG:</strong> 9 – Innovative Logistics</span>
           </div>
         </div>
 
-        <!-- IDEA 9 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">09</div>
-            <h2 class="idea-title">Automated Job Matching & Skill Mapping Portal</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              The portal calculates a compatibility score between job descriptions and candidate profiles based on skill mapping. It then presents the highest-scoring job matches to the user.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Quick Sort</div>
-              <div class="algorithm-desc">
-                After match scores are generated, the results must be rapidly ranked in descending order. Quick Sort is one of the fastest general-purpose comparison sorts with O(n log n) average complexity.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="keyword">int</span> <span class="function">partition</span>(<span class="keyword">float</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high) <span class="bracket">{</span>
-    <span class="keyword">float</span> pivot = arr[high]; 
-    <span class="keyword">int</span> i = (low - <span class="number">1</span>); 
-
-    <span class="keyword">for</span> (<span class="keyword">int</span> j = low; j <= high - <span class="number">1</span>; j++) <span class="bracket">{</span>
-        <span class="keyword">if</span> (arr[j] > pivot) <span class="bracket">{</span>
-            i++;
-            <span class="function">swap</span>(&arr[i], &arr[j]);
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    <span class="function">swap</span>(&arr[i + <span class="number">1</span>], &arr[high]);
-    <span class="keyword">return</span> (i + <span class="number">1</span>);
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 8: Decent Work and Economic Growth
+        <div class="idea-card">
+          <div class="idea-chip">💼 Idea 9</div>
+          <h3 class="idea-title">Automated Job Matching Portal</h3>
+          <p class="idea-desc">
+            Rank candidates for each job based on skill scores and efficient searching.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Selection Sort, Binary Search, Hashing</span>
+            <span><strong>SDG:</strong> 8 – Decent Work</span>
           </div>
         </div>
 
-        <!-- IDEA 10 -->
-        <div class="business-idea">
-          <div class="idea-header">
-            <div class="idea-number">10</div>
-            <h2 class="idea-title">Smart City Public Complaint Prioritization System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">⭐</span>
-              Explanation
-            </h3>
-            <div class="explanation-box">
-              This system automatically scores incoming public complaints based on urgency and impact. It then feeds them into a dynamic queue to ensure the most critical issues are routed to service teams first.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">🧮</span>
-              Algorithm Used
-            </h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Heapification (Max-Heap)</div>
-              <div class="algorithm-desc">
-                The system requires a Priority Queue where the highest score (most urgent complaint) is always extracted first. Heapification is the efficient process (O(n)) used to build or maintain the Max-Heap structure for this queue.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title">
-              <span class="section-icon">💻</span>
-              C++ Code
-            </h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-              </div>
-              <div class="code-block">
-<pre><span class="comment">// n is the size of the heap, k is the index to sift down</span>
-<span class="keyword">void</span> <span class="function">max_heapify</span>(<span class="keyword">int</span> n, <span class="keyword">int</span> k) <span class="bracket">{</span>
-    <span class="keyword">int</span> v = H[k];
-    <span class="keyword">int</span> j = <span class="number">2</span> * k;
-
-    <span class="keyword">while</span> (j <= n) <span class="bracket">{</span>
-        <span class="comment">// Find the larger child</span>
-        <span class="keyword">if</span> (j < n && H[j] < H[j + <span class="number">1</span>]) <span class="bracket">{</span>
-            j = j + <span class="number">1</span>;
-        <span class="bracket">}</span>
-        
-        <span class="keyword">if</span> (v >= H[j]) <span class="bracket">{</span>
-            <span class="keyword">break</span>;
-        <span class="bracket">}</span> <span class="keyword">else</span> <span class="bracket">{</span>
-            H[k] = H[j];
-            k = j;
-            j = <span class="number">2</span> * k;
-        <span class="bracket">}</span>
-    <span class="bracket">}</span>
-    H[k] = v;
-<span class="bracket">}</span></pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badge">
-            🎯 SDG 16: Peace, Justice, and Strong Institutions
+        <div class="idea-card">
+          <div class="idea-chip">📣 Idea 10</div>
+          <h3 class="idea-title">Public Complaint Prioritisation System</h3>
+          <p class="idea-desc">
+            Order complaints by urgency so that critical civic issues are attended first.
+          </p>
+          <div class="idea-meta">
+            <span><strong>Algorithms:</strong> Bubble Sort, Heapification, Insertion Sort</span>
+            <span><strong>SDG:</strong> 11 & 16 – Better Governance</span>
           </div>
         </div>
-
       </div>
     </section>
-
-    <footer class="footer">
-      <p>&copy; 2025 Namrata Shanbhag - Portfolio. All rights reserved.</p>
-    </footer>
   </main>
 
+  <footer class="footer">
+    © 2025 Namrata Shanbhag · Bellasagaram Smart‑City Portfolio
+  </footer>
+
   <script>
-  // ---------- Copy Code (used in Namrata page) ----------
-  function copyCode(button) {
-    const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
-    navigator.clipboard.writeText(codeBlock).then(() => {
-      button.innerText = 'Copied!';
-      setTimeout(() => button.innerText = 'Copy Code', 2000);
-    });
-  }
+    // Theme toggle (same behaviour across pages)
+    (function () {
+      const stored = localStorage.getItem('theme');
+      let initial;
+      if (stored === 'light' || stored === 'dark') {
+        initial = stored;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        initial = 'dark';
+      } else {
+        initial = 'light';
+      }
+      document.body.setAttribute('data-theme', initial);
 
-  // ---------- Theme + Back-to-Top (shared for all pages) ----------
-  (function () {
-    // 1) Initialise theme from localStorage or system preference
-    const storedTheme = localStorage.getItem('theme');
-    let initialTheme;
-
-    if (storedTheme === 'light' || storedTheme === 'dark') {
-      initialTheme = storedTheme;
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      initialTheme = 'dark';
-    } else {
-      initialTheme = 'light';
-    }
-
-    document.body.setAttribute('data-theme', initialTheme);
-
-    // 2) Theme toggle button
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        const next = current === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      });
-    }
-
-    // 3) Back to Top (only if the button exists on the page)
-    const backToTopButton = document.getElementById('backToTop');
-    if (backToTopButton) {
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add('show');
-        } else {
-          backToTopButton.classList.remove('show');
-        }
-      });
-
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          const next = current === 'light' ? 'dark' : 'light';
+          document.body.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      }
     })();
-</script>
-
+  </script>
 </body>
 </html>
