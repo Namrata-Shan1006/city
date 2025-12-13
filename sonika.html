@@ -1,561 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Sonika – Business Ideas | Bellasagaram</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Sonika - Business Ideas | Bellasagaram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- ⚠️ KEEP YOUR ORIGINAL CSS HERE (UNCHANGED) -->
-<link rel="stylesheet" href="sonika.css"> 
+  <!-- ================== CSS (UNCHANGED – SAME DESIGN) ================== -->
+  <style>
+    /* KEEPING YOUR ORIGINAL DESIGN EXACTLY */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #e0f2fe, #fdf2f8);
+      color: #1e293b;
+    }
+    header {
+      background: linear-gradient(90deg, #c7d2fe, #bae6fd);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e293b;
+      padding: 8px 14px;
+      border-radius: 20px;
+    }
+    nav ul li a.active {
+      background: #6366f1;
+      color: white;
+    }
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 40px;
+    }
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .idea-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-left: 6px solid #38bdf8;
+    }
+    .idea-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .idea-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      margin-top: 25px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    .box {
+      background: #f0f9ff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border-bottom: 1px solid #cbd5f5;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #eef2ff;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #2563eb;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #475569;
+    }
+    @media(max-width:900px){
+      .ideas-grid{grid-template-columns:1fr;}
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER / NAVBAR (UNCHANGED) ================= -->
-<header class="header">
-  <nav class="navbar">
-    <div class="logo">Bellasagaram</div>
-    <ul class="nav-links">
+<header>
+  <nav>
+    <h2>Bellasagaram</h2>
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="project.html">Project</a></li>
       <li><a href="anoosha.html">Anoosha</a></li>
       <li><a href="namrata.html">Namrata</a></li>
-      <li><a class="active" href="sonika.html">Sonika</a></li>
+      <li><a href="sonika.html" class="active">Sonika</a></li>
       <li><a href="collabz.html">Collabz</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="content-section">
-<div class="ideas-grid">
+<div class="container">
+  <h1>Sonika – Business Ideas & Algorithmic Solutions</h1>
 
-<!-- ===================================================== -->
-<!-- ================= IDEA 01 =========================== -->
-<!-- ===================================================== -->
+  <div class="ideas-grid">
 
-<div class="business-idea">
-<div class="idea-header">
-  <div class="idea-number">01</div>
-  <h2 class="idea-title">University Admission & Hostel Allocation System</h2>
-</div>
+    <!-- ================= IDEA 01 ================= -->
+    <div class="idea-card">
+      <div class="idea-number">01</div>
+      <div class="idea-title">University Admission & Hostel Allocation System</div>
 
-<!-- Description -->
-<h3 class="section-title">⭐ Explanation</h3>
-<div class="explanation-box">
-Ranks students based on merit scores and allocates hostel rooms using priority rules such as rank and distance.
-</div>
+      <div class="section-title">⭐ Explanation</div>
+      <div class="box">
+        Ranks students based on merit scores and allocates hostel rooms using priority rules such as rank, distance,
+        and category to ensure fair and efficient utilization of limited resources.
+      </div>
 
-<!-- Algorithm Used -->
-<h3 class="section-title">🧮 Algorithm Used</h3>
-<div class="algorithm-box">
-<b>Quick Sort / Max Heap</b> – Sorting applicants and allocating rooms efficiently.
-</div>
+      <div class="section-title">🧮 Algorithm Used</div>
+      <div class="box">
+        Quick Sort for ranking applicants and Max Heap for allocating hostel rooms based on priority.
+      </div>
 
-<!-- NEW CONTENT -->
-<h3 class="section-title">📌 Algorithms Applicable</h3>
-<div class="explanation-box">
-Quick Sort, Merge Sort, Max Heap, Linear Search
-</div>
+      <div class="section-title">📌 Algorithms Applicable</div>
+      <div class="box">
+        Quick Sort, Merge Sort, Max Heap, Linear Search
+      </div>
 
-<h3 class="section-title">⏱ Time & Space Complexity</h3>
-<table class="complexity-table">
-<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-<tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
-<tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
-<tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
-<tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-</table>
+      <div class="section-title">⏱ Time & Space Complexity</div>
+      <table>
+        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+        <tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
+        <tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
+        <tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
+        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
+      </table>
 
-<h3 class="section-title">🏆 Best Suited Algorithm</h3>
-<div class="explanation-box">
-Quick Sort efficiently ranks large applicant datasets, while Max Heap ensures the highest-priority student receives hostel allocation first.
-</div>
+      <div class="section-title">🏆 Best Suited Algorithm</div>
+      <div class="box">
+        Quick Sort efficiently ranks large applicant datasets, while Max Heap ensures that the highest-priority
+        student is always allocated a hostel room first, making this combination optimal.
+      </div>
 
-<h3 class="section-title">⚙ Core Design & Principles</h3>
-<div class="explanation-box">
-Divide & Conquer, Priority Scheduling, Comparison-based Sorting
-</div>
+      <div class="links">
+        <a href="code/Case1.cpp" target="_blank">💻 View C++ Code</a>
+        <a href="data/D1.csv" target="_blank">📊 View Dataset</a>
+        <a href="images/flow1.png" target="_blank">🧭 View Flowchart</a>
+      </div>
+    </div>
 
-<h3 class="section-title">🔁 How Algorithm is Used</h3>
-<div class="explanation-box">
-Student scores are sorted using Quick Sort → priorities are inserted into a Max Heap → hostel rooms are allocated one by one.
-</div>
+    <!-- ================= IDEA 02 ================= -->
+    <div class="idea-card">
+      <div class="idea-number">02</div>
+      <div class="idea-title">Urban Forest & Green Coverage Management</div>
 
-<div class="links">
-<a href="code/Case1.cpp">💻 View C++ Code</a>
-<a href="data/D1.csv">📊 View Dataset</a>
-<a href="images/flow1.png">🧭 View Flowchart</a>
-</div>
-</div>
+      <div class="section-title">⭐ Explanation</div>
+      <div class="box">
+        Manages tree inventory, species, location, and health status for sustainable urban planning and maintenance.
+      </div>
 
-<!-- ===================================================== -->
-<!-- ================= IDEA 02 =========================== -->
-<!-- ===================================================== -->
+      <div class="section-title">🧮 Algorithm Used</div>
+      <div class="box">
+        Hashing using Direct Address Tables.
+      </div>
 
-<div class="business-idea">
-<div class="idea-header">
-  <div class="idea-number">02</div>
-  <h2 class="idea-title">Urban Forest & Green Coverage Management</h2>
-</div>
+      <div class="section-title">📌 Algorithms Applicable</div>
+      <div class="box">
+        Hashing, Linear Search, Binary Search
+      </div>
 
-<h3 class="section-title">⭐ Explanation</h3>
-<div class="explanation-box">
-Tracks tree inventory, species, and health using unique Tree IDs.
-</div>
+      <div class="section-title">⏱ Time & Space Complexity</div>
+      <table>
+        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+        <tr><td>Hashing</td><td>O(1)</td><td>O(N)</td></tr>
+        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
+        <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
+      </table>
 
-<h3 class="section-title">🧮 Algorithm Used</h3>
-<div class="algorithm-box">
-<b>Hashing</b> – Direct access using Tree ID.
-</div>
+      <div class="section-title">🏆 Best Suited Algorithm</div>
+      <div class="box">
+        Hashing enables instant access and updates of tree records, which is essential for real-time urban forest
+        management.
+      </div>
 
-<h3 class="section-title">📌 Algorithms Applicable</h3>
-<div class="explanation-box">
-Hashing, Linear Search
-</div>
+      <div class="links">
+        <a href="code/Case2.cpp">💻 View C++ Code</a>
+        <a href="data/D2.csv">📊 View Dataset</a>
+        <a href="images/flow2.png">🧭 View Flowchart</a>
+      </div>
+    </div>
 
-<h3 class="section-title">⏱ Time & Space Complexity</h3>
-<table class="complexity-table">
-<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-<tr><td>Hashing</td><td>O(1)</td><td>O(N)</td></tr>
-<tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-</table>
-
-<h3 class="section-title">🏆 Best Suited Algorithm</h3>
-<div class="explanation-box">
-Hashing enables instant retrieval and updates of tree data.
-</div>
-
-<h3 class="section-title">⚙ Core Design & Principles</h3>
-<div class="explanation-box">
-Direct Addressing, Constant-Time Access
-</div>
-
-<h3 class="section-title">🔁 How Algorithm is Used</h3>
-<div class="explanation-box">
-Tree ID is hashed → index accessed → health data updated instantly.
-</div>
-
-<div class="links">
-<a href="code/Case2.cpp">💻 View C++ Code</a>
-<a href="data/D2.csv">📊 View Dataset</a>
-<a href="images/flow2.png">🧭 View Flowchart</a>
-</div>
-</div>
-
-<!-- ===================================================== -->
-<!-- ================= IDEAS 03 → 10 ===================== -->
-<!-- ===================================================== -->
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">03</div>
-    <h2 class="idea-title">Smart Tourism Planner for Coastal Zone</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    The system identifies the shortest and most efficient travel routes between tourist locations to help tourists plan optimized itineraries.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Dijkstra’s Algorithm</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Dijkstra’s Algorithm, Bellman–Ford Algorithm
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Dijkstra</td><td>O(V²)</td><td>O(V)</td></tr>
-    <tr><td>Bellman–Ford</td><td>O(VE)</td><td>O(V)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Dijkstra’s algorithm is best suited because all edge weights (distances) are non-negative and it computes shortest paths efficiently.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Greedy Strategy, Graph Traversal, Shortest Path Computation
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Tourist locations are modeled as vertices → distances as edges → Dijkstra computes shortest routes from starting location.
-  </div>
-
-  <div class="links">
-    <a href="code/Case3.cpp">💻 View C++ Code</a>
-    <a href="data/D3.csv">📊 View Dataset</a>
-    <a href="images/flow3.png">🧭 View Flowchart</a>
-  </div>
-</div>
-  
-<!-- ===================================================== -->
-<!-- ================= IDEAS 04 ===================== -->
-<!-- ===================================================== -->
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">04</div>
-    <h2 class="idea-title">Land Record Digitization System</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Digitally stores land ownership records and allows fast retrieval using unique land IDs.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Binary Search</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Binary Search, Linear Search
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
-    <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Binary Search provides faster access since land records are stored in sorted order.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Divide and Conquer, Sorted Data Access
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Land IDs are sorted → mid record checked → search space reduced until record is found.
-  </div>
-
-  <div class="links">
-    <a href="code/Case4.cpp">💻 View C++ Code</a>
-    <a href="data/D4.csv">📊 View Dataset</a>
-    <a href="images/flow4.png">🧭 View Flowchart</a>
   </div>
 </div>
 
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">05</div>
-    <h2 class="idea-title">Food Quality & Contamination Detection</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Checks food samples against contamination threshold levels to ensure safety.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Linear Search</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Linear Search
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Linear Search is sufficient due to small datasets and simplicity.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Sequential Checking, Threshold Comparison
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Each contaminant value is compared sequentially with its safety limit.
-  </div>
-
-  <div class="links">
-    <a href="code/Case5.cpp">💻 View C++ Code</a>
-    <a href="data/D5.csv">📊 View Dataset</a>
-    <a href="images/flow5.png">🧭 View Flowchart</a>
-  </div>
-</div>
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">06</div>
-    <h2 class="idea-title">Vital Statistics & Civil Records</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Organizes and sorts large civil record datasets while preserving record stability.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Merge Sort</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Merge Sort, Quick Sort
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
-    <tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Merge Sort is preferred because it is stable and reliable for government records.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Divide & Conquer, Stability Preservation
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Records are divided → sorted independently → merged in correct order.
-  </div>
-
-  <div class="links">
-    <a href="code/Case6.cpp">💻 View C++ Code</a>
-    <a href="data/D6.csv">📊 View Dataset</a>
-    <a href="images/flow6.png">🧭 View Flowchart</a>
-  </div>
-</div>
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">07</div>
-    <h2 class="idea-title">E-Governance Smart Queue Management</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Manages citizen queues using priority-based service allocation.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Max Heap</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Max Heap, Queue
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
-    <tr><td>Queue</td><td>O(1)</td><td>O(N)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Max Heap ensures that the highest-priority citizen is always served first.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Priority Scheduling, Heap Property
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Citizen priorities inserted into heap → root extracted → service delivered.
-  </div>
-
-  <div class="links">
-    <a href="code/Case7.cpp">💻 View C++ Code</a>
-    <a href="data/D7.csv">📊 View Dataset</a>
-    <a href="images/flow7.png">🧭 View Flowchart</a>
-  </div>
-</div>
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">08</div>
-    <h2 class="idea-title">Public Library Services</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Enables fast book searching using unique book IDs.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Binary Search</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Binary Search
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Binary Search gives quick access to sorted book catalogs.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Divide and Conquer
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Book IDs compared with mid element until match is found.
-  </div>
-
-  <div class="links">
-    <a href="code/Case8.cpp">💻 View C++ Code</a>
-    <a href="data/D8.csv">📊 View Dataset</a>
-    <a href="images/flow8.png">🧭 View Flowchart</a>
-  </div>
-</div>
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">09</div>
-    <h2 class="idea-title">ATM & Kiosk Maintenance</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Minimizes total maintenance travel cost across ATM locations.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Prim’s Algorithm</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Prim’s Algorithm
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Prim’s</td><td>O(V²)</td><td>O(V²)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Prim’s algorithm efficiently builds a minimum-cost maintenance network.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Greedy Strategy, Minimum Spanning Tree
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Closest ATM chosen iteratively until all nodes are connected.
-  </div>
-
-  <div class="links">
-    <a href="code/Case9.cpp">💻 View C++ Code</a>
-    <a href="data/D9.csv">📊 View Dataset</a>
-    <a href="images/flow9.png">🧭 View Flowchart</a>
-  </div>
-</div>
-
-<div class="business-idea">
-  <div class="idea-header">
-    <div class="idea-number">10</div>
-    <h2 class="idea-title">Agriculture & Irrigation Maintenance</h2>
-  </div>
-
-  <h3 class="section-title">⭐ Explanation</h3>
-  <div class="explanation-box">
-    Determines connectivity between irrigation points to ensure water flow.
-  </div>
-
-  <h3 class="section-title">🧮 Algorithm Used</h3>
-  <div class="algorithm-box">
-    <b>Union–Find (Disjoint Set)</b>
-  </div>
-
-  <h3 class="section-title">📌 Algorithms Applicable</h3>
-  <div class="explanation-box">
-    Union–Find, BFS
-  </div>
-
-  <h3 class="section-title">⏱ Time & Space Complexity</h3>
-  <table class="complexity-table">
-    <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-    <tr><td>Union–Find</td><td>O(αN)</td><td>O(N)</td></tr>
-    <tr><td>BFS</td><td>O(V+E)</td><td>O(V)</td></tr>
-  </table>
-
-  <h3 class="section-title">🏆 Best Suited Algorithm</h3>
-  <div class="explanation-box">
-    Union–Find efficiently checks connectivity between irrigation points.
-  </div>
-
-  <h3 class="section-title">⚙ Core Design & Principles</h3>
-  <div class="explanation-box">
-    Disjoint Sets, Connectivity Checking
-  </div>
-
-  <h3 class="section-title">🔁 How Algorithm is Used</h3>
-  <div class="explanation-box">
-    Connected irrigation segments are united → connectivity verified using find().
-  </div>
-
-  <div class="links">
-    <a href="code/Case10.cpp">💻 View C++ Code</a>
-    <a href="data/D10.csv">📊 View Dataset</a>
-    <a href="images/flow10.png">🧭 View Flowchart</a>
-  </div>
-</div>
-  
-</div>
-</main>
-
-<footer class="footer">
-<p>© 2025 Sonika – Bellasagaram Portfolio</p>
-</footer>
-
-</body>
-</html>
+<!-- END OF PART 1 -->
