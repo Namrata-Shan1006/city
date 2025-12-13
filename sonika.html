@@ -1,1051 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sonika - Business Ideas | Bellasagaram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    /* === (UNCHANGED) Your original CSS - kept exactly as you provided === */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary: #6366f1; --secondary: #ec4899; --accent: #f59e0b;
-      --success: #10b981; --info: #06b6d4; --bg-light: #faf5ff; --bg-card: #ffffff;
-      --text-dark: #1e1b4b; --text-muted: #6b7280;
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.1);
-      --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
-      --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.2);
-    }
-    body[data-theme="dark"] {
-      --primary: #818cf8; --secondary: #f472b6; --accent: #fbbf24;
-      --bg-light: #0f0a1f; --bg-card: #1a1333; --text-dark: #f3f4f6; --text-muted: #9ca3af;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3); --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-    body { font-family: "Poppins", sans-serif; background: var(--bg-light); color: var(--text-dark); transition: all 0.3s ease; overflow-x: hidden; }
-    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4; }
-    .bg-animation .shape { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 20s infinite ease-in-out; }
-    .shape1 { width: 500px; height: 500px; background: var(--gradient-3); top: -200px; left: -200px; }
-    .shape2 { width: 400px; height: 400px; background: var(--gradient-3); bottom: -150px; right: -150px; animation-delay: 5s; }
-    .shape3 { width: 350px; height: 350px; background: var(--gradient-1); top: 50%; right: 10%; animation-delay: 10s; }
-    @keyframes float { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(50px,-50px) scale(1.1);} 66%{transform:translate(-30px,30px) scale(0.9);} }
-    .header { position: fixed; top:0; left:0; width:100%; padding:1rem 6%; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); box-shadow: var(--shadow-sm); z-index:1000; }
-    body[data-theme="dark"] .header { background: rgba(26,19,51,0.8); }
-    .navbar { display:flex; justify-content:space-between; align-items:center; }
-    .logo { font-size:1.8rem; font-weight:800; background:var(--gradient-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; cursor:pointer; }
-    .nav-center { display:flex; align-items:center; gap:2rem; }
-    .theme-toggle { background:var(--bg-card); border:2px solid var(--primary); padding:0.5rem; border-radius:50%; cursor:pointer; font-size:1.3rem; width:45px; height:45px; display:flex; align-items:center; justify-content:center; transition: all 0.3s ease; }
-    .theme-toggle:hover { transform: rotate(180deg); }
-    .sun { display:none; } .moon { display:inline; } body[data-theme="dark"] .sun{display:inline;} body[data-theme="dark"] .moon{display:none;}
-    .nav-links { display:flex; list-style:none; gap:0.5rem; }
-    .nav-links a { text-decoration:none; color:var(--text-dark); padding:0.6rem 1.2rem; border-radius:12px; font-weight:600; font-size:0.95rem; transition:all 0.3s ease; }
-    .nav-links a:hover, .nav-links a.active { color:var(--primary); background: rgba(99,102,241,0.1); }
-    main { padding-top: 100px; }
-    .hero-section { padding:6rem 6% 4rem; background:var(--gradient-3); position:relative; overflow:hidden; }
-    .hero-section::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.3; }
-    .hero-content { text-align:center; position:relative; z-index:1; }
-    .hero-title { font-family:"Playfair Display", serif; font-size:4rem; font-weight:800; color:white; margin-bottom:1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-    .hero-subtitle { font-size:1.3rem; color: rgba(255,255,255,0.95); margin-bottom:2rem; }
-    .hero-meta { display:inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding:1rem 2rem; border-radius:20px; border:2px solid rgba(255,255,255,0.3); color:white; font-weight:600; }
-    .content-section { padding:4rem 6%; max-width:1600px; margin:0 auto; }
-    .ideas-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-    .business-idea { background: var(--bg-card); border-radius:24px; padding:2.5rem; box-shadow:var(--shadow-lg); border-left:6px solid #4facfe; transition: all 0.4s ease; position:relative; overflow:hidden; }
-    .business-idea::before { content:''; position:absolute; top:0; right:0; width:200px; height:200px; opacity:0.05; border-radius:50%; transform:translate(50%, -50%); background:var(--gradient-3); }
-    .business-idea:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(79, 172, 254, 0.3); }
-    .idea-header { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
-    .idea-number { font-size:2.5rem; font-weight:800; background:var(--gradient-3); -webkit-background-clip:text; -webkit-text-fill-color:transparent; min-width:60px; }
-    .idea-title { font-size:1.5rem; font-weight:700; color:var(--text-dark); flex:1; line-height:1.3; }
-    .sdg-badges { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-    .sdg-badge { display:inline-block; background:linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color:white; padding:0.5rem 1rem; border-radius:20px; font-size:0.85rem; font-weight:700; }
-    .sdg-badge.secondary { background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .section-block { margin-bottom:1.5rem; }
-    .section-title { display:flex; align-items:center; gap:0.8rem; font-size:1.2rem; font-weight:700; margin-bottom:0.8rem; color:var(--primary); }
-    .section-icon { font-size:1.5rem; }
-    .explanation-box { background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); padding:1.2rem; border-radius:12px; border-left:4px solid var(--info); color:var(--text-muted); line-height:1.7; font-size:0.95rem; }
-    .algorithm-box { background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); padding:1.2rem; border-radius:12px; border-left:4px solid var(--info); }
-    .algorithm-name { font-size:1.1rem; font-weight:700; color:var(--info); margin-bottom:0.6rem; }
-    .algorithm-desc { color:var(--text-muted); line-height:1.7; font-size:0.95rem; }
-    .code-container { background:#1e1e1e; border-radius:12px; padding:1.5rem; position:relative; overflow:hidden; }
-    .code-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
-    .code-lang { color:#4facfe; font-weight:700; font-size:1rem; font-family:"Fira Code", monospace; }
-    .copy-btn { background:var(--gradient-3); color:white; border:none; padding:0.4rem 1rem; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s ease; font-size:0.85rem; }
-    .copy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4); }
-    .code-block { font-family:"Fira Code", monospace; font-size:0.85rem; line-height:1.5; color:#d4d4d4; overflow-x:auto; }
-    .code-block pre { margin:0; white-space:pre; }
-    .keyword { color:#569cd6; } .function { color:#dcdcaa; } .number { color:#b5cea8; }
-    .comment { color:#6a9955; font-style:italic; } .operator { color:#d4d4d4; } .bracket { color:#ffd700; } .string { color:#ce9178; }
-    .divider { height:2px; background:var(--gradient-3); border-radius:2px; margin:1.5rem 0; opacity:0.2; }
-    .footer { padding:2rem 6%; text-align:center; color:var(--text-muted); border-top:1px solid rgba(99,102,241,0.1); margin-top:4rem; }
-    .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--gradient-3); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; box-shadow: var(--shadow-lg); display: none; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 999; }
-    .back-to-top.show { display: flex; } .back-to-top:hover { transform: translateY(-5px) scale(1.1); }
-    @media (max-width: 1200px) { .ideas-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) { .nav-links { display:none; } .hero-title { font-size:2.5rem; } .idea-header { flex-direction:column; align-items:flex-start; } .code-block { font-size:0.75rem; } }
+<meta charset="UTF-8">
+<title>Sonika – DAA Business Ideas Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* === New modal styles (non-invasive, same aesthetic) === */
-    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display:none; align-items:center; justify-content:center; z-index:2000; padding: 2rem; }
-    .modal-backdrop.show { display:flex; }
-    .modal { width: 100%; max-width: 1100px; max-height: 90vh; overflow:auto; border-radius:12px; background: var(--bg-card); box-shadow: 0 30px 80px rgba(0,0,0,0.6); padding:1.2rem; position:relative; }
-    .modal .modal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.8rem; }
-    .modal .modal-title { font-weight:700; color:var(--primary); }
-    .modal .close-btn { background:transparent; border:0; font-size:1.4rem; cursor:pointer; }
-    .modal .modal-body { background: none; color: var(--text-dark); }
-    .modal .code-large { background: #0f1724; color: #e6eef8; padding:1rem; border-radius:8px; font-family:"Fira Code", monospace; white-space:pre; overflow:auto; max-height:70vh; }
-    .modal iframe, .modal embed { width:100%; height:70vh; border-radius:8px; border:0; }
-    .modal .placeholder { padding:2rem; border-radius:8px; background: linear-gradient(180deg, rgba(99,102,241,0.03), rgba(0,0,0,0.03)); color:var(--text-muted); }
-    .btn-small { font-size:0.85rem; padding:0.4rem 0.8rem; border-radius:8px; border:0; cursor:pointer; background:var(--gradient-3); color:#fff; margin-left:0.5rem; }
-    .btn-outline { background: transparent; border: 1px solid rgba(0,0,0,0.06); color: var(--text-dark); padding:0.35rem 0.7rem; border-radius:6px; cursor:pointer; }
-  </style>
+<style>
+body{margin:0;font-family:Poppins,sans-serif;background:#0b1023;color:#e5e7eb}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.idea-card{background:linear-gradient(180deg,#0f172a,#020617);
+border-radius:20px;padding:30px;margin-bottom:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.idea-header{display:flex;gap:20px;align-items:center}
+.idea-number{font-size:3rem;font-weight:800;color:#38bdf8}
+.idea-title{font-size:1.8rem;font-weight:700}
+.section{margin-top:25px}
+.section h3{color:#38bdf8;margin-bottom:10px}
+.box{background:#020617;padding:15px;border-radius:12px;line-height:1.7}
+.table{width:100%;border-collapse:collapse;margin-top:10px}
+.table th,.table td{border:1px solid #1e293b;padding:10px;text-align:center}
+.table th{color:#38bdf8}
+.links a{display:inline-block;margin-right:20px;color:#22d3ee;
+font-weight:600;text-decoration:none}
+.links a:hover{text-decoration:underline}
+.sdg{margin-top:20px;background:#064e3b;color:#6ee7b7;
+padding:8px 14px;border-radius:20px;display:inline-block;font-weight:600}
+</style>
 </head>
+
 <body>
-  <div class="bg-animation">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-  </div>
-
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">Bellasagaram</div>
-      <div class="nav-center">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="sun">🌙</span><span class="moon">☀</span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="project.html">Project</a></li>
-          <li><a href="anoosha.html">Anoosha</a></li>
-          <li><a href="namrata.html">Namrata</a></li>
-          <li><a href="sonika.html" class="active">Sonika</a></li>
-          <li><a href="collabz.html">Collabz</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-
-  <main>
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Sonika</h1>
-        <p class="hero-subtitle">Business Ideas & Algorithm Solutions</p>
-        <div class="hero-meta">📋 Roll: [Roll Number] | 🎓 USN: [USN]</div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="ideas-grid">
-
-        <!-- IDEA 1 (unchanged content) but added dataset & flowchart & code modal triggers -->
-        <div class="business-idea" data-idea="1" data-dataset="https://raw.githubusercontent.com/atharva-in-bits/DAA-2025/main/Shashank/D1.csv">
-          <div class="idea-header">
-            <div class="idea-number">01</div>
-            <h2 class="idea-title">University Admission & Hostel Allocation System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">
-              The system handles student application ranking based on merit scores, assigns admissions, and then efficiently allocates limited hostel rooms based on student priority (rank, distance, or preference) to maximize resource utilization.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Quick Sort / Max-Heap</div>
-              <div class="algorithm-desc">
-                The system uses Quick Sort (O(N log N) average) for efficient ranking of applicants. The subsequent hostel allocation is managed by a Max-Heap (O(log N)) to consistently retrieve the highest-priority student for room assignment.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <!-- NEW: View full code modal -->
-                  <button class="btn-small" onclick="openCodeModal(1)">View C++ Code</button>
-                  <!-- NEW: View dataset modal -->
-                  <button class="btn-small" onclick="openDatasetModal(1)">View Dataset</button>
-                  <!-- NEW: View flowchart & PDF -->
-                  <button class="btn-small" onclick="openFlowchartModal(1)">View Flowchart</button>
-                  <button class="btn-small" onclick="openPdfModal()">View PDF</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>void quickSort(int H[], int low, int high) {
-    if (low < high) {
-        int pi = partition(H, low, high);
-        quickSort(H, low, pi - 1);
-        quickSort(H, pi + 1, high);
-    }
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 4: Quality Education</div>
-            <div class="sdg-badge secondary">🎯 SDG 10: Reduced Inequalities</div>
-          </div>
-        </div>
-
-        <!-- IDEA 2 (kept same, added modal triggers and data-dataset placeholder) -->
-        <div class="business-idea" data-idea="2" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">02</div>
-            <h2 class="idea-title">Urban Forest & Green Coverage Management</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">
-              The system tracks the inventory, location, species, and health status of individual trees. It must support near-instantaneous lookups and updates to data using a unique Tree ID for maintenance crews.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Hashing (Direct Address Table)</div>
-              <div class="algorithm-desc">
-                Hashing provides O(1) average time complexity for storing, retrieving, and updating tree data based on a unique Tree ID, essential for fast field operations and inventory management.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(2)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(2)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(2)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>const int MAX_TREES = 100;
-int treeHealthTable[MAX_TREES] = {0};
-
-void addTreeHealth(int treeID, int healthStatus) {
-    if (treeID >= 0 && treeID < MAX_TREES) {
-        treeHealthTable[treeID] = healthStatus;
-    }
-}
-
-int getHealth(int treeID) {
-    if (treeID >= 0 && treeID < MAX_TREES && treeHealthTable[treeID] != 0) {
-        return treeHealthTable[treeID];
-    }
-    return -1;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 11: Sustainable Cities and Communities</div>
-            <div class="sdg-badge secondary">🎯 SDG 13: Climate Action</div>
-          </div>
-        </div>
-
-        <!-- IDEA 3 -->
-        <div class="business-idea" data-idea="3" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">03</div>
-            <h2 class="idea-title">Smart Tourism Planner for Coastal Zone</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">
-              The system finds the shortest route sequence between a starting point and multiple Points of Interest (POIs), calculating the minimum travel time or distance to optimize the tourist's itinerary.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Dijkstra's Algorithm</div>
-              <div class="algorithm-desc">
-                Dijkstra efficiently finds the Single-Source Shortest Path (O(E + V log V)) with non-negative weights.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(3)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(3)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(3)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>const int V = 4;
-const int INF = 99999;
-
-void dijkstra(int src, int adj[V][V], int dist[]) {
-    int sptSet[V] = {0};
-    for (int i = 0; i < V; i++) dist[i] = INF;
-    dist[src] = 0;
-
-    for (int count = 0; count < V - 1; count++) {
-        int u = minDistance(dist, sptSet);
-        sptSet[u] = 1;
-
-        for (int v = 0; v < V; v++) {
-            if (!sptSet[v] && adj[u][v] != INF &&
-                dist[u] != INF && dist[u] + adj[u][v] < dist[v]) {
-                dist[v] = dist[u] + adj[u][v];
-            }
-        }
-    }
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 8: Decent Work and Economic Growth</div>
-            <div class="sdg-badge secondary">🎯 SDG 12: Responsible Consumption</div>
-          </div>
-        </div>
-
-        <!-- IDEA 4 -->
-        <div class="business-idea" data-idea="4" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">04</div>
-            <h2 class="idea-title">Land Record Digitization </h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">
-              The system facilitates fast and accurate retrieval of land records from a massive digital database using a unique, sequential Property ID or similarly sorted index.
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Binary Search</div>
-              <div class="algorithm-desc">Binary Search gives O(log N) time for fast lookups.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(4)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(4)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(4)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>int binarySearch(const int IDs[], int N, int targetID) {
-    int low = 0;
-    int high = N - 1;
-
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-
-        if (IDs[mid] == targetID) return mid;
-        else if (IDs[mid] < targetID) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
-            <div class="sdg-badge secondary">🎯 SDG 1: No Poverty</div>
-          </div>
-        </div>
-
-        <!-- IDEA 5 -->
-        <div class="business-idea" data-idea="5" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">05</div>
-            <h2 class="idea-title">Food Quality & Contamination Detection System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">The system checks if contaminant levels in a food sample exceed regulatory threshold limits.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Linear Search</div>
-              <div class="algorithm-desc">List is small → O(N) is sufficient and simple.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(5)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(5)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(5)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>#include &lt;string.h&gt;
-
-const int MAX_CONTAMINANTS = 5;
-
-typedef struct {
-    char contaminant[20];
-    double maxPPM;
-} Threshold;
-
-int checkContamination(const Threshold limits[], const char* name, double samplePPM) {
-    for (int i = 0; i < MAX_CONTAMINANTS; i++) {
-        if (strcmp(limits[i].contaminant, name) == 0) {
-            if (samplePPM > limits[i].maxPPM) return 1;
-            return 0;
-        }
-    }
-    return -1;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 3: Good Health and Well-being</div>
-            <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div>
-          </div>
-        </div>
-
-        <!-- IDEA 6 -->
-        <div class="business-idea" data-idea="6" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">06</div>
-            <h2 class="idea-title">Vital Statistics & Civil Records</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">Organizing huge civil datasets reliably while maintaining stability and consistency.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Merge Sort</div>
-              <div class="algorithm-desc">Stable, guaranteed O(N log N).</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(6)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(6)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(6)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = l + (r - l) / 2;
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
-        merge(arr, l, m, r);
-    }
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
-            <div class="sdg-badge secondary">🎯 SDG 17: Partnerships for the Goals</div>
-          </div>
-        </div>
-
-        <!-- IDEA 7 -->
-        <div class="business-idea" data-idea="7" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">07</div>
-            <h2 class="idea-title">E-Governance Smart Queue Management System</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">Manages citizen queues using priority handling to minimize wait times and improve service.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Max-Heap</div>
-              <div class="algorithm-desc">Highest priority citizen always served first.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(7)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(7)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(7)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>const int N = 5;
-int H[N + 1] = {0, 5, 3, 1, 9, 7};
-
-void maxHeapify(int H[], int k, int n) {
-    int v = H[k];
-    int heap = 0;
-
-    while (!heap && 2 * k <= n) {
-        int j = 2 * k;
-        if (j < n && H[j] < H[j + 1]) j = j + 1;
-
-        if (v >= H[j]) heap = 1;
-        else {
-            H[k] = H[j];
-            k = j;
-        }
-    }
-    H[k] = v;
-}
-
-void serveNextCitizen(int H[], int *n) {
-    if (*n < 1) {
-        printf("Queue is empty.\n");
-        return;
-    }
-
-    printf("Now Serving Priority: %d\n", H[1]);
-    H[1] = H[*n];
-    (*n)--;
-    maxHeapify(H, 1, *n);
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 16: Peace, Justice, and Strong Institutions</div>
-            <div class="sdg-badge secondary">🎯 SDG 10: Reduced Inequalities</div>
-          </div>
-        </div>
-
-        <!-- IDEA 8 -->
-        <div class="business-idea" data-idea="8" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">08</div>
-            <h2 class="idea-title">Public Library Services</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">Fast searching for books by ID using a sorted catalogue.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Binary Search</div>
-              <div class="algorithm-desc">O(log N) lookup time for sorted book catalogue.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(8)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(8)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(8)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>int binarySearch(const int IDs[], int N, int targetID) {
-    int low = 0, high = N - 1;
-
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-
-        if (IDs[mid] == targetID) return mid;
-        else if (IDs[mid] < targetID) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 4: Quality Education</div>
-            <div class="sdg-badge secondary">🎯 SDG 11: Sustainable Cities and Communities</div>
-          </div>
-        </div>
-
-        <!-- IDEA 9 -->
-        <div class="business-idea" data-idea="9" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">09</div>
-            <h2 class="idea-title">ATM & Kiosk Maintenance Business</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">Minimizes total cable length or travel cost across ATM/Kiosk locations.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Prim's Algorithm</div>
-              <div class="algorithm-desc">For MST generation to minimize total connection cost.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(9)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(9)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(9)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>const int V = 4;
-
-int primMST(int adj[V][V]) {
-    int key[V];
-    int mstSet[V] = {0};
-    int totalCost = 0;
-
-    for (int i = 0; i < V; i++) key[i] = 99999;
-    key[0] = 0;
-
-    for (int count = 0; count < V; count++) {
-        int u = minKey(key, mstSet);
-        if (u == -1) break;
-
-        mstSet[u] = 1;
-        totalCost += key[u];
-
-        for (int v = 0; v < V; v++) {
-            if (adj[u][v] != 0 && !mstSet[v] &&
-                adj[u][v] < key[v]) {
-                key[v] = adj[u][v];
-            }
-        }
-    }
-    return totalCost;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 9: Industry, Innovation, and Infrastructure</div>
-            <div class="sdg-badge secondary">🎯 SDG 8: Decent Work and Economic Growth</div>
-          </div>
-        </div>
-
-        <!-- IDEA 10 -->
-        <div class="business-idea" data-idea="10" data-dataset="">
-          <div class="idea-header">
-            <div class="idea-number">10</div>
-            <h2 class="idea-title">Agriculture and Irrigation Maintenance Services</h2>
-          </div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">⭐</span> Explanation</h3>
-            <div class="explanation-box">Checks if water flow is possible between points in an irrigation network.</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">🧮</span> Algorithm Used</h3>
-            <div class="algorithm-box">
-              <div class="algorithm-name">Union-Find (DSU)</div>
-              <div class="algorithm-desc">Efficiently tracks connectivity in irrigation networks.</div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="section-block">
-            <h3 class="section-title"><span class="section-icon">💻</span> C++ Code</h3>
-            <div class="code-container">
-              <div class="code-header">
-                <span class="code-lang">C++</span>
-                <div>
-                  <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-                  <button class="btn-small" onclick="openCodeModal(10)">View C++ Code</button>
-                  <button class="btn-small" onclick="openDatasetModal(10)">View Dataset</button>
-                  <button class="btn-small" onclick="openFlowchartModal(10)">View Flowchart</button>
-                </div>
-              </div>
-              <div class="code-block">
-<pre>const int NODES = 5;
-int parent[NODES];
-
-int find(int i) {
-    if (parent[i] == i) return i;
-    parent[i] = find(parent[i]);
-    return parent[i];
-}
-
-void unite(int i, int j) {
-    int root_i = find(i);
-    int root_j = find(j);
-
-    if (root_i != root_j) parent[root_i] = root_j;
-}</pre>
-              </div>
-            </div>
-          </div>
-
-          <div class="sdg-badges">
-            <div class="sdg-badge">🎯 SDG 6: Clean Water and Sanitation</div>
-            <div class="sdg-badge secondary">🎯 SDG 2: Zero Hunger</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>&copy; 2025 Sonika - Portfolio. All rights reserved.</p>
-    </footer>
-  </main>
-
-  <!-- === Modals (one generic modal system) === -->
-  <div id="modalBackdrop" class="modal-backdrop" onclick="if(event.target===this) closeModal();">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-header">
-        <div class="modal-title" id="modalTitle">Modal</div>
-        <button class="close-btn" onclick="closeModal()">✕</button>
-      </div>
-      <div class="modal-body" id="modalBody">
-        <!-- Filled dynamically -->
-      </div>
-    </div>
-  </div>
-
-  <!-- === Hidden containers for the full C++ code per idea (used by JS to open large code view) === -->
-  <template id="codeTemplate-1"><div><div class="modal-title">University Admission & Hostel Allocation — C++</div><div class="code-large"><pre>// Full (expanded) example: Admission + Hostels (skeleton)
-// NOTE: Replace with your complete code from the PDF if available
-
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct Applicant {
-  string name;
-  int merit;
-  int distance;
-  // Add other fields...
-};
-
-int partitionVec(vector&lt;Applicant&gt;&amp; A, int low, int high) {
-  int pivot = A[high].merit;
-  int i = low - 1;
-  for(int j=low;j&lt;high;++j) {
-    if(A[j].merit >= pivot) {
-      ++i; swap(A[i], A[j]);
-    }
-  }
-  swap(A[i+1], A[high]);
-  return i+1;
-}
-
-void quickSortApplicants(vector&lt;Applicant&gt;&amp; A, int low, int high) {
-  if(low &lt; high) {
-    int pi = partitionVec(A, low, high);
-    quickSortApplicants(A, low, pi-1);
-    quickSortApplicants(A, pi+1, high);
-  }
-}
-
-// Max-heap for hostel allocation (sample)
-void allocateHostels(vector&lt;Applicant&gt; & applicants) {
-  // convert to a heap by merit or priority
-  make_heap(applicants.begin(), applicants.end(), [](const Applicant &a, const Applicant &b){
-    return a.merit &lt; b.merit; // max-heap by merit
-  });
-  // pop highest priority and assign rooms...
-}</pre></div></div></template>
-
-  <template id="codeTemplate-2"><div><div class="modal-title">Urban Forest — C++</div><div class="code-large"><pre>// Hash table / direct-address example (skeleton)
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-using namespace std;
-
-const int MAX_TREES = 1000;
-int treeHealth[MAX_TREES];
-
-void addTree(int id, int health) {
-  if(id &gt;=0 &amp;&amp; id &lt; MAX_TREES) treeHealth[id] = health;
-}
-// ... expand from PDF
-</pre></div></div></template>
-
-  <!-- Templates for other code modals (3..10) are similar - included as minimal skeletons so modal opens without errors -->
-  <template id="codeTemplate-3"><div><div class="modal-title">Smart Tourism — C++</div><div class="code-large"><pre>// Dijkstra skeleton - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-4"><div><div class="modal-title">Land Records — C++</div><div class="code-large"><pre>// Binary search skeleton - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-5"><div><div class="modal-title">Food Contamination — C++</div><div class="code-large"><pre>// Contamination checker - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-6"><div><div class="modal-title">Vital Statistics — C++</div><div class="code-large"><pre>// Merge sort skeleton - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-7"><div><div class="modal-title">E-Governance Queue — C++</div><div class="code-large"><pre>// Max-Heap methods - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-8"><div><div class="modal-title">Library Services — C++</div><div class="code-large"><pre>// Binary search for books - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-9"><div><div class="modal-title">ATM Maintenance — C++</div><div class="code-large"><pre>// Prim MST skeleton - expand from PDF
-</pre></div></div></template>
-  <template id="codeTemplate-10"><div><div class="modal-title">Irrigation — C++</div><div class="code-large"><pre>// DSU skeleton - expand from PDF
-</pre></div></div></template>
-
-  <!-- Template for flowchart (placeholder) -->
-  <template id="flowchartTemplate">
-    <div>
-      <div class="modal-title" id="flowTitle">Flowchart</div>
-      <div class="modal-body">
-        <div class="placeholder" id="flowPlaceholder">Flowchart image not provided. Replace placeholder with the flowchart image or screenshot from the PDF.</div>
-      </div>
-    </div>
-  </template>
-
-  <!-- Template for PDF embed -->
-  <template id="pdfTemplate">
-    <div>
-      <div class="modal-title">Project PDF — Deliverable</div>
-      <div class="modal-body">
-        <div style="margin-bottom:0.6rem"><strong>Note:</strong> If you deploy to GitHub Pages, move the PDF into the same repo and update the `embed` `src` attribute accordingly.</div>
-        <embed id="pdfEmbed" src="/mnt/data/4e6fa41f-e8b2-4e7f-af35-485a0b43d595.pdf" type="application/pdf" />
-      </div>
-    </div>
-  </template>
-
-  <!-- Template for dataset -->
-  <template id="datasetTemplate">
-    <div>
-      <div class="modal-title" id="datasetTitle">Dataset</div>
-      <div class="modal-body" id="datasetBody">
-        <!-- Filled dynamically -->
-      </div>
-    </div>
-  </template>
-
-  <script>
-    // === Existing page scripts (kept logic same) ===
-    function copyCode(button) {
-      const codeBlock = button.closest('.code-container').querySelector('.code-block pre').innerText;
-      navigator.clipboard.writeText(codeBlock).then(() => {
-        const orig = button.innerText;
-        button.innerText = 'Copied!';
-        setTimeout(() => button.innerText = orig, 2000);
-      }).catch(()=> {
-        alert('Copy failed — permission denied or insecure context.');
-      });
-    }
-
-    (function () {
-      const storedTheme = localStorage.getItem('theme');
-      let initialTheme;
-
-      if (storedTheme === 'light' || storedTheme === 'dark') {
-        initialTheme = storedTheme;
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        initialTheme = 'dark';
-      } else {
-        initialTheme = 'light';
-      }
-      document.body.setAttribute('data-theme', initialTheme);
-
-      const themeToggle = document.getElementById('themeToggle');
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-          const next = current === 'light' ? 'dark' : 'light';
-          document.body.setAttribute('data-theme', next);
-          localStorage.setItem('theme', next);
-        });
-      }
-
-      const backToTopButton = document.getElementById('backToTop');
-      if (backToTopButton) {
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 300) backToTopButton.classList.add('show');
-          else backToTopButton.classList.remove('show');
-        });
-        backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-      }
-    })();
-
-    // === Modal logic: open/close and inject content ===
-    const modalBackdrop = document.getElementById('modalBackdrop');
-    const modalBody = document.getElementById('modalBody');
-    const modalTitle = document.getElementById('modalTitle');
-
-    function openModal(title, innerHTML) {
-      modalTitle.innerText = title || 'Details';
-      modalBody.innerHTML = innerHTML || '';
-      modalBackdrop.classList.add('show');
-      // scroll modal to top
-      modalBody.parentElement.scrollTop = 0;
-    }
-    function closeModal() {
-      modalBackdrop.classList.remove('show');
-      modalBody.innerHTML = '';
-    }
-
-    // Open the large C++ code modal for a given idea
-    function openCodeModal(idea) {
-      const tpl = document.getElementById('codeTemplate-' + idea);
-      if (tpl) {
-        openModal('', tpl.innerHTML);
-      } else {
-        openModal('C++ Code', '<div class="placeholder">Full code for idea '+idea+' not found. Paste it into the codeTemplate-'+idea+' template.</div>');
-      }
-    }
-
-    // Open dataset modal: reads dataset URL from the .business-idea data attribute
-    function openDatasetModal(idea) {
-      const el = document.querySelector('.business-idea[data-idea="'+idea+'"]');
-      const ds = el ? el.getAttribute('data-dataset') : null;
-      if (ds && ds.trim().length) {
-        const bodyHTML = '<div><div style="margin-bottom:0.6rem">Dataset preview for idea '+idea+' — if the link is a raw CSV (GitHub raw) it will load below.</div>' +
-                         '<iframe src="'+ds+'" style="height:70vh"></iframe></div>';
-        openModal('Dataset — Idea ' + idea, bodyHTML);
-      } else {
-        const bodyHTML = '<div class="placeholder">No dataset link provided for Idea '+idea+'.<br/><br/>To attach a dataset, either:<ul><li>host the CSV publicly (eg GitHub raw link) and set the <code>data-dataset</code> attribute on the idea element, or</li><li>reply with your CSV links and I will add them for you.</li></ul></div>';
-        openModal('Dataset — Idea ' + idea, bodyHTML);
-      }
-    }
-
-    // Flowchart modal (placeholder: you can replace the placeholder with an <img> pointing to your flowchart image)
-    function openFlowchartModal(idea) {
-      const tpl = document.getElementById('flowchartTemplate');
-      const clone = tpl.content ? tpl.content.cloneNode(true) : tpl.innerHTML;
-      const title = 'Flowchart — Idea ' + idea;
-      openModal(title, tpl.innerHTML);
-      // you can replace #flowPlaceholder innerHTML with an <img src="..."> using JS if you upload an image
-    }
-
-    // PDF modal
-    function openPdfModal() {
-      const pdfTpl = document.getElementById('pdfTemplate');
-      openModal('Project PDF', pdfTpl.innerHTML);
-      // If the PDF is hosted elsewhere, edit the embed src: document.getElementById('pdfEmbed').src = 'URL';
-    }
-
-    // Small helper: open code modal from code snippet click if needed
-    // Additionally we add keyboard ESC to close
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-    // Optional: populate data-dataset defaults programmatically (we prefilled idea 1 with your GitHub example)
-    (function fillDefaults() {
-      // Example: you gave https://github.com/atharva-in-bits/DAA-2025/blob/main/Shashank/D1.csv
-      // Use the raw link so it can be embedded in an iframe:
-      const rawD1 = 'https://raw.githubusercontent.com/atharva-in-bits/DAA-2025/main/Shashank/D1.csv';
-      const idea1 = document.querySelector('.business-idea[data-idea="1"]');
-      if (idea1 && !idea1.getAttribute('data-dataset')) idea1.setAttribute('data-dataset', rawD1);
-      // (other ideas left empty - paste dataset URLs manually or tell me and I'll add)
-    })();
-
-    // Copy code from large modal (if you later add a copy button inside templates)
-    function copyFromLargeModal() {
-      const pre = modalBody.querySelector('pre');
-      if (!pre) return alert('No code found to copy.');
-      navigator.clipboard.writeText(pre.innerText).then(()=> alert('Copied full code to clipboard'));
-    }
-  </script>
+<div class="container">
+
+<!-- ================= IDEA 1 ================= -->
+<div class="idea-card">
+<div class="idea-header">
+<div class="idea-number">01</div>
+<div class="idea-title">University Admission & Hostel Allocation System</div>
+</div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">
+Ranks students based on merit scores and allocates hostel rooms using priority rules such as rank and distance.
+</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">
+Quick Sort, Merge Sort, Max Heap, Linear Search
+</div></div>
+
+<div class="section"><h3>Time & Space Complexity</h3>
+<table class="table">
+<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+<tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
+<tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
+<tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
+<tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
+</table></div>
+
+<div class="section"><h3>Best Suited Algorithm</h3>
+<div class="box">
+<b>Quick Sort</b> is best for efficiently ranking large student datasets in real admission systems.
+</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case1.cpp">💻 C++ Code</a>
+<a href="data/D1.csv">📊 Dataset</a>
+<a href="images/flow1.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 4: Quality Education</div>
+</div>
+
+<!-- ================= IDEA 2 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">02</div>
+<div class="idea-title">Urban Forest & Green Coverage Management</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">
+Maintains tree records, species, and health status for sustainable urban planning.
+</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">
+Hashing, Linear Search
+</div></div>
+
+<div class="section"><h3>Time & Space Complexity</h3>
+<table class="table">
+<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+<tr><td>Hashing</td><td>O(1)</td><td>O(N)</td></tr>
+<tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
+</table></div>
+
+<div class="section"><h3>Best Suited Algorithm</h3>
+<div class="box">
+<b>Hashing</b> allows instant access to tree records using unique Tree IDs.
+</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case2.cpp">💻 C++ Code</a>
+<a href="data/D2.csv">📊 Dataset</a>
+<a href="images/flow2.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 11: Sustainable Cities</div>
+</div>
+
+<!-- ================= IDEA 3 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">03</div>
+<div class="idea-title">Smart Tourism Planner</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">
+Finds the shortest travel routes between tourist destinations to save time and cost.
+</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">
+Dijkstra, Bellman-Ford
+</div></div>
+
+<div class="section"><h3>Time & Space Complexity</h3>
+<table class="table">
+<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+<tr><td>Dijkstra</td><td>O(V²)</td><td>O(V)</td></tr>
+<tr><td>Bellman-Ford</td><td>O(VE)</td><td>O(V)</td></tr>
+</table></div>
+
+<div class="section"><h3>Best Suited Algorithm</h3>
+<div class="box">
+<b>Dijkstra</b> is faster and efficient for non-negative travel distances.
+</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case3.cpp">💻 C++ Code</a>
+<a href="data/D3.csv">📊 Dataset</a>
+<a href="images/flow3.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 8: Economic Growth</div>
+</div>
+
+<!-- ================= IDEA 4 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">04</div>
+<div class="idea-title">Land Record Digitization</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">
+Digitally retrieves land ownership details efficiently.
+</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Binary Search, Linear Search</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">
+Binary Search: O(log N), O(1)<br>
+Linear Search: O(N), O(1)
+</div></div>
+
+<div class="section"><h3>Best Suited Algorithm</h3>
+<div class="box"><b>Binary Search</b> provides faster lookup in sorted records.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case4.cpp">💻 C++ Code</a>
+<a href="data/D4.csv">📊 Dataset</a>
+<a href="images/flow4.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 16</div>
+</div>
+
+<!-- ================= IDEA 5 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">05</div>
+<div class="idea-title">Food Quality & Contamination Detection</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Detects unsafe food samples by checking contamination levels.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Linear Search</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">Time: O(N), Space: O(1)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Linear Search is sufficient due to small datasets.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case5.cpp">💻 C++ Code</a>
+<a href="data/D5.csv">📊 Dataset</a>
+<a href="images/flow5.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 3</div>
+</div>
+
+<!-- ================= IDEA 6 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">06</div>
+<div class="idea-title">Vital Statistics & Civil Records</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Sorts and manages large civil data securely.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Merge Sort, Quick Sort</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">Merge Sort: O(N log N), O(N)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Merge Sort ensures stability for official records.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case6.cpp">💻 C++ Code</a>
+<a href="data/D6.csv">📊 Dataset</a>
+<a href="images/flow6.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 16</div>
+</div>
+
+<!-- ================= IDEA 7 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">07</div>
+<div class="idea-title">E-Governance Smart Queue Management</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Serves citizens based on priority levels.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Max Heap, Queue</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">Heap: O(log N), O(N)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Max Heap ensures highest priority served first.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case7.cpp">💻 C++ Code</a>
+<a href="data/D7.csv">📊 Dataset</a>
+<a href="images/flow7.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 10</div>
+</div>
+
+<!-- ================= IDEA 8 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">08</div>
+<div class="idea-title">Public Library Services</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Provides fast search for books in library systems.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Binary Search</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">Time: O(log N), Space: O(1)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Binary Search ensures fast retrieval.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case8.cpp">💻 C++ Code</a>
+<a href="data/D8.csv">📊 Dataset</a>
+<a href="images/flow8.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 4</div>
+</div>
+
+<!-- ================= IDEA 9 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">09</div>
+<div class="idea-title">ATM & Kiosk Maintenance</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Optimizes maintenance routes and cost.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Prim’s Algorithm</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">Time: O(V²), Space: O(V²)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Prim’s algorithm minimizes total maintenance cost.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case9.cpp">💻 C++ Code</a>
+<a href="data/D9.csv">📊 Dataset</a>
+<a href="images/flow9.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 9</div>
+</div>
+
+<!-- ================= IDEA 10 ================= -->
+<div class="idea-card">
+<div class="idea-header"><div class="idea-number">10</div>
+<div class="idea-title">Agriculture & Irrigation Maintenance</div></div>
+
+<div class="section"><h3>Description</h3>
+<div class="box">Checks connectivity between irrigation points.</div></div>
+
+<div class="section"><h3>Algorithms Applicable</h3>
+<div class="box">Union-Find (DSU), BFS</div></div>
+
+<div class="section"><h3>Complexity</h3>
+<div class="box">DSU: O(αN), Space: O(N)</div></div>
+
+<div class="section"><h3>Best Algorithm</h3>
+<div class="box">Union-Find efficiently tracks connectivity.</div></div>
+
+<div class="section"><h3>Resources</h3>
+<div class="box links">
+<a href="code/Case10.cpp">💻 C++ Code</a>
+<a href="data/D10.csv">📊 Dataset</a>
+<a href="images/flow10.png">🧭 Flowchart</a>
+</div></div>
+
+<div class="sdg">SDG 6</div>
+</div>
+
+</div>
 </body>
 </html>
