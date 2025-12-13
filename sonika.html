@@ -181,8 +181,40 @@ body.dark nav ul li a {
   line-height: 1.6;
   font-size: 15px;
 }
+/* ============== DARK MODE ============== */
+body.dark {
+  background: linear-gradient(120deg, #0f172a, #020617);
+  color: #e5e7eb;
+}
 
-  </style>
+body.dark header {
+  background: linear-gradient(90deg, #1e293b, #020617);
+}
+
+body.dark .idea-card,
+body.dark .intro-card {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .box,
+body.dark .intro-box {
+  background: #020617;
+}
+
+body.dark table th {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark table td {
+  color: #e5e7eb;
+}
+
+body.dark nav ul li a {
+  color: #e5e7eb;
+}
+</style>
 </head>
 
 <body>
@@ -211,33 +243,37 @@ body.dark nav ul li a {
 </header>
 
 <div class="container">
-<!-- ================= INTRO CARD ================= -->
-<div class="idea-card" style="border-left: 6px solid #6366f1;">
-  <h2 style="margin-top:0;">Sonika – Business Ideas & Algorithmic Solutions</h2>
+<!-- ================= NEW INTRO SECTION ================= -->
 
-  <div class="box" style="margin-top:15px;">
-    <h3 style="margin:0;">Sonika Kalgutkar</h3>
-    <p style="margin:6px 0;">
-      <b>Roll No:</b> 210 <br>
-      <b>USN:</b> 01FE24BCS029 <br>
-      <b>Department:</b> Computer Science & Engineering <br>
-      <b>Course:</b> Design & Analysis of Algorithms
-    </p>
+<div class="intro-card">
+
+  <div class="intro-name">Sonika Kalgutkar</div>
+
+  <div class="intro-details">
+    <p><b>Roll No:</b> 210</p>
+    <p><b>USN:</b> 01FE24BCS029</p>
+    <p><b>Department:</b> Computer Science & Engineering</p>
+    <p><b>Course:</b> Design & Analysis of Algorithms</p>
   </div>
 
-  <div class="section-title">🎯 Focus Areas</div>
-  <div class="box">
+  <div class="intro-section">🎯 Focus Areas</div>
+  <div class="intro-box">
     Algorithms • Data Structures • Graph Algorithms • Sorting Techniques
   </div>
 
-  <div class="section-title">📌 Project Overview</div>
-  <div class="box">
-    This portfolio presents 10 real-world business ideas for Bellasagaram, 
-    solved using classic DSA and algorithmic techniques in C++ with 
-    proper time and space complexity analysis.
+  <div class="intro-section">📌 Project Overview</div>
+  <div class="intro-box">
+    This portfolio presents 10 real-world business ideas for Bellasagaram,
+    solved using classic DSA and algorithmic techniques in C++ with proper
+    time and space complexity analysis.
   </div>
+
 </div>
-<!-- ================= END INTRO CARD ================= -->
+
+<!-- SPACE AFTER INTRO -->
+<div style="height:40px;"></div>
+
+<!-- ================= END NEW INTRO SECTION ================= -->
 
   <div class="ideas-grid">
     
