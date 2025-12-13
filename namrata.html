@@ -752,6 +752,7 @@
       </div>
 
       <!-- PROJECT 1 -->
+      <!-- PROJECT 1 -->
       <div class="project-card">
         <div class="project-header">
           <div class="project-number">01</div>
@@ -786,45 +787,99 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
           </div>
           <div class="code-block">
-            <pre>#include &lt;iostream&gt;
-#include &lt;climits&gt;
-using namespace std;
+            <pre>#include &lt;stdio.h&gt;
 
-#define V 4 // Number of intersections
+// Define graph size and constants
+#define MAXN 4 // Using 4 vertices (V) from the original problem
+#define INF 1000000 // A large number to represent infinity
 
-int graph[V][V] = {{0, 4, INT_MAX, INT_MAX},
-                   {4, 0, 8, INT_MAX},
-                   {INT_MAX, 8, 0, 7},
-                   {INT_MAX, INT_MAX, 7, 0}};
+// --- Global Data Structures ---
+// cost[i][j] is the travel time/distance from i to j. INF if no direct path.
+int cost[MAXN][MAXN] = {
+    {0, 4, INF, INF},
+    {4, 0, 8, INF},
+    {INF, 8, 0, 7},
+    {INF, INF, 7, 0}
+};
 
-int minDistance(int dist[], bool sptSet[]) {
-    int min = INT_MAX, min_index;
-    for (int v = 0; v < V; v++)
-        if (sptSet[v] == false && dist[v] <= min)
-            min = dist[v], min_index = v;
-    return min_index;
-}
+int dist[MAXN]; // Stores the shortest distance from the source
+int path[MAXN]; // Stores the predecessor of the node in the shortest path
+int visited[MAXN]; // Acts as the sptSet (0 = false/not processed, 1 = true/processed)
 
-void dijkstra(int graph[V][V], int src) {
-    int dist[V];
-    bool sptSet[V];
-    for (int i = 0; i < V; i++)
-        dist[i] = INT_MAX, sptSet[i] = false;
-    dist[src] = 0;
-    for (int count = 0; count < V - 1; count++) {
-        int u = minDistance(dist, sptSet);
-        sptSet[u] = true;
-        for (int v = 0; v < V; v++)
-            if (!sptSet[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v])
-                dist[v] = dist[u] + graph[u][v];
+// --- Dijkstra's Algorithm Implementation ---
+void dijkstra(int n, int source) {
+    // Initialization
+    for(int i = 0; i < n; i++) {
+        dist[i] = cost[source][i]; // Direct cost from source
+        path[i] = source;          // Predecessor of i is source initially
+        visited[i] = 0;
     }
-    cout << "Distances from source " << src << ":\\n";
-    for (int i = 0; i < V; i++)
-        cout << "Vertex " << i << ": " << dist[i] << endl;
+    visited[source] = 1;
+    dist[source] = 0; // Distance from source to itself is 0
+
+    // Main loop: n-1 iterations to find the shortest path to all nodes
+    for(int iter = 0; iter < n - 1; iter++) {
+        int u = -1, min_dist = INF + 1;
+        
+        // 1. Find the unvisited node u with the smallest distance
+        for(int i = 0; i < n; i++) {
+            if(!visited[i] && dist[i] < min_dist) { 
+                min_dist = dist[i]; 
+                u = i; 
+            }
+        }
+
+        if(u == -1) break; // All remaining nodes are unreachable or processed
+        visited[u] = 1;
+
+        // 2. Update distances to neighbors (Relaxation)
+        for(int v = 0; v < n; v++) {
+            // Check if v is not processed AND there is an edge from u to v
+            if(!visited[v] && cost[u][v] != INF) {
+                // Relaxation step: If the path through u is shorter than the current distance to v
+                if(dist[u] + cost[u][v] < dist[v]) {
+                    dist[v] = dist[u] + cost[u][v];
+                    path[v] = u;
+                }
+            }
+        }
+    }
 }
 
+// --- Utility function to print the results ---
+void print_results(int n, int source) {
+    printf("Shortest Path Results from Source %d:\n", source);
+    for (int i = 0; i < n; i++) {
+        if (i == source) continue;
+        
+        printf("Vertex %d:\n", i);
+        
+        // Print Distance
+        if (dist[i] == INF) {
+            printf("  Distance: Unreachable\n");
+        } else {
+            printf("  Distance: %d\n", dist[i]);
+            
+            // Print Path (Reconstruct by tracing the path array backwards)
+            printf("  Path: %d", i);
+            int current = i;
+            while (current != source) {
+                current = path[current];
+                printf(" <- %d", current);
+            }
+            printf("\n");
+        }
+    }
+}
+
+// --- Main Function ---
 int main() {
-    dijkstra(graph, 0);
+    int num_vertices = MAXN;
+    int source_vertex = 0;
+    
+    dijkstra(num_vertices, source_vertex);
+    print_results(num_vertices, source_vertex);
+    
     return 0;
 }</pre>
           </div>
@@ -851,7 +906,7 @@ int main() {
             <p>Space: O(V²)</p>
           </div>
         </div>
-      </div>
+                </div>
 
       <!-- PROJECT 2 -->
       <div class="project-card">
