@@ -1,1 +1,31 @@
-
+PropertyID,OwnerName,AreaSqFt,LandType,District,ValueINR
+1001,Ramesh Patil,1200,Residential,Dharwad,3500000
+1002,Suresh Kulkarni,1500,Residential,Dharwad,4200000
+1003,Anita Desai,900,Commercial,Hubballi,5100000
+1004,Prakash Naik,2000,Agricultural,Gadag,2800000
+1005,Meena Joshi,1100,Residential,Dharwad,3600000
+1006,Vinay Hegde,2500,Agricultural,Haveri,3000000
+1007,Sunita Rao,1300,Residential,Hubballi,3900000
+1008,Rajesh Shetty,1800,Commercial,Hubballi,6500000
+1009,Anil Patil,2200,Agricultural,Gadag,2700000
+1010,Kavita Kulkarni,1400,Residential,Dharwad,4100000
+1011,Nitin Deshpande,1600,Residential,Hubballi,4300000
+1012,Pooja Naik,950,Commercial,Dharwad,5200000
+1013,Shankar Joshi,3000,Agricultural,Haveri,3100000
+1014,Rekha Patil,1250,Residential,Dharwad,3700000
+1015,Ajay Kulkarni,1750,Commercial,Hubballi,6000000
+1016,Smita Rao,1450,Residential,Dharwad,4050000
+1017,Deepak Shetty,2100,Agricultural,Gadag,2600000
+1018,Neha Desai,1550,Residential,Hubballi,4400000
+1019,Manoj Patil,1900,Commercial,Hubballi,6300000
+1020,Lata Joshi,1350,Residential,Dharwad,3950000
+1021,Rohit Naik,2600,Agricultural,Haveri,3150000
+1022,Asha Kulkarni,1150,Residential,Dharwad,3650000
+1023,Santosh Rao,1700,Commercial,Hubballi,5900000
+1024,Kiran Patil,2250,Agricultural,Gadag,2750000
+1025,Divya Desai,1500,Residential,Hubballi,4200000
+1026,Arun Joshi,2800,Agricultural,Haveri,3250000
+1027,Pallavi Naik,1300,Residential,Dharwad,3850000
+1028,Suresh Shetty,1850,Commercial,Hubballi,6400000
+1029,Rajani Kulkarni,1400,Residential,Dharwad,4000000
+1030,Vikas Patil,2400,Agricultural,Gadag,2900000
