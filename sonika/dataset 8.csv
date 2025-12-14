@@ -1,1 +1,52 @@
+BookID,Title,Author,Category,Year,Status
+1001,Data Structures in C,Mark Allen Weiss,CS,2018,Available
+1002,Introduction to Algorithms,CLRS,CS,2009,Issued
+1003,Operating System Concepts,Silberschatz,CS,2016,Available
+1004,Computer Networks,Tanenbaum,CS,2014,Available
+1005,Database System Concepts,Korth,CS,2015,Issued
+1006,Artificial Intelligence,Russell,AI,2019,Available
+1007,Machine Learning,Tom Mitchell,AI,2017,Issued
+1008,Deep Learning,Ian Goodfellow,AI,2018,Available
+1009,Python Programming,Guido van Rossum,CS,2020,Available
+1010,Java Complete Reference,Herbert Schildt,CS,2019,Issued
+1011,C Programming Language,Kernighan,CS,2016,Available
+1012,C++ Primer,Lippman,CS,2018,Issued
+1013,Discrete Mathematics,Rosen,Math,2015,Available
+1014,Linear Algebra,Strang,Math,2014,Available
+1015,Calculus,Stewart,Math,2013,Issued
+1016,Digital Logic,Morris Mano,CS,2016,Available
+1017,Microprocessors,Ramesh Gaonkar,CS,2012,Available
+1018,Software Engineering,Pressman,CS,2014,Issued
+1019,Web Technologies,Ullman,CS,2020,Available
+1020,Cloud Computing,Rajkumar Buyya,CS,2019,Available
+1021,IoT Fundamentals,David Hanes,CS,2020,Issued
+1022,Data Mining,Han & Kamber,CS,2017,Available
+1023,Big Data Analytics,Seema Acharya,CS,2018,Issued
+1024,Computer Graphics,Hearn & Baker,CS,2015,Available
+1025,Compiler Design,Aho,CS,2012,Issued
+1026,Cyber Security,Nina Godbole,CS,2019,Available
+1027,Ethical Hacking,Daniel Graham,CS,2018,Issued
+1028,Unix Programming,Stevens,CS,2013,Available
+1029,Linux Administration,Shotts,CS,2016,Available
+1030,Mobile Computing,Asoke Talukder,CS,2017,Issued
+1031,Probability Theory,Feller,Math,2011,Available
+1032,Statistics for Engineers,Miller,Math,2012,Available
+1033,Neural Networks,Simon Haykin,AI,2014,Issued
+1034,Pattern Recognition,Bishop,AI,2015,Available
+1035,Robotics,John Craig,AI,2016,Issued
+1036,Data Science Handbook,OReilly,CS,2020,Available
+1037,Blockchain Basics,Daniel Drescher,CS,2019,Issued
+1038,Software Testing,Patton,CS,2018,Available
+1039,Agile Development,Schwaber,CS,2017,Available
+1040,DevOps Handbook,Kim,CS,2019,Issued
+1041,Advanced Java,Deitel,CS,2018,Available
+1042,Advanced Python,Mark Lutz,CS,2021,Available
+1043,Digital Image Processing,Gonzalez,CS,2016,Issued
+1044,Human Computer Interaction,Alan Dix,CS,2015,Available
+1045,Distributed Systems,Tanenbaum,CS,2017,Issued
+1046,Theory of Computation,Sipser,CS,2014,Available
+1047,Formal Languages,Hopcroft,CS,2013,Available
+1048,Information Retrieval,Manning,CS,2016,Issued
+1049,Knowledge Engineering,Studer,AI,2018,Available
+1050,Expert Systems,Jackson,AI,2012,Available
 
