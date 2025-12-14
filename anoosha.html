@@ -1,30 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Bellasagaram | Anoosha Hokrani</title>
-  <style>
-    body{margin:0;font-family:Segoe UI,Arial;background:#0b1220;color:#e5e7eb}
-    header{padding:30px;background:#0f172a}
-    h1{margin:0;font-size:32px}
-    p{line-height:1.6}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:30px}
-    .card{background:#111827;border-radius:14px;padding:20px;cursor:pointer;transition:.3s}
-    .card:hover{transform:scale(1.03);background:#1e293b}
-    .card span{font-size:22px}
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center}
-    .modal-content{background:#020617;width:85%;max-height:85%;overflow:auto;border-radius:16px;padding:30px}
-    .close{float:right;font-size:22px;cursor:pointer}
-    button{background:#2563eb;border:none;color:white;padding:10px 16px;border-radius:8px;cursor:pointer;margin-top:10px}
-    pre{background:#020617;padding:15px;border-radius:10px;overflow:auto;display:none;white-space:pre-wrap}
-    h3{margin-top:25px}
-  </style>
+<style>
+  body {
+    margin: 0;
+    font-family: Segoe UI, Arial;
+    background: #e0f2fe; /* light blue background */
+    color: #0f172a;      /* dark navy text for contrast */
+  }
+
+  header {
+    padding: 30px;
+    background: #2563eb; /* strong blue header */
+    color: #f0f9ff;      /* very light text */
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #f0f9ff; /* header title in light text */
+  }
+
+  p {
+    line-height: 1.6;
+    color: #0f172a; /* readable dark text */
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .card {
+    background: #93c5fd; /* medium light blue card */
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s;
+    color: #0f172a; /* dark text inside cards */
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    background: #60a5fa; /* brighter blue on hover */
+  }
+
+  .card span {
+    font-size: 22px;
+  }
+
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(37, 99, 235, 0.85); /* semi-transparent blue overlay */
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background: #f0f9ff; /* very light blue modal background */
+    width: 85%;
+    max-height: 85%;
+    overflow: auto;
+    border-radius: 16px;
+    padding: 30px;
+    color: #0f172a; /* dark text inside modal */
+  }
+
+  .close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #2563eb; /* blue close button */
+  }
+
+  button {
+    background: #2563eb; /* blue button */
+    border: none;
+    color: #f0f9ff; /* light text */
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background: #1e40af; /* darker blue hover */
+  }
+
+  pre {
+    background: #e0f2fe; /* light blue code block */
+    padding: 15px;
+    border-radius: 10px;
+    overflow: auto;
+    display: none;
+    white-space: pre-wrap;
+    color: #0f172a;
+  }
+
+  h3 {
+    margin-top: 25px;
+    color: #2563eb; /* blue section headings */
+  }
+</style>
 </head>
 <body>
 <header>
-  <h1>Anoosha Hokrani</h1>
-  <p>Smart City Systems & Infrastructure – Project Bellasagaram</p>
-</header>
+  <h1 style="margin:0; font-size:32px; color:white;">
+    Anoosha Hokrani
+  </h1>
+    <p style="color:white; font-size:20px; margin-top:15px;">
+    Smart City Systems & Infrastructure – Project Bellasagaram
+  </p>
+</header><h2 style="color: #2563eb; font-size: 26px; text-align: center; margin-top: 40px;">
+  🔷 10 Visionary Business Ideas for a Smart city 🔷
+</h2>
 
 <div class="grid">
   <div class="card" onclick="openModal('waste')">♻️ Smart Waste Collection</div>
@@ -51,14 +141,35 @@
 
 <script>
 const data={
-  waste:{
-    title:'Smart Waste Collection & Recycling Management',
-    desc:`<h3>Problem Statement</h3>
+  waste: {
+  title: 'Smart Waste Collection & Recycling Management',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Urban and marine waste collection is inefficient due to fixed routes, poor prioritization of hazardous waste, and lack of real-time recycling plant selection.</p>
+
     <h3>System Approach</h3>
-    <p>The system registers waste sources using AVL Trees, prioritizes waste types via Max-Heaps, optimizes truck routes using Dijkstra/Bellman–Ford, and selects recycling plants with Min-Heaps.</p>
+    <p>The system registers waste sources using AVL Trees, prioritizes waste types via Max-Heaps, optimizes truck routes using Dijkstra and Bellman–Ford, and selects recycling plants with Min-Heaps.</p>
+
     <h3>Algorithms Used</h3>
-    <p>AVL Tree, Max Heap, Min Heap, Dijkstra, Bellman–Ford, Merge Sort, KMP, Kruskal/Prim</p>`,
+    <p>AVL Tree, Max Heap, Min Heap, Dijkstra, Bellman–Ford, Floyd–Warshall, Merge Sort, KMP, Kruskal, Prim, Red-Black Tree</p>
+
+    <h3>♻ Smart Waste Collection & Recycling System</h3>
+    <ul>
+      <li><b>Waste Registry:</b> AVL Tree – O(log n) insert/search for city, port & marine waste nodes</li>
+      <li><b>Waste Priority:</b> Max Heap – medical & hazardous waste collected first</li>
+      <li><b>Marine Alerts:</b> Sensor thresholds + Min Heap to prioritize aquatic pollution zones</li>
+      <li><b>Route Optimization:</b> Dijkstra for shortest paths; Bellman–Ford for penalty costs; Floyd–Warshall for all-pairs routing</li>
+      <li><b>Recycling Plant Choice:</b> Min Heap – lowest cost, load & distance</li>
+      <li><b>Industrial Logs:</b> Merge Sort – stable daily waste & toxicity reports</li>
+      <li><b>Factory Registry:</b> Red-Black Tree – recycling output tracking</li>
+      <li><b>Report Search:</b> KMP – fast keyword detection in logs</li>
+      <li><b>Truck Assignment:</b> Priority queue with constraints (capacity, battery, proximity)</li>
+      <li><b>Marine Network:</b> Kruskal & Prim – minimum-cost sea waste collection</li>
+      <li><b>System Reports:</b> Sorted grouping by zone and material type</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG-11, SDG-12, SDG-14, SDG-6</p>
+  `,
     code:`//#include <bits/stdc++.h>
 using namespace std;
 
@@ -979,14 +1090,31 @@ void loadFactoriesCSV(const char* fname) {
 }
 `
   },
-  parking:{
-    title:'Smart Parking System for Commercial & Entertainment Zones',
-    desc:`<h3>Problem Statement</h3>
+  parking: {
+  title: 'Smart Parking System for Commercial & Entertainment Zones',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Parking congestion around malls and theatres leads to traffic jams, wasted fuel, and poor user experience.</p>
+
     <h3>System Approach</h3>
     <p>Parking slots are stored in AVL Trees, VIP/EV vehicles are prioritized using Max-Heaps, and Dijkstra finds the nearest available slot.</p>
+
     <h3>Algorithms Used</h3>
-    <p>AVL Tree, Max Heap, Dijkstra, Merge Sort</p>`,
+    <p>AVL Tree, Max Heap, Dijkstra, Merge Sort</p>
+
+    <h3>🅿 Smart Parking System (Commercial & Entertainment Zones)</h3>
+    <ul>
+      <li><b>Parking Slot Registry:</b> AVL Tree – O(log n) insert/search for reserved and EV slots</li>
+      <li><b>VIP / Special Queue:</b> Max Heap – priority for VIP and EV vehicles</li>
+      <li><b>Shortest Path Routing:</b> Dijkstra (Adjacency Matrix) – nearest available slot selection</li>
+      <li><b>Reports & Billing:</b> Merge Sort – occupancy and revenue-based reports</li>
+      <li><b>Sensor Alerts:</b> Slot flags – block over-occupied or unavailable slots</li>
+      <li><b>EV Handling:</b> Slot attributes – ensures correct zone assignment</li>
+      <li><b>Time-Based Billing:</b> Revenue = time × rate – per-vehicle tracking</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG-11, SDG-7, SDG-9</p>
+  `,
     code:`#include <bits/stdc++.h>
 using namespace std;
 const int MAX_SLOTS=200, MAX_CARS=300, MAX_NODES=50, INF=1000000000;
@@ -1236,14 +1364,30 @@ int main(){
 
 `
   },
-  energy:{
-    title:'Renewable Energy Grid Management (Solar + Wind)',
-    desc:`<h3>Problem Statement</h3>
+  energy: {
+  title: 'Renewable Energy Grid Management (Solar + Wind)',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Renewable energy sources are intermittent, causing instability in urban power supply.</p>
+
     <h3>System Approach</h3>
     <p>Max-Heaps select highest-producing plants, Min-Heaps detect underperforming units, and Dijkstra routes power with minimal loss.</p>
+
     <h3>Algorithms Used</h3>
-    <p>Max Heap, Min Heap, Dijkstra, Bellman–Ford, Merge Sort, AVL Tree</p>`,
+    <p>Max Heap, Min Heap, Dijkstra, Bellman–Ford, Merge Sort, AVL Tree</p>
+
+    <h3>☀ Renewable Energy Grid Management (Solar + Wind)</h3>
+    <ul>
+      <li><b>Power Plant Priority:</b> Max Heap – selects highest-producing solar/wind plant first</li>
+      <li><b>Production Logs:</b> Min Heap – identifies lowest-output plants for maintenance scheduling</li>
+      <li><b>Load Distribution:</b> Dijkstra for shortest-loss routing; Bellman–Ford for penalty/toll adjustments</li>
+      <li><b>Daily Generation Sorting:</b> Merge Sort – efficient reporting of energy records</li>
+      <li><b>Plant Registry:</b> AVL Tree – O(log n) search, update, and fault detection</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑7, SDG‑13, SDG‑9</p>
+  `,
+
     code:`#include <iostream>
 #include <climits>
 #include <cstring>
@@ -1570,14 +1714,35 @@ int main() {
 }
 `
   },
-  cargo:{
-    title:'Port Cargo Scheduling & Container Allocation',
-    desc:`<h3>Problem Statement</h3>
+  cargo: {
+  title: 'Port Cargo Scheduling & Container Allocation',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Ports suffer delays due to inefficient container placement and berth scheduling.</p>
+
     <h3>System Approach</h3>
     <p>Containers are prioritized using Heaps, routes are optimized using graph algorithms, and scheduling minimizes turnaround time.</p>
+
     <h3>Algorithms Used</h3>
-    <p>Heap, Dijkstra, Bellman–Ford, Kruskal</p>`,
+    <p>Max Heap, Min Heap, AVL Tree, Red-Black Tree, Dijkstra, Bellman–Ford, Kruskal, QuickSort</p>
+
+    <h3>📦 Port Cargo Scheduling & Container Allocation</h3>
+    <ul>
+      <li><b>Cargo Priority Handling:</b> Max Heap – O(log n) handling of urgent/perishable cargo</li>
+      <li><b>Container Storage:</b> AVL Tree – fast O(log n) insert/search of container IDs</li>
+      <li><b>Cargo Search Index:</b> Red-Black Tree – efficient shipment lookup & tracking</li>
+      <li><b>Manifest Sorting:</b> QuickSort – array-based cargo report generation</li>
+      <li><b>Berth Assignment:</b> Min Heap – earliest available berth scheduling</li>
+      <li><b>Truck & Cargo Routing:</b> Dijkstra – shortest path from port to warehouse/city</li>
+      <li><b>Penalty/Traffic Costs:</b> Bellman–Ford – adjusts routing for tolls and delays</li>
+      <li><b>Network Model:</b> Adjacency Matrix – fixed-size port & city graph</li>
+      <li><b>Path Retrieval:</b> Parent Array – reconstruct delivery routes</li>
+      <li><b>Logistics Backbone:</b> Kruskal – minimum-cost spanning network for port-city connections</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑9, SDG‑12</p>
+  `,
+
     code:`#include <iostream>
 #include <string>
 #include <climits>
@@ -2078,14 +2243,32 @@ int main() {
 }
 `
   },
-  transport:{
-    title:'Public Transport Fleet Optimization',
-    desc:`<h3>Problem Statement</h3>
+  transport: {
+  title: 'Public Transport Fleet Optimization',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Uneven passenger distribution causes overcrowding on some routes and underutilization on others.</p>
+
     <h3>System Approach</h3>
     <p>Passenger demand is analyzed, routes are evaluated using BFS/DFS, and fleets are optimized using shortest paths.</p>
+
     <h3>Algorithms Used</h3>
-    <p>BFS, DFS, Dijkstra</p>`,
+    <p>BFS, DFS, Dijkstra, Bellman–Ford, Floyd–Warshall</p>
+
+    <h3>🚌 Public Transport Fleet Optimization</h3>
+    <ul>
+      <li><b>Shortest Route:</b> Dijkstra – fastest paths with positive travel times</li>
+      <li><b>Routes with Penalties:</b> Bellman–Ford – handles tolls, traffic delays, fines</li>
+      <li><b>Network Exploration:</b> BFS / DFS – checks connectivity & reachable zones</li>
+      <li><b>All-Pairs Shortest Paths:</b> Floyd–Warshall – city-wide route optimization</li>
+      <li><b>Graph Representation:</b> Adjacency Matrix – fixed-size city network</li>
+      <li><b>Distance Tracking:</b> Arrays – shortest distance & visited tracking</li>
+      <li><b>BFS Queue:</b> Array-based Queue – FIFO traversal without vectors</li>
+    </ul>
+
+    <p><b>Efficiency:</b> O(V²) Dijkstra, O(V³) Floyd–Warshall</p>
+    <p><b>SDGs:</b> SDG‑11, SDG‑13, SDG‑9</p>
+  `,
     code:`#include <iostream>
 #include <climits>
 using namespace std;
@@ -2224,15 +2407,33 @@ int main() {
 }
 `
   },
-  water:{
-    title:'Water Distribution System',
-    desc:`<h3>Problem Statement</h3>
+  water: {
+  title: 'Water Distribution System',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Water leakage and unequal distribution lead to shortages in many city zones.</p>
+
     <h3>System Approach</h3>
     <p>Pipelines are modeled as graphs, MST algorithms design efficient networks, and shortest paths reroute water during failures.</p>
+
     <h3>Algorithms Used</h3>
-    <p>Prim, Kruskal, Dijkstra</p>`,
-    code:`#include <bits/stdc++.h>
+    <p>Prim, Kruskal, Dijkstra, Bellman–Ford</p>
+
+    <h3>💧 Water Distribution System</h3>
+    <ul>
+      <li><b>Pipeline Network Design:</b> Prim / Kruskal – minimum spanning tree for efficient pipe layout</li>
+      <li><b>Leakage Rerouting:</b> Dijkstra – shortest alternate path to maintain supply during failures</li>
+      <li><b>Penalty Routing:</b> Bellman–Ford – handles extra costs due to leakage, pumping, or pressure loss</li>
+      <li><b>Zone Connectivity:</b> BFS / DFS – verify all city zones are reachable</li>
+      <li><b>Reservoir Registry:</b> AVL Tree – O(log n) lookup for tanks and reservoirs</li>
+      <li><b>Flow Monitoring:</b> Arrays – track distribution volumes and detect imbalances</li>
+      <li><b>Report Generation:</b> Merge Sort – stable sorting of daily water usage logs</li>
+    </ul>
+
+    <p><b>Efficiency:</b> MST O(E log V), Dijkstra O(V²), Bellman–Ford O(V·E)</p>
+    <p><b>SDGs:</b> SDG‑6, SDG‑11, SDG‑13</p>
+  `,
+   code:`#include <bits/stdc++.h>
 using namespace std;
 
 const int MAX_NODES = 50;       // distribution nodes
@@ -2597,14 +2798,29 @@ int main(){
 
 `
   },
-  emergency:{
-    title:'Emergency Response Dispatch System (Hydrology)',
-    desc:`<h3>Problem Statement</h3>
+  emergency: {
+  title: 'Emergency Response Dispatch System (Hydrology)',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Delayed response during floods increases damage and loss of life.</p>
+
     <h3>System Approach</h3>
     <p>The system predicts flood advance, proactively closes roads, prepositions vehicles, and activates drainage pumps.</p>
+
     <h3>Algorithms Used</h3>
-    <p>Graph traversal, forecasting logic</p>`,
+    <p>BFS / DFS (graph traversal), Dijkstra (rerouting), Time-series forecasting, Rule-based scheduling</p>
+
+    <h3>🚨 Emergency Response Dispatch System (Hydrology)</h3>
+    <ul>
+      <li><b>Flood Prediction:</b> Forecasting models – predict short-term flood rise using rainfall & river sensor data</li>
+      <li><b>Proactive Road Closures:</b> Graph traversal (BFS/DFS) – block routes before they become impassable</li>
+      <li><b>Vehicle & Pump Pre-positioning:</b> Scheduling + shortest path – stage ambulances & pumps near safe nodes</li>
+      <li><b>Pump Activation:</b> Rule-based triggers – increase drainage capacity to reduce flood risk</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑3, SDG‑11, SDG‑9</p>
+  `,
+
     code:`#include <bits/stdc++.h>
 using namespace std;
 const int MAX_NODES = 60;
@@ -3405,14 +3621,32 @@ int main() {
 }
 `
   },
-  housing:{
-    title:'Smart Housing Allocation System',
-    desc:`<h3>Problem Statement</h3>
+  housing: {
+  title: 'Smart Housing Allocation System',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Manual housing allotment is slow, unfair, and inefficient.</p>
+
     <h3>System Approach</h3>
     <p>Applicants are stored in AVL Trees, prioritized using Max-Heaps, and houses are allocated based on cost and proximity.</p>
+
     <h3>Algorithms Used</h3>
-    <p>AVL Tree, Max Heap, Min Heap, Dijkstra</p>`,
+    <p>AVL Tree, Max Heap, Min Heap, Dijkstra, Red-Black Tree, Merge Sort, KMP</p>
+
+    <h3>🏠 Smart Housing Allocation System (Residential Zone)</h3>
+    <ul>
+      <li><b>Applicant Registry:</b> AVL Tree – O(log n) insert/search with sorted applicant IDs</li>
+      <li><b>Applicant Priority Queue:</b> Max-Heap – allocates houses to most-needy applicants first</li>
+      <li><b>House Inventory:</b> Min-Heap – selects cheapest / best available house efficiently</li>
+      <li><b>Proximity Evaluation:</b> Dijkstra (Adjacency Matrix) – computes applicant-to-house distance</li>
+      <li><b>Allocation Index:</b> Red-Black Tree – maps ApplicantID → HouseID without conflicts</li>
+      <li><b>Applicant Sorting:</b> Merge Sort – stable report generation</li>
+      <li><b>Name Search:</b> KMP Algorithm – fast partial applicant name lookup</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑11, SDG‑1, SDG‑10</p>
+  `,
+
     code:`#include <iostream>
 #include <cstring>
 #include <climits>
@@ -3912,14 +4146,28 @@ int main() {
 
 `
   },
-  market:{
-    title:'Smart Market & Commercial Zone Price Analyzer',
-    desc:`<h3>Problem Statement</h3>
+  market: {
+  title: 'Smart Market & Commercial Zone Price Analyzer',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Unregulated pricing causes inflation spikes in commercial zones.</p>
+
     <h3>System Approach</h3>
     <p>Prices are tracked, sorted, and analyzed to detect abnormal increases and assist policy decisions.</p>
+
     <h3>Algorithms Used</h3>
-    <p>Heap, Merge Sort</p>`,
+    <p>Max Heap, Merge Sort, QuickSort, KMP, Rabin–Karp, AVL Tree / BST</p>
+
+    <h3>📊 Smart Market & Commercial Zone Price Analyzer</h3>
+    <ul>
+      <li><b>Unstable Prices:</b> Merge Sort / QuickSort for daily price ordering; Max-Heap detects price spikes and fake inflation</li>
+      <li><b>Data Manipulation:</b> KMP & Rabin–Karp ensure accurate product search; AVL/BST maintains unique, tamper-proof records</li>
+      <li><b>Market Zoning:</b> Separate zone-wise price lists (Wholesale, Retail, Import Yard) enable regulation and comparison</li>
+      <li><b>Illegal Practices Detection:</b> Sorted zone comparison exposes overpricing, dumping, and tax evasion</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑12, SDG‑9</p>
+  `,
     code:`#include <iostream>
 #include <cstring>
 #include <cmath>
@@ -4138,14 +4386,35 @@ int main() {
 
 `
   },
-  logistics:{
-    title:'Industrial Logistics & Supply Chain Manager',
-    desc:`<h3>Problem Statement</h3>
+  logistics: {
+  title: 'Industrial Logistics & Supply Chain Manager',
+  desc: `
+    <h3>Problem Statement</h3>
     <p>Factory-to-warehouse movement is inefficient, especially for cold-chain goods.</p>
+
     <h3>System Approach</h3>
     <p>Warehouses are stored in AVL Trees, shipments prioritized with Heaps, and trucks dispatched using Dijkstra-based routing.</p>
+
     <h3>Algorithms Used</h3>
-    <p>AVL Tree, Heap, Dijkstra, Bellman–Ford</p>`,
+    <p>AVL Tree, Max Heap, Dijkstra, Bellman–Ford, Kruskal, Prim, Merge Sort, KMP, Greedy</p>
+
+    <h3>🚚 Industrial Logistics & Supply Chain Manager</h3>
+    <ul>
+      <li><b>Warehouse Registry:</b> AVL Tree – O(log n) lookup for cold-storage availability and capacity</li>
+      <li><b>Shipment Priority:</b> Max-Heap – assigns trucks to urgent and cold-chain shipments first</li>
+      <li><b>Cold-Chain Monitoring:</b> Sensor data + Heap – detect temperature deviations and trigger alerts</li>
+      <li><b>Route Planning:</b> Dijkstra – finds shortest-cost paths for pickup and delivery</li>
+      <li><b>Penalty Routes:</b> Bellman–Ford – handles traffic, toll, and cold-penalty adjustments</li>
+      <li><b>Network Design:</b> Kruskal & Prim – build minimal-cost logistics backbone</li>
+      <li><b>Manifest Sorting:</b> Merge Sort – generates stable, printable shipment reports</li>
+      <li><b>Tracking Search:</b> KMP – enables fast lookup of shipment tracking codes</li>
+      <li><b>Truck Scheduling:</b> Greedy selection + Dijkstra – choose nearest suitable truck</li>
+      <li><b>Emergency Handling:</b> Alerts – trigger shipment holds and rerouting to nearest cold warehouse</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑9, SDG‑12, SDG‑13</p>
+  `,
+
     code:`#include <bits/stdc++.h>
 using namespace std;
 const int MAX_NODES = 60;      // graph nodes
