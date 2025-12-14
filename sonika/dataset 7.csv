@@ -1,1 +1,62 @@
+citizen_id,name,age,service_type,priority_score,arrival_time
+1,Arun Patil,62,Pension,95,09:00
+2,Sneha Kulkarni,34,Income Certificate,40,09:01
+3,Ramesh Naik,71,Senior Pension,98,09:02
+4,Anita Desai,29,Address Change,30,09:03
+5,Prakash Joshi,45,Land Record,55,09:04
+6,Meena Shetty,67,Senior Pension,96,09:05
+7,Rahul Verma,22,Caste Certificate,35,09:06
+8,Sunita Rao,58,Health Scheme,70,09:07
+9,Mahesh Gowda,39,Driving License,45,09:08
+10,Kavita Kulkarni,64,Pension,92,09:09
+11,Ajay Patil,28,Income Certificate,38,09:10
+12,Shanta Naik,73,Senior Pension,99,09:11
+13,Vikas Hegde,41,Land Record,52,09:12
+14,Neha Sharma,26,Domicile Certificate,32,09:13
+15,Suresh Bhat,59,Health Scheme,68,09:14
+16,Geeta Rao,66,Senior Pension,97,09:15
+17,Amit Joshi,35,Driving License,44,09:16
+18,Latha Kulkarni,61,Pension,90,09:17
+19,Nitin Patil,23,Caste Certificate,33,09:18
+20,Rekha Desai,56,Health Scheme,65,09:19
+21,Mohan Naik,72,Senior Pension,98,09:20
+22,Pooja Shah,31,Income Certificate,41,09:21
+23,Ravi Hegde,47,Land Record,54,09:22
+24,Anil Kumar,60,Pension,89,09:23
+25,Deepa Rao,27,Domicile Certificate,34,09:24
+26,Krishna Patil,69,Senior Pension,96,09:25
+27,Sandhya Joshi,52,Health Scheme,67,09:26
+28,Rohit Verma,36,Driving License,46,09:27
+29,Usha Naik,63,Pension,91,09:28
+30,Manoj Kulkarni,42,Land Record,53,09:29
+31,Radha Shetty,75,Senior Pension,100,09:30
+32,Kiran Patil,24,Caste Certificate,36,09:31
+33,Ananya Sharma,33,Income Certificate,42,09:32
+34,Raghav Rao,58,Health Scheme,69,09:33
+35,Shivraj Desai,48,Land Record,56,09:34
+36,Leela Joshi,67,Senior Pension,97,09:35
+37,Ashwin Hegde,29,Driving License,39,09:36
+38,Savitri Naik,71,Senior Pension,98,09:37
+39,Pankaj Verma,37,Income Certificate,43,09:38
+40,Nirmala Patil,62,Pension,93,09:39
+41,Rajesh Kumar,45,Land Record,55,09:40
+42,Kusuma Rao,68,Senior Pension,96,09:41
+43,Varun Shah,26,Domicile Certificate,31,09:42
+44,Sunil Bhat,59,Health Scheme,66,09:43
+45,Padma Kulkarni,73,Senior Pension,99,09:44
+46,Vinay Patil,34,Driving License,47,09:45
+47,Chandrika Naik,61,Pension,90,09:46
+48,Sameer Joshi,28,Income Certificate,37,09:47
+49,Shankar Hegde,70,Senior Pension,98,09:48
+50,Mehul Shah,40,Land Record,54,09:49
+51,Lalitha Rao,65,Senior Pension,95,09:50
+52,Akash Verma,21,Caste Certificate,34,09:51
+53,Reema Patil,57,Health Scheme,64,09:52
+54,Pramod Kulkarni,46,Land Record,56,09:53
+55,Saraswati Naik,74,Senior Pension,100,09:54
+56,Karthik Rao,32,Driving License,41,09:55
+57,Girish Bhat,60,Pension,88,09:56
+58,Anusha Joshi,27,Domicile Certificate,33,09:57
+59,Narayan Hegde,69,Senior Pension,97,09:58
+60,Divya Shah,35,Income Certificate,44,09:59
 
