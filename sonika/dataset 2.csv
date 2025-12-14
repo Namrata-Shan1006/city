@@ -1,1 +1,54 @@
+TreeID,Zone,Species,AgeYears,HealthScore,CarbonAbsorptionKg,Status
+1,North,Neem,12,85,21.4,Healthy
+2,North,Banyan,35,78,54.2,Healthy
+3,East,Peepal,22,62,32.1,Needs Care
+4,South,Mango,8,91,18.6,Healthy
+5,West,Neem,15,74,24.8,Healthy
+6,North,Peepal,40,55,47.9,Needs Care
+7,East,Banyan,28,88,49.1,Healthy
+8,South,Neem,10,92,20.0,Healthy
+9,West,Mango,6,83,15.3,Healthy
+10,North,Neem,18,69,29.6,Needs Care
+11,East,Peepal,25,77,35.8,Healthy
+12,South,Banyan,33,81,52.7,Healthy
+13,West,Neem,14,66,23.9,Needs Care
+14,North,Mango,9,89,17.5,Healthy
+15,East,Neem,20,73,31.2,Healthy
+16,South,Peepal,27,58,38.6,Needs Care
+17,West,Banyan,45,64,60.4,Needs Care
+18,North,Neem,11,94,22.1,Healthy
+19,East,Mango,7,86,16.2,Healthy
+20,South,Neem,19,71,30.7,Healthy
+21,West,Peepal,24,79,34.9,Healthy
+22,North,Banyan,38,67,56.8,Needs Care
+23,East,Neem,13,90,24.3,Healthy
+24,South,Mango,5,95,14.6,Healthy
+25,West,Neem,17,72,28.1,Healthy
+26,North,Peepal,29,61,40.2,Needs Care
+27,East,Banyan,31,84,50.6,Healthy
+28,South,Neem,16,76,26.7,Healthy
+29,West,Mango,8,88,17.9,Healthy
+30,North,Neem,21,65,33.0,Needs Care
+31,East,Peepal,26,80,36.4,Healthy
+32,South,Banyan,34,70,53.9,Needs Care
+33,West,Neem,12,93,22.6,Healthy
+34,North,Mango,6,82,15.8,Healthy
+35,East,Neem,18,75,29.1,Healthy
+36,South,Peepal,23,59,34.1,Needs Care
+37,West,Banyan,41,63,58.2,Needs Care
+38,North,Neem,9,96,19.5,Healthy
+39,East,Mango,7,87,16.7,Healthy
+40,South,Neem,20,74,31.8,Healthy
+41,West,Peepal,28,81,39.3,Healthy
+42,North,Banyan,36,68,55.1,Needs Care
+43,East,Neem,15,91,26.2,Healthy
+44,South,Mango,5,97,14.1,Healthy
+45,West,Neem,19,73,30.4,Healthy
+46,North,Peepal,31,60,42.6,Needs Care
+47,East,Banyan,29,86,49.9,Healthy
+48,South,Neem,14,78,25.1,Healthy
+49,West,Mango,9,89,18.4,Healthy
+50,North,Neem,22,64,34.7,Needs Care
+...
+120,South,Banyan,37,82,57.6,Healthy
 
