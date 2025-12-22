@@ -13,6 +13,94 @@
   --accent-soft:rgba(56,189,248,.35);
   --text:#e5f4ff;
   --muted:#94a3b8;
+/* ===================== AQUATIC APPEAL ===================== */
+.hero {
+  position: relative;
+  height: 85vh;
+  background:
+    linear-gradient(to bottom, rgba(2,6,23,0.25), #020617 90%),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+/* ===== BELLASAGARAM TITLE CARD ===== */
+.title-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 20px;
+}
+
+.title-card {
+  width: 90%;
+  max-width: 1000px;
+  height: 380px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-card h1 {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.title-card p {
+  position: absolute;
+  bottom: 28px;
+  font-size: 18px;
+  color: #e0f2fe;
+  opacity: 0.95;
+}
+
+}
+
+/* floating sea creatures */
+.sea {
+  position: absolute;
+  opacity: 0.9;
+  animation: swim 30s linear infinite;
+}
+
+.fish {
+  width: 120px;
+  top: 60%;
+  left: -150px;
+}
+
+.dolphin {
+  width: 220px;
+  top: 25%;
+  left: -300px;
+  animation-delay: 10s;
+}
+
+@keyframes swim {
+  from { transform: translateX(0); }
+  to { transform: translateX(140vw); }
+}
+
+/* lift content over ocean */
+.main-content {
+  position: relative;
+  margin-top: -120px;
+  z-index: 5;
+}
+
 }
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -129,13 +217,42 @@ button{
 
 <body>
 
-<header>
-  <h1>Anoosha Hokrani</h1>
-  <p>Smart City Systems & Infrastructure – Bellasagaram</p>
-  <div class="tagline">Sustainable • Intelligent • Connected Urban Future</div>
-</header>
+<section class="hero">
 
-<h2 class="section-title">🌐 Visionary Smart City Business Ideas</h2>
+  <!-- floating sea life -->
+  <img class="sea fish"
+       src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+  <img class="sea dolphin"
+       src="https://cdn-icons-png.flaticon.com/512/3069/3069172.png">
+
+  <div class="hero-content">
+    <h1>Anoosha Hokrani</h1>
+    <p>Smart City Systems & Infrastructure – Bellasagaram</p>
+    <div class="tagline">
+      Sustainable • Intelligent • Connected Urban Future
+    </div>
+  </div>
+
+</section>
+<div class="main-content">
+
+  <h2 class="section-title">🌐 Visionary Smart City Business Ideas</h2>
+
+  <div class="grid">
+    <!-- KEEP your existing 10 card divs exactly here -->
+
+<div class="title-card-wrapper">
+  <div class="title-card">
+    <h1>Bellasagaram</h1>
+    <p>Smart City Systems & Infrastructure Project</p>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
 
 <div class="grid">
   <div class="card" onclick="openModal('waste')"><span>♻️</span><h3>Smart Waste Collection</h3><p>IoT-enabled waste optimization</p></div>
