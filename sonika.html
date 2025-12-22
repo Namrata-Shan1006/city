@@ -5,6 +5,8 @@
 <title>Sonika – Business Ideas | Bellasagaram</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 body{
   margin:0;
@@ -12,8 +14,6 @@ body{
   background:linear-gradient(120deg,#e0f2fe,#fdf2f8);
   color:#1e293b;
 }
-
-/* NAVBAR */
 header{
   background:linear-gradient(90deg,#c7d2fe,#bae6fd);
   padding:15px 40px;
@@ -43,60 +43,18 @@ nav ul li a.active{
   color:#fff;
 }
 
-/* HERO SECTION */
-.hero-intro{
-  display:flex;
-  gap:60px;
-  padding:80px 60px;
-  border-radius:30px;
-  background:radial-gradient(circle at top left,#3b0764,#020617);
-  color:#e5e7eb;
-}
-.hero-left{flex:1}
-.hero-right{
-  flex:1;
-  background:rgba(255,255,255,0.06);
-  padding:30px;
-  border-radius:20px;
-}
-.pill{
-  display:inline-block;
-  padding:6px 14px;
-  background:#6366f1;
-  border-radius:20px;
-  font-size:14px;
-}
-.hero-intro h1{
-  font-size:48px;
-  margin:20px 0;
-}
-.hero-intro h1 span{color:#f472b6}
-.hero-desc{color:#c7d2fe;font-size:17px}
-.hero-buttons button{
-  padding:12px 22px;
-  border-radius:25px;
-  font-weight:600;
-  cursor:pointer;
-  margin-right:12px;
-}
-.primary-btn{background:#6366f1;color:#fff;border:none}
-.secondary-btn{background:none;border:1px solid #6366f1;color:#c7d2fe}
-
-/* DETAILS */
-.detail-row{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,.15);
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:40px;
 }
 
-/* CONTENT */
-.container{max-width:1400px;margin:auto;padding:40px}
 .ideas-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
   gap:30px;
 }
+
 .idea-card{
   background:#fff;
   border-radius:20px;
@@ -104,43 +62,57 @@ nav ul li a.active{
   box-shadow:0 15px 40px rgba(0,0,0,.1);
   border-left:6px solid #38bdf8;
 }
-.idea-number{font-size:28px;font-weight:800;color:#38bdf8}
-.idea-title{font-size:22px;font-weight:700}
-.section-title{margin-top:25px;font-weight:700;color:#2563eb}
+
+.idea-number{
+  font-size:28px;
+  font-weight:800;
+  color:#38bdf8;
+}
+.idea-title{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.section-title{
+  margin-top:20px;
+  font-weight:700;
+  color:#2563eb;
+}
+
 .box{
   background:#f0f9ff;
   padding:15px;
   border-radius:12px;
-  margin-top:10px;
+  margin-top:8px;
 }
-table{width:100%;margin-top:15px;border-collapse:collapse}
-th,td{padding:10px;text-align:center;border-bottom:1px solid #cbd5f5}
-th{background:#eef2ff}
-.links a{display:inline-block;margin:10px 15px 0 0;font-weight:600;color:#2563eb}
 
-/* DARK MODE */
-body.dark{
-  background:linear-gradient(120deg,#0f172a,#020617);
-  color:#e5e7eb;
+table{
+  width:100%;
+  margin-top:15px;
+  border-collapse:collapse;
 }
-body.dark header{
-  background:linear-gradient(90deg,#1e293b,#020617);
+th,td{
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid #cbd5f5;
 }
-body.dark .idea-card,
-body.dark .box,
-body.dark table th{
-  background:#020617;
-  color:#e5e7eb;
+th{background:#eef2ff}
+
+img{
+  width:100%;
+  max-width:600px;
+  border-radius:12px;
+  margin-top:15px;
 }
-body.dark nav ul li a{color:#e5e7eb}
 
 footer{
   text-align:center;
   padding:20px;
   color:#94a3b8;
 }
+
 @media(max-width:900px){
-  .hero-intro{flex-direction:column}
   .ideas-grid{grid-template-columns:1fr}
 }
 </style>
@@ -160,519 +132,250 @@ footer{
       <li><a href="sonika.html" class="active">Sonika</a></li>
       <li><a href="collabz.html">Collabz</a></li>
     </ul>
-
-    <button id="modeToggle"
-      style="padding:6px 12px;border-radius:20px;border:none;cursor:pointer;font-weight:600;">
-      🌙 Dark
-    </button>
   </nav>
 </header>
 
 <div class="container">
-
-<!-- ================= HERO INTRO ================= -->
-<section class="hero-intro">
-
-  <div class="hero-left">
-    <span class="pill">City Plan • Team 09</span>
-
-    <h1>
-      Sonika Kalgutkar<br>
-      <span>Business Ideas & Algorithmic Solutions</span>
-    </h1>
-
-    <p class="hero-desc">
-      Designing algorithm-driven solutions for Bellasagaram using
-      classic Data Structures & Algorithms with real-world applications.
-    </p>
-
-    <!-- ✅ FIXED BUTTONS -->
-    <div class="hero-buttons">
-      <button class="primary-btn"
-        onclick="document.getElementById('ideas').scrollIntoView({behavior:'smooth'})">
-        View Business Cases
-      </button>
-
-      <button class="secondary-btn"
-        onclick="window.location.href='https://namrata-shan1006.github.io/city/project.html'">
-        Back to Project
-      </button>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <h3>Course Details</h3>
-    <div class="detail-row"><span>Roll No</span><span>210</span></div>
-    <div class="detail-row"><span>USN</span><span>01FE24BCS029</span></div>
-    <div class="detail-row"><span>Department</span><span>CSE</span></div>
-    <div class="detail-row"><span>Course</span><span>DAA</span></div>
-    <div class="detail-row"><span>University</span><span>KLE Tech, Hubballi</span></div>
-  </div>
-
-</section>
-
-<div style="height:70px;"></div>
-
-<div class="container">
 <div id="ideas" class="ideas-grid">
 
- <!-- ================= IDEA 01 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">01</div>
-      <div class="idea-title">University Admission & Hostel Allocation System</div>
+<!-- ================= IDEA 01 ================= -->
+<div class="idea-card">
+<div class="idea-number">01</div>
+<div class="idea-title">University Admission & Hostel Allocation System</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Ranks students based on merit scores and allocates hostel rooms using priority rules such as rank, distance,
-        and category to ensure fair and efficient utilization of limited resources.
-      </div>
-
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Quick Sort for ranking applicants and Max Heap for allocating hostel rooms based on priority.
-      </div>
-
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Quick Sort, Merge Sort, Max Heap, Linear Search
-      </div>
-
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
-        <tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
-        <tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
-        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-      </table>
-
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Quick Sort efficiently ranks large applicant datasets, while Max Heap ensures that the highest-priority
-        student is always allocated a hostel room first, making this combination optimal.
-      </div>
-
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%201.cpp" target="_blank">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%201.csv" target="_blank">📊 View Dataset</a>
-         <div class="section-title">🧭 Flowchart</div>
-
-     <div class="box" style="text-align:center;">
-      <img src="sonika/flow1.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-
-    <!-- ================= IDEA 02 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">02</div>
-      <div class="idea-title">Urban Forest & Green Coverage Management</div>
-
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Manages tree inventory, species, location, and health status for sustainable urban planning and maintenance.
-      </div>
-
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Hashing using Direct Address Tables.
-      </div>
-
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Hashing, Linear Search, Binary Search
-      </div>
-
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Hashing</td><td>O(1)</td><td>O(N)</td></tr>
-        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-        <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
-      </table>
-
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Hashing enables instant access and updates of tree records, which is essential for real-time urban forest
-        management.
-      </div>
-
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%202.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%202.csv">📊 View Dataset</a>
-     </div>
-
-     <div class="section-title">🧭 Flowchart</div>
-
-     <div class="box" style="text-align:center;">
-      <img src="sonika/flow2.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-
-     </div>
-   
-
-  </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Ranks students based on merit scores and allocates hostel rooms using priority rules such as rank,
+distance, and category to ensure fair and efficient utilization of limited resources.
 </div>
 
-<!-- END OF PART 1 -->
-<div class="container">
-  <div class="ideas-grid">
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Quick Sort + Max Heap</div>
 
-    <!-- ================= IDEA 03 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">03</div>
-      <div class="idea-title">Smart Tourism Planner for Coastal Zone</div>
+<div class="section-title">📌 Algorithms Applicable</div>
+<div class="box">Quick Sort, Merge Sort, Max Heap, Linear Search</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Plans optimal travel routes between tourist locations by minimizing travel distance or time.
-      </div>
+<div class="section-title">⏱ Time & Space Complexity</div>
+<table>
+<tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
+<tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
+<tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
+<tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
+<tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
+</table>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Dijkstra’s Algorithm
-      </div>
+<div class="section-title">🏆 Best Suited Algorithm</div>
+<div class="box">
+Quick Sort efficiently ranks large applicant datasets, while Max Heap ensures that the highest-priority
+student is always allocated first.
+</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Dijkstra, Bellman-Ford, Floyd-Warshall
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow1.jpg">
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Dijkstra</td><td>O(E log V)</td><td>O(V)</td></tr>
-        <tr><td>Bellman-Ford</td><td>O(VE)</td><td>O(V)</td></tr>
-        <tr><td>Floyd-Warshall</td><td>O(V³)</td><td>O(V²)</td></tr>
-      </table>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%201.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%201.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Dijkstra’s algorithm is best for non-negative weighted graphs and efficiently finds the shortest path.
-      </div>
+<!-- ================= IDEA 02 ================= -->
+<div class="idea-card">
+<div class="idea-number">02</div>
+<div class="idea-title">Urban Forest & Green Coverage Management</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%203.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%203.csv">📊 View Dataset</a>
-          <div class="box" style="text-align:center;">
-      <img src="sonika/flow3.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-      
-    </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Manages tree inventory, species, location, and health status for sustainable urban planning.
+</div>
 
-    
-    <!-- ================= IDEA 04 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">04</div>
-      <div class="idea-title">Land Record Digitization System</div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Hashing</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Provides fast retrieval of land records using unique property IDs in a sorted database.
-      </div>
+<div class="section-title">📌 Algorithms Applicable</div>
+<div class="box">Hashing, Linear Search, Binary Search</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Binary Search
-      </div>
+<div class="section-title">🏆 Best Suited Algorithm</div>
+<div class="box">
+Hashing enables instant access and updates of tree records.
+</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Binary Search, Linear Search
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow2.jpg">
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
-        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-      </table>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%202.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%202.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Binary Search ensures fast record retrieval in large, sorted land databases.
-      </div>
+<!-- ================= IDEA 03 ================= -->
+<div class="idea-card">
+<div class="idea-number">03</div>
+<div class="idea-title">Smart Tourism Planner for Coastal Zone</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%204.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%204.csv">📊 View Dataset</a>
-         <img src="sonika/flow4.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Plans optimal travel routes between tourist locations by minimizing travel distance or time.
+</div>
 
-    <!-- ================= IDEA 05 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">05</div>
-      <div class="idea-title">Food Quality & Contamination Detection</div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Dijkstra’s Algorithm</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Detects food contamination levels by comparing samples with regulatory thresholds.
-      </div>
+<div class="section-title">🏆 Best Suited Algorithm</div>
+<div class="box">
+Dijkstra efficiently finds shortest paths in weighted graphs.
+</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Linear Search
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow3.jpg">
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Linear Search, Hashing
-      </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%203.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%203.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Linear Search</td><td>O(N)</td><td>O(1)</td></tr>
-        <tr><td>Hashing</td><td>O(1)</td><td>O(N)</td></tr>
-      </table>
+<!-- ================= IDEA 04 ================= -->
+<div class="idea-card">
+<div class="idea-number">04</div>
+<div class="idea-title">Land Record Digitization System</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Linear Search is sufficient due to small contaminant datasets and simplicity.
-      </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Provides fast retrieval of land records using unique property IDs.
+</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%205.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%205.csv">📊 View Dataset</a>
-         <img src="sonika/flow5.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Binary Search</div>
 
-    <!-- ================= IDEA 06 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">06</div>
-      <div class="idea-title">Vital Statistics & Civil Records</div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow4.jpg">
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Organizes birth, death, and marriage records while maintaining data consistency.
-      </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%204.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%204.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Merge Sort
-      </div>
+<!-- ================= IDEA 05 ================= -->
+<div class="idea-card">
+<div class="idea-number">05</div>
+<div class="idea-title">Food Quality & Contamination Detection</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Merge Sort, Quick Sort
-      </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Detects food contamination levels by comparing samples with thresholds.
+</div>
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Merge Sort</td><td>O(N log N)</td><td>O(N)</td></tr>
-        <tr><td>Quick Sort</td><td>O(N log N)</td><td>O(log N)</td></tr>
-      </table>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Linear Search</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Merge Sort preserves record order and guarantees stable sorting for official data.
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow5.jpg">
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%206.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%206.csv">📊 View Dataset</a>
-         <img src="sonika/flow6.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%205.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%205.csv">📊 View Dataset</a>
+</div>
 
-    <!-- ================= IDEA 07 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">07</div>
-      <div class="idea-title">E-Governance Smart Queue System</div>
+<!-- ================= IDEA 06 ================= -->
+<div class="idea-card">
+<div class="idea-number">06</div>
+<div class="idea-title">Vital Statistics & Civil Records</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Manages citizen service queues using priority-based scheduling.
-      </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Organizes birth, death, and marriage records systematically.
+</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Max Heap
-      </div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Merge Sort</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Max Heap, Priority Queue
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow6.jpg">
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Max Heap</td><td>O(log N)</td><td>O(N)</td></tr>
-      </table>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%206.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%206.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Max Heap ensures high-priority citizens are always served first.
-      </div>
+<!-- ================= IDEA 07 ================= -->
+<div class="idea-card">
+<div class="idea-number">07</div>
+<div class="idea-title">E-Governance Smart Queue System</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%207.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%207.csv">📊 View Dataset</a>
-         <img src="sonika/flow7.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Manages citizen service queues using priority-based scheduling.
+</div>
 
-    <!-- ================= IDEA 08 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">08</div>
-      <div class="idea-title">Public Library Management System</div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Max Heap</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Enables fast searching and issuing of books using unique IDs.
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow7.jpg">
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Binary Search
-      </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%207.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%207.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Binary Search, Linear Search
-      </div>
+<!-- ================= IDEA 08 ================= -->
+<div class="idea-card">
+<div class="idea-number">08</div>
+<div class="idea-title">Public Library Management System</div>
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Binary Search</td><td>O(log N)</td><td>O(1)</td></tr>
-      </table>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Enables fast searching and issuing of books using unique IDs.
+</div>
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Binary Search allows efficient lookup in sorted catalogues.
-      </div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Binary Search</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%208.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%208.csv">📊 View Dataset</a>
-         <img src="sonika/flow8.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow8.jpg">
 
-    <!-- ================= IDEA 09 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">09</div>
-      <div class="idea-title">ATM & Kiosk Maintenance Network</div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%208.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%208.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Minimizes maintenance travel cost by optimizing service routes.
-      </div>
+<!-- ================= IDEA 09 ================= -->
+<div class="idea-card">
+<div class="idea-number">09</div>
+<div class="idea-title">ATM & Kiosk Maintenance Network</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Prim’s Algorithm
-      </div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Minimizes maintenance travel cost by optimizing service routes.
+</div>
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Prim’s, Kruskal’s
-      </div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Prim’s Algorithm</div>
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Prim’s</td><td>O(V²)</td><td>O(V)</td></tr>
-        <tr><td>Kruskal’s</td><td>O(E log E)</td><td>O(V)</td></tr>
-      </table>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow9.jpg">
 
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Prim’s algorithm efficiently builds minimum-cost maintenance routes.
-      </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%209.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%209.csv">📊 View Dataset</a>
+</div>
 
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%209.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%209.csv">📊 View Dataset</a>
-        <img src="sonika/flow9.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
-    </div>
+<!-- ================= IDEA 10 ================= -->
+<div class="idea-card">
+<div class="idea-number">10</div>
+<div class="idea-title">Agriculture & Irrigation Network Management</div>
 
-    <!-- ================= IDEA 10 ================= -->
-    <div class="idea-card">
-      <div class="idea-number">10</div>
-      <div class="idea-title">Agriculture & Irrigation Network Management</div>
+<div class="section-title">⭐ Explanation</div>
+<div class="box">
+Determines connectivity between irrigation channels to ensure water flow.
+</div>
 
-      <div class="section-title">⭐ Explanation</div>
-      <div class="box">
-        Determines connectivity between irrigation channels to ensure water flow.
-      </div>
+<div class="section-title">🧮 Algorithm Used</div>
+<div class="box">Union-Find</div>
 
-      <div class="section-title">🧮 Algorithm Used</div>
-      <div class="box">
-        Union-Find (Disjoint Set Union)
-      </div>
+<div class="section-title">🧭 Flowchart</div>
+<img src="sonika/flow10.jpg">
 
-      <div class="section-title">📌 Algorithms Applicable</div>
-      <div class="box">
-        Union-Find, DFS, BFS
-      </div>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%2010.cpp">💻 View C++ Code</a><br>
+<a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%2010.csv">📊 View Dataset</a>
+</div>
 
-      <div class="section-title">⏱ Time & Space Complexity</div>
-      <table>
-        <tr><th>Algorithm</th><th>Time</th><th>Space</th></tr>
-        <tr><td>Union-Find</td><td>O(α(N))</td><td>O(N)</td></tr>
-        <tr><td>DFS</td><td>O(V+E)</td><td>O(V)</td></tr>
-      </table>
-
-      <div class="section-title">🏆 Best Suited Algorithm</div>
-      <div class="box">
-        Union-Find efficiently tracks connectivity changes in irrigation systems.
-      </div>
-
-      <div class="links">
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/case%2010.cpp">💻 View C++ Code</a>
-        <a href="https://github.com/Namrata-Shan1006/city/blob/main/sonika/dataset%2010.csv">📊 View Dataset</a>
-         <img src="sonika/flow10.jpg"
-     alt="Urban Forest Flowchart"
-     style="width:100%; max-width:600px; margin-top:15px;">
-    </div>
-      </div>
+</div>
 </div>
 
 <footer>
 © 2025 Sonika – Bellasagaram Portfolio
 </footer>
 
-<script>
- const toggleBtn = document.getElementById("modeToggle");
-
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    toggleBtn.innerText = document.body.classList.contains("dark")
-      ? "☀ Light"
-      : "🌙 Dark";
-  });
-</script>
-
 </body>
 </html>
-
