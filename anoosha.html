@@ -1,135 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart City | Bellasagaram</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-  body {
-    margin: 0;
-    font-family: Segoe UI, Arial;
-    background: #e0f2fe; /* light blue background */
-    color: #0f172a;      /* dark navy text for contrast */
-  }
+:root{
+  --bg:radial-gradient(circle at top,#0f172a,#020617 75%);
+  --glass:rgba(255,255,255,0.08);
+  --accent:#38bdf8;
+  --accent-soft:rgba(56,189,248,.35);
+  --text:#e5f4ff;
+  --muted:#94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
 
-  header {
-    padding: 30px;
-    background: #2563eb; /* strong blue header */
-    color: #f0f9ff;      /* very light text */
-  }
+body{
+  font-family:"Segoe UI",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-  h1 {
-    margin: 0;
-    font-size: 32px;
-    color: #f0f9ff; /* header title in light text */
-  }
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px 60px;
+}
+header h1{font-size:42px}
+header p{font-size:20px;color:var(--muted);margin-top:10px}
+.tagline{font-size:16px;color:#7dd3fc;margin-top:10px}
 
-  p {
-    line-height: 1.6;
-    color: #0f172a; /* readable dark text */
-  }
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:32px;
+  color:var(--accent);
+  margin:40px 0 20px;
+}
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 30px;
-  }
+/* GRID */
+.grid{
+  max-width:1200px;
+  margin:auto;
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
 
-  .card {
-    background: #93c5fd; /* medium light blue card */
-    border-radius: 14px;
-    padding: 20px;
-    cursor: pointer;
-    transition: .3s;
-    color: #0f172a; /* dark text inside cards */
-  }
+/* CARD */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  border-radius:22px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.06);
+  cursor:pointer;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(56,189,248,.6);
+  box-shadow:0 0 35px var(--accent-soft);
+}
+.card span{font-size:34px;display:block;margin-bottom:15px}
+.card p{color:var(--muted);font-size:15px}
 
-  .card:hover {
-    transform: scale(1.03);
-    background: #60a5fa; /* brighter blue on hover */
-  }
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+.modal-content{
+  background:rgba(15,23,42,.95);
+  padding:35px;
+  width:90%;
+  max-width:900px;
+  max-height:85vh;
+  overflow-y:auto;
+  border-radius:22px;
+}
+.close{
+  float:right;
+  cursor:pointer;
+  font-size:20px;
+  background:rgba(56,189,248,.15);
+  padding:6px 10px;
+  border-radius:50%;
+  color:var(--accent);
+}
+.close:hover{transform:rotate(90deg)}
 
-  .card span {
-    font-size: 22px;
-  }
+h3.section{
+  margin-top:22px;
+  color:#7dd3fc;
+}
 
-  .modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(37, 99, 235, 0.85); /* semi-transparent blue overlay */
-    display: none;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal-content {
-    background: #f0f9ff; /* very light blue modal background */
-    width: 85%;
-    max-height: 85%;
-    overflow: auto;
-    border-radius: 16px;
-    padding: 30px;
-    color: #0f172a; /* dark text inside modal */
-  }
-
-  .close {
-    float: right;
-    font-size: 22px;
-    cursor: pointer;
-    color: #2563eb; /* blue close button */
-  }
-
-  button {
-    background: #2563eb; /* blue button */
-    border: none;
-    color: #f0f9ff; /* light text */
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
-  button:hover {
-    background: #1e40af; /* darker blue hover */
-  }
-
-  pre {
-    background: #e0f2fe; /* light blue code block */
-    padding: 15px;
-    border-radius: 10px;
-    overflow: auto;
-    display: none;
-    white-space: pre-wrap;
-    color: #0f172a;
-  }
-
-  h3 {
-    margin-top: 25px;
-    color: #2563eb; /* blue section headings */
-  }
+/* CODE BOX */
+#codeBox{
+  display:none;
+  margin-top:15px;
+}
+pre{
+  background:#020617;
+  color:#a5f3fc;
+  padding:20px;
+  border-radius:14px;
+  white-space:pre-wrap;
+  overflow-x:auto;
+}
+button{
+  margin-top:15px;
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  cursor:pointer;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <h1 style="margin:0; font-size:32px; color:white;">
-    Anoosha Hokrani
-  </h1>
-    <p style="color:white; font-size:20px; margin-top:15px;">
-    Smart City Systems & Infrastructure – Project Bellasagaram
-  </p>
-</header><h2 style="color: #2563eb; font-size: 26px; text-align: center; margin-top: 40px;">
-  🔷 10 Visionary Business Ideas for a Smart city 🔷
-</h2>
+  <h1>Anoosha Hokrani</h1>
+  <p>Smart City Systems & Infrastructure – Bellasagaram</p>
+  <div class="tagline">Sustainable • Intelligent • Connected Urban Future</div>
+</header>
+
+<h2 class="section-title">🌐 Visionary Smart City Business Ideas</h2>
 
 <div class="grid">
-  <div class="card" onclick="openModal('waste')">♻️ Smart Waste Collection</div>
-  <div class="card" onclick="openModal('parking')">🅿 Smart Parking System</div>
-  <div class="card" onclick="openModal('energy')">☀ Renewable Energy Grid</div>
-  <div class="card" onclick="openModal('cargo')">📦 Port Cargo Scheduling</div>
-  <div class="card" onclick="openModal('transport')">🚌 Public Transport Optimization</div>
-  <div class="card" onclick="openModal('water')">💧 Water Distribution System</div>
-  <div class="card" onclick="openModal('emergency')">🚨 Emergency Dispatch System</div>
-  <div class="card" onclick="openModal('housing')">🏠 Smart Housing Allocation</div>
-  <div class="card" onclick="openModal('market')">📊 Smart Market Analyzer</div>
-  <div class="card" onclick="openModal('logistics')">🚚 Industrial Logistics</div>
+  <div class="card" onclick="openModal('waste')"><span>♻️</span><h3>Smart Waste Collection</h3><p>IoT-enabled waste optimization</p></div>
+  <div class="card" onclick="openModal('parking')"><span>🅿️</span><h3>Smart Parking</h3><p>Commercial & entertainment zones</p></div>
+  <div class="card" onclick="openModal('energy')"><span>☀️</span><h3>Renewable Energy Grid</h3><p>Solar & wind integration</p></div>
+  <div class="card" onclick="openModal('cargo')"><span>📦</span><h3>Port Cargo Scheduling</h3><p>Container allocation</p></div>
+  <div class="card" onclick="openModal('transport')"><span>🚌</span><h3>Public Transport</h3><p>Fleet optimization</p></div>
+  <div class="card" onclick="openModal('water')"><span>💧</span><h3>Water Distribution</h3><p>Leak detection</p></div>
+  <div class="card" onclick="openModal('emergency')"><span>🚨</span><h3>Emergency Dispatch</h3><p>AI-assisted response</p></div>
+  <div class="card" onclick="openModal('housing')"><span>🏠</span><h3>Smart Housing</h3><p>Residential allocation</p></div>
+  <div class="card" onclick="openModal('market')"><span>📊</span><h3>Market Analyzer</h3><p>Price analytics</p></div>
+  <div class="card" onclick="openModal('logistics')"><span>🚚</span><h3>Industrial Logistics</h3><p>Supply chain</p></div>
 </div>
 
-<p style="text-align:center; font-size:18px; color:black; margin-top:20px; font-weight:500;">
+<p style="text-align:center; font-size:18px; color:white; margin-top:20px; font-weight:500;">
   👉 Click on each business idea to know more about it 👈
 </p>
 
