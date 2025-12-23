@@ -261,6 +261,28 @@
       box-shadow: var(--shadow-lg);
     }
 
+    .info-btn {
+      background: var(--gradient-3);
+      color: white;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-left: 1rem;
+    }
+
+    .info-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
     .phase-section {
       padding: 4rem 6%;
       max-width: 1400px;
@@ -513,6 +535,15 @@
       .section-subheading {
         font-size: 2rem;
       }
+
+      .btn-container {
+        flex-direction: column;
+      }
+
+      .info-btn {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
     }
   </style>
 </head>
@@ -561,14 +592,25 @@
           economy, and quality of life.
         </p>
 
-        <a
-          class="btn primary-btn"
-          href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Find this project on GitHub
-        </a>
+        <div class="btn-container">
+          <a
+            class="btn primary-btn"
+            href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find this project on GitHub
+          </a>
+          
+          <a
+            class="btn info-btn"
+            href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io/blob/main/README.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📖 View Detailed Documentation
+          </a>
+        </div>
       </div>
     </section>
 
@@ -661,6 +703,43 @@
         </div>
       </div>
     </section>
+
+    <!-- MORE INFORMATION SECTION -->
+    <section class="phase-section">
+      <h2 class="section-subheading">📚 More Information</h2>
+      
+      <p class="phase-intro">
+        For complete project documentation, detailed city planning insights, and comprehensive information about Bellasagaram, please visit our detailed README documentation.
+      </p>
+      
+      <div class="image-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h3 class="image-title">📖 Complete Project Documentation</h3>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+          Our README.md file contains exhaustive information about Bellasagaram city design including:
+          <br><br>
+          • Complete city planning methodology<br>
+          • Detailed zoning strategies<br>
+          • Sustainability initiatives<br>
+          • Algorithm implementations for city management<br>
+          • Future development plans<br>
+          • Team contributions and responsibilities
+        </p>
+        
+        <a
+          class="btn primary-btn"
+          href="https://github.com/SONIKA-KALGUTKAR/CityPlan_Bellasagaram.github.io/blob/main/README.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size: 1.1rem; padding: 1.2rem 3rem;"
+        >
+          📄 Open README.md Documentation
+        </a>
+        
+        <div class="image-description" style="margin-top: 2rem;">
+          <strong>Note:</strong> This link will open the README.md file directly on GitHub where you can view the complete project documentation, including detailed explanations, diagrams, and implementation details.
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -670,6 +749,38 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.setAttribute('data-theme', savedTheme);
+    }
+    
+    // Back to top functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
