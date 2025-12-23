@@ -1,0 +1,5323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart City | Bellasagaram</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:radial-gradient(circle at top,#0f172a,#020617 75%);
+  --glass:rgba(255,255,255,0.08);
+  --accent:#38bdf8;
+  --accent-soft:rgba(56,189,248,.35);
+  --text:#e5f4ff;
+  --muted:#94a3b8;
+/* ===================== AQUATIC APPEAL ===================== */
+.hero {
+  position: relative;
+  height: 85vh;
+  background:
+    linear-gradient(to bottom, rgba(2,6,23,0.25), #020617 90%),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+/* ===== BELLASAGARAM TITLE CARD ===== */
+.title-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 20px;
+}
+
+.title-card {
+  width: 90%;
+  max-width: 1000px;
+  height: 380px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-card h1 {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.title-card p {
+  position: absolute;
+  bottom: 28px;
+  font-size: 18px;
+  color: #e0f2fe;
+  opacity: 0.95;
+}
+
+}
+
+/* floating sea creatures */
+.sea {
+  position: absolute;
+  opacity: 0.9;
+  animation: swim 30s linear infinite;
+}
+
+.fish {
+  width: 120px;
+  top: 60%;
+  left: -150px;
+}
+
+.dolphin {
+  width: 220px;
+  top: 25%;
+  left: -300px;
+  animation-delay: 10s;
+}
+
+@keyframes swim {
+  from { transform: translateX(0); }
+  to { transform: translateX(140vw); }
+}
+
+/* lift content over ocean */
+.main-content {
+  position: relative;
+  margin-top: -120px;
+  z-index: 5;
+}
+
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:"Segoe UI",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px 60px;
+}
+header h1{font-size:42px}
+header p{font-size:20px;color:var(--muted);margin-top:10px}
+.tagline{font-size:16px;color:#7dd3fc;margin-top:10px}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:32px;
+  color:var(--accent);
+  margin:40px 0 20px;
+}
+
+/* GRID */
+.grid{
+  max-width:1200px;
+  margin:auto;
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  border-radius:22px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.06);
+  cursor:pointer;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(56,189,248,.6);
+  box-shadow:0 0 35px var(--accent-soft);
+}
+.card span{font-size:34px;display:block;margin-bottom:15px}
+.card p{color:var(--muted);font-size:15px}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+.modal-content{
+  background:rgba(15,23,42,.95);
+  padding:35px;
+  width:90%;
+  max-width:900px;
+  max-height:85vh;
+  overflow-y:auto;
+  border-radius:22px;
+}
+.close{
+  float:right;
+  cursor:pointer;
+  font-size:20px;
+  background:rgba(56,189,248,.15);
+  padding:6px 10px;
+  border-radius:50%;
+  color:var(--accent);
+}
+.close:hover{transform:rotate(90deg)}
+
+h3.section{
+  margin-top:22px;
+  color:#7dd3fc;
+}
+
+/* CODE BOX */
+#codeBox{
+  display:none;
+  margin-top:15px;
+}
+pre{
+  background:#020617;
+  color:#a5f3fc;
+  padding:20px;
+  border-radius:14px;
+  white-space:pre-wrap;
+  overflow-x:auto;
+}
+button{
+  margin-top:15px;
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <!-- floating sea life -->
+  <img class="sea fish"
+       src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+  <img class="sea dolphin"
+       src="https://cdn-icons-png.flaticon.com/512/3069/3069172.png">
+
+  <div class="hero-content">
+    <h1>Anoosha Hokrani</h1>
+    <p>Smart City Systems & Infrastructure – Bellasagaram</p>
+    <div class="tagline">
+      Sustainable • Intelligent • Connected Urban Future
+    </div>
+  </div>
+
+</section>
+<div class="main-content">
+
+  <h2 class="section-title">🌐 Visionary Smart City Business Ideas</h2>
+
+  <div class="grid">
+    <!-- KEEP your existing 10 card divs exactly here -->
+
+<div class="title-card-wrapper">
+  <div class="title-card">
+    <h1>Bellasagaram</h1>
+    <p>Smart City Systems & Infrastructure Project</p>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+
+<div class="grid">
+  <div class="card" onclick="openModal('waste')"><span>♻️</span><h3>Smart Waste Collection</h3><p>IoT-enabled waste optimization</p></div>
+  <div class="card" onclick="openModal('parking')"><span>🅿️</span><h3>Smart Parking</h3><p>Commercial & entertainment zones</p></div>
+  <div class="card" onclick="openModal('energy')"><span>☀️</span><h3>Renewable Energy Grid</h3><p>Solar & wind integration</p></div>
+  <div class="card" onclick="openModal('cargo')"><span>📦</span><h3>Port Cargo Scheduling</h3><p>Container allocation</p></div>
+  <div class="card" onclick="openModal('transport')"><span>🚌</span><h3>Public Transport</h3><p>Fleet optimization</p></div>
+  <div class="card" onclick="openModal('water')"><span>💧</span><h3>Water Distribution</h3><p>Leak detection</p></div>
+  <div class="card" onclick="openModal('emergency')"><span>🚨</span><h3>Emergency Dispatch</h3><p>AI-assisted response</p></div>
+  <div class="card" onclick="openModal('housing')"><span>🏠</span><h3>Smart Housing</h3><p>Residential allocation</p></div>
+  <div class="card" onclick="openModal('market')"><span>📊</span><h3>Market Analyzer</h3><p>Price analytics</p></div>
+  <div class="card" onclick="openModal('logistics')"><span>🚚</span><h3>Industrial Logistics</h3><p>Supply chain</p></div>
+</div>
+
+<p style="text-align:center; font-size:18px; color:white; margin-top:20px; font-weight:500;">
+  👉 Click on each business idea to know more about it 👈
+</p>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <h2 id="title"></h2>
+    <div id="desc"></div>
+
+    <!-- Action buttons -->
+    <div style="display:flex; gap:10px; margin-top:15px;">
+      <button onclick="toggleCode()">View Code</button>
+      <button onclick="toggleFlowchart()">View Flowchart</button>
+    </div>
+
+    <!-- Code block -->
+    <pre id="code" style="display:none;"></pre>
+
+    <!-- Flowchart image -->
+    <img id="flowchartImg" src="" alt="Flowchart"
+         style="display:none; max-width:100%; margin-top:15px; border-radius:12px;">
+  </div>
+</div>
+<script>
+const data={
+  waste: {
+  title: 'Smart Waste Collection & Recycling Management',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Urban and marine waste collection is inefficient due to fixed routes, poor prioritization of hazardous waste, and lack of real-time recycling plant selection.</p>
+
+    <h3>System Approach</h3>
+    <p>The system registers waste sources using AVL Trees, prioritizes waste types via Max-Heaps, optimizes truck routes using Dijkstra and Bellman–Ford, and selects recycling plants with Min-Heaps.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>AVL Tree, Max Heap, Min Heap, Dijkstra, Bellman–Ford, Floyd–Warshall, Merge Sort, KMP, Kruskal, Prim, Red-Black Tree</p>
+
+    <h3>♻ Smart Waste Collection & Recycling System</h3>
+    <ul>
+      <li><b>Waste Registry:</b> AVL Tree – O(log n) insert/search for city, port & marine waste nodes</li>
+      <li><b>Waste Priority:</b> Max Heap – medical & hazardous waste collected first</li>
+      <li><b>Marine Alerts:</b> Sensor thresholds + Min Heap to prioritize aquatic pollution zones</li>
+      <li><b>Route Optimization:</b> Dijkstra for shortest paths; Bellman–Ford for penalty costs; Floyd–Warshall for all-pairs routing</li>
+      <li><b>Recycling Plant Choice:</b> Min Heap – lowest cost, load & distance</li>
+      <li><b>Industrial Logs:</b> Merge Sort – stable daily waste & toxicity reports</li>
+      <li><b>Factory Registry:</b> Red-Black Tree – recycling output tracking</li>
+      <li><b>Report Search:</b> KMP – fast keyword detection in logs</li>
+      <li><b>Truck Assignment:</b> Priority queue with constraints (capacity, battery, proximity)</li>
+      <li><b>Marine Network:</b> Kruskal & Prim – minimum-cost sea waste collection</li>
+      <li><b>System Reports:</b> Sorted grouping by zone and material type</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG-11, SDG-12, SDG-14, SDG-6</p>
+  `,
+    code:`//#include <bits/stdc++.h>
+using namespace std;
+
+/* ===========================
+**   CONFIG**
+**   =========================== */**
+const int MAX_NODES = 80;
+const int MAX_REQUESTS = 1000;
+const int MAX_TRUCKS = 80;
+const int MAX_BOATS = 40;
+const int MAX_FACTORIES = 80;
+const int INF = 1000000000;
+
+/* ===========================
+**   ENUMS & NAMES**
+**   =========================== */**
+enum WasteType { W_HOUSEHOLD=0, W_COMMERCIAL=1, W_INDUSTRIAL=2, W_SEA_AQUATIC=3, W_HAZARDOUS=4 };
+const char* WasteTypeName[] = {"Household","Commercial","Industrial","Sea/Aquatic","Hazardous"};
+
+/* ===========================
+**   DATA STRUCTS**
+**   =========================== */**
+struct Request {
+**    int id;**
+**    int node;           // location node**
+**    WasteType type;**
+**    int volume;         // liters**
+**    int priority;       // computed priority (higher = more urgent)**
+**    int timestamp;      // request creation time (simulated minutes)**
+**    bool processed;**
+**    bool assigned;      // assigned to vehicle**
+**    int assignedVehicleId; // id of truck/boat**
+};
+
+struct VehicleCommon {
+**    int id;**
+**    int currentNode;**
+**    int capacity;**
+**    int load;           // liters loaded**
+**    bool available;**
+**    int speed;          // units (distance) per simulated minute**
+**    int destNode;       // destination node if moving, -1 if idle**
+**    int remainingDist;  // remaining distance units to destination**
+**    int assignedRequestIdx; // index in requests array, or -1**
+};
+
+struct Truck {
+**    VehicleCommon c;**
+};
+
+struct Boat {
+**    VehicleCommon c;**
+**    bool sea_enabled; // true for boats**
+};
+
+struct Factory {
+**    int id;**
+**    char name[64];**
+**    int node;**
+**    int capacityIn;**
+**    int storedRaw;**
+**    int producedUnits;**
+**    bool handlesSea;**
+};
+
+struct RegistryItem {
+**    int id;**
+**    char name[64];**
+**    int node;**
+**    bool isFactory;**
+};
+
+/* ===========================
+**   GLOBAL STORAGE (arrays)**
+**   =========================== */**
+Request requests[MAX_REQUESTS]; int requestsCount = 0;
+int requestHeapArr[MAX_REQUESTS]; int requestHeapSize = 0; // max-heap indexes into requests[]
+
+Truck trucks[MAX_TRUCKS]; int trucksCount = 0;
+Boat boats[MAX_BOATS]; int boatsCount = 0;
+
+Factory factories[MAX_FACTORIES]; int factoriesCount = 0;
+
+/* Graph */
+int nodesCount = 0;
+int adjMat[MAX_NODES][MAX_NODES];
+
+void initGraph(int n) {
+**    nodesCount = n;**
+**    for (int i=0;i<n;i++) for (int j=0;j<n;j++) adjMat[i][j] = (i==j?0:INF);**
+}
+void addEdge(int u,int v,int w) {
+**    if (u<0||v<0||u>=nodesCount||v>=nodesCount) return;**
+**    adjMat[u][v] = w; adjMat[v][u] = w;**
+}
+
+/* ===========================
+**   AVL Registry (no vectors)**
+**   =========================== */**
+struct AVLNode {
+**    RegistryItem it;**
+**    AVLNode *left, *right;**
+**    int height;**
+**    AVLNode(const RegistryItem &x) { it = x; left = right = nullptr; height = 1; }**
+};
+AVLNode* registryRoot = nullptr;
+int avlHeight(AVLNode* n) { return n ? n->height : 0; }
+AVLNode* rightRotateAVL(AVLNode* y) {
+**    AVLNode* x = y->left; AVLNode* T2 = x->right;**
+**    x->right = y; y->left = T2;**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    return x;**
+}
+AVLNode* leftRotateAVL(AVLNode* x) {
+**    AVLNode* y = x->right; AVLNode* T2 = y->left;**
+**    y->left = x; x->right = T2;**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    return y;**
+}
+AVLNode* avlInsert(AVLNode* node, const RegistryItem &it) {
+**    if (!node) return new AVLNode(it);**
+**    if (it.id < node->it.id) node->left = avlInsert(node->left, it);**
+**    else if (it.id > node->it.id) node->right = avlInsert(node->right, it);**
+**    else return node;**
+**    node->height = 1 + max(avlHeight(node->left), avlHeight(node->right));**
+**    int balance = avlHeight(node->left) - avlHeight(node->right);**
+**    if (balance > 1 && it.id < node->left->it.id) return rightRotateAVL(node);**
+**    if (balance < -1 && it.id > node->right->it.id) return leftRotateAVL(node);**
+**    if (balance > 1 && it.id > node->left->it.id) { node->left = leftRotateAVL(node->left); return rightRotateAVL(node); }**
+**    if (balance < -1 && it.id < node->right->it.id) { node->right = rightRotateAVL(node->right); return leftRotateAVL(node); }**
+**    return node;**
+}
+AVLNode* avlSearch(AVLNode* root, int id) {
+**    if (!root) return nullptr;**
+**    if (id == root->it.id) return root;**
+**    if (id < root->it.id) return avlSearch(root->left, id);**
+**    return avlSearch(root->right, id);**
+}
+void registerEntity(int id, const char* name, int node, bool isFactory) {
+**    RegistryItem it; it.id = id; strncpy(it.name, name, sizeof(it.name)-1); it.name[sizeof(it.name)-1]=0; it.node = node; it.isFactory = isFactory;**
+**    registryRoot = avlInsert(registryRoot, it);**
+}
+
+/* ===========================
+**   MAX-HEAP: request priority queue (priority by priority, then earlier timestamp)**
+**   computePriority includes hazardous strong bias**
+**   =========================== */**
+int computePriority(WasteType t, int volume, int timestamp, bool urgentFlag=false) {
+**    int base = 0;**
+**    if (t == W_HAZARDOUS) base += 200;**
+**    else if (t == W_SEA_AQUATIC) base += 120;**
+**    else if (t == W_INDUSTRIAL) base += 100;**
+**    else if (t == W_COMMERCIAL) base += 60;**
+**    else base += 30;**
+**    int volScore = min(100, volume / 5);**
+**    int urgency = urgentFlag ? 100 : 0;**
+**    int timePenalty = timestamp/100; // older smaller timestamp => less penalty, but keep small impact**
+**    return base + volScore + urgency - timePenalty;**
+}
+void requestHeapPush(int reqIdx) {
+**    requestHeapArr[requestHeapSize] = reqIdx;**
+**    int i = requestHeapSize++;**
+**    while (i != 0) {**
+**        int p = (i-1)/2;**
+**        Request &cur = requests[ requestHeapArr[i] ];**
+**        Request &par = requests[ requestHeapArr[p] ];**
+**        if (cur.priority > par.priority || (cur.priority==par.priority && cur.timestamp < par.timestamp)) {**
+**            int tmp = requestHeapArr[i]; requestHeapArr[i] = requestHeapArr[p]; requestHeapArr[p] = tmp;**
+**            i = p;**
+**        } else break;**
+**    }**
+}
+int requestHeapPop() {
+**    if (requestHeapSize == 0) return -1;**
+**    int root = requestHeapArr[0];**
+**    requestHeapArr[0] = requestHeapArr[--requestHeapSize];**
+**    int i = 0;**
+**    while (true) {**
+**        int l = 2*i+1, r = 2*i+2, largest = i;**
+**        if (l < requestHeapSize) {**
+**            Request &L = requests[ requestHeapArr[l] ], &I = requests[ requestHeapArr[largest] ];**
+**            if (L.priority > I.priority || (L.priority==I.priority && L.timestamp < I.timestamp)) largest = l;**
+**        }**
+**        if (r < requestHeapSize) {**
+**            Request &R = requests[ requestHeapArr[r] ], &I = requests[ requestHeapArr[largest] ];**
+**            if (R.priority > I.priority || (R.priority==I.priority && R.timestamp < I.timestamp)) largest = r;**
+**        }**
+**        if (largest != i) { int tmp = requestHeapArr[i]; requestHeapArr[i] = requestHeapArr[largest]; requestHeapArr[largest] = tmp; i = largest; }**
+**        else break;**
+**    }**
+**    return root;**
+}
+
+/* ===========================
+**   Add / load / save requests**
+**   =========================== */**
+void addRequest(int node, WasteType wt, int volume, int timestamp, bool urgent=false) {
+**    if (requestsCount >= MAX_REQUESTS) { cout << "Request storage full\n"; return; }**
+**    Request &r = requests[requestsCount];**
+**    r.id = 100000 + requestsCount;**
+**    r.node = node; r.type = wt; r.volume = volume; r.timestamp = timestamp;**
+**    r.priority = computePriority(wt, volume, timestamp, urgent);**
+**    r.processed = false; r.assigned = false; r.assignedVehicleId = -1;**
+**    requestHeapPush(requestsCount);**
+**    requestsCount++;**
+}
+void saveRequestsCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"id,node,type,volume,priority,timestamp,processed\n";**
+**    for (int i=0;i<requestsCount;i++) {**
+**        f<<requests[i].id<<","<<requests[i].node<<","<<int(requests[i].type)<<","<<requests[i].volume<<","<<requests[i].priority<<","<<requests[i].timestamp<<","<<requests[i].processed<<"\n";**
+**    }**
+**    f.close(); cout<<"Requests saved to "<<fname<<"\n";**
+}
+void loadRequestsCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line); // header**
+**    requestsCount = 0; requestHeapSize = 0;**
+**    while(getline(f,line) && requestsCount < MAX_REQUESTS) {**
+**        // parse CSV simple**
+**        int id,node,type,volume,priority,timestamp,processed;**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        // naive parse with sscanf**
+**        if (sscanf(buf,"%d,%d,%d,%d,%d,%d,%d",&id,&node,&type,&volume,&priority,&timestamp,&processed) >= 7) {**
+**            Request &r = requests[requestsCount];**
+**            r.id = id; r.node = node; r.type = (WasteType)type; r.volume = volume; r.priority = priority; r.timestamp = timestamp; r.processed = processed; r.assigned=false; r.assignedVehicleId=-1;**
+**            requestHeapPush(requestsCount);**
+**            requestsCount++;**
+**        }**
+**    }**
+**    f.close(); cout<<"Loaded "<<requestsCount<<" requests from "<<fname<<"\n";**
+}
+
+/* ===========================
+**   Trucks & Boats management**
+**   =========================== */**
+void addTruck(int id, int startNode, int capacity, int speed) {
+**    if (trucksCount >= MAX_TRUCKS) { cout<<"Truck capacity full\n"; return; }**
+**    trucks[trucksCount].c.id = id; trucks[trucksCount].c.currentNode = startNode; trucks[trucksCount].c.capacity = capacity; trucks[trucksCount].c.load = 0; trucks[trucksCount].c.available = true; trucks[trucksCount].c.speed = speed; trucks[trucksCount].c.destNode = -1; trucks[trucksCount].c.remainingDist = 0; trucks[trucksCount].c.assignedRequestIdx = -1; trucksCount++;**
+}
+void addBoat(int id, int startNode, int capacity, int speed) {
+**    if (boatsCount >= MAX_BOATS) { cout<<"Boat capacity full\n"; return; }**
+**    boats[boatsCount].c.id = id; boats[boatsCount].c.currentNode = startNode; boats[boatsCount].c.capacity = capacity; boats[boatsCount].c.load = 0; boats[boatsCount].c.available = true; boats[boatsCount].c.speed = speed; boats[boatsCount].c.destNode = -1; boats[boatsCount].c.remainingDist = 0; boats[boatsCount].c.assignedRequestIdx = -1; boats[boatsCount].sea_enabled = true; boatsCount++;**
+}
+void saveVehiclesCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"type,id,node,capacity,speed,available,load\n";**
+**    for (int i=0;i<trucksCount;i++) f<<"truck,"<<trucks[i].c.id<<","<<trucks[i].c.currentNode<<","<<trucks[i].c.capacity<<","<<trucks[i].c.speed<<","<<trucks[i].c.available<<","<<trucks[i].c.load<<"\n";**
+**    for (int i=0;i<boatsCount;i++) f<<"boat,"<<boats[i].c.id<<","<<boats[i].c.currentNode<<","<<boats[i].c.capacity<<","<<boats[i].c.speed<<","<<boats[i].c.available<<","<<boats[i].c.load<<"\n";**
+**    f.close(); cout<<"Vehicles saved to "<<fname<<"\n";**
+}
+void loadVehiclesCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line);**
+**    trucksCount = 0; boatsCount = 0;**
+**    while(getline(f,line) && (trucksCount < MAX_TRUCKS || boatsCount < MAX_BOATS)) {**
+**        char type[32]; int id,node,capacity,speed,available,load;**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        if (sscanf(buf,"%31[^,],%d,%d,%d,%d,%d,%d",type,&id,&node,&capacity,&speed,&available,&load) >= 7) {**
+**            if (strcmp(type,"truck")==0 && trucksCount < MAX_TRUCKS) {**
+**                addTruck(id,node,capacity,speed); trucks[trucksCount-1].c.available = (available!=0); trucks[trucksCount-1].c.load = load;**
+**            } else if (strcmp(type,"boat")==0 && boatsCount < MAX_BOATS) {**
+**                addBoat(id,node,capacity,speed); boats[boatsCount-1].c.available = (available!=0); boats[boatsCount-1].c.load = load;**
+**            }**
+**        }**
+**    }**
+**    f.close();**
+**    cout<<"Loaded trucks="<<trucksCount<<" boats="<<boatsCount<<" from "<<fname<<"\n";**
+}
+
+/* ===========================
+**   Factories: add/save/load**
+**   =========================== */**
+void addFactoryEntry(int id, const char* name, int node, int capacityIn, bool handlesSea) {
+**    if (factoriesCount >= MAX_FACTORIES) { cout<<"Factories full\n"; return; }**
+**    Factory &f = factories[factoriesCount++];**
+**    f.id = id; strncpy(f.name, name, sizeof(f.name)-1); f.name[sizeof(f.name)-1]=0; f.node = node; f.capacityIn = capacityIn; f.storedRaw = 0; f.producedUnits = 0; f.handlesSea = handlesSea;**
+**    // register entity**
+**    registerEntity(id, name, node, true);**
+}
+void saveFactoriesCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"id,name,node,capacityIn,storedRaw,producedUnits,handlesSea\n";**
+**    for (int i=0;i<factoriesCount;i++) {**
+**        f<<factories[i].id<<","<<factories[i].name<<","<<factories[i].node<<","<<factories[i].capacityIn<<","<<factories[i].storedRaw<<","<<factories[i].producedUnits<<","<<factories[i].handlesSea<<"\n";**
+**    }**
+**    f.close(); cout<<"Factories saved to "<<fname<<"\n";**
+}
+void loadFactoriesCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line);**
+**    factoriesCount = 0;**
+**    while(getline(f,line) && factoriesCount < MAX_FACTORIES) {**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        int id,node,capacityIn,storedRaw,producedUnits,handlesSea;**
+**        char name[64];**
+**        if (sscanf(buf,"%d,%63[^,],%d,%d,%d,%d,%d",&id,name,&node,&capacityIn,&storedRaw,&producedUnits,&handlesSea) >= 7) {**
+**            addFactoryEntry(id,name,node,capacityIn,handlesSea!=0);**
+**            factories[factoriesCount-1].storedRaw = storedRaw; factories[factoriesCount-1].producedUnits = producedUnits;**
+**        }**
+**    }**
+**    f.close(); cout<<"Loaded "<<factoriesCount<<" factories from "<<fname<<"\n";**
+}
+
+/* ===========================
+**   Dijkstra (array-based) returns parent & dist arrays**
+**   =========================== */**
+struct DRes { int dist[MAX_NODES]; int parent[MAX_NODES]; };
+DRes dijkstraArray(int src) {
+**    DRes R; bool used[MAX_NODES];**
+**    for (int i=0;i<nodesCount;i++) { R.dist[i]=INF; R.parent[i]=-1; used[i]=false; }**
+**    R.dist[src] = 0;**
+**    for (int iter=0; iter<nodesCount; iter++) {**
+**        int u=-1, best=INF;**
+**        for (int i=0;i<nodesCount;i++) if (!used[i] && R.dist[i]<best) { best = R.dist[i]; u = i; }**
+**        if (u==-1) break;**
+**        used[u] = true;**
+**        for (int v=0; v<nodesCount; v++) {**
+**            if (adjMat[u][v] < INF && R.dist[u] + adjMat[u][v] < R.dist[v]) {**
+**                R.dist[v] = R.dist[u] + adjMat[u][v];**
+**                R.parent[v] = u;**
+**            }**
+**        }**
+**    }**
+**    return R;**
+}
+int computePathLenFromParent(int parent[], int target) {
+**    int cur = target; int sum = 0;**
+**    while (parent[cur] != -1) {**
+**        int p = parent[cur];**
+**        sum += adjMat[p][cur];**
+**        cur = p;**
+**    }**
+**    return sum;**
+}
+
+/* ===========================
+**   Dispatch: assign nearest suitable vehicle (truck or boat) based on waste type & availability**
+**   time-accurate: assign destination and remainingDist; movement simulated by ticks**
+**   =========================== */**
+int findFactoryFor(WasteType wt, int volume) {
+**    int best = -1; int bestFree = -1;**
+**    for (int i=0;i<factoriesCount;i++) {**
+**        if (wt == W_SEA_AQUATIC && !factories[i].handlesSea) continue;**
+**        int freeCap = factories[i].capacityIn - factories[i].storedRaw;**
+**        if (freeCap >= volume && freeCap > bestFree) { best = i; bestFree = freeCap; }**
+**    }**
+**    if (best == -1) {**
+**        for (int i=0;i<factoriesCount;i++) {**
+**            if (wt == W_SEA_AQUATIC && !factories[i].handlesSea) continue;**
+**            int freeCap = factories[i].capacityIn - factories[i].storedRaw;**
+**            if (freeCap > 0) { best = i; break; }**
+**        }**
+**    }**
+**    return best;**
+}
+void dispatchTopRequest(int currentTime) {
+**    if (requestHeapSize == 0) return;**
+**    int reqIdx = requestHeapPop();**
+**    if (reqIdx < 0) return;**
+**    Request &rq = requests[reqIdx];**
+**    if (rq.processed || rq.assigned) return;**
+**    // choose vehicle type**
+**    bool needBoat = (rq.type == W_SEA_AQUATIC);**
+**    // First look for dedicated vehicle (truck/boat) nearest by Dijkstra distance**
+**    int chosenVehicleType = -1; // 0=truck,1=boat**
+**    int chosenIdx = -1;**
+**    int chosenDist = INF;**
+**    // trucks**
+**    for (int t=0;t<trucksCount;t++) {**
+**        if (!trucks[t].c.available) continue;**
+**        if (trucks[t].c.capacity - trucks[t].c.load < rq.volume) continue;**
+**        DRes dr = dijkstraArray(trucks[t].c.currentNode);**
+**        if (dr.dist[rq.node] < chosenDist) { chosenDist = dr.dist[rq.node]; chosenVehicleType = 0; chosenIdx = t; }**
+**    }**
+**    // boats if needed or if no truck found and boats exist**
+**    if (boatsCount > 0) {**
+**        for (int b=0;b<boatsCount;b++) {**
+**            if (!boats[b].c.available) continue;**
+**            if (boats[b].c.capacity - boats[b].c.load < rq.volume) continue;**
+**            DRes dr = dijkstraArray(boats[b].c.currentNode);**
+**            // if request is sea and boat is closer, prefer boat**
+**            if (dr.dist[rq.node] < chosenDist) { chosenDist = dr.dist[rq.node]; chosenVehicleType = 1; chosenIdx = b; }**
+**        }**
+**    }**
+**    // If hazardous request, try to find any vehicle; hazard bias would have made priority high and it'll get chosen early**
+**    if (chosenIdx == -1) {**
+**        // no vehicle available now: requeue with slight time penalty (so others can be processed)**
+**        rq.priority = max(0, rq.priority - 1);**
+**        requestHeapPush(reqIdx);**
+**        return;**
+**    }**
+**    // Determine factory**
+**    int fIdx = findFactoryFor(rq.type, rq.volume);**
+**    if (fIdx == -1) {**
+**        // No factory; if hazardous, escalate (we can send to nearest allowed factory regardless of free capacity)**
+**        int fallback = -1; int minDist = INF;**
+**        for (int i=0;i<factoriesCount;i++) {**
+**            if (rq.type==W_SEA_AQUATIC && !factories[i].handlesSea) continue;**
+**            DRes dr = dijkstraArray(rq.node);**
+**            if (dr.dist[factories[i].node] < minDist) { minDist = dr.dist[factories[i].node]; fallback = i; }**
+**        }**
+**        if (fallback != -1) fIdx = fallback;**
+**        else {**
+**            cout<<"[WARN] No factory available for request "<<rq.id<<". Marking as failed.\n";**
+**            rq.processed = true;**
+**            return;**
+**        }**
+**    }**
+**    // Assign chosen vehicle: set destination to request node then to factory (we simulate multi-leg by setting destNode=request.node and storing assignedRequest)**
+**    if (chosenVehicleType == 0) {**
+**        Truck &tr = trucks[chosenIdx];**
+**        tr.c.available = false;**
+**        tr.c.assignedRequestIdx = reqIdx;**
+**        // compute distance from truck.currentNode -> request.node**
+**        DRes drTruckToReq = dijkstraArray(tr.c.currentNode);**
+**        int distToReq = drTruckToReq.dist[rq.node];**
+**        tr.c.destNode = rq.node;**
+**        tr.c.remainingDist = (distToReq>=INF? INF: distToReq);**
+**        // store assigned vehicle id into request**
+**        rq.assigned = true; rq.assignedVehicleId = tr.c.id;**
+**        cout<<"[ASSIGN] Truck "<<tr.c.id<<" assigned to Request "<<rq.id<<" (distToReq="<<distToReq<<") and will deliver to Factory "<<factories[fIdx].name<<"\n";**
+**        // We will store factory index somewhere: for simplicity, we temporarily attach to requestsCount field? better store in processed flag mapping? We'll store assignedVehicleId and vehicle will know assignedRequestIdx, and on delivery we'll find factory by type+volume**
+**        // Keep rq.processed false until delivered**
+**    } else {**
+**        Boat &bo = boats[chosenIdx];**
+**        bo.c.available = false;**
+**        bo.c.assignedRequestIdx = reqIdx;**
+**        DRes drBoatToReq = dijkstraArray(bo.c.currentNode);**
+**        int distToReq = drBoatToReq.dist[rq.node];**
+**        bo.c.destNode = rq.node;**
+**        bo.c.remainingDist = (distToReq>=INF? INF: distToReq);**
+**        rq.assigned = true; rq.assignedVehicleId = bo.c.id;**
+**        cout<<"[ASSIGN] Boat "<<bo.c.id<<" assigned to Request "<<rq.id<<" (distToReq="<<distToReq<<") and will deliver to Factory "<<factories[fIdx].name<<"\n";**
+**    }**
+}
+
+/* ===========================
+**   Movement simulation tick: move vehicles toward dest; when reach request node, load and send to factory**
+**   We implement states:**
+**   - vehicle.destNode == request.node : moving to pickup**
+**   - when arrive, immediate compute factory and set destNode = factory.node and remainingDist accordingly**
+**   - when arrive at factory, unload -> factory.storedRaw += volume; mark request.processed = true**
+**   =========================== */**
+void processTick(int currentTime) {
+**    // trucks**
+**    for (int t=0;t<trucksCount;t++) {**
+**        Truck &tr = trucks[t];**
+**        if (tr.c.destNode == -1) continue;**
+**        if (tr.c.remainingDist <= 0) {**
+**            // arrived at dest node**
+**            int reqIdx = tr.c.assignedRequestIdx;**
+**            if (reqIdx < 0 || reqIdx >= requestsCount) { tr.c.destNode = -1; tr.c.available = true; continue; }**
+**            Request &rq = requests[reqIdx];**
+**            if (!rq.assigned) { tr.c.destNode = -1; tr.c.available = true; tr.c.assignedRequestIdx = -1; continue; }**
+**            // If at pickup point and not yet loaded**
+**            if (!rq.processed && tr.c.currentNode == rq.node) {**
+**                // load into truck**
+**                if (tr.c.capacity - tr.c.load >= rq.volume) {**
+**                    tr.c.load += rq.volume;**
+**                    // set next destination = best factory**
+**                    int fIdx = findFactoryFor(rq.type, rq.volume);**
+**                    if (fIdx == -1) {**
+**                        // no factory -> unload to temp depot (skip)**
+**                        cout<<"[WARN] No factory when truck arrived for request "<<rq.id<<". Unloading at depot.\n";**
+**                        tr.c.load -= rq.volume;**
+**                        rq.processed = true;**
+**                        tr.c.destNode = -1; tr.c.assignedRequestIdx = -1; tr.c.available = true;**
+**                    } else {**
+**                        // set path to factory**
+**                        DRes dr = dijkstraArray(tr.c.currentNode);**
+**                        int distToFactory = dr.dist[ factories[fIdx].node ];**
+**                        tr.c.destNode = factories[fIdx].node;**
+**                        tr.c.remainingDist = (distToFactory>=INF? INF: distToFactory);**
+**                        // store selected factory id in assignedVehicleId? we will simply on arrival iterate best factory again and add**
+**                        cout<<"[TRUCK] Truck "<<tr.c.id<<" loaded "<<rq.volume<<"L for Request "<<rq.id<<", heading to Factory "<<factories[fIdx].name<<" (dist="<<distToFactory<<")\n";**
+**                    }**
+**                } else {**
+**                    // not enough capacity (shouldn't happen due to check earlier) -> requeue or partial load (skip)**
+**                    cout<<"[WARN] Truck "<<tr.c.id<<" cannot load full volume for request "<<rq.id<<"\n";**
+**                }**
+**            } else if (!rq.processed && tr.c.currentNode == tr.c.destNode) {**
+**                // arrived at factory (assuming destNode is factory)**
+**                int fIdx = -1;**
+**                // find factory at this node**
+**                for (int i=0;i<factoriesCount;i++) if (factories[i].node == tr.c.currentNode) { fIdx = i; break; }**
+**                if (fIdx == -1) {**
+**                    // not factory node -> free vehicle**
+**                    tr.c.destNode = -1; tr.c.available = true; tr.c.assignedRequestIdx = -1;**
+**                } else {**
+**                    // unload**
+**                    // find request for this truck**
+**                    if (rq.volume <= tr.c.load) {**
+**                        factories[fIdx].storedRaw += rq.volume;**
+**                        tr.c.load -= rq.volume;**
+**                        rq.processed = true;**
+**                        cout<<"[DELIVER] Truck "<<tr.c.id<<" delivered "<<rq.volume<<"L for Request "<<rq.id<<" to Factory "<<factories[fIdx].name<<"\n";**
+**                        // free truck**
+**                        tr.c.destNode = -1; tr.c.available = true; tr.c.assignedRequestIdx = -1;**
+**                    } else {**
+**                        // partial handling**
+**                        factories[fIdx].storedRaw += tr.c.load;**
+**                        rq.volume -= tr.c.load;**
+**                        cout<<"[PARTIAL] Truck "<<tr.c.id<<" partially delivered to Factory "<<factories[fIdx].name<<" remaining for request "<<rq.id<<" = "<<rq.volume<<"\n";**
+**                        tr.c.load = 0;**
+**                        tr.c.destNode = -1; tr.c.available = true; tr.c.assignedRequestIdx = -1;**
+**                        // requeue remaining (adjust priority)**
+**                        rq.priority = max(0, rq.priority - 1);**
+**                        requestHeapPush(reqIdx);**
+**                    }**
+**                }**
+**            } else {**
+**                // arrived at some node but conditions not matching - free vehicle**
+**                tr.c.destNode = -1; tr.c.available = true; tr.c.assignedRequestIdx = -1;**
+**            }**
+**        } else {**
+**            // move towards destination by speed units**
+**            int move = tr.c.speed;**
+**            tr.c.remainingDist -= move;**
+**            // if remainingDist becomes <=0, set currentNode to destNode**
+**            if (tr.c.remainingDist <= 0) tr.c.currentNode = tr.c.destNode;**
+**            // else we don't update intermediate node (requires path step simulation)**
+**        }**
+**    }**
+**    // boats: similar logic**
+**    for (int b=0;b<boatsCount;b++) {**
+**        Boat &bo = boats[b];**
+**        if (bo.c.destNode == -1) continue;**
+**        if (bo.c.remainingDist <= 0) {**
+**            int reqIdx = bo.c.assignedRequestIdx;**
+**            if (reqIdx < 0 || reqIdx >= requestsCount) { bo.c.destNode = -1; bo.c.available = true; continue; }**
+**            Request &rq = requests[reqIdx];**
+**            if (!rq.assigned) { bo.c.destNode = -1; bo.c.available = true; bo.c.assignedRequestIdx = -1; continue; }**
+**            if (!rq.processed && bo.c.currentNode == rq.node) {**
+**                if (bo.c.capacity - bo.c.load >= rq.volume) {**
+**                    bo.c.load += rq.volume;**
+**                    int fIdx = findFactoryFor(rq.type, rq.volume);**
+**                    if (fIdx == -1) {**
+**                        cout<<"[WARN] No factory when boat arrived for request "<<rq.id<<". Unloading at depot.\n";**
+**                        bo.c.load -= rq.volume;**
+**                        rq.processed = true;**
+**                        bo.c.destNode = -1; bo.c.assignedRequestIdx = -1; bo.c.available = true;**
+**                    } else {**
+**                        DRes dr = dijkstraArray(bo.c.currentNode);**
+**                        int distToFactory = dr.dist[ factories[fIdx].node ];**
+**                        bo.c.destNode = factories[fIdx].node;**
+**                        bo.c.remainingDist = (distToFactory>=INF? INF: distToFactory);**
+**                        cout<<"[BOAT] Boat "<<bo.c.id<<" loaded "<<rq.volume<<"L for Request "<<rq.id<<", heading to Factory "<<factories[fIdx].name<<"\n";**
+**                    }**
+**                } else {**
+**                    cout<<"[WARN] Boat "<<bo.c.id<<" cannot load full volume for request "<<rq.id<<"\n";**
+**                }**
+**            } else if (!rq.processed && bo.c.currentNode == bo.c.destNode) {**
+**                int fIdx = -1;**
+**                for (int i=0;i<factoriesCount;i++) if (factories[i].node == bo.c.currentNode) { fIdx = i; break; }**
+**                if (fIdx == -1) { bo.c.destNode = -1; bo.c.available = true; bo.c.assignedRequestIdx = -1; }**
+**                else {**
+**                    if (rq.volume <= bo.c.load) {**
+**                        factories[fIdx].storedRaw += rq.volume;**
+**                        bo.c.load -= rq.volume;**
+**                        rq.processed = true;**
+**                        cout<<"[DELIVER] Boat "<<bo.c.id<<" delivered "<<rq.volume<<"L for Request "<<rq.id<<" to Factory "<<factories[fIdx].name<<"\n";**
+**                        bo.c.destNode = -1; bo.c.available = true; bo.c.assignedRequestIdx = -1;**
+**                    } else {**
+**                        factories[fIdx].storedRaw += bo.c.load;**
+**                        rq.volume -= bo.c.load;**
+**                        cout<<"[PARTIAL] Boat "<<bo.c.id<<" partially delivered to Factory "<<factories[fIdx].name<<" remaining for request "<<rq.id<<" = "<<rq.volume<<"\n";**
+**                        bo.c.load = 0;**
+**                        bo.c.destNode = -1; bo.c.available = true; bo.c.assignedRequestIdx = -1;**
+**                        rq.priority = max(0, rq.priority - 1);**
+**                        requestHeapPush(reqIdx);**
+**                    }**
+**                }**
+**            } else {**
+**                bo.c.destNode = -1; bo.c.available = true; bo.c.assignedRequestIdx = -1;**
+**            }**
+**        } else {**
+**            int move = bo.c.speed;**
+**            bo.c.remainingDist -= move;**
+**            if (bo.c.remainingDist <= 0) bo.c.currentNode = bo.c.destNode;**
+**        }**
+**    }**
+}
+
+/* ===========================
+**   Factory processing: convert raw -> units**
+**   =========================== */**
+void processFactories() {
+**    for (int i=0;i<factoriesCount;i++) {**
+**        Factory &f = factories[i];**
+**        if (f.storedRaw <= 0) continue;**
+**        int units = f.storedRaw / 100; // 100L -> 1 unit**
+**        if (units > 0) {**
+**            f.producedUnits += units;**
+**            f.storedRaw -= units * 100;**
+**            cout<<"[FACTORY] "<<f.name<<" processed "<<units*100<<"L -> "<<units<<" units (total units="<<f.producedUnits<<")\n";**
+**        }**
+**    }**
+}
+
+/* ===========================
+**   Merge sort factories by producedUnits descending for report**
+**   =========================== */**
+void mergeFactories(Factory arr[], int l, int m, int r) {
+**    int n1 = m-l+1, n2 = r-m;**
+**    Factory *L = new Factory[n1]; Factory *R = new Factory[n2];**
+**    for (int i=0;i<n1;i++) L[i] = arr[l+i];**
+**    for (int j=0;j<n2;j++) R[j] = arr[m+1+j];**
+**    int i=0,j=0,k=l;**
+**    while (i<n1 && j<n2) {**
+**        if (L[i].producedUnits >= R[j].producedUnits) arr[k++] = L[i++]; else arr[k++] = R[j++];**
+**    }**
+**    while (i<n1) arr[k++] = L[i++];**
+**    while (j<n2) arr[k++] = R[j++];**
+**    delete[] L; delete[] R;**
+}
+void mergeSortFactoriesArr(Factory arr[], int l, int r) {
+**    if (l<r) {**
+**        int m = (l+r)/2;**
+**        mergeSortFactoriesArr(arr,l,m); mergeSortFactoriesArr(arr,m+1,r); mergeFactories(arr,l,m,r);**
+**    }**
+}
+
+/* ===========================
+**   KMP substring search for names**
+**   =========================== */**
+void computeLPS(const char pat[], int M, int lps[]) {
+**    int len=0; lps[0]=0; int i=1;**
+**    while (i<M) {**
+**        if (pat[i] == pat[len]) { len++; lps[i]=len; i++; }**
+**        else { if (len) len=lps[len-1]; else { lps[i]=0; i++; } }**
+**    }**
+}
+bool KMPsearch(const char text[], const char pat[]) {
+**    int N = strlen(text), M = strlen(pat);**
+**    if (M==0) return true;**
+**    int *lps = new int[M];**
+**    computeLPS(pat,M,lps);**
+**    int i=0,j=0;**
+**    while (i<N) {**
+**        if (text[i] == pat[j]) { i++; j++; if (j==M) { delete[] lps; return true; } }**
+**        else { if (j) j = lps[j-1]; else i++; }**
+**    }**
+**    delete[] lps; return false;**
+}
+
+/* ===========================
+**   Persistence: save/load all major tables**
+**   =========================== */**
+void saveAll(const char* dir) {
+**    char fname[256];**
+**    snprintf(fname,sizeof(fname),"%s/requests.csv",dir); saveRequestsCSV(fname);**
+**    snprintf(fname,sizeof(fname),"%s/vehicles.csv",dir); saveVehiclesCSV(fname);**
+**    snprintf(fname,sizeof(fname),"%s/factories.csv",dir); saveFactoriesCSV(fname);**
+**    cout<<"Saved all data to directory: "<<dir<<"\n";**
+}
+void loadAll(const char* dir) {
+**    char fname[256];**
+**    snprintf(fname,sizeof(fname),"%s/requests.csv",dir); loadRequestsCSV(fname);**
+**    snprintf(fname,sizeof(fname),"%s/vehicles.csv",dir); loadVehiclesCSV(fname);**
+**    snprintf(fname,sizeof(fname),"%s/factories.csv",dir); loadFactoriesCSV(fname);**
+**    cout<<"Loaded all data from directory: "<<dir<<"\n";**
+}
+
+/* ===========================
+**   Save/Load functions require forward declarations from above**
+**   =========================== */**
+void saveRequestsCSV(const char* fname);
+void loadRequestsCSV(const char* fname);
+void saveVehiclesCSV(const char* fname);
+void loadVehiclesCSV(const char* fname);
+void saveFactoriesCSV(const char* fname);
+void loadFactoriesCSV(const char* fname);
+
+/* ===========================
+**   DEMO SETUP**
+**   =========================== */**
+void demoSetup() {
+**    initGraph(20);**
+**    // build sample map (nodes)**
+**    addEdge(0,1,5); addEdge(0,2,7); addEdge(1,3,4); addEdge(2,4,6);**
+**    addEdge(3,5,3); addEdge(4,6,2); addEdge(5,7,5); addEdge(6,8,4);**
+**    addEdge(7,9,7); addEdge(9,10,3); addEdge(10,11,4); addEdge(11,12,6);**
+**    // factories**
+**    addFactoryEntry:**
+**    // use addFactoryEntry wrapper (we already have addFactoryEntry earlier) -> but name conflict; implement simple here:**
+**    addFactoryEntry(501,"RecycCo General",6,3000,false);**
+**    addFactoryEntry(502,"MarineClean",9,4000,true);**
+**    addFactoryEntry(503,"InduRecycle",4,2500,false);**
+**    // register factories in AVL**
+**    registerEntity(501,"RecycCo General",6,true);**
+**    registerEntity(502,"MarineClean",9,true);**
+**    registerEntity(503,"InduRecycle",4,true);**
+**    // trucks and boats**
+**    addTruck(201,0,1500,20);**
+**    addTruck(202,2,1000,18);**
+**    addBoat(301,9,2000,15);**
+**    // sample household registrations**
+**    registerEntity(1001,"House-A",3,false);**
+**    registerEntity(1002,"Shop-B",2,false);**
+}
+
+/* ===========================
+**   CLI helpers**
+**   =========================== */**
+void showMenu() {
+**    cout<<"\n=== Smart Waste System Menu ===\n";**
+**    cout<<"1) Add Request\n2) Add Truck\n3) Add Boat\n4) Add Factory\n5) Dispatch next request\n6) Run simulation ticks\n7) Process factories (run processing once)\n8) Show reports (factories)\n9) Save all CSVs\n10) Load all CSVs\n11) List pending requests\n12) List vehicles\n13) Exit\nChoose: ";**
+}
+void listPendingRequests() {
+**    cout<<"Pending Requests (id,node,type,vol,priority,timestamp,processed):\n";**
+**    for (int i=0;i<requestsCount;i++) {**
+**        Request &r = requests[i];**
+**        cout<<r.id<<","<<r.node<<","<<WasteTypeName[r.type]<<","<<r.volume<<","<<r.priority<<","<<r.timestamp<<","<<r.processed<<"\n";**
+**    }**
+}
+void listVehicles() {
+**    cout<<"Trucks:\n";**
+**    for (int i=0;i<trucksCount;i++) {**
+**        Truck &t = trucks[i];**
+**        cout<<"Truck id="<<t.c.id<<" node="<<t.c.currentNode<<" cap="<<t.c.capacity<<" load="<<t.c.load<<" avail="<<t.c.available<<"\n";**
+**    }**
+**    cout<<"Boats:\n";**
+**    for (int i=0;i<boatsCount;i++) {**
+**        Boat &b = boats[i];**
+**        cout<<"Boat id="<<b.c.id<<" node="<<b.c.currentNode<<" cap="<<b.c.capacity<<" load="<<b.c.load<<" avail="<<b.c.available<<"\n";**
+**    }**
+}
+void showFactoryReport() {
+**    if (factoriesCount == 0) { cout<<"No factories\n"; return; }**
+**    Factory copyArr[MAX_FACTORIES];**
+**    int fc = factoriesCount;**
+**    for (int i=0;i<fc;i++) copyArr[i] = factories[i];**
+**    mergeSortFactoriesArr(copyArr, 0, fc-1);**
+**    cout<<"Factory Report (by units desc):\n";**
+**    for (int i=0;i<fc;i++) cout<<copyArr[i].name<<" units="<<copyArr[i].producedUnits<<" storedRaw="<<copyArr[i].storedRaw<<"\n";**
+}
+
+/* ===========================
+**   wrapper for addFactoryEntry (we forward declared earlier)**
+**   =========================== */**
+void addFactoryEntry(int id, const char* name, int node, int capacityIn, bool handlesSea) {
+**    if (factoriesCount >= MAX_FACTORIES) { cout<<"No space\n"; return; }**
+**    Factory &f = factories[factoriesCount++];**
+**    f.id = id; strncpy(f.name, name, sizeof(f.name)-1); f.name[sizeof(f.name)-1]=0; f.node=node; f.capacityIn = capacityIn; f.storedRaw = 0; f.producedUnits = 0; f.handlesSea = handlesSea;**
+}
+
+/* ===========================
+**   Main: menu loop**
+**   =========================== */**
+int main() {
+**    ios::sync_with_stdio(false);**
+**    cin.tie(nullptr);**
+
+**    cout<<"=== Smart Waste Collection & Recycling Management (Expanded) ===\n";**
+**    demoSetup(); // sample world preloaded**
+
+**    int currentTime = 0;**
+**    while (true) {**
+**        showMenu();**
+**        int choice; if (!(cin>>choice)) break;**
+**        if (choice == 1) {**
+**            int node, vol; int ttype;**
+**            char urgentch;**
+**            cout<<"Enter node, type (0=household,1=commercial,2=industrial,3=sea,4=hazardous), volume: ";**
+**            cin>>node>>ttype>>vol;**
+**            cout<<"Urgent? (y/n): "; cin>>urgentch;**
+**            bool urgent = (urgentch=='y'||urgentch=='Y');**
+**            addRequest(node, (WasteType)ttype, vol, currentTime, urgent);**
+**            cout<<"Added request.\n";**
+**        } else if (choice == 2) {**
+**            int id,node,cap,speed;**
+**            cout<<"Enter truck id, startNode, capacity, speed (units/min): "; cin>>id>>node>>cap>>speed;**
+**            addTruck(id,node,cap,speed);**
+**            cout<<"Truck added.\n";**
+**        } else if (choice == 3) {**
+**            int id,node,cap,speed;**
+**            cout<<"Enter boat id, startNode, capacity, speed: "; cin>>id>>node>>cap>>speed;**
+**            addBoat(id,node,cap,speed);**
+**            cout<<"Boat added.\n";**
+**        } else if (choice == 4) {**
+**            int id,node,cap; char name[64]; int handlesSea;**
+**            cout<<"Enter factory id, name (single token), node, capacityIn, handlesSea(0/1): ";**
+**            cin>>id>>name>>node>>cap>>handlesSea;**
+**            addFactoryEntry(id,name,node,cap,handlesSea!=0);**
+**            registerEntity(id,name,node,true);**
+**            cout<<"Factory added.\n";**
+**        } else if (choice == 5) {**
+**            // dispatch top request**
+**            dispatchTopRequest(currentTime);**
+**        } else if (choice == 6) {**
+**            int ticks; cout<<"How many minutes to simulate? "; cin>>ticks;**
+**            for (int i=0;i<ticks;i++) {**
+**                // dispatch new requests opportunistically**
+**                if (requestHeapSize > 0) dispatchTopRequest(currentTime);**
+**                processTick(currentTime);**
+**                processFactories();**
+**                currentTime++;**
+**            }**
+**            cout<<"Simulated "<<ticks<<" minute(s). CurrentTime="<<currentTime<<"\n";**
+**        } else if (choice == 7) {**
+**            processFactories(); cout<<"Factories processed once.\n";**
+**        } else if (choice == 8) {**
+**            showFactoryReport();**
+**        } else if (choice == 9) {**
+**            char dir[128]; cout<<"Enter directory path (no trailing slash) to save CSV files: "; cin>>dir;**
+**            saveAll(dir);**
+**        } else if (choice == 10) {**
+**            char dir[128]; cout<<"Enter directory path to load CSV files: "; cin>>dir;**
+**            loadAll(dir);**
+**        } else if (choice == 11) {**
+**            listPendingRequests();**
+**        } else if (choice == 12) {**
+**            listVehicles();**
+**        } else if (choice == 13) {**
+**            cout<<"Exiting.\n"; break;**
+**        } else {**
+**            cout<<"Invalid choice.\n";**
+**        }**
+**    }**
+
+**    return 0;**
+}
+
+/* ===========================
+**   CSV helper implementations (declared above)**
+**   =========================== */**
+
+void saveRequestsCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"id,node,type,volume,priority,timestamp,processed\n";**
+**    for (int i=0;i<requestsCount;i++) {**
+**        f<<requests[i].id<<","<<requests[i].node<<","<<int(requests[i].type)<<","<<requests[i].volume<<","<<requests[i].priority<<","<<requests[i].timestamp<<","<<requests[i].processed<<"\n";**
+**    }**
+**    f.close();**
+}
+
+void loadRequestsCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line); // header**
+**    requestsCount = 0; requestHeapSize = 0;**
+**    while(getline(f,line) && requestsCount < MAX_REQUESTS) {**
+**        int id,node,type,volume,priority,timestamp,processed;**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        if (sscanf(buf,"%d,%d,%d,%d,%d,%d,%d",&id,&node,&type,&volume,&priority,&timestamp,&processed) >= 7) {**
+**            Request &r = requests[requestsCount];**
+**            r.id = id; r.node = node; r.type = (WasteType)type; r.volume = volume; r.priority = priority; r.timestamp = timestamp; r.processed = processed; r.assigned=false; r.assignedVehicleId=-1;**
+**            requestHeapPush(requestsCount);**
+**            requestsCount++;**
+**        }**
+**    }**
+**    f.close();**
+}
+
+void saveVehiclesCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"type,id,node,capacity,speed,available,load\n";**
+**    for (int i=0;i<trucksCount;i++) f<<"truck,"<<trucks[i].c.id<<","<<trucks[i].c.currentNode<<","<<trucks[i].c.capacity<<","<<trucks[i].c.speed<<","<<trucks[i].c.available<<","<<trucks[i].c.load<<"\n";**
+**    for (int i=0;i<boatsCount;i++) f<<"boat,"<<boats[i].c.id<<","<<boats[i].c.currentNode<<","<<boats[i].c.capacity<<","<<boats[i].c.speed<<","<<boats[i].c.available<<","<<boats[i].c.load<<"\n";**
+**    f.close();**
+}
+
+void loadVehiclesCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line);**
+**    trucksCount = 0; boatsCount = 0;**
+**    while(getline(f,line) && (trucksCount < MAX_TRUCKS || boatsCount < MAX_BOATS)) {**
+**        char type[32]; int id,node,capacity,speed,available,load;**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        if (sscanf(buf,"%31[^,],%d,%d,%d,%d,%d,%d",type,&id,&node,&capacity,&speed,&available,&load) >= 7) {**
+**            if (strcmp(type,"truck")==0 && trucksCount < MAX_TRUCKS) {**
+**                addTruck(id,node,capacity,speed); trucks[trucksCount-1].c.available = (available!=0); trucks[trucksCount-1].c.load = load;**
+**            } else if (strcmp(type,"boat")==0 && boatsCount < MAX_BOATS) {**
+**                addBoat(id,node,capacity,speed); boats[boatsCount-1].c.available = (available!=0); boats[boatsCount-1].c.load = load;**
+**            }**
+**        }**
+**    }**
+**    f.close();**
+}
+
+void saveFactoriesCSV(const char* fname) {
+**    ofstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    f<<"id,name,node,capacityIn,storedRaw,producedUnits,handlesSea\n";**
+**    for (int i=0;i<factoriesCount;i++) {**
+**        f<<factories[i].id<<","<<factories[i].name<<","<<factories[i].node<<","<<factories[i].capacityIn<<","<<factories[i].storedRaw<<","<<factories[i].producedUnits<<","<<factories[i].handlesSea<<"\n";**
+**    }**
+**    f.close();**
+}
+
+void loadFactoriesCSV(const char* fname) {
+**    ifstream f(fname);**
+**    if(!f) { cout<<"Failed to open "<<fname<<"\n"; return; }**
+**    string line; getline(f,line);**
+**    factoriesCount = 0;**
+**    while(getline(f,line) && factoriesCount < MAX_FACTORIES) {**
+**        char buf[512]; strncpy(buf,line.c_str(),511); buf[511]=0;**
+**        int id,node,capacityIn,storedRaw,producedUnits,handlesSea;**
+**        char name[64];**
+**        if (sscanf(buf,"%d,%63[^,],%d,%d,%d,%d,%d",&id,name,&node,&capacityIn,&storedRaw,&producedUnits,&handlesSea) >= 7) {**
+**            addFactoryEntry(id,name,node,capacityIn,handlesSea!=0);**
+**            factories[factoriesCount-1].storedRaw = storedRaw; factories[factoriesCount-1].producedUnits = producedUnits;**
+**        }**
+**    }**
+**    f.close();**
+}
+`,
+  flowchart: "image/flowchart1.png"
+  },
+  parking: {
+  title: 'Smart Parking System for Commercial & Entertainment Zones',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Parking congestion around malls and theatres leads to traffic jams, wasted fuel, and poor user experience.</p>
+
+    <h3>System Approach</h3>
+    <p>Parking slots are stored in AVL Trees, VIP/EV vehicles are prioritized using Max-Heaps, and Dijkstra finds the nearest available slot.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>AVL Tree, Max Heap, Dijkstra, Merge Sort</p>
+
+    <h3>🅿 Smart Parking System (Commercial & Entertainment Zones)</h3>
+    <ul>
+      <li><b>Parking Slot Registry:</b> AVL Tree – O(log n) insert/search for reserved and EV slots</li>
+      <li><b>VIP / Special Queue:</b> Max Heap – priority for VIP and EV vehicles</li>
+      <li><b>Shortest Path Routing:</b> Dijkstra (Adjacency Matrix) – nearest available slot selection</li>
+      <li><b>Reports & Billing:</b> Merge Sort – occupancy and revenue-based reports</li>
+      <li><b>Sensor Alerts:</b> Slot flags – block over-occupied or unavailable slots</li>
+      <li><b>EV Handling:</b> Slot attributes – ensures correct zone assignment</li>
+      <li><b>Time-Based Billing:</b> Revenue = time × rate – per-vehicle tracking</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG-11, SDG-7, SDG-9</p>
+  `,
+    code:`#include <bits/stdc++.h>
+using namespace std;
+const int MAX_SLOTS=200, MAX_CARS=300, MAX_NODES=50, INF=1000000000;
+
+// ----------------- Parking Slot & AVL Tree -----------------
+struct ParkingSlot{
+    **\*\*int id, zone; bool occupied; bool vip; bool ev; bool coldchain;\*\*
+
+    \*\*int reservedFor; // -1 if free\*\*
+
+    \*\*int sensor; // 1 if sensor detects blockage/occupied\*\*
+
+    \*\*int timeIn; // time in hours\*\***
+
+
+
+};
+
+struct AVLNode{
+    **\*\*ParkingSlot slot;\*\*
+
+    \*\*AVLNode \\\*left,\\\*right;\*\*
+
+    \*\*int height;\*\*
+
+    \*\*AVLNode(ParkingSlot s): slot(s), left(NULL), right(NULL), height(1){}\*\***
+
+
+
+};
+
+int avlHeight(AVLNode* n){ return n?n->height:0;}
+int avlBalance(AVLNode* n){ return n?avlHeight(n->left)-avlHeight(n->right):0;}
+AVLNode* rightRotate(AVLNode* y){ AVLNode* x=y->left; AVLNode* T2=x->right; x->right=y; y->left=T2; y->height=1+max(avlHeight(y->left),avlHeight(y->right)); x->height=1+max(avlHeight(x->left),avlHeight(x->right)); return x;}
+AVLNode* leftRotate(AVLNode* x){ AVLNode* y=x->right; AVLNode* T2=y->left; y->left=x; x->right=T2; x->height=1+max(avlHeight(x->left),avlHeight(x->right)); y->height=1+max(avlHeight(y->left),avlHeight(y->right)); return y;}
+AVLNode* avlInsert(AVLNode* node, ParkingSlot s){
+    **\*\*if(!node) return new AVLNode(s);\*\*
+
+    \*\*if(s.id<node->slot.id) node->left=avlInsert(node->left,s);\*\*
+
+    \*\*else if(s.id>node->slot.id) node->right=avlInsert(node->right,s);\*\*
+
+    \*\*else return node;\*\*
+
+    \*\*node->height=1+max(avlHeight(node->left),avlHeight(node->right));\*\*
+
+    \*\*int balance=avlBalance(node);\*\*
+
+    \*\*if(balance>1 \\\&\\\& s.id<node->left->slot.id) return rightRotate(node);\*\*
+
+    \*\*if(balance<-1 \\\&\\\& s.id>node->right->slot.id) return leftRotate(node);\*\*
+
+    \*\*if(balance>1 \\\&\\\& s.id>node->left->slot.id){ node->left=leftRotate(node->left); return rightRotate(node);}\*\*
+
+    \*\*if(balance<-1 \\\&\\\& s.id<node->right->slot.id){ node->right=rightRotate(node->right); return leftRotate(node);}\*\*
+
+    \*\*return node;\*\***
+
+
+
+}
+AVLNode* avlSearch(AVLNode* root,int id){ if(!root) return NULL; if(id==root->slot.id) return root; if(id<root->slot.id) return avlSearch(root->left,id); return avlSearch(root->right,id);}
+void avlInorder(AVLNode* root){
+    **\*\*if(!root) return;\*\*
+
+    \*\*avlInorder(root->left);\*\*
+
+    \*\*cout<<"Slot "<<root->slot.id<<" Zone "<<root->slot.zone<<" Occ "<<root->slot.occupied<<" VIP "<<root->slot.vip<<" EV "<<root->slot.ev<<" Cold "<<root->slot.coldchain<<" Sensor "<<root->slot.sensor<<"\\\\n";\*\*
+
+    \*\*avlInorder(root->right);\*\***
+
+
+
+}
+
+// ----------------- Max Heap for VIP / Special Queue -----------------
+struct Car{ int id; bool vip,ev,coldchain; int zonePref; int timeIn; };
+Car cars[MAX_CARS]; int carsCount=0;
+int vipHeap[MAX_CARS], vipHeapSize=0;
+
+void vipPush(int idx){
+    **\*\*vipHeap\\\[vipHeapSize]=idx; int i=vipHeapSize++;\*\*
+
+    \*\*while(i!=0){\*\*
+
+        \*\*int p=(i-1)/2;\*\*
+
+        \*\*if(cars\\\[vipHeap\\\[i]].vip \\\&\\\& !cars\\\[vipHeap\\\[p]].vip){ swap(vipHeap\\\[i],vipHeap\\\[p]); i=p;}\*\*
+
+        \*\*else break;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+int vipPop(){
+    **\*\*if(vipHeapSize==0) return -1;\*\*
+
+    \*\*int root=vipHeap\\\[0]; vipHeap\\\[0]=vipHeap\\\[--vipHeapSize];\*\*
+
+    \*\*int i=0;\*\*
+
+    \*\*while(true){\*\*
+
+        \*\*int l=2\\\*i+1,r=2\\\*i+2,largest=i;\*\*
+
+        \*\*if(l<vipHeapSize \\\&\\\& cars\\\[vipHeap\\\[l]].vip \\\&\\\& !cars\\\[vipHeap\\\[largest]].vip) largest=l;\*\*
+
+        \*\*if(r<vipHeapSize \\\&\\\& cars\\\[vipHeap\\\[r]].vip \\\&\\\& !cars\\\[vipHeap\\\[largest]].vip) largest=r;\*\*
+
+        \*\*if(largest!=i){ swap(vipHeap\\\[i],vipHeap\\\[largest]); i=largest;}\*\*
+
+        \*\*else break;\*\*
+
+    \*\*}\*\*
+
+    \*\*return root;\*\***
+
+
+
+}
+
+// ----------------- Parking Graph + Dijkstra -----------------
+int adj[MAX_NODES][MAX_NODES]; int nodesCount=0;
+void initGraph(int n){ nodesCount=n; for(int i=0;i<n;i++) for(int j=0;j<n;j++) adj[i][j]=(i==j?0:INF);}
+void addEdge(int u,int v,int w){ adj[u][v]=w; adj[v][u]=w;}
+struct DRes{ int dist[MAX_NODES]; int parent[MAX_NODES]; };
+DRes dijkstra(int src){
+    **\*\*DRes R; bool used\\\[MAX\\\_NODES]; for(int i=0;i<nodesCount;i++){ R.dist\\\[i]=INF; R.parent\\\[i]=-1; used\\\[i]=false;}\*\*
+
+    \*\*R.dist\\\[src]=0;\*\*
+
+    \*\*for(int iter=0;iter<nodesCount;iter++){\*\*
+
+        \*\*int u=-1,best=INF;\*\*
+
+        \*\*for(int i=0;i<nodesCount;i++) if(!used\\\[i] \\\&\\\& R.dist\\\[i]<best){ best=R.dist\\\[i]; u=i;}\*\*
+
+        \*\*if(u==-1) break;\*\*
+
+        \*\*used\\\[u]=true;\*\*
+
+        \*\*for(int v=0;v<nodesCount;v++) if(adj\\\[u]\\\[v]<INF \\\&\\\& R.dist\\\[u]+adj\\\[u]\\\[v]<R.dist\\\[v]){\*\*
+
+            \*\*R.dist\\\[v]=R.dist\\\[u]+adj\\\[u]\\\[v]; R.parent\\\[v]=u;\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\*
+
+    \*\*return R;\*\***
+
+
+
+}
+
+// ----------------- Merge Sort for Reports -----------------
+struct Report{ int slotID; int occupancy; int revenue; };
+Report reports[MAX_SLOTS]; int reportSize=0;
+void mergeReport(int l,int m,int r){
+    **\*\*int n1=m-l+1,n2=r-m; Report \\\*L=new Report\\\[n1]; Report \\\*R=new Report\\\[n2];\*\*
+
+    \*\*for(int i=0;i<n1;i++) L\\\[i]=reports\\\[l+i]; for(int j=0;j<n2;j++) R\\\[j]=reports\\\[m+1+j];\*\*
+
+    \*\*int i=0,j=0,k=l;\*\*
+
+    \*\*while(i<n1 \\\&\\\& j<n2){ if(L\\\[i].occupancy>=R\\\[j].occupancy) reports\\\[k++]=L\\\[i++]; else reports\\\[k++]=R\\\[j++];}\*\*
+
+    \*\*while(i<n1) reports\\\[k++]=L\\\[i++]; while(j<n2) reports\\\[k++]=R\\\[j++]; delete\\\[] L; delete\\\[] R;\*\***
+
+
+
+}
+void mergeSortReport(int l,int r){ if(l<r){ int m=(l+r)/2; mergeSortReport(l,m); mergeSortReport(m+1,r); mergeReport(l,m,r);}}
+
+// ----------------- Simulation -----------------
+AVLNode* parkingRoot=NULL;
+void addSlot(int id,int zone,bool vip=false,bool ev=false,bool cold=false){ ParkingSlot s={id,zone,false,vip,ev,cold,-1,0,0}; parkingRoot=avlInsert(parkingRoot,s);}
+void addCar(int id,bool vip,bool ev,bool cold,int zonePref,int timeIn){ cars[carsCount]={id,vip,ev,cold,zonePref,timeIn}; vipPush(carsCount); carsCount++; }
+
+void simulateParking(){
+    **\*\*cout<<"-- Parking Slots --\\\\n"; avlInorder(parkingRoot);\*\*
+
+    \*\*cout<<"\\\\n-- Dispatching Cars (VIP priority first) --\\\\n";\*\*
+
+    \*\*int idx=vipPop();\*\*
+
+    \*\*while(idx!=-1){\*\*
+
+        \*\*Car \\\&c=cars\\\[idx];\*\*
+
+        \*\*cout<<"Car "<<c.id<<" VIP "<<c.vip<<" EV "<<c.ev<<" Cold "<<c.coldchain<<" looking for slot in zone "<<c.zonePref<<"\\\\n";\*\*
+
+        \*\*AVLNode\\\* slot=NULL; queue<AVLNode\\\*> q; if(parkingRoot) q.push(parkingRoot);\*\*
+
+        \*\*while(!q.empty()){\*\*
+
+            \*\*AVLNode\\\* n=q.front(); q.pop();\*\*
+
+            \*\*if(!n->slot.occupied \\\&\\\& n->slot.zone==c.zonePref \\\&\\\& n->slot.sensor==0 \\\&\\\&\*\* 
+
+               \*\*(!c.ev || n->slot.ev) \\\&\\\& (!c.coldchain || n->slot.coldchain)){ slot=n; break;}\*\*
+
+            \*\*if(n->left) q.push(n->left); if(n->right) q.push(n->right);\*\*
+
+        \*\*}\*\*
+
+        \*\*if(slot){ slot->slot.occupied=true; slot->slot.reservedFor=c.id; slot->slot.timeIn=c.timeIn; cout<<"Assigned Slot "<<slot->slot.id<<"\\\\n";\*\*
+
+            \*\*reports\\\[reportSize++]={slot->slot.id,1, c.timeIn\\\*10};}\*\*
+
+        \*\*else cout<<"No slot available for Car "<<c.id<<"\\\\n";\*\*
+
+        \*\*idx=vipPop();\*\*
+
+    \*\*}\*\*
+
+    \*\*mergeSortReport(0,reportSize-1);\*\*
+
+    \*\*cout<<"\\\\n-- Parking Report --\\\\n";\*\*
+
+    \*\*for(int i=0;i<reportSize;i++) cout<<"Slot "<<reports\\\[i].slotID<<" Occ "<<reports\\\[i].occupancy<<" Revenue $"<<reports\\\[i].revenue<<"\\\\n";\*\***
+
+
+
+}
+
+int main(){
+    **\*\*cout<<"=== Real-Time Smart Parking System ===\\\\n";\*\*
+
+    \*\*addSlot(1,1,true,true,false); addSlot(2,1,false,false,false); addSlot(3,2,false,false,true); addSlot(4,2,true,false,false);\*\*
+
+    \*\*addSlot(5,3,false,true,false);\*\*
+
+    \*\*addCar(101,true,true,false,1,2); addCar(102,false,false,true,2,1); addCar(103,true,false,true,3,3);\*\*
+
+    \*\*addCar(104,false,false,false,1,1);\*\*
+
+    \*\*simulateParking();\*\*
+
+    \*\*return 0;\*\***
+
+
+
+}
+
+`,
+  flowchart: "image/flowchart2.png"
+  },
+  energy: {
+  title: 'Renewable Energy Grid Management (Solar + Wind)',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Renewable energy sources are intermittent, causing instability in urban power supply.</p>
+
+    <h3>System Approach</h3>
+    <p>Max-Heaps select highest-producing plants, Min-Heaps detect underperforming units, and Dijkstra routes power with minimal loss.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>Max Heap, Min Heap, Dijkstra, Bellman–Ford, Merge Sort, AVL Tree</p>
+
+    <h3>☀ Renewable Energy Grid Management (Solar + Wind)</h3>
+    <ul>
+      <li><b>Power Plant Priority:</b> Max Heap – selects highest-producing solar/wind plant first</li>
+      <li><b>Production Logs:</b> Min Heap – identifies lowest-output plants for maintenance scheduling</li>
+      <li><b>Load Distribution:</b> Dijkstra for shortest-loss routing; Bellman–Ford for penalty/toll adjustments</li>
+      <li><b>Daily Generation Sorting:</b> Merge Sort – efficient reporting of energy records</li>
+      <li><b>Plant Registry:</b> AVL Tree – O(log n) search, update, and fault detection</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑7, SDG‑13, SDG‑9</p>
+  `,
+
+    code:`#include <iostream>
+#include <climits>
+#include <cstring>
+using namespace std;
+
+/*************************************************************
+** * 1. AVL TREE FOR SOLAR + WIND PLANT REGISTRY**
+** *************************************************************/**
+class Plant {
+public:
+**    char name[30];**
+**    int capacity;     // kW**
+**    Plant *left, *right;**
+**    int height;**
+
+**    Plant(const char* n, int c) {**
+**        strcpy(name, n);**
+**        capacity = c;**
+**        left = right = NULL;**
+**        height = 1;**
+**    }**
+};
+
+int height(Plant* n) {
+**    return n ? n->height : 0;**
+}
+
+int balanceFactor(Plant* n) {
+**    return n ? height(n->left) - height(n->right) : 0;**
+}
+
+Plant* rightRotate(Plant* y) {
+**    Plant* x = y->left;**
+**    Plant* T = x->right;**
+
+**    x->right = y;**
+**    y->left = T;**
+
+**    y->height = max(height(y->left), height(y->right)) + 1;**
+**    x->height = max(height(x->left), height(x->right)) + 1;**
+
+**    return x;**
+}
+
+Plant* leftRotate(Plant* x) {
+**    Plant* y = x->right;**
+**    Plant* T = y->left;**
+
+**    y->left = x;**
+**    x->right = T;**
+
+**    x->height = max(height(x->left), height(x->right)) + 1;**
+**    y->height = max(height(y->left), height(y->right)) + 1;**
+
+**    return y;**
+}
+
+Plant* insertPlant(Plant* node, const char* name, int cap) {
+**    if (!node)**
+**        return new Plant(name, cap);**
+
+**    if (strcmp(name, node->name) < 0)**
+**        node->left = insertPlant(node->left, name, cap);**
+**    else**
+**        node->right = insertPlant(node->right, name, cap);**
+
+**    node->height = max(height(node->left), height(node->right)) + 1;**
+
+**    int bf = balanceFactor(node);**
+
+**    if (bf > 1 && strcmp(name, node->left->name) < 0)**
+**        return rightRotate(node);**
+
+**    if (bf < -1 && strcmp(name, node->right->name) > 0)**
+**        return leftRotate(node);**
+
+**    if (bf > 1 && strcmp(name, node->left->name) > 0) {**
+**        node->left = leftRotate(node->left);**
+**        return rightRotate(node);**
+**    }**
+
+**    if (bf < -1 && strcmp(name, node->right->name) < 0) {**
+**        node->right = rightRotate(node->right);**
+**        return leftRotate(node);**
+**    }**
+
+**    return node;**
+}
+
+void inorder(Plant* root) {
+**    if (!root) return;**
+**    inorder(root->left);**
+**    cout << root->name << " (" << root->capacity << " kW)\n";**
+**    inorder(root->right);**
+}
+
+
+/*************************************************************
+** * 2. MAX HEAP FOR PRIORITY (HIGHEST POWER PRODUCING PLANT)**
+** *************************************************************/**
+class MaxHeap {
+public:
+**    int arr[50];**
+**    int size;**
+
+**    MaxHeap() { size = 0; }**
+
+**    void insert(int power) {**
+**        arr[++size] = power;**
+**        int i = size;**
+
+**        while (i > 1 && arr[i/2] < arr[i]) {**
+**            int t = arr[i];**
+**            arr[i] = arr[i/2];**
+**            arr[i/2] = t;**
+**            i /= 2;**
+**        }**
+**    }**
+
+**    int extractMax() {**
+**        if (size == 0) return -1;**
+
+**        int maxVal = arr[1];**
+**        arr[1] = arr[size--];**
+
+**        int i = 1;**
+**        while (true) {**
+**            int l = 2*i, r = 2*i+1, largest = i;**
+
+**            if (l <= size && arr[l] > arr[largest]) largest = l;**
+**            if (r <= size && arr[r] > arr[largest]) largest = r;**
+
+**            if (largest != i) {**
+**                int t = arr[i];**
+**                arr[i] = arr[largest];**
+**                arr[largest] = t;**
+**                i = largest;**
+**            } else break;**
+**        }**
+**        return maxVal;**
+**    }**
+};
+
+
+/*************************************************************
+** * 3. MIN HEAP (LOW PRODUCTION DETECTOR)**
+** *************************************************************/**
+class MinHeap {
+public:
+**    int arr[50];**
+**    int size;**
+
+**    MinHeap() { size = 0; }**
+
+**    void insert(int val) {**
+**        arr[++size] = val;**
+**        int i = size;**
+
+**        while (i > 1 && arr[i/2] > arr[i]) {**
+**            int t = arr[i];**
+**            arr[i] = arr[i/2];**
+**            arr[i/2] = t;**
+**            i /= 2;**
+**        }**
+**    }**
+
+**    int extractMin() {**
+**        if (size == 0) return -1;**
+**        int minVal = arr[1];**
+**        arr[1] = arr[size--];**
+
+**        int i = 1;**
+**        while (true) {**
+**            int l = 2*i, r = 2*i+1, smallest = i;**
+
+**            if (l <= size && arr[l] < arr[smallest]) smallest = l;**
+**            if (r <= size && arr[r] < arr[smallest]) smallest = r;**
+
+**            if (smallest != i) {**
+**                int t = arr[i];**
+**                arr[i] = arr[smallest];**
+**                arr[smallest] = t;**
+**                i = smallest;**
+**            } else break;**
+**        }**
+**        return minVal;**
+**    }**
+};
+
+
+/*************************************************************
+** * 4. MERGE SORT (SORT DAILY PRODUCTION)**
+** *************************************************************/**
+void merge(int arr[], int l, int m, int r) {
+**    int n1 = m-l+1;**
+**    int n2 = r-m;**
+
+**    int L[20], R[20];**
+
+**    for (int i=0;i<n1;i++) L[i] = arr[l+i];**
+**    for (int j=0;j<n2;j++) R[j] = arr[m+1+j];**
+
+**    int i=0,j=0,k=l;**
+
+**    while(i<n1 && j<n2) {**
+**        if (L[i] <= R[j]) arr[k++] = L[i++];**
+**        else arr[k++] = R[j++];**
+**    }**
+
+**    while(i<n1) arr[k++] = L[i++];**
+**    while(j<n2) arr[k++] = R[j++];**
+}
+
+void mergeSort(int arr[], int l, int r) {
+**    if (l < r) {**
+**        int m = (l+r)/2;**
+**        mergeSort(arr, l, m);**
+**        mergeSort(arr, m+1, r);**
+**        merge(arr, l, m, r);**
+**    }**
+}
+
+
+/*************************************************************
+** * 5. DIJKSTRA (NO VECTORS, ARRAY-BASED) FOR LOAD BALANCING**
+** *************************************************************/**
+int minDist(int dist[], bool used[], int n) {
+**    int minv = INT_MAX, idx = -1;**
+**    for (int i=0;i<n;i++)**
+**        if (!used[i] && dist[i] < minv) {**
+**            minv = dist[i];**
+**            idx = i;**
+**        }**
+**    return idx;**
+}
+
+void dijkstra(int graph[10][10], int src, int n) {
+**    int dist[10];**
+**    bool used[10];**
+
+**    for (int i=0;i<n;i++) {**
+**        dist[i] = INT_MAX;**
+**        used[i] = false;**
+**    }**
+
+**    dist[src] = 0;**
+
+**    for (int c=0;c<n-1;c++) {**
+**        int u = minDist(dist, used, n);**
+**        used[u] = true;**
+
+**        for (int v=0; v<n; v++) {**
+**            if (!used[v] && graph[u][v] != INT_MAX &&**
+**                dist[u] + graph[u][v] < dist[v])**
+**            {**
+**                dist[v] = dist[u] + graph[u][v];**
+**            }**
+**        }**
+**    }**
+
+**    cout << "\nShortest Power Transmission Cost from Plant:\n";**
+**    for (int i=0;i<n;i++)**
+**        cout << "City block " << i << " = " << dist[i] << endl;**
+}
+
+
+/*************************************************************
+** * MAIN PROGRAM**
+** *************************************************************/**
+int main() {
+
+**    cout << "\n==== Bellapuram Renewable Energy Grid Management ====\n";**
+
+**    /*************** AVL Plant Registry ***************/**
+**    Plant* root = NULL;**
+**    root = insertPlant(root, "SolarPlantA", 120);**
+**    root = insertPlant(root, "WindFarmB", 90);**
+**    root = insertPlant(root, "SolarPlantC", 150);**
+
+**    cout << "\n--- Registered Power Plants (AVL Inorder) ---\n";**
+**    inorder(root);**
+
+
+**    /*************** Max Heap – Highest Producer ***************/**
+**    MaxHeap maxH;**
+**    maxH.insert(120);**
+**    maxH.insert(90);**
+**    maxH.insert(150);**
+
+**    cout << "\nHighest producing plant (kW): " << maxH.extractMax() << endl;**
+
+
+**    /*************** Min Heap – Low Production Detector ***************/**
+**    MinHeap minH;**
+**    minH.insert(10);   // failure**
+**    minH.insert(25);**
+**    minH.insert(18);**
+
+**    cout << "Lowest production detected (kW): " << minH.extractMin() << endl;**
+
+
+**    /*************** Merge Sort – Sort Day Production ***************/**
+**    int prod[6] = {50, 120, 80, 60, 140, 30};**
+**    mergeSort(prod, 0, 5);**
+
+**    cout << "\nSorted Daily Production (kW): ";**
+**    for (int i=0;i<6;i++) cout << prod[i] << " ";**
+
+
+**    /*************** Dijkstra – Load Distribution ***************/**
+**    int graph[10][10] = {**
+**        {0,4,INT_MAX,2,INT_MAX},**
+**        {4,0,3,INT_MAX,INT_MAX},**
+**        {INT_MAX,3,0,5,6},**
+**        {2,INT_MAX,5,0,4},**
+**        {INT_MAX,INT_MAX,6,4,0}**
+**    };**
+
+**    cout << "\n";**
+**    dijkstra(graph, 0, 5);**
+
+
+**    return 0;**
+}
+`,
+  flowchart: "image/flowchart3.png"
+  },
+  cargo: {
+  title: 'Port Cargo Scheduling & Container Allocation',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Ports suffer delays due to inefficient container placement and berth scheduling.</p>
+
+    <h3>System Approach</h3>
+    <p>Containers are prioritized using Heaps, routes are optimized using graph algorithms, and scheduling minimizes turnaround time.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>Max Heap, Min Heap, AVL Tree, Red-Black Tree, Dijkstra, Bellman–Ford, Kruskal, QuickSort</p>
+
+    <h3>📦 Port Cargo Scheduling & Container Allocation</h3>
+    <ul>
+      <li><b>Cargo Priority Handling:</b> Max Heap – O(log n) handling of urgent/perishable cargo</li>
+      <li><b>Container Storage:</b> AVL Tree – fast O(log n) insert/search of container IDs</li>
+      <li><b>Cargo Search Index:</b> Red-Black Tree – efficient shipment lookup & tracking</li>
+      <li><b>Manifest Sorting:</b> QuickSort – array-based cargo report generation</li>
+      <li><b>Berth Assignment:</b> Min Heap – earliest available berth scheduling</li>
+      <li><b>Truck & Cargo Routing:</b> Dijkstra – shortest path from port to warehouse/city</li>
+      <li><b>Penalty/Traffic Costs:</b> Bellman–Ford – adjusts routing for tolls and delays</li>
+      <li><b>Network Model:</b> Adjacency Matrix – fixed-size port & city graph</li>
+      <li><b>Path Retrieval:</b> Parent Array – reconstruct delivery routes</li>
+      <li><b>Logistics Backbone:</b> Kruskal – minimum-cost spanning network for port-city connections</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑9, SDG‑12</p>
+  `,
+
+    code:`#include <iostream>
+#include <string>
+#include <climits>
+#include <algorithm>
+using namespace std;
+
+const int NODES = 5;
+const int INF = 1000000000; // large
+
+///////////////////////////
+// === MAX HEAP (custom) ===
+///////////////////////////
+class MaxHeap {
+**    int *arr;**
+**    int capacity;**
+**    int size;**
+public:
+**    MaxHeap(int cap=1000) {**
+**        capacity = cap;**
+**        size = 0;**
+**        arr = new int[capacity];**
+**    }**
+**    ~MaxHeap(){ delete[] arr; }**
+**    bool empty() const { return size==0; }**
+**    void insert(int val) {**
+**        if (size == capacity) {**
+**            int *narr = new int[capacity*2];**
+**            for (int i=0;i<size;i++) narr[i]=arr[i];**
+**            delete[] arr;**
+**            arr = narr;**
+**            capacity *= 2;**
+**        }**
+**        int i = size++;**
+**        arr[i] = val;**
+**        while (i != 0 && arr[(i-1)/2] < arr[i]) {**
+**            std::swap(arr[i], arr[(i-1)/2]);**
+**            i = (i-1)/2;**
+**        }**
+**    }**
+**    int extractMax() {**
+**        if (size <= 0) return -1;**
+**        int root = arr[0];**
+**        arr[0] = arr[size-1];**
+**        size--;**
+**        heapify(0);**
+**        return root;**
+**    }**
+**    void heapify(int i) {**
+**        int largest = i;**
+**        int l = 2*i + 1, r = 2*i + 2;**
+**        if (l < size && arr[l] > arr[largest]) largest = l;**
+**        if (r < size && arr[r] > arr[largest]) largest = r;**
+**        if (largest != i) {**
+**            std::swap(arr[i], arr[largest]);**
+**            heapify(largest);**
+**        }**
+**    }**
+**    void display() const {**
+**        for (int i=0;i<size;i++) cout << arr[i] << " ";**
+**        cout << endl;**
+**    }**
+};
+
+///////////////////////////
+// === AVL TREE (container storage) ===
+///////////////////////////
+struct AVLNode {
+**    int key; // container ID**
+**    AVLNode *left, *right;**
+**    int height;**
+**    AVLNode(int k): key(k), left(nullptr), right(nullptr), height(1) {}**
+};
+int avlHeight(AVLNode* n) { return n ? n->height : 0; }
+int avlBalance(AVLNode* n) { return n ? avlHeight(n->left) - avlHeight(n->right) : 0; }
+AVLNode* avlRightRotate(AVLNode* y){
+**    AVLNode* x = y->left;**
+**    AVLNode* T2 = x->right;**
+**    x->right = y; y->left = T2;**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    return x;**
+}
+AVLNode* avlLeftRotate(AVLNode* x){
+**    AVLNode* y = x->right;**
+**    AVLNode* T2 = y->left;**
+**    y->left = x; x->right = T2;**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    return y;**
+}
+AVLNode* avlInsert(AVLNode* node, int key) {
+**    if (!node) return new AVLNode(key);**
+**    if (key < node->key) node->left = avlInsert(node->left, key);**
+**    else if (key > node->key) node->right = avlInsert(node->right, key);**
+**    else return node;**
+**    node->height = 1 + max(avlHeight(node->left), avlHeight(node->right));**
+**    int balance = avlBalance(node);**
+**    if (balance > 1 && key < node->left->key) return avlRightRotate(node);**
+**    if (balance < -1 && key > node->right->key) return avlLeftRotate(node);**
+**    if (balance > 1 && key > node->left->key) {**
+**        node->left = avlLeftRotate(node->left);**
+**        return avlRightRotate(node);**
+**    }**
+**    if (balance < -1 && key < node->right->key) {**
+**        node->right = avlRightRotate(node->right);**
+**        return avlLeftRotate(node);**
+**    }**
+**    return node;**
+}
+void avlInorder(AVLNode* root) {
+**    if (!root) return;**
+**    avlInorder(root->left);**
+**    cout << root->key << " ";**
+**    avlInorder(root->right);**
+}
+
+///////////////////////////
+// === RED-BLACK TREE (cargo search) ===
+///////////////////////////
+enum Color { RED, BLACK };
+struct RBNode {
+**    int key;**
+**    Color color;**
+**    RBNode *left, *right, *parent;**
+**    RBNode(int k): key(k), color(RED), left(nullptr), right(nullptr), parent(nullptr) {}**
+};
+class RBTree {
+public:
+**    RBNode* root;**
+**    RBTree(): root(nullptr) {}**
+**    RBNode* bstInsert(RBNode* root, RBNode* pt) {**
+**        if (!root) return pt;**
+**        if (pt->key < root->key) {**
+**            root->left = bstInsert(root->left, pt);**
+**            root->left->parent = root;**
+**        } else if (pt->key > root->key) {**
+**            root->right = bstInsert(root->right, pt);**
+**            root->right->parent = root;**
+**        }**
+**        return root;**
+**    }**
+**    void rotateLeft(RBNode* &root, RBNode* &pt) {**
+**        RBNode* pt_right = pt->right;**
+**        pt->right = pt_right->left;**
+**        if (pt->right) pt->right->parent = pt;**
+**        pt_right->parent = pt->parent;**
+**        if (!pt->parent) root = pt_right;**
+**        else if (pt == pt->parent->left) pt->parent->left = pt_right;**
+**        else pt->parent->right = pt_right;**
+**        pt_right->left = pt;**
+**        pt->parent = pt_right;**
+**    }**
+**    void rotateRight(RBNode* &root, RBNode* &pt) {**
+**        RBNode* pt_left = pt->left;**
+**        pt->left = pt_left->right;**
+**        if (pt->left) pt->left->parent = pt;**
+**        pt_left->parent = pt->parent;**
+**        if (!pt->parent) root = pt_left;**
+**        else if (pt == pt->parent->left) pt->parent->left = pt_left;**
+**        else pt->parent->right = pt_left;**
+**        pt_left->right = pt;**
+**        pt->parent = pt_left;**
+**    }**
+**    void fixViolation(RBNode* &root, RBNode* &pt) {**
+**        RBNode *parent_pt = nullptr, *grand_parent_pt = nullptr;**
+**        while ((pt != root) && (pt->color == RED) && (pt->parent->color == RED)) {**
+**            parent_pt = pt->parent;**
+**            grand_parent_pt = pt->parent->parent;**
+**            if (parent_pt == grand_parent_pt->left) {**
+**                RBNode *uncle_pt = grand_parent_pt->right;**
+**                if (uncle_pt && uncle_pt->color == RED) {**
+**                    grand_parent_pt->color = RED;**
+**                    parent_pt->color = BLACK;**
+**                    uncle_pt->color = BLACK;**
+**                    pt = grand_parent_pt;**
+**                } else {**
+**                    if (pt == parent_pt->right) {**
+**                        rotateLeft(root, parent_pt);**
+**                        pt = parent_pt;**
+**                        parent_pt = pt->parent;**
+**                    }**
+**                    rotateRight(root, grand_parent_pt);**
+**                    swap(parent_pt->color, grand_parent_pt->color);**
+**                    pt = parent_pt;**
+**                }**
+**            } else {**
+**                RBNode *uncle_pt = grand_parent_pt->left;**
+**                if (uncle_pt && uncle_pt->color == RED) {**
+**                    grand_parent_pt->color = RED;**
+**                    parent_pt->color = BLACK;**
+**                    uncle_pt->color = BLACK;**
+**                    pt = grand_parent_pt;**
+**                } else {**
+**                    if (pt == parent_pt->left) {**
+**                        rotateRight(root, parent_pt);**
+**                        pt = parent_pt;**
+**                        parent_pt = pt->parent;**
+**                    }**
+**                    rotateLeft(root, grand_parent_pt);**
+**                    swap(parent_pt->color, grand_parent_pt->color);**
+**                    pt = parent_pt;**
+**                }**
+**            }**
+**        }**
+**        root->color = BLACK;**
+**    }**
+**    void insert(int key) {**
+**        RBNode* pt = new RBNode(key);**
+**        root = bstInsert(root, pt);**
+**        fixViolation(root, pt);**
+**    }**
+**    void inorder(RBNode* node) {**
+**        if (!node) return;**
+**        inorder(node->left);**
+**        cout << node->key << " ";**
+**        inorder(node->right);**
+**    }**
+**    RBNode* search(int key) {**
+**        RBNode* cur = root;**
+**        while (cur) {**
+**            if (key == cur->key) return cur;**
+**            if (key < cur->key) cur = cur->left;**
+**            else cur = cur->right;**
+**        }**
+**        return nullptr;**
+**    }**
+};
+
+///////////////////////////
+// === Manifest array & QuickSort ===
+///////////////////////////
+struct ManifestItem {
+**    int id;**
+**    string desc;**
+};
+const int MANIFEST_CAP = 100;
+ManifestItem manifest[MANIFEST_CAP];
+int manifestSize = 0;
+
+void quickSortManifest(int left, int right) {
+**    if (left >= right) return;**
+**    int pivot = manifest[(left+right)/2].id;**
+**    int i = left, j = right;**
+**    while (i <= j) {**
+**        while (manifest[i].id < pivot) i++;**
+**        while (manifest[j].id > pivot) j--;**
+**        if (i <= j) {**
+**            swap(manifest[i], manifest[j]);**
+**            i++; j--;**
+**        }**
+**    }**
+**    if (left < j) quickSortManifest(left, j);**
+**    if (i < right) quickSortManifest(i, right);**
+}
+
+///////////////////////////
+// === Graph (adjacency matrix) + Dijkstra (custom min-heap) ===
+///////////////////////////
+int graphMat[NODES][NODES];
+
+struct PQNode { int dist; int node; };
+const int PQ_CAP = 200;
+struct MinHeapPQ {
+**    PQNode arr[PQ_CAP];**
+**    int size;**
+**    MinHeapPQ(): size(0) {}**
+**    bool empty() const { return size==0; }**
+**    void push(int d, int u) {**
+**        if (size >= PQ_CAP) return;**
+**        int i = size++;**
+**        arr[i].dist = d; arr[i].node = u;**
+**        while (i != 0) {**
+**            int p = (i-1)/2;**
+**            if (arr[p].dist <= arr[i].dist) break;**
+**            swap(arr[p], arr[i]);**
+**            i = p;**
+**        }**
+**    }**
+**    PQNode pop() {**
+**        PQNode root = arr[0];**
+**        arr[0] = arr[size-1];**
+**        size--;**
+**        int i = 0;**
+**        while (true) {**
+**            int l = 2*i+1, r = 2*i+2, smallest = i;**
+**            if (l < size && arr[l].dist < arr[smallest].dist) smallest = l;**
+**            if (r < size && arr[r].dist < arr[smallest].dist) smallest = r;**
+**            if (smallest == i) break;**
+**            swap(arr[i], arr[smallest]);**
+**            i = smallest;**
+**        }**
+**        return root;**
+**    }**
+};
+
+void dijkstraNoVector(int src, int distArr[], int parentArr[]) {
+**    for (int i=0;i<NODES;i++) { distArr[i] = INF; parentArr[i] = -1; }**
+**    distArr[src] = 0;**
+**    MinHeapPQ pq;**
+**    pq.push(0, src);**
+**    while (!pq.empty()) {**
+**        PQNode p = pq.pop();**
+**        int d = p.dist, u = p.node;**
+**        if (d != distArr[u]) continue; // stale**
+**        for (int v=0; v<NODES; v++) {**
+**            if (graphMat[u][v] < INF) {**
+**                int nd = d + graphMat[u][v];**
+**                if (nd < distArr[v]) {**
+**                    distArr[v] = nd;**
+**                    parentArr[v] = u;**
+**                    pq.push(nd, v);**
+**                }**
+**            }**
+**        }**
+**    }**
+}
+
+void retrievePathNoVector(int target, int parentArr[], int outPath[], int &outLen) {
+**    // outPath max length NODES**
+**    outLen = 0;**
+**    int cur = target;**
+**    int temp[NODES];**
+**    int tlen = 0;**
+**    while (cur != -1) {**
+**        temp[tlen++] = cur;**
+**        cur = parentArr[cur];**
+**    }**
+**    // reverse**
+**    for (int i = tlen-1; i>=0; --i) outPath[outLen++] = temp[i];**
+}
+
+///////////////////////////
+// === Berth pool (min-heap by nextAvailable) ===
+///////////////////////////
+struct Berth {
+**    string name;**
+**    int nextAvailable;**
+};
+const int BERTH_CAP = 20;
+struct BerthHeap {
+**    Berth arr[BERTH_CAP];**
+**    int size;**
+**    BerthHeap(): size(0) {}**
+**    bool empty() const { return size==0; }**
+**    void push(const Berth &b) {**
+**        if (size >= BERTH_CAP) return;**
+**        int i = size++;**
+**        arr[i] = b;**
+**        while (i != 0) {**
+**            int p = (i-1)/2;**
+**            if (arr[p].nextAvailable <= arr[i].nextAvailable) break;**
+**            swap(arr[p], arr[i]);**
+**            i = p;**
+**        }**
+**    }**
+**    Berth pop() {**
+**        Berth root = arr[0];**
+**        arr[0] = arr[size-1];**
+**        size--;**
+**        int i = 0;**
+**        while (true) {**
+**            int l = 2*i+1, r = 2*i+2, smallest = i;**
+**            if (l < size && arr[l].nextAvailable < arr[smallest].nextAvailable) smallest = l;**
+**            if (r < size && arr[r].nextAvailable < arr[smallest].nextAvailable) smallest = r;**
+**            if (smallest == i) break;**
+**            swap(arr[i], arr[smallest]);**
+**            i = smallest;**
+**        }**
+**        return root;**
+**    }**
+**    // for dumping state without destroying heap**
+**    void dumpState() {**
+**        for (int i=0;i<size;i++) cout << arr[i].name << " nextAvailable=" << arr[i].nextAvailable << "\n";**
+**    }**
+};
+
+///////////////////////////
+// === SIMULATION / MAIN ===
+///////////////////////////
+int main() {
+**    ios::sync_with_stdio(false);**
+**    cin.tie(nullptr);**
+
+**    cout << "=== Bellapuram Smart Cargo Management System (NO vector) ===\n\n";**
+
+**    // 1) Prepare structures**
+**    MaxHeap cargoPriorityHeap(50);**
+**    AVLNode* containerStorage = nullptr;**
+**    RBTree cargoSearchIndex;**
+
+**    // 2) Manifest populate (array)**
+**    manifestSize = 0;**
+**    manifest[manifestSize++] = {3001, "Electronics - 20 pallets"};**
+**    manifest[manifestSize++] = {1002, "Perishable Food - 10 pallets"};**
+**    manifest[manifestSize++] = {2005, "Medical Supplies - 5 pallets"};**
+**    manifest[manifestSize++] = {4003, "Automobile Parts - 15 pallets"};**
+
+**    // 3) Port graph (adjacency matrix)**
+**    for (int i=0;i<NODES;i++) for (int j=0;j<NODES;j++) graphMat[i][j] = INF;**
+**    // diagonal 0**
+**    for (int i=0;i<NODES;i++) graphMat[i][i] = 0;**
+**    // edges (same as previous)**
+**    graphMat[0][1] = 10; graphMat[0][2] = 5;**
+**    graphMat[1][2] = 2;  graphMat[1][3] = 20; // keep 20 to reflect earlier 20**
+**    graphMat[2][1] = 3;  graphMat[2][3] = 9; graphMat[2][4] = 2;**
+**    graphMat[3][4] = 4;**
+**    graphMat[4][3] = 6;  graphMat[4][0] = 30;**
+
+**    // 4) Berth pool (min-heap)**
+**    BerthHeap berthPool;**
+**    berthPool.push({"Berth-A", 0});**
+**    berthPool.push({"Berth-B", 0});**
+**    berthPool.push({"Berth-C", 2});**
+
+**    // --- Simulation actions ---**
+
+**    cout << "--- Step 1: Insert cargo into priority heap, AVL, RB index ---\n";**
+**    cargoPriorityHeap.insert(2005); cargoPriorityHeap.insert(1002);**
+**    cargoPriorityHeap.insert(3001); cargoPriorityHeap.insert(4003);**
+
+**    containerStorage = avlInsert(containerStorage, 5001);**
+**    containerStorage = avlInsert(containerStorage, 3002);**
+**    containerStorage = avlInsert(containerStorage, 7007);**
+
+**    cargoSearchIndex.insert(5001); cargoSearchIndex.insert(3002); cargoSearchIndex.insert(7007);**
+
+**    cout << "Cargo Priority Heap contents (array order): ";**
+**    cargoPriorityHeap.display();**
+
+**    cout << "\nContainer Storage (AVL inorder): ";**
+**    avlInorder(containerStorage);**
+**    cout << "\nRB Tree cargo index (inorder): ";**
+**    cargoSearchIndex.inorder(cargoSearchIndex.root);**
+**    cout << "\n\n";**
+
+**    cout << "--- Step 2: Sort manifest (QuickSort) ---\n";**
+**    cout << "Manifest before sort (id : desc):\n";**
+**    for (int i=0;i<manifestSize;i++) cout << manifest[i].id << " : " << manifest[i].desc << "\n";**
+**    quickSortManifest(0, manifestSize-1);**
+**    cout << "\nManifest after QuickSort (by id ascending):\n";**
+**    for (int i=0;i<manifestSize;i++) cout << manifest[i].id << " : " << manifest[i].desc << "\n";**
+
+**    cout << "\n--- Step 3: Assign earliest available berth and schedule truck route ---\n";**
+**    int topCargo = cargoPriorityHeap.extractMax();**
+**    cout << "Top priority cargo ID to dispatch: " << topCargo << "\n";**
+
+**    if (!berthPool.empty()) {**
+**        Berth b = berthPool.pop();**
+**        int arrivalTime = 1;**
+**        int startTime = max(arrivalTime, b.nextAvailable);**
+**        cout << "Assigning " << b.name << " starting at time " << startTime << "\n";**
+**        b.nextAvailable = startTime + 3;**
+**        berthPool.push(b);**
+**    } else {**
+**        cout << "No berth available right now. Queueing...\n";**
+**    }**
+
+**    // Dijkstra (no vector)**
+**    int distArr[NODES], parentArr[NODES];**
+**    dijkstraNoVector(0, distArr, parentArr);**
+
+**    cout << "\nDijkstra distances from port:\n";**
+**    for (int i=0;i<NODES;i++) {**
+**        if (distArr[i] >= INF) cout << "Node " << i << " dist = -1\n";**
+**        else cout << "Node " << i << " dist = " << distArr[i] << "\n";**
+**    }**
+
+**    int target = (distArr[1] <= distArr[2]) ? 1 : 2;**
+**    cout << "Chosen warehouse node: " << target << "\n";**
+**    int path[NODES], pathLen = 0;**
+**    retrievePathNoVector(target, parentArr, path, pathLen);**
+**    cout << "Route: ";**
+**    for (int i=0;i<pathLen;i++) {**
+**        cout << path[i];**
+**        if (i+1<pathLen) cout << " -> ";**
+**    }**
+**    cout << "\nEstimated travel cost/time: " << (distArr[target] >= INF ? -1 : distArr[target]) << "\n";**
+
+**    cout << "\n--- Step 4: Cargo search demo (RB tree) ---\n";**
+**    int searchID = 3002;**
+**    RBNode* found = cargoSearchIndex.search(searchID);**
+**    if (found) cout << "Cargo ID " << searchID << " found in index.\n";**
+**    else cout << "Cargo ID " << searchID << " NOT found in index.\n";**
+
+**    cout << "\n--- Step 5: Final state ---\n";**
+**    cout << "Berth pool state (nextAvailable times):\n";**
+**    berthPool.dumpState();**
+
+**    cout << "\nRemaining cargo priority heap: ";**
+**    cargoPriorityHeap.display();**
+
+**    cout << "\nContainer Storage (AVL inorder) final: ";**
+**    avlInorder(containerStorage);**
+**    cout << "\n";**
+
+**    cout << "\nSimulation complete.\n";**
+**    return 0;**
+}
+`,
+  flowchart: "image/flowchart4.png"
+  },
+  transport: {
+  title: 'Public Transport Fleet Optimization',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Uneven passenger distribution causes overcrowding on some routes and underutilization on others.</p>
+
+    <h3>System Approach</h3>
+    <p>Passenger demand is analyzed, routes are evaluated using BFS/DFS, and fleets are optimized using shortest paths.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>BFS, DFS, Dijkstra, Bellman–Ford, Floyd–Warshall</p>
+
+    <h3>🚌 Public Transport Fleet Optimization</h3>
+    <ul>
+      <li><b>Shortest Route:</b> Dijkstra – fastest paths with positive travel times</li>
+      <li><b>Routes with Penalties:</b> Bellman–Ford – handles tolls, traffic delays, fines</li>
+      <li><b>Network Exploration:</b> BFS / DFS – checks connectivity & reachable zones</li>
+      <li><b>All-Pairs Shortest Paths:</b> Floyd–Warshall – city-wide route optimization</li>
+      <li><b>Graph Representation:</b> Adjacency Matrix – fixed-size city network</li>
+      <li><b>Distance Tracking:</b> Arrays – shortest distance & visited tracking</li>
+      <li><b>BFS Queue:</b> Array-based Queue – FIFO traversal without vectors</li>
+    </ul>
+
+    <p><b>Efficiency:</b> O(V²) Dijkstra, O(V³) Floyd–Warshall</p>
+    <p><b>SDGs:</b> SDG‑11, SDG‑13, SDG‑9</p>
+  `,
+    code:`#include <iostream>
+#include <climits>
+using namespace std;
+const int MAX = 10;
+
+// ------------------ DIJKSTRA (NO VECTOR) ------------------
+void dijkstra(int graph[MAX][MAX], int n, int src) {
+**    int dist[MAX];**
+**    bool visited[MAX];**
+
+**    for(int i = 0; i < n; i++) {**
+**        dist[i] = INT_MAX;**
+**        visited[i] = false;**
+**    }**
+**    dist[src] = 0;**
+
+**    for(int count = 0; count < n-1; count++) {**
+**        int u = -1, minVal = INT_MAX;**
+**        for(int i = 0; i < n; i++)**
+**            if(!visited[i] && dist[i] < minVal)**
+**                minVal = dist[i], u = i;**
+
+**        visited[u] = true;**
+
+**        for(int v = 0; v < n; v++)**
+**            if(graph[u][v] != INT_MAX && dist[u] + graph[u][v] < dist[v])**
+**                dist[v] = dist[u] + graph[u][v];**
+**    }**
+
+**    cout << "\nDijkstra distances from source " << src << ":\n";**
+**    for(int i = 0; i < n; i++)**
+**        cout << i << " -> " << dist[i] << endl;**
+}
+
+// ------------------ BELLMAN-FORD (NO VECTOR) ------------------
+void bellmanFord(int edges[][3], int edgeCount, int V, int src) {
+**    int dist[MAX];**
+**    for(int i = 0; i < V; i++) dist[i] = INT_MAX;**
+**    dist[src] = 0;**
+
+**    for(int i = 1; i < V; i++) {**
+**        for(int j = 0; j < edgeCount; j++) {**
+**            int u = edges[j][0], v = edges[j][1], w = edges[j][2];**
+**            if(dist[u] != INT_MAX && dist[u] + w < dist[v])**
+**                dist[v] = dist[u] + w;**
+**        }**
+**    }**
+
+**    cout << "\nBellman-Ford distances from " << src << ":\n";**
+**    for(int i = 0; i < V; i++)**
+**        cout << i << " -> " << dist[i] << endl;**
+}
+
+// ------------------ BFS (NO VECTOR) ------------------
+void BFS(int graph[MAX][MAX], int n, int start) {
+**    bool visited[MAX] = {false};**
+**    int queue[MAX], front = 0, rear = 0;**
+
+**    visited[start] = true;**
+**    queue[rear++] = start;**
+
+**    cout << "\nBFS Traversal: ";**
+**    while(front < rear) {**
+**        int u = queue[front++];**
+
+**        cout << u << " ";**
+
+**        for(int v = 0; v < n; v++) {**
+**            if(graph[u][v] == 1 && !visited[v]) {**
+**                visited[v] = true;**
+**                queue[rear++] = v;**
+**            }**
+**        }**
+**    }**
+**    cout << endl;**
+}
+
+// ------------------ FLOYD-WARSHALL (NO VECTOR) ------------------
+void floydWarshall(int dist[MAX][MAX], int V) {
+**    for(int k = 0; k < V; k++)**
+**        for(int i = 0; i < V; i++)**
+**            for(int j = 0; j < V; j++)**
+**                if(dist[i][k] != INT_MAX && dist[k][j] != INT_MAX)**
+**                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);**
+
+**    cout << "\nFloyd-Warshall APSP Matrix:\n";**
+**    for(int i = 0; i < V; i++) {**
+**        for(int j = 0; j < V; j++) {**
+**            if(dist[i][j] == INT_MAX) cout << "INF ";**
+**            else cout << dist[i][j] << " ";**
+**        }**
+**        cout << endl;**
+**    }**
+}
+
+// ------------------ MAIN ------------------
+int main() {
+**    cout << "=== Bellapuram Transport Routing System (NO VECTORS) ===\n";**
+
+**    int n = 5;**
+**    int graph[MAX][MAX];**
+
+**    // Initialize all edges to INF**
+**    for(int i = 0; i < MAX; i++)**
+**        for(int j = 0; j < MAX; j++)**
+**            graph[i][j] = INT_MAX;**
+
+**    // Weighted edges**
+**    graph[0][1] = 10;  graph[0][2] = 5;**
+**    graph[1][2] = 2;   graph[1][3] = 1;**
+**    graph[2][1] = 3;   graph[2][3] = 9; graph[2][4] = 2;**
+**    graph[3][4] = 4;**
+**    graph[4][3] = 6;   graph[4][0] = 7;**
+
+**    dijkstra(graph, n, 0);**
+
+**    // BFS UNWEIGHTED GRAPH (for demonstration)**
+**    int bfsGraph[MAX][MAX] = {0};**
+**    bfsGraph[0][1] = bfsGraph[0][2] = 1;**
+**    bfsGraph[1][2] = bfsGraph[1][3] = 1;**
+**    bfsGraph[2][3] = bfsGraph[3][4] = bfsGraph[4][0] = 1;**
+
+**    BFS(bfsGraph, 5, 0);**
+
+**    // FLOYD-WARSHALL**
+**    int fw[MAX][MAX] = {**
+**        {0,3,8,INT_MAX,-4},**
+**        {INT_MAX,0,INT_MAX,1,7},**
+**        {INT_MAX,4,0,INT_MAX,INT_MAX},**
+**        {2,INT_MAX,-5,0,INT_MAX},**
+**        {INT_MAX,INT_MAX,INT_MAX,6,0}**
+**    };**
+**    floydWarshall(fw, 5);**
+
+**    return 0;**
+}
+`,
+  flowchart: "image/flowchart5.png"
+  },
+  water: {
+  title: 'Water Distribution System',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Water leakage and unequal distribution lead to shortages in many city zones.</p>
+
+    <h3>System Approach</h3>
+    <p>Pipelines are modeled as graphs, MST algorithms design efficient networks, and shortest paths reroute water during failures.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>Prim, Kruskal, Dijkstra, Bellman–Ford</p>
+
+    <h3>💧 Water Distribution System</h3>
+    <ul>
+      <li><b>Pipeline Network Design:</b> Prim / Kruskal – minimum spanning tree for efficient pipe layout</li>
+      <li><b>Leakage Rerouting:</b> Dijkstra – shortest alternate path to maintain supply during failures</li>
+      <li><b>Penalty Routing:</b> Bellman–Ford – handles extra costs due to leakage, pumping, or pressure loss</li>
+      <li><b>Zone Connectivity:</b> BFS / DFS – verify all city zones are reachable</li>
+      <li><b>Reservoir Registry:</b> AVL Tree – O(log n) lookup for tanks and reservoirs</li>
+      <li><b>Flow Monitoring:</b> Arrays – track distribution volumes and detect imbalances</li>
+      <li><b>Report Generation:</b> Merge Sort – stable sorting of daily water usage logs</li>
+    </ul>
+
+    <p><b>Efficiency:</b> MST O(E log V), Dijkstra O(V²), Bellman–Ford O(V·E)</p>
+    <p><b>SDGs:</b> SDG‑6, SDG‑11, SDG‑13</p>
+  `,
+   code:`#include <bits/stdc++.h>
+using namespace std;
+
+const int MAX_NODES = 50;       // distribution nodes
+const int MAX_EDGES = 200;      // possible pipes
+const int MAX_CUSTOMERS = 500;  // registry
+const int INF = 1000000000;
+
+// ---------------------- AVL TREE: Customer Registry ----------------------
+struct Customer {
+**    int meterId;          // unique meter id**
+**    char name[64];**
+**    int node;             // connected distribution node**
+**    double avgDaily;      // avg daily consumption**
+**    Customer() : meterId(0), node(-1), avgDaily(0.0) { name[0]='\0'; }**
+};
+
+struct AVLNode {
+**    Customer cust;**
+**    AVLNode *left, *right;**
+**    int height;**
+**    AVLNode(const Customer &c): cust(c), left(nullptr), right(nullptr), height(1) {}**
+};
+
+int heightAVL(AVLNode* n) { return n? n->height : 0; }
+AVLNode* rotateRightAVL(AVLNode* y) {
+**    AVLNode* x = y->left; AVLNode* T2 = x->right;**
+**    x->right = y; y->left = T2;**
+**    y->height = max(heightAVL(y->left), heightAVL(y->right)) + 1;**
+**    x->height = max(heightAVL(x->left), heightAVL(x->right)) + 1;**
+**    return x;**
+}
+AVLNode* rotateLeftAVL(AVLNode* x) {
+**    AVLNode* y = x->right; AVLNode* T2 = y->left;**
+**    y->left = x; x->right = T2;**
+**    x->height = max(heightAVL(x->left), heightAVL(x->right)) + 1;**
+**    y->height = max(heightAVL(y->left), heightAVL(y->right)) + 1;**
+**    return y;**
+}
+AVLNode* insertAVL(AVLNode* node, const Customer &c) {
+**    if(!node) return new AVLNode(c);**
+**    if(c.meterId < node->cust.meterId) node->left = insertAVL(node->left, c);**
+**    else if(c.meterId > node->cust.meterId) node->right = insertAVL(node->right, c);**
+**    else return node; // duplicate**
+**    node->height = 1 + max(heightAVL(node->left), heightAVL(node->right));**
+**    int balance = heightAVL(node->left) - heightAVL(node->right);**
+**    if(balance > 1 && c.meterId < node->left->cust.meterId) return rotateRightAVL(node);**
+**    if(balance < -1 && c.meterId > node->right->cust.meterId) return rotateLeftAVL(node);**
+**    if(balance > 1 && c.meterId > node->left->cust.meterId) { node->left = rotateLeftAVL(node->left); return rotateRightAVL(node); }**
+**    if(balance < -1 && c.meterId < node->right->cust.meterId) { node->right = rotateRightAVL(node->right); return rotateLeftAVL(node); }**
+**    return node;**
+}
+AVLNode* searchAVL(AVLNode* root, int meterId) {
+**    if(!root) return nullptr;**
+**    if(meterId == root->cust.meterId) return root;**
+**    if(meterId < root->cust.meterId) return searchAVL(root->left, meterId);**
+**    return searchAVL(root->right, meterId);**
+}
+
+// ---------------------- Heaps: Pump priority & low nodes ----------------------
+struct MaxHeap {
+**    int arr[100]; int size;**
+**    MaxHeap(): size(0) {}**
+**    void insert(int val) {**
+**        arr[size++] = val;**
+**        int i = size-1;**
+**        while(i && arr[(i-1)/2] < arr[i]) { swap(arr[i], arr[(i-1)/2]); i=(i-1)/2; }**
+**    }**
+**    int extractMax() {**
+**        if(size==0) return -1;**
+**        int root = arr[0]; arr[0]=arr[--size];**
+**        int i=0;**
+**        while(true) {**
+**            int l=2*i+1, r=2*i+2, largest=i;**
+**            if(l<size && arr[l]>arr[largest]) largest=l;**
+**            if(r<size && arr[r]>arr[largest]) largest=r;**
+**            if(largest==i) break;**
+**            swap(arr[i], arr[largest]); i=largest;**
+**        }**
+**        return root;**
+**    }**
+**    bool empty() { return size==0; }**
+};
+
+struct MinHeap {
+**    int arr[100]; int size;**
+**    MinHeap(): size(0) {}**
+**    void insert(int val) {**
+**        arr[size++]=val; int i=size-1;**
+**        while(i && arr[(i-1)/2] > arr[i]) { swap(arr[i], arr[(i-1)/2]); i=(i-1)/2; }**
+**    }**
+**    int extractMin() {**
+**        if(size==0) return -1;**
+**        int root=arr[0]; arr[0]=arr[--size];**
+**        int i=0;**
+**        while(true) {**
+**            int l=2*i+1, r=2*i+2, smallest=i;**
+**            if(l<size && arr[l]<arr[smallest]) smallest=l;**
+**            if(r<size && arr[r]<arr[smallest]) smallest=r;**
+**            if(smallest==i) break;**
+**            swap(arr[i], arr[smallest]); i=smallest;**
+**        }**
+**        return root;**
+**    }**
+**    bool empty() { return size==0; }**
+};
+
+// ---------------------- Graph: adjacency matrix + edge list ----------------------
+int nodesCount = 0;
+int adjMat[MAX_NODES][MAX_NODES]; // INF for no edge, weight = cost/loss
+struct Edge { int u,v,w; };
+Edge edges[MAX_EDGES];
+int edgesCount = 0;
+
+void initGraph(int n) {
+**    nodesCount = n;**
+**    for(int i=0;i<n;i++) for(int j=0;j<n;j++) adjMat[i][j] = (i==j?0:INF);**
+**    edgesCount = 0;**
+}
+void addEdge(int u,int v,int w) {
+**    if(u<0||u>=nodesCount||v<0||v>=nodesCount) return;**
+**    adjMat[u][v] = w; adjMat[v][u] = w; // undirected pipe**
+**    if(edgesCount < MAX_EDGES) edges[edgesCount++] = {u,v,w};**
+}
+
+// ---------------------- Dijkstra (array-based) ----------------------
+void dijkstraArray(int src, int dist[], int parent[]) {
+**    bool used[MAX_NODES]; for(int i=0;i<nodesCount;i++){ dist[i]=INF; parent[i]=-1; used[i]=false; }**
+**    dist[src]=0;**
+**    for(int it=0; it<nodesCount; ++it) {**
+**        int u=-1, best=INF;**
+**        for(int i=0;i<nodesCount;i++) if(!used[i] && dist[i]<best){ best=dist[i]; u=i; }**
+**        if(u==-1) break;**
+**        used[u]=true;**
+**        for(int v=0; v<nodesCount; ++v) {**
+**            if(adjMat[u][v]<INF && dist[u]+adjMat[u][v] < dist[v]) {**
+**                dist[v] = dist[u] + adjMat[u][v];**
+**                parent[v] = u;**
+**            }**
+**        }**
+**    }**
+}
+
+// ---------------------- Bellman-Ford (edge list) ----------------------
+bool bellmanFord(int src, int dist[]) {
+**    for(int i=0;i<nodesCount;i++) dist[i]=INF;**
+**    dist[src]=0;**
+**    for(int k=0;k<nodesCount-1;k++){**
+**        bool changed=false;**
+**        for(int e=0;e<edgesCount;e++){**
+**            int u=edges[e].u, v=edges[e].v, w=edges[e].w;**
+**            if(dist[u]<INF && dist[u]+w < dist[v]) { dist[v]=dist[u]+w; changed=true; }**
+**            if(dist[v]<INF && dist[v]+w < dist[u]) { dist[u]=dist[v]+w; changed=true; } // undirected edges handled**
+**        }**
+**        if(!changed) break;**
+**    }**
+**    // no negative edges expected; skip negative cycle check**
+**    return true;**
+}
+
+// ---------------------- Union-Find for Kruskal ----------------------
+int parentUF[MAX_NODES];
+int rankUF[MAX_NODES];
+void ufInit(int n){ for(int i=0;i<n;i++){ parentUF[i]=i; rankUF[i]=0; } }
+int ufFind(int x){ return parentUF[x]==x?x:parentUF[x]=ufFind(parentUF[x]); }
+void ufUnion(int x,int y){ x=ufFind(x); y=ufFind(y); if(x==y) return; if(rankUF[x]<rankUF[y]) parentUF[x]=y; else if(rankUF[y]<rankUF[x]) parentUF[y]=x; else { parentUF[y]=x; rankUF[x]++; } }
+
+// ---------------------- Merge Sort for edges (used in Kruskal) ----------------------
+void mergeEdges(Edge a[], int l, int m, int r) {
+**    int n1=m-l+1, n2=r-m;**
+**    Edge L[100], R[100]; // adjust sizes if large**
+**    for(int i=0;i<n1;i++) L[i]=a[l+i];**
+**    for(int j=0;j<n2;j++) R[j]=a[m+1+j];**
+**    int i=0,j=0,k=l;**
+**    while(i<n1 && j<n2) {**
+**        if(L[i].w <= R[j].w) a[k++]=L[i++]; else a[k++]=R[j++];**
+**    }**
+**    while(i<n1) a[k++]=L[i++];**
+**    while(j<n2) a[k++]=R[j++];**
+}
+void mergeSortEdges(Edge a[], int l, int r) {
+**    if(l<r) { int m=(l+r)/2; mergeSortEdges(a,l,m); mergeSortEdges(a,m+1,r); mergeEdges(a,l,m,r); }**
+}
+
+// ---------------------- Kruskal MST ----------------------
+Edge mstEdges[MAX_NODES]; int mstCount=0;
+int kruskalMST() {
+**    if(edgesCount==0) return 0;**
+**    // copy edges to temp array**
+**    Edge tmp[MAX_EDGES];**
+**    for(int i=0;i<edgesCount;i++) tmp[i]=edges[i];**
+**    mergeSortEdges(tmp, 0, edgesCount-1);**
+**    ufInit(nodesCount); mstCount=0;**
+**    int cost=0;**
+**    for(int i=0;i<edgesCount && mstCount < nodesCount-1;i++){**
+**        int u = tmp[i].u, v = tmp[i].v;**
+**        if(ufFind(u) != ufFind(v)) {**
+**            ufUnion(u,v);**
+**            mstEdges[mstCount++] = tmp[i];**
+**            cost += tmp[i].w;**
+**        }**
+**    }**
+**    return cost;**
+}
+
+// ---------------------- Prim MST (array-based) ----------------------
+int primMST(int outParent[]) {
+**    bool inMST[MAX_NODES]; int key[MAX_NODES];**
+**    for(int i=0;i<nodesCount;i++){ inMST[i]=false; key[i]=INF; outParent[i]=-1; }**
+**    key[0]=0;**
+**    for(int cnt=0; cnt<nodesCount; ++cnt) {**
+**        int u=-1, best=INF;**
+**        for(int v=0; v<nodesCount; ++v) if(!inMST[v] && key[v]<best){ best=key[v]; u=v; }**
+**        if(u==-1) break;**
+**        inMST[u]=true;**
+**        for(int v=0; v<nodesCount; ++v) {**
+**            if(adjMat[u][v]<INF && !inMST[v] && adjMat[u][v] < key[v]) {**
+**                key[v] = adjMat[u][v];**
+**                outParent[v] = u;**
+**            }**
+**        }**
+**    }**
+**    int totalCost=0;**
+**    for(int i=1;i<nodesCount;i++) if(outParent[i]!=-1) totalCost += adjMat[i][outParent[i]];**
+**    return totalCost;**
+}
+
+// ---------------------- Merge Sort for Logs ----------------------
+struct Log { int node; double delivered; int time; };
+Log logs[500]; int logsSize=0;
+void mergeLogs(Log a[], int l, int m, int r) {
+**    int n1=m-l+1, n2=r-m;**
+**    Log L[250], R[250];**
+**    for(int i=0;i<n1;i++) L[i]=a[l+i];**
+**    for(int j=0;j<n2;j++) R[j]=a[m+1+j];**
+**    int i=0,j=0,k=l;**
+**    while(i<n1 && j<n2) {**
+**        if(L[i].delivered >= R[j].delivered) a[k++]=L[i++]; else a[k++]=R[j++];**
+**    }**
+**    while(i<n1) a[k++]=L[i++];**
+**    while(j<n2) a[k++]=R[j++];**
+}
+void mergeSortLogs(Log a[], int l, int r) { if(l<r){ int m=(l+r)/2; mergeSortLogs(a,l,m); mergeSortLogs(a,m+1,r); mergeLogs(a,l,m,r); } }
+
+// ---------------------- KMP (for meter ID/name search) ----------------------
+void computeLPS(const char* pat, int M, int lps[]) {
+**    int len=0; lps[0]=0; int i=1;**
+**    while(i<M) {**
+**        if(pat[i]==pat[len]) { len++; lps[i]=len; i++; }**
+**        else { if(len!=0) len=lps[len-1]; else { lps[i]=0; i++; } }**
+**    }**
+}
+bool KMPsearch(const char* txt, const char* pat) {
+**    int N = strlen(txt), M = strlen(pat);**
+**    if(M==0) return true;**
+**    int lps[128]; computeLPS(pat,M,lps);**
+**    int i=0,j=0;**
+**    while(i<N) {**
+**        if(txt[i]==pat[j]) { i++; j++; if(j==M) return true; }**
+**        else { if(j) j=lps[j-1]; else i++; }**
+**    }**
+**    return false;**
+}
+
+// ---------------------- Demo & Simulation Utilities ----------------------
+void addLogEntry(int node, double delivered, int time) { if(logsSize<500) logs[logsSize++] = {node, delivered, time}; }
+
+void demoSetup() {
+**    // simple graph example**
+**    initGraph(7);**
+**    addEdge(0,1,4); addEdge(0,2,3); addEdge(1,2,1);**
+**    addEdge(1,3,2); addEdge(2,4,5); addEdge(3,4,3);**
+**    addEdge(3,5,7); addEdge(4,6,4);**
+**    // customers demo**
+}
+
+void printMSTKruskal() {
+**    cout << "Kruskal MST edges (u-v : w):\n";**
+**    for(int i=0;i<mstCount;i++) cout<< mstEdges[i].u << "-" << mstEdges[i].v << " : " << mstEdges[i].w << "\n";**
+}
+void printPrimParent(int parent[]) {
+**    cout << "Prim MST parent list (v <- parent):\n";**
+**    for(int i=1;i<nodesCount;i++) cout << i << " <- " << parent[i] << " (w="<<adjMat[i][parent[i]]<<")\n";**
+}
+
+// ---------------------- Main demo ----------------------
+int main(){
+**    cout << "=== Bellapuram Water Distribution System (No vectors) ===\n\n";**
+
+**    // 1) Setup graph**
+**    demoSetup();**
+
+**    // 2) Register some customers (AVL)**
+**    AVLNode* custRoot=nullptr;**
+**    Customer c1; c1.meterId=1001; strcpy(c1.name,"Rahul"); c1.node=3; c1.avgDaily=250.5;**
+**    Customer c2; c2.meterId=1002; strcpy(c2.name,"Meena"); c2.node=4; c2.avgDaily=180.0;**
+**    Customer c3; c3.meterId=1003; strcpy(c3.name,"ShopA"); c3.node=5; c3.avgDaily=500.0;**
+**    custRoot = insertAVL(custRoot, c1);**
+**    custRoot = insertAVL(custRoot, c2);**
+**    custRoot = insertAVL(custRoot, c3);**
+**    cout<<"Registered customers (inorder by meterId):\n";**
+**    // inorder print simple:**
+**    function<void(AVLNode*)> inorderPrint = [&](AVLNode* r){**
+**        if(!r) return; inorderPrint(r->left); cout<< r->cust.meterId << " " << r->cust.name << " node="<<r->cust.node<<"\n"; inorderPrint(r->right);**
+**    };**
+**    inorderPrint(custRoot);**
+**    cout<<"\n";**
+
+**    // 3) Pump priority using MaxHeap (choose largest capacity pump)**
+**    MaxHeap pumpHeap;**
+**    pumpHeap.insert(500); pumpHeap.insert(300); pumpHeap.insert(700);**
+**    cout << "Top pump capacity selected (kL): " << pumpHeap.extractMax() << "\n\n";**
+
+**    // 4) Route for critical node (use Dijkstra)**
+**    int dist[ MAX_NODES ], parent[MAX_NODES ];**
+**    dijkstraArray(0, dist, parent);**
+**    cout << "Dijkstra dist from reservoir(0):\n";**
+**    for(int i=0;i<nodesCount;i++) cout << "node " << i << " dist=" << (dist[i]>=INF? -1: dist[i]) << "\n";**
+**    cout<<"\n";**
+
+**    // 5) Bellman-Ford as alternative**
+**    int distBF[MAX_NODES];**
+**    bellmanFord(0, distBF);**
+**    cout << "Bellman-Ford dist from 0:\n";**
+**    for(int i=0;i<nodesCount;i++) cout << i << " -> " << distBF[i] << "\n";**
+**    cout<<"\n";**
+
+**    // 6) Build MST using Kruskal**
+**    int costK = kruskalMST();**
+**    cout << "Kruskal MST total cost: " << costK << "\n";**
+**    printMSTKruskal();**
+**    cout<<"\n";**
+
+**    // 7) Prim MST**
+**    int primParent[MAX_NODES];**
+**    int costP = primMST(primParent);**
+**    cout << "Prim MST total cost: " << costP << "\n";**
+**    printPrimParent(primParent);**
+**    cout<<"\n";**
+
+**    // 8) Detect low-performing nodes via MinHeap (e.g., delivered volume below threshold)**
+**    // simulate delivered volumes**
+**    int volumes[7] = {1200, 800, 950, 400, 700, 350, 600}; // example liters/hour**
+**    MinHeap low;**
+**    for(int i=0;i<nodesCount;i++) low.insert(volumes[i]);**
+**    cout << "Lowest performed node volume (L/h): " << low.extractMin() << "\n\n";**
+
+**    // 9) Logs and sorting**
+**    addLogEntry(3, 240.0, 9); addLogEntry(4, 180.0, 9); addLogEntry(5, 500.0, 9);**
+**    addLogEntry(3, 260.0, 10); addLogEntry(5, 480.0, 10);**
+**    cout << "Logs before sort (node : delivered):\n"; for(int i=0;i<logsSize;i++) cout<<logs[i].node<<" : "<<logs[i].delivered<<"\n";**
+**    mergeSortLogs(logs, 0, logsSize-1);**
+**    cout << "Logs after sort (delivered desc):\n"; for(int i=0;i<logsSize;i++) cout<<logs[i].node<<" : "<<logs[i].delivered<<"\n\n";**
+
+**    // 10) KMP search demo (meter name)**
+**    const char* txt = "Meter-1003-ShopA";**
+**    const char* pat = "ShopA";**
+**    cout << "KMP search for 'ShopA' in '"<<txt<<"' -> " << (KMPsearch(txt,pat)? "FOUND":"NOT FOUND") << "\n\n";**
+
+**    cout << "Demo complete.\n";**
+**    return 0;**
+}
+
+`,
+  flowchart: "image/flowchart6.png"
+  },
+  emergency: {
+  title: 'Emergency Response Dispatch System (Hydrology)',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Delayed response during floods increases damage and loss of life.</p>
+
+    <h3>System Approach</h3>
+    <p>The system predicts flood advance, proactively closes roads, prepositions vehicles, and activates drainage pumps.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>BFS / DFS (graph traversal), Dijkstra (rerouting), Time-series forecasting, Rule-based scheduling</p>
+
+    <h3>🚨 Emergency Response Dispatch System (Hydrology)</h3>
+    <ul>
+      <li><b>Flood Prediction:</b> Forecasting models – predict short-term flood rise using rainfall & river sensor data</li>
+      <li><b>Proactive Road Closures:</b> Graph traversal (BFS/DFS) – block routes before they become impassable</li>
+      <li><b>Vehicle & Pump Pre-positioning:</b> Scheduling + shortest path – stage ambulances & pumps near safe nodes</li>
+      <li><b>Pump Activation:</b> Rule-based triggers – increase drainage capacity to reduce flood risk</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑3, SDG‑11, SDG‑9</p>
+  `,
+
+    code:`#include <bits/stdc++.h>
+using namespace std;
+const int MAX_NODES = 60;
+const int MAX_EDGES = 300;
+const int MAX_SENSORS = 60;
+const int MAX_ALERTS = 400;
+const int MAX_INCIDENTS = 500;
+const int MAX_VEHICLES = 80;
+const int INF = 1000000000;
+
+/* ---------------- Graph and edges ---------------- */
+struct Edge { int u,v,w; bool blocked; bool proactivelyClosed; };
+int nodesCount = 0;
+int adjMat[MAX_NODES][MAX_NODES];
+Edge edges[MAX_EDGES]; int edgesCount = 0;
+
+void initGraph(int n) {
+    **\*\*nodesCount = n;\*\*
+
+    \*\*edgesCount = 0;\*\*
+
+    \*\*for(int i=0;i<n;i++) for(int j=0;j<n;j++) adjMat\\\[i]\\\[j] = (i==j?0:INF);\*\***
+
+
+
+}
+void addEdge(int u,int v,int w) {
+    **\*\*if(u<0||v<0||u>=nodesCount||v>=nodesCount) return;\*\*
+
+    \*\*adjMat\\\[u]\\\[v] = w; adjMat\\\[v]\\\[u] = w;\*\*
+
+    \*\*if(edgesCount < MAX\\\_EDGES) { edges\\\[edgesCount++] = {u,v,w,false,false}; }\*\***
+
+
+
+}
+
+/* ------------- Dijkstra (respects blocked and proactivelyClosed edges) ------------- */
+struct DRes { int dist[MAX_NODES]; int parent[MAX_NODES]; };
+DRes dijkstraAvoidBlocked(int src) {
+    **\*\*DRes R; bool used\\\[MAX\\\_NODES];\*\*
+
+    \*\*for(int i=0;i<nodesCount;i++){ R.dist\\\[i]=INF; R.parent\\\[i]=-1; used\\\[i]=false; }\*\*
+
+    \*\*R.dist\\\[src] = 0;\*\*
+
+    \*\*for(int iter=0; iter<nodesCount; ++iter) {\*\*
+
+        \*\*int u=-1, best=INF;\*\*
+
+        \*\*for(int i=0;i<nodesCount;i++) if(!used\\\[i] \\\&\\\& R.dist\\\[i] < best) { best = R.dist\\\[i]; u = i; }\*\*
+
+        \*\*if(u==-1) break;\*\*
+
+        \*\*used\\\[u] = true;\*\*
+
+        \*\*for(int v=0; v<nodesCount; ++v) {\*\*
+
+            \*\*// skip blocked or proactively closed edges\*\*
+
+            \*\*bool blocked = false;\*\*
+
+            \*\*for(int e=0;e<edgesCount;e++) {\*\*
+
+                \*\*if( (edges\\\[e].u==u \\\&\\\& edges\\\[e].v==v) || (edges\\\[e].u==v \\\&\\\& edges\\\[e].v==u) ) {\*\*
+
+                    \*\*if(edges\\\[e].blocked || edges\\\[e].proactivelyClosed) blocked = true;\*\*
+
+                \*\*}\*\*
+
+            \*\*}\*\*
+
+            \*\*if(blocked) continue;\*\*
+
+            \*\*if(adjMat\\\[u]\\\[v] < INF \\\&\\\& R.dist\\\[u] + adjMat\\\[u]\\\[v] < R.dist\\\[v]) {\*\*
+
+                \*\*R.dist\\\[v] = R.dist\\\[u] + adjMat\\\[u]\\\[v];\*\*
+
+                \*\*R.parent\\\[v] = u;\*\*
+
+            \*\*}\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\*
+
+    \*\*return R;\*\***
+
+
+
+}
+
+/* ---------------- Kruskal & Prim for evacuation backbone ---------------- */
+int parentUF[MAX_NODES], rankUF[MAX_NODES];
+void ufInit(int n){ for(int i=0;i<n;i++){ parentUF[i]=i; rankUF[i]=0; } }
+int ufFind(int x){ return parentUF[x]==x?x:parentUF[x]=ufFind(parentUF[x]); }
+void ufUnion(int a,int b){ a=ufFind(a); b=ufFind(b); if(a==b) return; if(rankUF[a]<rankUF[b]) parentUF[a]=b; else if(rankUF[b]<rankUF[a]) parentUF[b]=a; else { parentUF[b]=a; rankUF[a]++; } }
+
+void sortEdgesByWeight(Edge arr[], int n) {
+    **\*\*if(n<=1) return;\*\*
+
+    \*\*int m = n/2;\*\*
+
+    \*\*Edge \\\*L = new Edge\\\[m], \\\*R = new Edge\\\[n-m];\*\*
+
+    \*\*for(int i=0;i<m;i++) L\\\[i]=arr\\\[i];\*\*
+
+    \*\*for(int i=0;i<n-m;i++) R\\\[i]=arr\\\[m+i];\*\*
+
+    \*\*sortEdgesByWeight(L,m); sortEdgesByWeight(R,n-m);\*\*
+
+    \*\*int i=0,j=0,k=0;\*\*
+
+    \*\*while(i<m \\\&\\\& j<n-m) arr\\\[k++] = (L\\\[i].w <= R\\\[j].w ? L\\\[i++] : R\\\[j++]);\*\*
+
+    \*\*while(i<m) arr\\\[k++] = L\\\[i++]; while(j<n-m) arr\\\[k++] = R\\\[j++]; delete\\\[] L; delete\\\[] R;\*\***
+
+
+
+}
+int kruskalMSTOnSubgraph(int nodeMask[], int maskSize, Edge out[], int &outCount) {
+    **\*\*Edge temp\\\[ MAX\\\_EDGES ]; int tc=0;\*\*
+
+    \*\*for(int e=0;e<edgesCount;e++) {\*\*
+
+        \*\*int u = edges\\\[e].u, v = edges\\\[e].v;\*\*
+
+        \*\*bool uok=false, vok=false;\*\*
+
+        \*\*for(int i=0;i<maskSize;i++){ if(nodeMask\\\[i]==u) uok=true; if(nodeMask\\\[i]==v) vok=true; }\*\*
+
+        \*\*if(uok \\\&\\\& vok \\\&\\\& !edges\\\[e].blocked \\\&\\\& !edges\\\[e].proactivelyClosed) temp\\\[tc++] = edges\\\[e];\*\*
+
+    \*\*}\*\*
+
+    \*\*sortEdgesByWeight(temp, tc);\*\*
+
+    \*\*ufInit(nodesCount); outCount=0; int cost=0;\*\*
+
+    \*\*for(int i=0;i<tc \\\&\\\& outCount < maskSize-1;i++){\*\*
+
+        \*\*int u=temp\\\[i].u, v=temp\\\[i].v;\*\*
+
+        \*\*if(ufFind(u) != ufFind(v)) { ufUnion(u,v); out\\\[outCount++]=temp\\\[i]; cost += temp\\\[i].w; }\*\*
+
+    \*\*}\*\*
+
+    \*\*return cost;\*\***
+
+
+
+}
+int primMSTCostOnSubgraph(int nodeMask[], int maskSize, int parentOut[]) {
+    **\*\*bool inMST\\\[MAX\\\_NODES]; int key\\\[MAX\\\_NODES]; for(int i=0;i<nodesCount;i++){ inMST\\\[i]=false; key\\\[i]=INF; parentOut\\\[i]=-1; }\*\*
+
+    \*\*int root = nodeMask\\\[0]; key\\\[root]=0;\*\*
+
+    \*\*for(int iter=0; iter<maskSize; ++iter) {\*\*
+
+        \*\*int u=-1, best=INF;\*\*
+
+        \*\*for(int i=0;i<maskSize;i++){ int v=nodeMask\\\[i]; if(!inMST\\\[v] \\\&\\\& key\\\[v] < best){ best=key\\\[v]; u=v; } }\*\*
+
+        \*\*if(u==-1) break;\*\*
+
+        \*\*inMST\\\[u]=true;\*\*
+
+        \*\*for(int i=0;i<maskSize;i++){\*\*
+
+            \*\*int v = nodeMask\\\[i];\*\*
+
+            \*\*// skip blocked edges\*\*
+
+            \*\*if(adjMat\\\[u]\\\[v] < INF) {\*\*
+
+                \*\*bool blocked=false;\*\*
+
+                \*\*for(int e=0;e<edgesCount;e++) if((edges\\\[e].u==u \\\&\\\& edges\\\[e].v==v) || (edges\\\[e].u==v \\\&\\\& edges\\\[e].v==u)) if(edges\\\[e].blocked || edges\\\[e].proactivelyClosed) blocked=true;\*\*
+
+                \*\*if(blocked) continue;\*\*
+
+                \*\*if(!inMST\\\[v] \\\&\\\& adjMat\\\[u]\\\[v] < key\\\[v]) { key\\\[v] = adjMat\\\[u]\\\[v]; parentOut\\\[v] = u; }\*\*
+
+            \*\*}\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\*
+
+    \*\*int total=0; for(int i=0;i<maskSize;i++){ int v = nodeMask\\\[i]; if(parentOut\\\[v] != -1) total += adjMat\\\[v]\\\[ parentOut\\\[v] ]; }\*\*
+
+    \*\*return total;\*\***
+
+
+
+}
+
+/* ---------------- Flood model: hydrology sensors per node ---------------- */
+struct FloodSensor {
+    **\*\*int node;\*\*
+
+    \*\*double riverLevel;      // cm\*\*
+
+    \*\*double rainfall;        // mm in window\*\*
+
+    \*\*double runoffCoeff;     // 0..1\*\*
+
+    \*\*double soilAbsorption;  // mm/hr\*\*
+
+    \*\*double elevation;       // m\*\*
+
+    \*\*double drainageCapacity; // L/hr\*\*
+
+    \*\*double floodRiskScore;\*\*
+
+    \*\*bool flooded;\*\***
+
+
+
+} sensors[MAX_SENSORS];
+int sensorsCount = 0;
+
+int findSensorIdx(int node) {
+    **\*\*for(int i=0;i<sensorsCount;i++) if(sensors\\\[i].node == node) return i;\*\*
+
+    \*\*return -1;\*\***
+
+
+
+}
+void addSensor(int node,double river,double rain,double runoff,double soilAbs,double elev,double drainage) {
+    **\*\*if(sensorsCount >= MAX\\\_SENSORS) return;\*\*
+
+    \*\*sensors\\\[sensorsCount].node=node; sensors\\\[sensorsCount].riverLevel=river; sensors\\\[sensorsCount].rainfall=rain;\*\*
+
+    \*\*sensors\\\[sensorsCount].runoffCoeff=runoff; sensors\\\[sensorsCount].soilAbsorption=soilAbs; sensors\\\[sensorsCount].elevation=elev;\*\*
+
+    \*\*sensors\\\[sensorsCount].drainageCapacity=drainage; sensors\\\[sensorsCount].floodRiskScore=0; sensors\\\[sensorsCount].flooded=false;\*\*
+
+    \*\*sensorsCount++;\*\***
+
+
+
+}
+
+/* Risk computation (hydrology-based) */
+void computeFloodRiskAll() {
+    **\*\*const double maxRiver = 500.0, maxRain=500.0;\*\*
+
+    \*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*FloodSensor \\\&s = sensors\\\[i];\*\*
+
+        \*\*double normRiver = min(1.0, s.riverLevel / maxRiver);\*\*
+
+        \*\*double normRain = min(1.0, s.rainfall / maxRain);\*\*
+
+        \*\*double runoff = s.runoffCoeff;\*\*
+
+        \*\*double drainage = s.drainageCapacity / 10000.0;\*\*
+
+        \*\*double elevFactor = 1.0 / (1.0 + max(0.01, s.elevation));\*\*
+
+        \*\*double score = 2.5\\\*normRiver + 2.0\\\*normRain + 2.0\\\*runoff - 1.8\\\*drainage + 3.0\\\*elevFactor - 1.0\\\*(s.soilAbsorption/100.0);\*\*
+
+        \*\*if(score < 0) score = 0;\*\*
+
+        \*\*bool wasFlooded = s.flooded;\*\*
+
+        \*\*s.floodRiskScore = score;\*\*
+
+        \*\*s.flooded = (s.floodRiskScore > 3.2 || s.riverLevel > 300.0 || (s.rainfall > 220.0 \\\&\\\& s.elevation < 2.0));\*\*
+
+        \*\*if(s.flooded \\\&\\\& !wasFlooded) {\*\*
+
+            \*\*for(int e=0;e<edgesCount;e++) if(edges\\\[e].u==s.node || edges\\\[e].v==s.node) edges\\\[e].blocked = true;\*\*
+
+        \*\*}\*\*
+
+        \*\*if(!s.flooded \\\&\\\& wasFlooded) {\*\*
+
+            \*\*for(int e=0;e<edgesCount;e++) if(edges\\\[e].u==s.node || edges\\\[e].v==s.node) edges\\\[e].blocked = false;\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* -------------- Min-Heap for high-risk sensors -------------- */
+int floodHeapArr[MAX_SENSORS]; int floodHeapSize = 0;
+void floodHeapPush(int sensorIdx) {
+    **\*\*floodHeapArr\\\[floodHeapSize] = sensorIdx; int i=floodHeapSize++;\*\*
+
+    \*\*while(i!=0){ int p=(i-1)/2; if(sensors\\\[floodHeapArr\\\[i]].floodRiskScore > sensors\\\[floodHeapArr\\\[p]].floodRiskScore){ int t=floodHeapArr\\\[i]; floodHeapArr\\\[i]=floodHeapArr\\\[p]; floodHeapArr\\\[p]=t; i=p; } else break; }\*\***
+
+
+
+}
+int floodHeapPop() {
+    **\*\*if(floodHeapSize==0) return -1;\*\*
+
+    \*\*int root = floodHeapArr\\\[0]; floodHeapArr\\\[0] = floodHeapArr\\\[--floodHeapSize];\*\*
+
+    \*\*int i=0;\*\*
+
+    \*\*while(true) {\*\*
+
+        \*\*int l=2\\\*i+1, r=2\\\*i+2, largest=i;\*\*
+
+        \*\*if(l<floodHeapSize \\\&\\\& sensors\\\[floodHeapArr\\\[l]].floodRiskScore > sensors\\\[floodHeapArr\\\[largest]].floodRiskScore) largest=l;\*\*
+
+        \*\*if(r<floodHeapSize \\\&\\\& sensors\\\[floodHeapArr\\\[r]].floodRiskScore > sensors\\\[floodHeapArr\\\[largest]].floodRiskScore) largest=r;\*\*
+
+        \*\*if(largest!=i){ int t=floodHeapArr\\\[i]; floodHeapArr\\\[i]=floodHeapArr\\\[largest]; floodHeapArr\\\[largest]=t; i=largest; } else break;\*\*
+
+    \*\*}\*\*
+
+    \*\*return root;\*\***
+
+
+
+}
+
+/* --------------- Alert system (SMS / siren) --------------- */
+struct Alert { char text[200]; int node; int severity; int timestamp; };
+Alert alertQueue[MAX_ALERTS]; int alertHead=0, alertTail=0, alertCount=0;
+void enqueueAlert(const char* txt, int node, int severity, int timestamp) {
+    **\*\*if(alertCount==MAX\\\_ALERTS) { alertHead=(alertHead+1)%MAX\\\_ALERTS; alertCount--; }\*\*
+
+    \*\*strncpy(alertQueue\\\[alertTail].text, txt, 199); alertQueue\\\[alertTail].text\\\[199]=0;\*\*
+
+    \*\*alertQueue\\\[alertTail].node = node; alertQueue\\\[alertTail].severity = severity; alertQueue\\\[alertTail].timestamp = timestamp;\*\*
+
+    \*\*alertTail = (alertTail+1)%MAX\\\_ALERTS; alertCount++;\*\***
+
+
+
+}
+void processAlerts() {
+    **\*\*while(alertCount>0) {\*\*
+
+        \*\*Alert \\\&a = alertQueue\\\[alertHead];\*\*
+
+        \*\*cout<<"\\\[ALERT ts="<<a.timestamp<<"] Node "<<a.node<<" severity="<<a.severity<<" : "<<a.text<<"\\\\n";\*\*
+
+        \*\*alertHead = (alertHead+1)%MAX\\\_ALERTS; alertCount--;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* --------------- Vehicles (ambulances, trucks, boats) --------------- */
+struct Vehicle { int id; int type; int currentNode; int capacity; int load; bool available; int speed; int destNode; int remainingDist; int assignedIncidentIdx; };
+Vehicle vehicles[MAX_VEHICLES]; int vehiclesCount=0;
+enum VehicleType { VT_AMBULANCE=0, VT_TRUCK=1, VT_BOAT=2, VT_PUMP=3 };
+void addVehicle(int id,int type,int startNode,int cap,int speed) {
+    **\*\*if(vehiclesCount >= MAX\\\_VEHICLES) return;\*\*
+
+    \*\*vehicles\\\[vehiclesCount].id=id; vehicles\\\[vehiclesCount].type=type; vehicles\\\[vehiclesCount].currentNode=startNode; vehicles\\\[vehiclesCount].capacity=cap; vehicles\\\[vehiclesCount].load=0; vehicles\\\[vehiclesCount].available=true; vehicles\\\[vehiclesCount].speed=speed; vehicles\\\[vehiclesCount].destNode=-1; vehicles\\\[vehiclesCount].remainingDist=0; vehicles\\\[vehiclesCount].assignedIncidentIdx=-1; vehiclesCount++;\*\***
+
+
+
+}
+
+/* --------------- Incidents (evacuations) --------------- */
+struct Incident { int id; int node; int severity; bool handled; };
+Incident incidents[MAX_INCIDENTS]; int incidentsCount=0; int nextIncidentId=1;
+void createEvacuationIncident(int node,int severity) {
+    **\*\*if(incidentsCount >= MAX\\\_INCIDENTS) return;\*\*
+
+    \*\*incidents\\\[incidentsCount].id = nextIncidentId++; incidents\\\[incidentsCount].node = node; incidents\\\[incidentsCount].severity = severity; incidents\\\[incidentsCount].handled=false;\*\*
+
+    \*\*incidentsCount++;\*\***
+
+
+
+}
+
+/* --------------- Preventative Measures --------------- */
+
+/* Predict near-future flood (simple linear forecast) -> returns predicted risk increment per sensor */
+void predictFloodAdvance(int minsAhead, double predictedIncrease[]) {
+    **\*\*// simplistic model: predictedIncrease = rainfallFactor\\\*minsAhead + riverRise\\\*0.1\\\*minsAhead\*\*
+
+    \*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*double rainRate = sensors\\\[i].rainfall / 60.0; // mm per hour -> mm per minute approx\*\*
+
+        \*\*double riverRate = sensors\\\[i].riverLevel / 720.0; // cm per 12 hours -> cm per minute approx\*\*
+
+        \*\*double inc = (rainRate \\\* minsAhead)/50.0 + (riverRate \\\* minsAhead)/200.0; // normalize\*\*
+
+        \*\*predictedIncrease\\\[i] = inc; // additive to floodRiskScore scale\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* Proactive road closure: close edges near nodes that are predicted to flood */
+void proactiveRoadClosures(double predictedIncrease[], double threshold) {
+    **\*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*if(predictedIncrease\\\[i] > threshold) {\*\*
+
+            \*\*int node = sensors\\\[i].node;\*\*
+
+            \*\*for(int e=0;e<edgesCount;e++) if(edges\\\[e].u==node || edges\\\[e].v==node) edges\\\[e].proactivelyClosed = true;\*\*
+
+            \*\*char msg\\\[200]; snprintf(msg,200,"Proactive road closure around node %d due to forecasted flood risk.", node);\*\*
+
+            \*\*enqueueAlert(msg, node, 5, 0);\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* Pre-position vehicles: stage ambulances/pumps at safe nearby nodes for high-risk sensors */
+void prepositionVehicles(double predictedIncrease[], int currentTime) {
+    **\*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*if(predictedIncrease\\\[i] > 0.6) { // threshold for staging\*\*
+
+            \*\*int node = sensors\\\[i].node;\*\*
+
+            \*\*// find a nearby safe node (lowest floodRiskScore) within nodesCount brute force\*\*
+
+            \*\*int bestNode=-1; double bestScore=1e9;\*\*
+
+            \*\*for(int n=0;n<nodesCount;n++) {\*\*
+
+                \*\*int si = findSensorIdx(n);\*\*
+
+                \*\*double score = (si==-1? 0.0 : sensors\\\[si].floodRiskScore);\*\*
+
+                \*\*if(score < bestScore) { bestScore = score; bestNode = n; }\*\*
+
+            \*\*}\*\*
+
+            \*\*// reserve one ambulance and one pump vehicle and move them to bestNode if available\*\*
+
+            \*\*for(int v=0; v<vehiclesCount; v++) {\*\*
+
+                \*\*if(vehicles\\\[v].available \\\&\\\& vehicles\\\[v].type==VT\\\_AMBULANCE) {\*\*
+
+                    \*\*vehicles\\\[v].available=false; vehicles\\\[v].destNode = bestNode;\*\*
+
+                    \*\*vehicles\\\[v].remainingDist = 0; // teleport for preventative staging in this simple sim\*\*
+
+                    \*\*char msg\\\[200]; snprintf(msg,200,"Pre-position Ambulance %d to staging node %d for potential flood at node %d", vehicles\\\[v].id, bestNode, node);\*\*
+
+                    \*\*enqueueAlert(msg, bestNode, 3, currentTime);\*\*
+
+                    \*\*break;\*\*
+
+                \*\*}\*\*
+
+            \*\*}\*\*
+
+            \*\*for(int v=0; v<vehiclesCount; v++) {\*\*
+
+                \*\*if(vehicles\\\[v].available \\\&\\\& vehicles\\\[v].type==VT\\\_PUMP) {\*\*
+
+                    \*\*vehicles\\\[v].available=false; vehicles\\\[v].destNode = bestNode;\*\*
+
+                    \*\*vehicles\\\[v].remainingDist = 0;\*\*
+
+                    \*\*char msg\\\[200]; snprintf(msg,200,"Pre-position Pump Vehicle %d to node %d", vehicles\\\[v].id, bestNode);\*\*
+
+                    \*\*enqueueAlert(msg, bestNode, 3, currentTime);\*\*
+
+                    \*\*break;\*\*
+
+                \*\*}\*\*
+
+            \*\*}\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* Activate pumps at nodes (simulate drainage boosting) */
+void activatePumpsAtNode(int node) {
+    **\*\*int si = findSensorIdx(node);\*\*
+
+    \*\*if(si==-1) return;\*\*
+
+    \*\*// boosting drainage reduces flood risk by increasing drainageCapacity temporarily\*\*
+
+    \*\*sensors\\\[si].drainageCapacity += 2000; // L/hr extra\*\*
+
+    \*\*char msg\\\[200]; snprintf(msg,200,"Activated pumps at node %d to boost drainage.", node);\*\*
+
+    \*\*enqueueAlert(msg, node, 4, 0);\*\***
+
+
+
+}
+
+/* Preventative alert dispatch: sends pre-evacuation notices to zones above threshold */
+void sendPreventiveAlerts(double predictedIncrease[], int currentTime) {
+    **\*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*if(predictedIncrease\\\[i] > 0.5 \\\&\\\& sensors\\\[i].floodRiskScore < 4.0) {\*\*
+
+            \*\*char buf\\\[200]; snprintf(buf,200,"Preventive Warning: Please prepare to evacuate area %d; predicted risk rising.", sensors\\\[i].node);\*\*
+
+            \*\*enqueueAlert(buf, sensors\\\[i].node, 2, currentTime);\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* Reserve resources (mark vehicle assigned/prevent redeployment) */
+void reserveResourcesForNode(int node, int currentTime) {
+    **\*\*// Reserve nearest ambulance/truck for node by marking available=false and assigning a placeholder task\*\*
+
+    \*\*for(int v=0; v<vehiclesCount; v++) {\*\*
+
+        \*\*if(vehicles\\\[v].available \\\&\\\& (vehicles\\\[v].type==VT\\\_AMBULANCE || vehicles\\\[v].type==VT\\\_TRUCK)) {\*\*
+
+            \*\*vehicles\\\[v].available = false;\*\*
+
+            \*\*vehicles\\\[v].destNode = node; vehicles\\\[v].remainingDist = 0;\*\*
+
+            \*\*char msg\\\[200]; snprintf(msg,200,"Resource Reserve: Vehicle %d reserved for node %d", vehicles\\\[v].id, node);\*\*
+
+            \*\*enqueueAlert(msg, node, 3, currentTime);\*\*
+
+            \*\*break;\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* --------------- Simulation: integrated step --------------- */
+void simulationStepWithPrevention(int currentTime) {
+    **\*\*// 1) compute present flood risks\*\*
+
+    \*\*computeFloodRiskAll();\*\*
+
+    \*\*// 2) predict near future\*\*
+
+    \*\*double predicted\\\[MAX\\\_SENSORS]; for(int i=0;i<sensorsCount;i++) predicted\\\[i]=0.0;\*\*
+
+    \*\*predictFloodAdvance(60, predicted); // predict 60 minutes ahead\*\*
+
+    \*\*// 3) proactive road closures\*\*
+
+    \*\*proactiveRoadClosures(predicted, 0.7);\*\*
+
+    \*\*// 4) send preventive alerts\*\*
+
+    \*\*sendPreventiveAlerts(predicted, currentTime);\*\*
+
+    \*\*// 5) pre-position vehicles/pumps\*\*
+
+    \*\*prepositionVehicles(predicted, currentTime);\*\*
+
+    \*\*// 6) reserve resources for highest predicted risk nodes\*\*
+
+    \*\*// build heap and reserve for top 2 nodes\*\*
+
+    \*\*floodHeapSize=0; for(int i=0;i<sensorsCount;i++) floodHeapPush(i);\*\*
+
+    \*\*for(int k=0;k<2;k++){\*\*
+
+        \*\*int idx = floodHeapPop(); if(idx==-1) break;\*\*
+
+        \*\*if(predicted\\\[idx] > 0.6) { reserveResourcesForNode(sensors\\\[idx].node, currentTime); activatePumpsAtNode(sensors\\\[idx].node); }\*\*
+
+    \*\*}\*\*
+
+    \*\*// 7) re-evaluate flood risk and generate alerts/incidents (like before)\*\*
+
+    \*\*floodHeapSize=0; for(int i=0;i<sensorsCount;i++) floodHeapPush(i);\*\*
+
+    \*\*for(int k=0;k<3;k++){\*\*
+
+        \*\*int idx = floodHeapPop(); if(idx==-1) break;\*\*
+
+        \*\*FloodSensor \\\&s = sensors\\\[idx];\*\*
+
+        \*\*if(s.floodRiskScore > 3.0) {\*\*
+
+            \*\*char buf\\\[200]; snprintf(buf,200,"FLOOD ALERT: Node %d risk=%.2f (river=%.1f cm, rain=%.1f mm)", s.node, s.floodRiskScore, s.riverLevel, s.rainfall);\*\*
+
+            \*\*enqueueAlert(buf, s.node, (int)ceil(s.floodRiskScore), currentTime);\*\*
+
+            \*\*if(s.floodRiskScore > 4.0) createEvacuationIncident(s.node, (int)ceil(s.floodRiskScore));\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\*
+
+    \*\*// 8) process alerts (print)\*\*
+
+    \*\*processAlerts();\*\*
+
+    \*\*// 9) evacuation planning on safe nodes\*\*
+
+    \*\*int safeMask\\\[MAX\\\_NODES]; int safeCount=0;\*\*
+
+    \*\*for(int n=0;n<nodesCount;n++) { int si=findSensorIdx(n); if(si==-1 || !sensors\\\[si].flooded) safeMask\\\[safeCount++]=n; }\*\*
+
+    \*\*if(safeCount>1) {\*\*
+
+        \*\*int primParentArr\\\[MAX\\\_NODES];\*\*
+
+        \*\*int cost = primMSTCostOnSubgraph(safeMask, safeCount, primParentArr);\*\*
+
+        \*\*cout<<"\\\[EvacPlan] Evacuation MST cost="<<cost<<" over "<<safeCount<<" safe nodes.\\\\n";\*\*
+
+    \*\*} else cout<<"\\\[EvacPlan] Not enough safe nodes.\\\\n";\*\*
+
+    \*\*// 10) handle incidents by computing safe shelter and generating targeted evacuation route\*\*
+
+    \*\*for(int i=0;i<incidentsCount;i++){\*\*
+
+        \*\*Incident \\\&inc = incidents\\\[i];\*\*
+
+        \*\*if(inc.handled) continue;\*\*
+
+        \*\*DRes dr = dijkstraAvoidBlocked(inc.node);\*\*
+
+        \*\*int shelter=-1; int bestd=INF;\*\*
+
+        \*\*for(int s=0;s<nodesCount;s++){ int si=findSensorIdx(s); if(si==-1 || !sensors\\\[si].flooded) { if(dr.dist\\\[s] < bestd){ bestd = dr.dist\\\[s]; shelter = s; }}}\*\*
+
+        \*\*if(shelter==-1) {\*\*
+
+            \*\*cout<<"\\\[Evac] No shelter reachable for incident "<<inc.id<<" node "<<inc.node<<"\\\\n";\*\*
+
+            \*\*continue;\*\*
+
+        \*\*}\*\*
+
+        \*\*// print route\*\*
+
+        \*\*int path\\\[MAX\\\_NODES]; int plen=0; int cur=shelter;\*\*
+
+        \*\*while(cur!=-1){ path\\\[plen++]=cur; cur=dr.parent\\\[cur]; if(plen>nodesCount) break; }\*\*
+
+        \*\*cout<<"\\\[Evac] Incident "<<inc.id<<" node "<<inc.node<<" -> shelter "<<shelter<<" dist="<<bestd<<" path: ";\*\*
+
+        \*\*for(int p=plen-1;p>=0;p--){ cout<<path\\\[p]; if(p) cout<<"->"; } cout<<"\\\\n";\*\*
+
+        \*\*// auto-dispatch nearest ambulance if available\*\*
+
+        \*\*int bestVeh=-1, bestDist=INF;\*\*
+
+        \*\*for(int v=0; v<vehiclesCount; v++) if(vehicles\\\[v].available \\\&\\\& vehicles\\\[v].type==VT\\\_AMBULANCE) {\*\*
+
+            \*\*DRes dveh = dijkstraAvoidBlocked(vehicles\\\[v].currentNode);\*\*
+
+            \*\*if(dveh.dist\\\[inc.node] < bestDist){ bestDist = dveh.dist\\\[inc.node]; bestVeh = v; }\*\*
+
+        \*\*}\*\*
+
+        \*\*if(bestVeh!=-1) {\*\*
+
+            \*\*vehicles\\\[bestVeh].available=false; vehicles\\\[bestVeh].destNode = inc.node; vehicles\\\[bestVeh].remainingDist = bestDist;\*\*
+
+            \*\*char msg\\\[200]; snprintf(msg,200,"Auto-dispatch Ambulance %d to incident %d at node %d (ETA approx %d units)", vehicles\\\[bestVeh].id, inc.id, inc.node, bestDist/ max(1, vehicles\\\[bestVeh].speed));\*\*
+
+            \*\*enqueueAlert(msg, inc.node, inc.severity, 0);\*\*
+
+        \*\*}\*\*
+
+        \*\*inc.handled = true;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* Simple linear prediction used by prevention function */
+void predictFloodAdvance(int minsAhead, double predictedIncrease[]) {
+    **\*\*for(int i=0;i<sensorsCount;i++) {\*\*
+
+        \*\*double rainRate = sensors\\\[i].rainfall / 60.0; // mm/hr -> mm/min approx\*\*
+
+        \*\*double riverRate = sensors\\\[i].riverLevel / 720.0;\*\*
+
+        \*\*double inc = (rainRate \\\* minsAhead)/50.0 + (riverRate \\\* minsAhead)/200.0;\*\*
+
+        \*\*predictedIncrease\\\[i] = inc;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* ---------------- Demo setup & run ---------------- */
+void demoSetup() {
+    **\*\*initGraph(12);\*\*
+
+    \*\*addEdge(0,1,4); addEdge(1,2,6); addEdge(2,3,5); addEdge(3,4,3);\*\*
+
+    \*\*addEdge(0,5,7); addEdge(5,6,3); addEdge(6,7,4); addEdge(7,4,6);\*\*
+
+    \*\*addEdge(2,8,8); addEdge(8,9,5); addEdge(9,10,6); addEdge(10,11,4);\*\*
+
+    \*\*// sensors\*\*
+
+    \*\*addSensor(0, 30, 10, 0.3, 10, 5.0, 2000);\*\*
+
+    \*\*addSensor(1, 60, 50, 0.5, 5, 2.0, 1200);\*\*
+
+    \*\*addSensor(2, 120, 200, 0.8, 2, 1.0, 600);\*\*
+
+    \*\*addSensor(3, 250, 300, 0.9, 1, 0.5, 300);\*\*
+
+    \*\*addSensor(4, 20, 5, 0.2, 12, 6.0, 3000);\*\*
+
+    \*\*addSensor(5, 10, 0, 0.1, 15, 10.0, 4000);\*\*
+
+    \*\*addSensor(6, 80, 120, 0.7, 3, 1.5, 800);\*\*
+
+    \*\*addSensor(7, 40, 30, 0.4, 8, 3.0, 1500);\*\*
+
+    \*\*addSensor(8, 0, 0, 0.1, 20, 15.0, 5000);\*\*
+
+    \*\*addSensor(9, 0, 0, 0.1, 18, 12.0, 4500);\*\*
+
+    \*\*addSensor(10, 50, 80, 0.6, 4, 2.0, 700);\*\*
+
+    \*\*addSensor(11, 10, 20, 0.3, 10, 7.0, 2000);\*\*
+
+    \*\*// vehicles: ambulances, pumps\*\*
+
+    \*\*addVehicle(401, VT\\\_AMBULANCE, 5, 4, 20);\*\*
+
+    \*\*addVehicle(402, VT\\\_AMBULANCE, 6, 4, 18);\*\*
+
+    \*\*addVehicle(501, VT\\\_PUMP, 0, 0, 0);\*\*
+
+    \*\*addVehicle(502, VT\\\_PUMP, 2, 0, 0);\*\***
+
+
+
+}
+
+/* ---------------- main ---------------- */
+int main() {
+    **\*\*cout<<"=== Emergency Dispatch + Flood Prevention System ===\\\\n";\*\*
+
+    \*\*demoSetup();\*\*
+
+    \*\*int currentTime = 0;\*\*
+
+    \*\*cout<<"\\\\n--- Preventative simulation step 1 ---\\\\n";\*\*
+
+    \*\*simulationStepWithPrevention(currentTime);\*\*
+
+    \*\*// simulate heavier rainfall after some time\*\*
+
+    \*\*int idx = findSensorIdx(3); if(idx!=-1) { sensors\\\[idx].rainfall += 120; sensors\\\[idx].riverLevel += 90; }\*\*
+
+    \*\*idx = findSensorIdx(2); if(idx!=-1) { sensors\\\[idx].rainfall += 80; sensors\\\[idx].riverLevel += 50; }\*\*
+
+    \*\*currentTime += 60;\*\*
+
+    \*\*cout<<"\\\\n--- Preventative simulation step 2 (after increased rainfall) ---\\\\n";\*\*
+
+    \*\*simulationStepWithPrevention(currentTime);\*\*
+
+    \*\*cout<<"\\\\nDemo complete.\\\\n";\*\*
+
+    \*\*return 0;\*\***
+
+
+
+}
+`,
+  flowchart: "image/flowchart7.png"
+  },
+  housing: {
+  title: 'Smart Housing Allocation System',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Manual housing allotment is slow, unfair, and inefficient.</p>
+
+    <h3>System Approach</h3>
+    <p>Applicants are stored in AVL Trees, prioritized using Max-Heaps, and houses are allocated based on cost and proximity.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>AVL Tree, Max Heap, Min Heap, Dijkstra, Red-Black Tree, Merge Sort, KMP</p>
+
+    <h3>🏠 Smart Housing Allocation System (Residential Zone)</h3>
+    <ul>
+      <li><b>Applicant Registry:</b> AVL Tree – O(log n) insert/search with sorted applicant IDs</li>
+      <li><b>Applicant Priority Queue:</b> Max-Heap – allocates houses to most-needy applicants first</li>
+      <li><b>House Inventory:</b> Min-Heap – selects cheapest / best available house efficiently</li>
+      <li><b>Proximity Evaluation:</b> Dijkstra (Adjacency Matrix) – computes applicant-to-house distance</li>
+      <li><b>Allocation Index:</b> Red-Black Tree – maps ApplicantID → HouseID without conflicts</li>
+      <li><b>Applicant Sorting:</b> Merge Sort – stable report generation</li>
+      <li><b>Name Search:</b> KMP Algorithm – fast partial applicant name lookup</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑11, SDG‑1, SDG‑10</p>
+  `,
+
+    code:`#include <iostream>
+#include <cstring>
+#include <climits>
+using namespace std;
+
+/* ========== CONFIG ========== */
+const int MAX_APPLICANTS = 300;
+const int MAX_HOUSES = 200;
+const int MAX_NODES = 40;   // graph nodes for city amenities
+const int INF = 1000000000;
+
+/* ========== DATA MODELS ========== */
+
+// Applicant record
+struct Applicant {
+**    int id;                 // unique id**
+**    char name[64];**
+**    int familySize;**
+**    double monthlyIncome;**
+**    bool specialNeed;       // elderly/disabled**
+**    int preferenceNode;     // preferred location (node)**
+**    int score;              // computed priority score (higher = more urgent)**
+};
+
+// House record
+struct House {
+**    int id;**
+**    int node;               // location node**
+**    double price;**
+**    double area;            // sq.ft**
+**    bool available;**
+};
+
+/* ========== AVL TREE FOR APPLICANTS (by id) ========== */
+struct AVLNode {
+**    Applicant app;**
+**    AVLNode *left, *right;**
+**    int height;**
+**    AVLNode(const Applicant &a): app(a), left(nullptr), right(nullptr), height(1) {}**
+};
+
+int avlHeight(AVLNode* n) { return n ? n->height : 0; }
+AVLNode* avlRightRotate(AVLNode* y) {
+**    AVLNode* x = y->left;**
+**    AVLNode* T2 = x->right;**
+**    x->right = y; y->left = T2;**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    return x;**
+}
+AVLNode* avlLeftRotate(AVLNode* x) {
+**    AVLNode* y = x->right;**
+**    AVLNode* T2 = y->left;**
+**    y->left = x; x->right = T2;**
+**    x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));**
+**    y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));**
+**    return y;**
+}
+AVLNode* avlInsert(AVLNode* node, const Applicant &a) {
+**    if (!node) return new AVLNode(a);**
+**    if (a.id < node->app.id) node->left = avlInsert(node->left, a);**
+**    else if (a.id > node->app.id) node->right = avlInsert(node->right, a);**
+**    else return node; // duplicate ignored**
+**    node->height = 1 + max(avlHeight(node->left), avlHeight(node->right));**
+**    int balance = avlHeight(node->left) - avlHeight(node->right);**
+**    if (balance > 1 && a.id < node->left->app.id) return avlRightRotate(node);**
+**    if (balance < -1 && a.id > node->right->app.id) return avlLeftRotate(node);**
+**    if (balance > 1 && a.id > node->left->app.id) { node->left = avlLeftRotate(node->left); return avlRightRotate(node); }**
+**    if (balance < -1 && a.id < node->right->app.id) { node->right = avlRightRotate(node->right); return avlLeftRotate(node); }**
+**    return node;**
+}
+AVLNode* avlSearch(AVLNode* root, int id) {
+**    if (!root) return nullptr;**
+**    if (id == root->app.id) return root;**
+**    if (id < root->app.id) return avlSearch(root->left, id);**
+**    return avlSearch(root->right, id);**
+}
+
+/* ========== MERGE SORT FOR APPLICANTS BY SCORE (array) ========== */
+void mergeApplicants(Applicant arr[], int l, int m, int r) {
+**    int n1 = m - l + 1, n2 = r - m;**
+**    Applicant *L = new Applicant[n1];**
+**    Applicant *R = new Applicant[n2];**
+**    for (int i=0;i<n1;i++) L[i]=arr[l+i];**
+**    for (int j=0;j<n2;j++) R[j]=arr[m+1+j];**
+**    int i=0,j=0,k=l;**
+**    while(i<n1 && j<n2) {**
+**        if (L[i].score >= R[j].score) arr[k++] = L[i++]; // descending by score**
+**        else arr[k++] = R[j++];**
+**    }**
+**    while(i<n1) arr[k++]=L[i++];**
+**    while(j<n2) arr[k++]=R[j++];**
+**    delete[] L; delete[] R;**
+}
+void mergeSortApplicants(Applicant arr[], int l, int r) {
+**    if (l < r) {**
+**        int m = (l + r)/2;**
+**        mergeSortApplicants(arr, l, m);**
+**        mergeSortApplicants(arr, m+1, r);**
+**        mergeApplicants(arr, l, m, r);**
+**    }**
+}
+
+/* ========== MAX-HEAP FOR APPLICANT PRIORITY (stores indices into applicants array) ========== */
+struct ApplicantHeap {
+**    int heapIdx[MAX_APPLICANTS];**
+**    int size;**
+**    ApplicantHeap(): size(0) {}**
+**    void push(int idx, Applicant applicants[]) {**
+**        heapIdx[size] = idx;**
+**        int i = size++;**
+**        while (i != 0) {**
+**            int p = (i-1)/2;**
+**            if (applicants[heapIdx[i]].score > applicants[heapIdx[p]].score) {**
+**                int t = heapIdx[i]; heapIdx[i] = heapIdx[p]; heapIdx[p] = t;**
+**                i = p;**
+**            } else break;**
+**        }**
+**    }**
+**    int pop(Applicant applicants[]) {**
+**        if (size == 0) return -1;**
+**        int root = heapIdx[0];**
+**        heapIdx[0] = heapIdx[--size];**
+**        // heapify**
+**        int i=0;**
+**        while(true) {**
+**            int l=2*i+1, r=2*i+2, largest=i;**
+**            if (l < size && applicants[heapIdx[l]].score > applicants[heapIdx[largest]].score) largest = l;**
+**            if (r < size && applicants[heapIdx[r]].score > applicants[heapIdx[largest]].score) largest = r;**
+**            if (largest != i) { int t = heapIdx[i]; heapIdx[i] = heapIdx[largest]; heapIdx[largest] = t; i = largest; }**
+**            else break;**
+**        }**
+**        return root;**
+**    }**
+**    bool empty() { return size==0; }**
+};
+
+/* ========== MIN-HEAP FOR AVAILABLE HOUSES (choose cheapest or closest) ========== */
+struct HouseHeap {
+**    int heapIdx[MAX_HOUSES];**
+**    int size;**
+**    HouseHeap(): size(0) {}**
+**    // comparator by price ascending; tie-breaker by area descending**
+**    void push(int idx, House houses[]) {**
+**        heapIdx[size] = idx;**
+**        int i = size++;**
+**        while (i != 0) {**
+**            int p = (i-1)/2;**
+**            bool better = (houses[heapIdx[i]].price < houses[heapIdx[p]].price) ||**
+**                          (houses[heapIdx[i]].price == houses[heapIdx[p]].price && houses[heapIdx[i]].area > houses[heapIdx[p]].area);**
+**            if (better) {**
+**                int t = heapIdx[i]; heapIdx[i] = heapIdx[p]; heapIdx[p] = t;**
+**                i = p;**
+**            } else break;**
+**        }**
+**    }**
+**    int pop(House houses[]) {**
+**        if (size==0) return -1;**
+**        int root = heapIdx[0];**
+**        heapIdx[0] = heapIdx[--size];**
+**        int i=0;**
+**        while(true) {**
+**            int l=2*i+1, r=2*i+2, smallest=i;**
+**            if (l<size) {**
+**                bool less = (houses[heapIdx[l]].price < houses[heapIdx[smallest]].price) ||**
+**                            (houses[heapIdx[l]].price == houses[heapIdx[smallest]].price && houses[heapIdx[l]].area > houses[heapIdx[smallest]].area);**
+**                if (less) smallest = l;**
+**            }**
+**            if (r<size) {**
+**                bool less = (houses[heapIdx[r]].price < houses[heapIdx[smallest]].price) ||**
+**                            (houses[heapIdx[r]].price == houses[heapIdx[smallest]].price && houses[heapIdx[r]].area > houses[heapIdx[smallest]].area);**
+**                if (less) smallest = r;**
+**            }**
+**            if (smallest != i) { int t = heapIdx[i]; heapIdx[i] = heapIdx[smallest]; heapIdx[smallest] = t; i = smallest; }**
+**            else break;**
+**        }**
+**        return root;**
+**    }**
+**    bool empty() { return size==0; }**
+};
+
+/* ========== RED-BLACK TREE FOR ALLOCATIONS (applicantID -> houseID) ========== */
+enum Color { R_RED, R_BLACK };
+struct RBTNode {
+**    int appId;**
+**    int houseId;**
+**    Color color;**
+**    RBTNode *left, *right, *parent;**
+**    RBTNode(int a=0,int h=-1): appId(a), houseId(h), color(R_RED), left(nullptr), right(nullptr), parent(nullptr) {}**
+};
+
+class RBTree {
+public:
+**    RBTNode* root;**
+**    RBTree(): root(nullptr) {}**
+**    void rotateLeft(RBTNode* &rootRef, RBTNode* &pt) {**
+**        RBTNode* pt_right = pt->right;**
+**        pt->right = pt_right->left;**
+**        if(pt->right) pt->right->parent = pt;**
+**        pt_right->parent = pt->parent;**
+**        if(!pt->parent) rootRef = pt_right;**
+**        else if(pt == pt->parent->left) pt->parent->left = pt_right;**
+**        else pt->parent->right = pt_right;**
+**        pt_right->left = pt;**
+**        pt->parent = pt_right;**
+**    }**
+**    void rotateRight(RBTNode* &rootRef, RBTNode* &pt) {**
+**        RBTNode* pt_left = pt->left;**
+**        pt->left = pt_left->right;**
+**        if(pt->left) pt->left->parent = pt;**
+**        pt_left->parent = pt->parent;**
+**        if(!pt->parent) rootRef = pt_left;**
+**        else if(pt == pt->parent->left) pt->parent->left = pt_left;**
+**        else pt->parent->right = pt_left;**
+**        pt_left->right = pt;**
+**        pt->parent = pt_left;**
+**    }**
+**    void fixViolation(RBTNode* &rootRef, RBTNode* &pt) {**
+**        RBTNode *parent_pt = nullptr, *grand_parent_pt = nullptr;**
+**        while ((pt != rootRef) && (pt->color == R_RED) && (pt->parent->color == R_RED)) {**
+**            parent_pt = pt->parent;**
+**            grand_parent_pt = pt->parent->parent;**
+**            if (parent_pt == grand_parent_pt->left) {**
+**                RBTNode *uncle_pt = grand_parent_pt->right;**
+**                if (uncle_pt && uncle_pt->color == R_RED) {**
+**                    grand_parent_pt->color = R_RED;**
+**                    parent_pt->color = R_BLACK;**
+**                    uncle_pt->color = R_BLACK;**
+**                    pt = grand_parent_pt;**
+**                } else {**
+**                    if (pt == parent_pt->right) {**
+**                        rotateLeft(rootRef, parent_pt);**
+**                        pt = parent_pt;**
+**                        parent_pt = pt->parent;**
+**                    }**
+**                    rotateRight(rootRef, grand_parent_pt);**
+**                    Color t = parent_pt->color; parent_pt->color = grand_parent_pt->color; grand_parent_pt->color = t;**
+**                    pt = parent_pt;**
+**                }**
+**            } else {**
+**                RBTNode *uncle_pt = grand_parent_pt->left;**
+**                if (uncle_pt && uncle_pt->color == R_RED) {**
+**                    grand_parent_pt->color = R_RED;**
+**                    parent_pt->color = R_BLACK;**
+**                    uncle_pt->color = R_BLACK;**
+**                    pt = grand_parent_pt;**
+**                } else {**
+**                    if (pt == parent_pt->left) {**
+**                        rotateRight(rootRef, parent_pt);**
+**                        pt = parent_pt;**
+**                        parent_pt = pt->parent;**
+**                    }**
+**                    rotateLeft(rootRef, grand_parent_pt);**
+**                    Color t = parent_pt->color; parent_pt->color = grand_parent_pt->color; grand_parent_pt->color = t;**
+**                    pt = parent_pt;**
+**                }**
+**            }**
+**        }**
+**        rootRef->color = R_BLACK;**
+**    }**
+**    void insert(int appId, int houseId) {**
+**        RBTNode* pt = new RBTNode(appId, houseId);**
+**        root = bstInsert(root, pt);**
+**        fixViolation(root, pt);**
+**    }**
+**    RBTNode* bstInsert(RBTNode* rootLocal, RBTNode* pt) {**
+**        if (!rootLocal) return pt;**
+**        if (pt->appId < rootLocal->appId) {**
+**            rootLocal->left = bstInsert(rootLocal->left, pt);**
+**            rootLocal->left->parent = rootLocal;**
+**        } else if (pt->appId > rootLocal->appId) {**
+**            rootLocal->right = bstInsert(rootLocal->right, pt);**
+**            rootLocal->right->parent = rootLocal;**
+**        }**
+**        return rootLocal;**
+**    }**
+**    int search(int appId) {**
+**        RBTNode* cur = root;**
+**        while(cur) {**
+**            if (appId == cur->appId) return cur->houseId;**
+**            if (appId < cur->appId) cur = cur->left;**
+**            else cur = cur->right;**
+**        }**
+**        return -1; // not found**
+**    }**
+};
+
+/* ========== DIJKSTRA (array adjacency matrix) ========== */
+int nodeCount = 0;
+int adjMat[MAX_NODES][MAX_NODES];
+
+void initGraph(int n) {
+**    nodeCount = n;**
+**    for (int i=0;i<n;i++) for (int j=0;j<n;j++) adjMat[i][j] = (i==j?0:INF);**
+}
+void addEdgeGraph(int u,int v,int w) {
+**    if (u<0||u>=nodeCount||v<0||v>=nodeCount) return;**
+**    adjMat[u][v] = w; adjMat[v][u] = w;**
+}
+void dijkstra(int src, int dist[], int parent[]) {
+**    bool used[MAX_NODES];**
+**    for (int i=0;i<nodeCount;i++) { dist[i]=INF; parent[i]=-1; used[i]=false; }**
+**    dist[src]=0;**
+**    for (int it=0; it<nodeCount; ++it) {**
+**        int u=-1, best=INF;**
+**        for (int i=0;i<nodeCount;i++) if(!used[i] && dist[i]<best) { best=dist[i]; u=i; }**
+**        if (u==-1) break;**
+**        used[u]=true;**
+**        for (int v=0; v<nodeCount; ++v) {**
+**            if (adjMat[u][v] < INF && dist[u] + adjMat[u][v] < dist[v]) {**
+**                dist[v] = dist[u] + adjMat[u][v];**
+**                parent[v] = u;**
+**            }**
+**        }**
+**    }**
+}
+
+/* ========== KMP FOR NAME SEARCH (C-style strings) ========== */
+void computeLPS(const char pat[], int M, int lps[]) {
+**    int len = 0; lps[0]=0; int i=1;**
+**    while (i < M) {**
+**        if (pat[i] == pat[len]) { len++; lps[i]=len; i++; }**
+**        else { if (len != 0) len = lps[len-1]; else { lps[i]=0; i++; } }**
+**    }**
+}
+bool KMPsearch(const char text[], const char pat[]) {
+**    int N = strlen(text), M = strlen(pat);**
+**    if (M==0) return true;**
+**    int *lps = new int[M];**
+**    computeLPS(pat, M, lps);**
+**    int i=0,j=0;**
+**    while(i<N) {**
+**        if (text[i]==pat[j]) { i++; j++; if (j==M) { delete[] lps; return true; } }**
+**        else { if (j) j = lps[j-1]; else i++; }**
+**    }**
+**    delete[] lps;**
+**    return false;**
+}
+
+/* ========== SYSTEM STORAGE ========== */
+Applicant applicants[MAX_APPLICANTS];
+int applicantsCount = 0;
+
+House houses[MAX_HOUSES];
+int housesCount = 0;
+
+AVLNode* applicantRoot = nullptr;
+ApplicantHeap applicantHeap;
+HouseHeap houseHeap;
+RBTree allocationIndex;
+
+/* ========== UTILITIES ========== */
+int computeScore(const Applicant &a) {
+**    // sample scoring: higher family size and lower income => higher priority**
+**    int s = 0;**
+**    s += a.familySize * 10;**
+**    if (a.monthlyIncome < 15000) s += 80;**
+**    else if (a.monthlyIncome < 30000) s += 40;**
+**    if (a.specialNeed) s += 100;**
+**    // proximity preference will be considered later when selecting house**
+**    return s;**
+}
+void addApplicant(const Applicant &a) {
+**    if (applicantsCount >= MAX_APPLICANTS) { cout<<"Applicant capacity reached\n"; return; }**
+**    applicants[applicantsCount] = a;**
+**    applicants[applicantsCount].score = computeScore(a);**
+**    applicantRoot = avlInsert(applicantRoot, applicants[applicantsCount]);**
+**    // push index into heap for allocation queue**
+**    applicantHeap.push(applicantsCount, applicants);**
+**    applicantsCount++;**
+}
+void addHouse(const House &h) {
+**    if (housesCount >= MAX_HOUSES) { cout<<"House capacity reached\n"; return; }**
+**    houses[housesCount] = h;**
+**    houses[housesCount].available = h.available;**
+**    if (houses[housesCount].available) houseHeap.push(housesCount, houses);**
+**    housesCount++;**
+}
+void showTopApplicants(int k) {
+**    // produce a shallow copy of heap (we'll pop from a temporary array)**
+**    int tempHeap[MAX_APPLICANTS]; int sz=applicantHeap.size;**
+**    for (int i=0;i<sz;i++) tempHeap[i]=applicantHeap.heapIdx[i];**
+**    cout<<"Top applicants (id : score) :\n";**
+**    for (int i=0;i<k && applicantHeap.size>0;i++) {**
+**        int idx = applicantHeap.pop(applicants);**
+**        cout<< applicants[idx].id << " : " << applicants[idx].score << "\n";**
+**    }**
+**    // restore heap**
+**    for (int i=0;i<sz;i++) applicantHeap.heapIdx[i] = tempHeap[i];**
+**    applicantHeap.size = sz;**
+}
+
+/* ========== ALLOCATION PROCESS ========== */
+void allocateHousing() {
+**    // process applicants in priority order (heap) and assign best available house**
+**    while (!applicantHeap.empty() && !houseHeap.empty()) {**
+**        int appIdx = applicantHeap.pop(applicants);**
+**        Applicant &ap = applicants[appIdx];**
+**        // evaluate available houses to find one closest to applicant preference (use Dijkstra distances)**
+**        // We'll pop houses temporarily, compute a score combining price and distance, pick best, then push back others.**
+**        int tempHIdx[MAX_HOUSES]; int tempCount=0;**
+**        int bestHouseIdx = -1;**
+**        double bestScore = 1e18; // lower better: price + alpha*distance**
+**        double alpha = 1.0; // tuning param cost per distance unit**
+**        // prepare distances from applicant preference node**
+**        int dist[MAX_NODES], parent[MAX_NODES];**
+**        dijkstra(ap.preferenceNode, dist, parent);**
+**        // iterate through houseHeap positions -> but heap doesn't allow easy iterate; we'll pop houses and inspect**
+**        while (!houseHeap.empty()) {**
+**            int hIdx = houseHeap.pop(houses);**
+**            tempHIdx[tempCount++] = hIdx;**
+**            if (!houses[hIdx].available) continue;**
+**            int hnode = houses[hIdx].node;**
+**            int d = (hnode>=0 && hnode<nodeCount) ? dist[hnode] : INF;**
+**            double score = houses[hIdx].price + alpha * ( (d>=INF)? 1000000 : d );**
+**            // prefer houses nearer and cheaper**
+**            if (score < bestScore) { bestScore = score; bestHouseIdx = hIdx; }**
+**        }**
+**        // Rebuild houseHeap from temp, skipping the assigned**
+**        for (int i=0;i<tempCount;i++) {**
+**            int idx = tempHIdx[i];**
+**            if (idx == bestHouseIdx) continue; // assigned**
+**            if (houses[idx].available) houseHeap.push(idx, houses);**
+**        }**
+**        if (bestHouseIdx == -1) {**
+**            // no available house actually assignable, push applicant back? here we break**
+**            cout<<"No suitable house available now for applicant "<<ap.id<<"\n";**
+**            // optionally could queue applicant elsewhere; skip for now**
+**            continue;**
+**        }**
+**        // assign**
+**        houses[bestHouseIdx].available = false;**
+**        allocationIndex.insert(ap.id, houses[bestHouseIdx].id);**
+**        cout<<"Allocated Applicant "<<ap.id<<" ("<<ap.name<<") -> House "<<houses[bestHouseIdx].id<<"\n";**
+**    }**
+}
+
+/* ========== DEMO SETUP & RUN ========== */
+void setupDemoGraph() {
+**    initGraph(8); // nodes 0..7**
+**    addEdgeGraph(0,1,4); addEdgeGraph(0,2,6);**
+**    addEdgeGraph(1,2,2); addEdgeGraph(1,3,7);**
+**    addEdgeGraph(2,4,3); addEdgeGraph(3,4,2);**
+**    addEdgeGraph(3,5,5); addEdgeGraph(4,6,4); addEdgeGraph(5,7,8);**
+}
+void setupDemoHouses() {
+**    addHouse( (House){1001, 3, 4500.0, 900.0, true} );**
+**    addHouse( (House){1002, 4, 5000.0, 1000.0, true} );**
+**    addHouse( (House){1003, 2, 3500.0, 700.0, true} );**
+**    addHouse( (House){1004, 6, 4800.0, 950.0, true} );**
+}
+void setupDemoApplicants() {
+**    Applicant a1; a1.id=1; strcpy(a1.name,"Priya"); a1.familySize=4; a1.monthlyIncome=12000; a1.specialNeed=false; a1.preferenceNode=3;**
+**    Applicant a2; a2.id=2; strcpy(a2.name,"Rajan"); a2.familySize=6; a2.monthlyIncome=8000; a2.specialNeed=true; a2.preferenceNode=4;**
+**    Applicant a3; a3.id=3; strcpy(a3.name,"Leela"); a3.familySize=2; a3.monthlyIncome=35000; a3.specialNeed=false; a3.preferenceNode=2;**
+**    Applicant a4; a4.id=4; strcpy(a4.name,"Suresh"); a4.familySize=5; a4.monthlyIncome=15000; a4.specialNeed=false; a4.preferenceNode=6;**
+**    addApplicant(a1); addApplicant(a2); addApplicant(a3); addApplicant(a4);**
+}
+
+/* ========== MAIN ========== */
+int main() {
+**    cout<<"=== Smart Housing Allocation System (No vectors) ===\n\n";**
+
+**    // Setup**
+**    setupDemoGraph();**
+**    setupDemoHouses();**
+**    setupDemoApplicants();**
+
+**    cout<<"\nTop applicants by priority (demo):\n";**
+**    showTopApplicants(4);**
+
+**    cout<<"\nStarting allocation process...\n";**
+**    allocateHousing();**
+
+**    cout<<"\nLookup allocation for applicant 2: House ID = " << allocationIndex.search(2) << "\n";**
+
+**    // Search by name using KMP**
+**    char pattern[] = "Leela";**
+**    cout<<"\nSearching applicants by name pattern '"<<pattern<<"':\n";**
+**    for (int i=0;i<applicantsCount;i++) {**
+**        if (KMPsearch(applicants[i].name, pattern)) {**
+**            cout<<"Found applicant: "<< applicants[i].id << " - " << applicants[i].name << "\n";**
+**        }**
+**    }**
+
+**    // Report: sort applicants array by score for full listing**
+**    cout<<"\nApplicants sorted by score (desc):\n";**
+**    mergeSortApplicants(applicants, 0, applicantsCount-1);**
+**    for (int i=0;i<applicantsCount;i++) {**
+**        cout<< applicants[i].id << " " << applicants[i].name << " score=" << applicants[i].score << "\n";**
+**    }**
+
+**    cout<<"\nDemo complete.\n";**
+**    return 0;**
+}
+
+
+`,
+  flowchart: "image/flowchart8.png"
+  },
+  market: {
+  title: 'Smart Market & Commercial Zone Price Analyzer',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Unregulated pricing causes inflation spikes in commercial zones.</p>
+
+    <h3>System Approach</h3>
+    <p>Prices are tracked, sorted, and analyzed to detect abnormal increases and assist policy decisions.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>Max Heap, Merge Sort, QuickSort, KMP, Rabin–Karp, AVL Tree / BST</p>
+
+    <h3>📊 Smart Market & Commercial Zone Price Analyzer</h3>
+    <ul>
+      <li><b>Unstable Prices:</b> Merge Sort / QuickSort for daily price ordering; Max-Heap detects price spikes and fake inflation</li>
+      <li><b>Data Manipulation:</b> KMP & Rabin–Karp ensure accurate product search; AVL/BST maintains unique, tamper-proof records</li>
+      <li><b>Market Zoning:</b> Separate zone-wise price lists (Wholesale, Retail, Import Yard) enable regulation and comparison</li>
+      <li><b>Illegal Practices Detection:</b> Sorted zone comparison exposes overpricing, dumping, and tax evasion</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑12, SDG‑9</p>
+  `,
+    code:`#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+// =====================================================
+// 1. PRODUCT STRUCTURE
+// =====================================================
+struct Product {
+**    char name[30];**
+**    float price;**
+};
+
+// =====================================================
+// 2. MERGE SORT (NO VECTORS, ONLY ARRAYS)
+// =====================================================
+void merge(Product arr[], int l, int m, int r) {
+**    int n1 = m - l + 1, n2 = r - m;**
+
+**    Product* L = new Product[n1];**
+**    Product* R = new Product[n2];**
+
+**    for (int i=0; i<n1; i++) L[i] = arr[l+i];**
+**    for (int j=0; j<n2; j++) R[j] = arr[m+1+j];**
+
+**    int i=0, j=0, k=l;**
+
+**    while (i < n1 && j < n2) {**
+**        if (L[i].price <= R[j].price) arr[k++] = L[i++];**
+**        else arr[k++] = R[j++];**
+**    }**
+**    while (i<n1) arr[k++] = L[i++];**
+**    while (j<n2) arr[k++] = R[j++];**
+
+**    delete[] L;**
+**    delete[] R;**
+}
+
+void mergeSort(Product arr[], int l, int r) {
+**    if (l < r) {**
+**        int m = (l+r)/2;**
+**        mergeSort(arr, l, m);**
+**        mergeSort(arr, m+1, r);**
+**        merge(arr, l, m, r);**
+**    }**
+}
+
+// =====================================================
+// 3. QUICK SORT
+// =====================================================
+int partition(Product arr[], int low, int high) {
+**    float pivot = arr[high].price;**
+**    int i = low -1;**
+
+**    for(int j=low; j<high; j++) {**
+**        if(arr[j].price < pivot) {**
+**            i++;**
+**            Product temp = arr[i];**
+**            arr[i] = arr[j];**
+**            arr[j] = temp;**
+**        }**
+**    }**
+**    Product temp = arr[i+1];**
+**    arr[i+1] = arr[high];**
+**    arr[high] = temp;**
+
+**    return i+1;**
+}
+
+void quickSort(Product arr[], int low, int high) {
+**    if(low < high) {**
+**        int pi = partition(arr, low, high);**
+**        quickSort(arr, low, pi-1);**
+**        quickSort(arr, pi+1, high);**
+**    }**
+}
+
+// =====================================================
+// 4. MAX HEAP (NO VECTOR) – PRICE SPIKE DETECTOR
+// =====================================================
+class MaxHeap {
+public:
+**    float heapArr[100];**
+**    int size;**
+
+**    MaxHeap() { size = 0; }**
+
+**    void insert(float x) {**
+**        int i = size;**
+**        heapArr[size++] = x;**
+
+**        while(i != 0 && heapArr[(i-1)/2] < heapArr[i]) {**
+**            float temp = heapArr[i];**
+**            heapArr[i] = heapArr[(i-1)/2];**
+**            heapArr[(i-1)/2] = temp;**
+**            i = (i-1)/2;**
+**        }**
+**    }**
+
+**    float extractMax() {**
+**        if (size <= 0) return -1;**
+
+**        float root = heapArr[0];**
+**        heapArr[0] = heapArr[size-1];**
+**        size--;**
+**        heapify(0);**
+**        return root;**
+**    }**
+
+**    void heapify(int i) {**
+**        int largest = i;**
+**        int l = 2*i+1;**
+**        int r = 2*i+2;**
+
+**        if(l < size && heapArr[l] > heapArr[largest]) largest = l;**
+**        if(r < size && heapArr[r] > heapArr[largest]) largest = r;**
+
+**        if(largest != i) {**
+**            float temp = heapArr[i];**
+**            heapArr[i] = heapArr[largest];**
+**            heapArr[largest] = temp;**
+**            heapify(largest);**
+**        }**
+**    }**
+};
+
+// =====================================================
+// 5. KMP STRING SEARCH - FIND PRODUCT BY NAME
+// =====================================================
+void computeLPS(char pat[], int M, int lps[]) {
+**    int len = 0;**
+**    lps[0] = 0;**
+**    int i = 1;**
+
+**    while(i < M) {**
+**        if(pat[i] == pat[len]) {**
+**            lps[i++] = ++len;**
+**        } else {**
+**            if(len != 0) len = lps[len-1];**
+**            else lps[i++] = 0;**
+**        }**
+**    }**
+}
+
+int KMPSearch(char pat[], char txt[]) {
+**    int M = strlen(pat);**
+**    int N = strlen(txt);**
+
+**    int* lps = new int[M];**
+**    computeLPS(pat, M, lps);**
+
+**    int i=0, j=0;**
+**    while(i < N) {**
+**        if(pat[j] == txt[i]) { i++; j++; }**
+**        if(j == M) return 1;**
+**        else if(i < N && pat[j] != txt[i]) {**
+**            if(j != 0) j = lps[j-1];**
+**            else i++;**
+**        }**
+**    }**
+**    delete[] lps;**
+**    return 0;**
+}
+
+// =====================================================
+// 6. MAIN APPLICATION
+// =====================================================
+int main() {
+**    cout << "\n=== SMART MARKET & COMMERCIAL ZONE PRICE ANALYZER ===\n";**
+
+**    int n;**
+**    cout << "Enter number of products: ";**
+**    cin >> n;**
+
+**    Product* arr = new Product[n];**
+
+**    cout << "\nEnter Product Name & Price:\n";**
+**    for(int i=0; i<n; i++) {**
+**        cout << "Name: ";**
+**        cin >> arr[i].name;**
+**        cout << "Price: ";**
+**        cin >> arr[i].price;**
+**    }**
+
+**    cout << "\nSorting using MERGE SORT...\n";**
+**    mergeSort(arr, 0, n-1);**
+
+**    cout << "\nSorted Price List (Low → High):\n";**
+**    for(int i=0; i<n; i++)**
+**        cout << arr[i].name << " = Rs." << arr[i].price << endl;**
+
+**    // ================== HEAP ALERT SYSTEM =====================**
+**    MaxHeap priceHeap;**
+**    for(int i=0; i<n; i++) priceHeap.insert(arr[i].price);**
+
+**    float maxPrice = priceHeap.extractMax();**
+**    cout << "\n*** ALERT: Highest Market Price Today = Rs." << maxPrice << " ***\n";**
+
+**    // ================== NAME SEARCH ===========================**
+**    char searchName[30];**
+**    cout << "\nEnter item name to search: ";**
+**    cin >> searchName;**
+
+**    bool found = false;**
+**    for(int i=0; i<n; i++) {**
+**        if(KMPSearch(searchName, arr[i].name)) {**
+**            cout << "FOUND → " << arr[i].name << " at Rs." << arr[i].price << endl;**
+**            found = true;**
+**        }**
+**    }**
+**    if(!found) cout << "Item NOT FOUND.\n";**
+
+**    delete[] arr;**
+**    return 0;**
+}
+
+`,
+  flowchart: "image/flowchart9.png"
+  },
+  logistics: {
+  title: 'Industrial Logistics & Supply Chain Manager',
+  desc: `
+    <h3>Problem Statement</h3>
+    <p>Factory-to-warehouse movement is inefficient, especially for cold-chain goods.</p>
+
+    <h3>System Approach</h3>
+    <p>Warehouses are stored in AVL Trees, shipments prioritized with Heaps, and trucks dispatched using Dijkstra-based routing.</p>
+
+    <h3>Algorithms Used</h3>
+    <p>AVL Tree, Max Heap, Dijkstra, Bellman–Ford, Kruskal, Prim, Merge Sort, KMP, Greedy</p>
+
+    <h3>🚚 Industrial Logistics & Supply Chain Manager</h3>
+    <ul>
+      <li><b>Warehouse Registry:</b> AVL Tree – O(log n) lookup for cold-storage availability and capacity</li>
+      <li><b>Shipment Priority:</b> Max-Heap – assigns trucks to urgent and cold-chain shipments first</li>
+      <li><b>Cold-Chain Monitoring:</b> Sensor data + Heap – detect temperature deviations and trigger alerts</li>
+      <li><b>Route Planning:</b> Dijkstra – finds shortest-cost paths for pickup and delivery</li>
+      <li><b>Penalty Routes:</b> Bellman–Ford – handles traffic, toll, and cold-penalty adjustments</li>
+      <li><b>Network Design:</b> Kruskal & Prim – build minimal-cost logistics backbone</li>
+      <li><b>Manifest Sorting:</b> Merge Sort – generates stable, printable shipment reports</li>
+      <li><b>Tracking Search:</b> KMP – enables fast lookup of shipment tracking codes</li>
+      <li><b>Truck Scheduling:</b> Greedy selection + Dijkstra – choose nearest suitable truck</li>
+      <li><b>Emergency Handling:</b> Alerts – trigger shipment holds and rerouting to nearest cold warehouse</li>
+    </ul>
+
+    <p><b>SDGs:</b> SDG‑8, SDG‑9, SDG‑12, SDG‑13</p>
+  `,
+
+    code:`#include <bits/stdc++.h>
+using namespace std;
+const int MAX_NODES = 60;      // graph nodes
+const int MAX_EDGES = 300;
+const int MAX_WAREHOUSES = 200;
+const int MAX_SHIPMENTS = 500;
+const int MAX_TRUCKS = 80;
+const int MAX_MANIFEST = 500;
+const int INF = 1000000000;
+
+/* ---------------- Graph / edges ---------------- */
+struct Edge { int u,v,w; }; // w = time/cost
+Edge edges[MAX_EDGES]; int edgesCount = 0;
+int nodesCount = 0;
+int adjMat[MAX_NODES][MAX_NODES]; // INF if no edge
+
+void initGraph(int n) {
+    **\*\*nodesCount = n; edgesCount = 0;\*\*
+
+    \*\*for (int i=0;i<n;i++) for (int j=0;j<n;j++) adjMat\\\[i]\\\[j] = (i==j?0:INF);\*\***
+
+
+
+}
+void addEdge(int u,int v,int w) {
+    **\*\*if(u<0||v<0||u>=nodesCount||v>=nodesCount) return;\*\*
+
+    \*\*adjMat\\\[u]\\\[v] = w; adjMat\\\[v]\\\[u] = w;\*\*
+
+    \*\*if (edgesCount < MAX\\\_EDGES) edges\\\[edgesCount++] = {u,v,w};\*\***
+
+
+
+}
+
+/* ---------------- AVL Tree: Warehouse registry ---------------- */
+struct Warehouse {
+    **\*\*int id;\*\*
+
+    \*\*char name\\\[64];\*\*
+
+    \*\*int node;           // graph node location\*\*
+
+    \*\*bool coldStorage;   // has cold chain capacity\*\*
+
+    \*\*int capacity;       // capacity in pallets\*\***
+
+
+
+};
+struct AVLNode {
+    **\*\*Warehouse wh;\*\*
+
+    \*\*AVLNode \\\*left, \\\*right;\*\*
+
+    \*\*int height;\*\*
+
+    \*\*AVLNode(const Warehouse \\\&w): wh(w), left(NULL), right(NULL), height(1) {}\*\***
+
+
+
+};
+int avlHeight(AVLNode* n) { return n? n->height : 0; }
+AVLNode* rightRotate(AVLNode* y) {
+    **\*\*AVLNode\\\* x = y->left; AVLNode\\\* T2 = x->right;\*\*
+
+    \*\*x->right = y; y->left = T2;\*\*
+
+    \*\*y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));\*\*
+
+    \*\*x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));\*\*
+
+    \*\*return x;\*\***
+
+
+
+}
+AVLNode* leftRotateA(AVLNode* x) {
+    **\*\*AVLNode\\\* y = x->right; AVLNode\\\* T2 = y->left;\*\*
+
+    \*\*y->left = x; x->right = T2;\*\*
+
+    \*\*x->height = 1 + max(avlHeight(x->left), avlHeight(x->right));\*\*
+
+    \*\*y->height = 1 + max(avlHeight(y->left), avlHeight(y->right));\*\*
+
+    \*\*return y;\*\***
+
+
+
+}
+AVLNode* avlInsert(AVLNode* node, const Warehouse &w) {
+    **\*\*if (!node) return new AVLNode(w);\*\*
+
+    \*\*if (w.id < node->wh.id) node->left = avlInsert(node->left, w);\*\*
+
+    \*\*else if (w.id > node->wh.id) node->right = avlInsert(node->right, w);\*\*
+
+    \*\*else return node;\*\*
+
+    \*\*node->height = 1 + max(avlHeight(node->left), avlHeight(node->right));\*\*
+
+    \*\*int balance = avlHeight(node->left) - avlHeight(node->right);\*\*
+
+    \*\*if (balance > 1 \\\&\\\& w.id < node->left->wh.id) return rightRotate(node);\*\*
+
+    \*\*if (balance < -1 \\\&\\\& w.id > node->right->wh.id) return leftRotateA(node);\*\*
+
+    \*\*if (balance > 1 \\\&\\\& w.id > node->left->wh.id) { node->left = leftRotateA(node->left); return rightRotate(node); }\*\*
+
+    \*\*if (balance < -1 \\\&\\\& w.id < node->right->wh.id) { node->right = rightRotate(node->right); return leftRotateA(node); }\*\*
+
+    \*\*return node;\*\***
+
+
+
+}
+AVLNode* warehouseRoot = NULL;
+AVLNode* avlSearch(AVLNode* root, int id) {
+    **\*\*if (!root) return NULL;\*\*
+
+    \*\*if (id == root->wh.id) return root;\*\*
+
+    \*\*if (id < root->wh.id) return avlSearch(root->left, id);\*\*
+
+    \*\*return avlSearch(root->right, id);\*\***
+
+
+
+}
+
+/* ---------------- Shipments & Max-Heap priority ---------------- */
+struct Shipment {
+    **\*\*int id;\*\*
+
+    \*\*char tracking\\\[48];  // tracking code\*\*
+
+    \*\*int originNode;\*\*
+
+    \*\*int destNode;\*\*
+
+    \*\*int volume;         // pallets\*\*
+
+    \*\*bool cold;          // needs cold-chain\*\*
+
+    \*\*int priority;       // higher first\*\*
+
+    \*\*bool dispatched;\*\***
+
+
+
+};
+Shipment shipments[MAX_SHIPMENTS]; int shipmentsCount = 0;
+int shipmentHeap[MAX_SHIPMENTS]; int shipmentHeapSize = 0;
+
+int computeShipmentPriority(const Shipment &s) {
+    **\*\*int p = 0;\*\*
+
+    \*\*p += s.volume \\\* 2;\*\*
+
+    \*\*if (s.cold) p += 200;\*\*
+
+    \*\*// earlier shipments get slightly higher due to insertion order (not stored here)\*\*
+
+    \*\*return p;\*\***
+
+
+
+}
+void shipmentHeapPush(int idx) {
+    **\*\*shipmentHeap\\\[shipmentHeapSize] = idx;\*\*
+
+    \*\*int i = shipmentHeapSize++;\*\*
+
+    \*\*while (i != 0) {\*\*
+
+        \*\*int p = (i-1)/2;\*\*
+
+        \*\*if (shipments\\\[shipmentHeap\\\[i]].priority > shipments\\\[shipmentHeap\\\[p]].priority) {\*\*
+
+            \*\*int tmp = shipmentHeap\\\[i]; shipmentHeap\\\[i] = shipmentHeap\\\[p]; shipmentHeap\\\[p] = tmp;\*\*
+
+            \*\*i = p;\*\*
+
+        \*\*} else break;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+int shipmentHeapPop() {
+    **\*\*if (shipmentHeapSize == 0) return -1;\*\*
+
+    \*\*int root = shipmentHeap\\\[0];\*\*
+
+    \*\*shipmentHeap\\\[0] = shipmentHeap\\\[--shipmentHeapSize];\*\*
+
+    \*\*int i = 0;\*\*
+
+    \*\*while (true) {\*\*
+
+        \*\*int l = 2\\\*i+1, r = 2\\\*i+2, largest = i;\*\*
+
+        \*\*if (l < shipmentHeapSize \\\&\\\& shipments\\\[shipmentHeap\\\[l]].priority > shipments\\\[shipmentHeap\\\[largest]].priority) largest = l;\*\*
+
+        \*\*if (r < shipmentHeapSize \\\&\\\& shipments\\\[shipmentHeap\\\[r]].priority > shipments\\\[shipmentHeap\\\[largest]].priority) largest = r;\*\*
+
+        \*\*if (largest != i) { int tmp = shipmentHeap\\\[i]; shipmentHeap\\\[i] = shipmentHeap\\\[largest]; shipmentHeap\\\[largest] = tmp; i = largest; }\*\*
+
+        \*\*else break;\*\*
+
+    \*\*}\*\*
+
+    \*\*return root;\*\***
+
+
+
+}
+
+/* ---------------- Temperature sensors & Min-Heap for anomalies ---------------- */
+struct TempSensor { int node; double tempC; double targetC; double deviation; };
+TempSensor sensorsArr[MAX_NODES]; int sensorsArrCount = 0;
+int tempHeap[MAX_NODES]; int tempHeapSize = 0; // max deviation at top? we want largest deviation -> use max-heap of deviation
+void tempPush(int idx) {
+    **\*\*tempHeap\\\[tempHeapSize] = idx;\*\*
+
+    \*\*int i = tempHeapSize++;\*\*
+
+    \*\*while (i!=0) {\*\*
+
+        \*\*int p=(i-1)/2;\*\*
+
+        \*\*if (sensorsArr\\\[tempHeap\\\[i]].deviation > sensorsArr\\\[tempHeap\\\[p]].deviation) { int t=tempHeap\\\[i]; tempHeap\\\[i]=tempHeap\\\[p]; tempHeap\\\[p]=t; i=p; } else break;\*\*
+
+    \*\*}\*\***
+
+
+
+}
+int tempPop() {
+    **\*\*if (tempHeapSize==0) return -1;\*\*
+
+    \*\*int root = tempHeap\\\[0];\*\*
+
+    \*\*tempHeap\\\[0] = tempHeap\\\[--tempHeapSize];\*\*
+
+    \*\*int i=0;\*\*
+
+    \*\*while(true) {\*\*
+
+        \*\*int l=2\\\*i+1, r=2\\\*i+2, largest=i;\*\*
+
+        \*\*if (l<tempHeapSize \\\&\\\& sensorsArr\\\[tempHeap\\\[l]].deviation > sensorsArr\\\[tempHeap\\\[largest]].deviation) largest=l;\*\*
+
+        \*\*if (r<tempHeapSize \\\&\\\& sensorsArr\\\[tempHeap\\\[r]].deviation > sensorsArr\\\[tempHeap\\\[largest]].deviation) largest=r;\*\*
+
+        \*\*if (largest!=i) { int t=tempHeap\\\[i]; tempHeap\\\[i]=tempHeap\\\[largest]; tempHeap\\\[largest]=t; i=largest; } else break;\*\*
+
+    \*\*}\*\*
+
+    \*\*return root;\*\***
+
+
+
+}
+
+/* ---------------- Trucks ---------------- */
+struct Truck { int id; int node; int capacity; int load; bool available; int speed; };
+Truck trucks[MAX_TRUCKS]; int trucksCount = 0;
+void addTruck(int id,int node,int cap,int speed) {
+    **\*\*if(trucksCount>=MAX\\\_TRUCKS) return;\*\*
+
+    \*\*trucks\\\[trucksCount].id=id; trucks\\\[trucksCount].node=node; trucks\\\[trucksCount].capacity=cap; trucks\\\[trucksCount].load=0; trucks\\\[trucksCount].available=true; trucks\\\[trucksCount].speed=speed;\*\*
+
+    \*\*trucksCount++;\*\***
+
+
+
+}
+
+/* ---------------- Dijkstra (array-based) ---------------- */
+struct DRes { int dist[MAX_NODES]; int parent[MAX_NODES]; };
+DRes dijkstra(int src) {
+    **\*\*DRes R; bool used\\\[MAX\\\_NODES];\*\*
+
+    \*\*for(int i=0;i<nodesCount;i++){ R.dist\\\[i]=INF; R.parent\\\[i]=-1; used\\\[i]=false; }\*\*
+
+    \*\*R.dist\\\[src]=0;\*\*
+
+    \*\*for(int iter=0; iter<nodesCount; ++iter) {\*\*
+
+        \*\*int u=-1, best=INF;\*\*
+
+        \*\*for(int i=0;i<nodesCount;i++) if(!used\\\[i] \\\&\\\& R.dist\\\[i] < best){ best=R.dist\\\[i]; u=i; }\*\*
+
+        \*\*if(u==-1) break;\*\*
+
+        \*\*used\\\[u]=true;\*\*
+
+        \*\*for(int v=0; v<nodesCount; ++v) if(adjMat\\\[u]\\\[v] < INF \\\&\\\& R.dist\\\[u]+adjMat\\\[u]\\\[v] < R.dist\\\[v]) {\*\*
+
+            \*\*R.dist\\\[v] = R.dist\\\[u] + adjMat\\\[u]\\\[v];\*\*
+
+            \*\*R.parent\\\[v] = u;\*\*
+
+        \*\*}\*\*
+
+    \*\*}\*\*
+
+    \*\*return R;\*\***
+
+
+
+}
+
+/* ---------------- Bellman-Ford for penalty-weighted edges (e.g., traffic or cold-penalty) ---------------- */
+bool bellmanFord(int src, int dist[]) {
+    **\*\*for(int i=0;i<nodesCount;i++) dist\\\[i]=INF;\*\*
+
+    \*\*dist\\\[src]=0;\*\*
+
+    \*\*for(int k=0;k<nodesCount-1;k++) {\*\*
+
+        \*\*bool changed=false;\*\*
+
+        \*\*for(int e=0;e<edgesCount;e++){\*\*
+
+            \*\*int u=edges\\\[e].u, v=edges\\\[e].v, w=edges\\\[e].w;\*\*
+
+            \*\*if(dist\\\[u] < INF \\\&\\\& dist\\\[u]+w < dist\\\[v]) { dist\\\[v]=dist\\\[u]+w; changed=true; }\*\*
+
+            \*\*if(dist\\\[v] < INF \\\&\\\& dist\\\[v]+w < dist\\\[u]) { dist\\\[u]=dist\\\[v]+w; changed=true; }\*\*
+
+        \*\*}\*\*
+
+        \*\*if(!changed) break;\*\*
+
+    \*\*}\*\*
+
+    \*\*return true;\*\***
+
+
+
+}
+
+/* ---------------- Kruskal & Prim for network design (MST) ---------------- */
+int parentUF[MAX_NODES], rankUF[MAX_NODES];
+void ufInit(int n){ for(int i=0;i<n;i++){ parentUF[i]=i; rankUF[i]=0; } }
+int ufFind(int x){ return parentUF[x]==x?x:parentUF[x]=ufFind(parentUF[x]); }
+void ufUnion(int a,int b){ a=ufFind(a); b=ufFind(b); if(a==b) return; if(rankUF[a]<rankUF[b]) parentUF[a]=b; else if(rankUF[b]<rankUF[a]) parentUF[b]=a; else { parentUF[b]=a; rankUF[a]++; } }
+
+void sortEdges(Edge arr[], int n) {
+    **\*\*if(n<=1) return;\*\*
+
+    \*\*int m=n/2;\*\*
+
+    \*\*Edge \\\*L = new Edge\\\[m], \\\*R = new Edge\\\[n-m];\*\*
+
+    \*\*for(int i=0;i<m;i++) L\\\[i]=arr\\\[i];\*\*
+
+    \*\*for(int i=0;i<n-m;i++) R\\\[i]=arr\\\[m+i];\*\*
+
+    \*\*sortEdges(L,m); sortEdges(R,n-m);\*\*
+
+    \*\*int i=0,j=0,k=0;\*\*
+
+    \*\*while(i<m \\\&\\\& j<n-m) arr\\\[k++] = (L\\\[i].w <= R\\\[j].w ? L\\\[i++] : R\\\[j++]);\*\*
+
+    \*\*while(i<m) arr\\\[k++]=L\\\[i++]; while(j<n-m) arr\\\[k++]=R\\\[j++];\*\*
+
+    \*\*delete\\\[] L; delete\\\[] R;\*\***
+
+
+
+}
+int kruskalMST(Edge out[]) {
+    **\*\*Edge tmp\\\[MAX\\\_EDGES];\*\*
+
+    \*\*for(int i=0;i<edgesCount;i++) tmp\\\[i]=edges\\\[i];\*\*
+
+    \*\*sortEdges(tmp, edgesCount);\*\*
+
+    \*\*ufInit(nodesCount); int outCount=0;\*\*
+
+    \*\*for(int i=0;i<edgesCount \\\&\\\& outCount < nodesCount-1;i++){\*\*
+
+        \*\*int u=tmp\\\[i].u, v=tmp\\\[i].v;\*\*
+
+        \*\*if(ufFind(u) != ufFind(v)) { ufUnion(u,v); out\\\[outCount++] = tmp\\\[i]; }\*\*
+
+    \*\*}\*\*
+
+    \*\*return 0;\*\***
+
+
+
+}
+int primMSTParent[MAX_NODES];
+int primMST() {
+    **\*\*bool inMST\\\[MAX\\\_NODES]; int key\\\[MAX\\\_NODES];\*\*
+
+    \*\*for(int i=0;i<nodesCount;i++){ inMST\\\[i]=false; key\\\[i]=INF; primMSTParent\\\[i]=-1; }\*\*
+
+    \*\*key\\\[0]=0;\*\*
+
+    \*\*for(int cnt=0; cnt<nodesCount; ++cnt) {\*\*
+
+        \*\*int u=-1, best=INF;\*\*
+
+        \*\*for(int i=0;i<nodesCount;i++) if(!inMST\\\[i] \\\&\\\& key\\\[i] < best){ best=key\\\[i]; u=i; }\*\*
+
+        \*\*if(u==-1) break;\*\*
+
+        \*\*inMST\\\[u]=true;\*\*
+
+        \*\*for(int v=0; v<nodesCount; ++v) if(adjMat\\\[u]\\\[v] < INF \\\&\\\& !inMST\\\[v] \\\&\\\& adjMat\\\[u]\\\[v] < key\\\[v]) { key\\\[v]=adjMat\\\[u]\\\[v]; primMSTParent\\\[v]=u; }\*\*
+
+    \*\*}\*\*
+
+    \*\*int cost=0; for(int i=1;i<nodesCount;i++) if(primMSTParent\\\[i]!=-1) cost += adjMat\\\[i]\\\[primMSTParent\\\[i]];\*\*
+
+    \*\*return cost;\*\***
+
+
+
+}
+
+/* ---------------- Manifest sorting (Merge Sort) ---------------- */
+struct ManifestItem { int shipmentId; char desc[80]; int priority; };
+ManifestItem manifest[MAX_MANIFEST]; int manifestSize=0;
+void mergeManifest(int l,int m,int r) {
+    **\*\*int n1=m-l+1, n2=r-m;\*\*
+
+    \*\*ManifestItem \\\*L = new ManifestItem\\\[n1]; ManifestItem \\\*R = new ManifestItem\\\[n2];\*\*
+
+    \*\*for(int i=0;i<n1;i++) L\\\[i]=manifest\\\[l+i];\*\*
+
+    \*\*for(int j=0;j<n2;j++) R\\\[j]=manifest\\\[m+1+j];\*\*
+
+    \*\*int i=0,j=0,k=l;\*\*
+
+    \*\*while(i<n1 \\\&\\\& j<n2) {\*\*
+
+        \*\*if(L\\\[i].priority >= R\\\[j].priority) manifest\\\[k++]=L\\\[i++]; else manifest\\\[k++]=R\\\[j++];\*\*
+
+    \*\*}\*\*
+
+    \*\*while(i<n1) manifest\\\[k++]=L\\\[i++]; while(j<n2) manifest\\\[k++]=R\\\[j++];\*\*
+
+    \*\*delete\\\[] L; delete\\\[] R;\*\***
+
+
+
+}
+void mergeSortManifest(int l,int r){ if(l<r){ int m=(l+r)/2; mergeSortManifest(l,m); mergeSortManifest(m+1,r); mergeManifest(l,m,r); } }
+
+/* ---------------- KMP for tracking code search ---------------- */
+void computeLPS(const char pat[], int M, int lps[]) {
+    **\*\*int len=0; lps\\\[0]=0; int i=1;\*\*
+
+    \*\*while(i<M) {\*\*
+
+        \*\*if(pat\\\[i]==pat\\\[len]) { len++; lps\\\[i]=len; i++; }\*\*
+
+        \*\*else { if(len!=0) len=lps\\\[len-1]; else { lps\\\[i]=0; i++; } }\*\*
+
+    \*\*}\*\***
+
+
+
+}
+bool KMPsearch(const char txt[], const char pat[]) {
+    **\*\*int N=strlen(txt), M=strlen(pat);\*\*
+
+    \*\*if(M==0) return true;\*\*
+
+    \*\*int \\\*lps = new int\\\[M];\*\*
+
+    \*\*computeLPS(pat,M,lps);\*\*
+
+    \*\*int i=0,j=0;\*\*
+
+    \*\*while(i<N) {\*\*
+
+        \*\*if(txt\\\[i]==pat\\\[j]) { i++; j++; if(j==M){ delete\\\[] lps; return true; } }\*\*
+
+        \*\*else { if(j) j=lps\\\[j-1]; else i++; }\*\*
+
+    \*\*}\*\*
+
+    \*\*delete\\\[] lps; return false;\*\***
+
+
+
+}
+
+/* ---------------- Utility: add demo data ---------------- */
+AVLNode* whRoot = NULL;
+void addWarehouse(int id,const char* name,int node,bool cold,int cap) {
+    **\*\*Warehouse w; w.id=id; strncpy(w.name,name,63); w.name\\\[63]=0; w.node=node; w.coldStorage=cold; w.capacity=cap;\*\*
+
+    \*\*whRoot = avlInsert(whRoot, w);\*\***
+
+
+
+}
+void addShipment(int id,const char* code,int o,int d,int vol,bool cold) {
+    **\*\*if(shipmentsCount>=MAX\\\_SHIPMENTS) return;\*\*
+
+    \*\*shipments\\\[shipmentsCount].id=id; strncpy(shipments\\\[shipmentsCount].tracking,code,47); shipments\\\[shipmentsCount].tracking\\\[47]=0;\*\*
+
+    \*\*shipments\\\[shipmentsCount].originNode=o; shipments\\\[shipmentsCount].destNode=d; shipments\\\[shipmentsCount].volume=vol; shipments\\\[shipmentsCount].cold=cold;\*\*
+
+    \*\*shipments\\\[shipmentsCount].priority = computeShipmentPriority(shipments\\\[shipmentsCount]);\*\*
+
+    \*\*shipments\\\[shipmentsCount].dispatched = false;\*\*
+
+    \*\*shipmentHeapPush(shipmentsCount);\*\*
+
+    \*\*// manifest add\*\*
+
+    \*\*if(manifestSize < MAX\\\_MANIFEST) { manifest\\\[manifestSize].shipmentId = id; snprintf(manifest\\\[manifestSize].desc,79,"Shipment %d code %s", id, code); manifest\\\[manifestSize].priority = shipments\\\[shipmentsCount].priority; manifestSize++; }\*\*
+
+    \*\*shipmentsCount++;\*\***
+
+
+
+}
+void addTempSensor(int node,double temp,double target) {
+    **\*\*if(sensorsArrCount >= MAX\\\_NODES) return;\*\*
+
+    \*\*sensorsArr\\\[sensorsArrCount].node = node; sensorsArr\\\[sensorsArrCount].tempC = temp; sensorsArr\\\[sensorsArrCount].targetC = target;\*\*
+
+    \*\*sensorsArr\\\[sensorsArrCount].deviation = fabs(temp - target);\*\*
+
+    \*\*tempPush(sensorsArrCount);\*\*
+
+    \*\*sensorsArrCount++;\*\***
+
+
+
+}
+
+/* ---------------- Scheduling & Dispatch simulation ---------------- */
+void dispatchNextShipment() {
+    **\*\*int idx = shipmentHeapPop();\*\*
+
+    \*\*if(idx == -1) { cout<<"No shipments to dispatch\\\\n"; return; }\*\*
+
+    \*\*Shipment \\\&s = shipments\\\[idx];\*\*
+
+    \*\*// choose best truck: available and capacity >= volume and if cold required, prefer trucks with cold capability (not modeled separately here)\*\*
+
+    \*\*int bestTruck = -1, bestDist = INF;\*\*
+
+    \*\*for(int t=0;t<trucksCount;t++) {\*\*
+
+        \*\*if(!trucks\\\[t].available) continue;\*\*
+
+        \*\*if(trucks\\\[t].capacity < s.volume) continue;\*\*
+
+        \*\*DRes dr = dijkstra(trucks\\\[t].node);\*\*
+
+        \*\*if(dr.dist\\\[s.originNode] < bestDist) { bestDist = dr.dist\\\[s.originNode]; bestTruck = t; }\*\*
+
+    \*\*}\*\*
+
+    \*\*if(bestTruck == -1) { cout<<"No available truck for shipment "<<s.id<<", requeueing\\\\n"; s.priority = max(0, s.priority-5); shipmentHeapPush(idx); return; }\*\*
+
+    \*\*// simulate pickup + route to destination (compute path)\*\*
+
+    \*\*DRes drOrigin = dijkstra(s.originNode);\*\*
+
+    \*\*int distToDest = drOrigin.dist\\\[s.destNode];\*\*
+
+    \*\*cout<<"Dispatch: Truck "<<trucks\\\[bestTruck].id<<" assigned to shipment "<<s.id<<" (origin "<<s.originNode<<" -> dest "<<s.destNode<<", dist="<<distToDest<<")\\\\n";\*\*
+
+    \*\*// mark truck busy\*\*
+
+    \*\*trucks\\\[bestTruck].available = false;\*\*
+
+    \*\*trucks\\\[bestTruck].load = s.volume;\*\*
+
+    \*\*// after dispatch mark shipment dispatched (in real sim we'd move truck)\*\*
+
+    \*\*s.dispatched = true;\*\***
+
+
+
+}
+
+/* ---------------- Temperature anomaly handling for cold chain ---------------- */
+void handleTemperatureAnomalies() {
+    **\*\*// pop top sensors with largest deviation and create alerts / reroute shipments if needed\*\*
+
+    \*\*int top = tempPop();\*\*
+
+    \*\*while(top != -1) {\*\*
+
+        \*\*TempSensor \\\&ts = sensorsArr\\\[top];\*\*
+
+        \*\*if (ts.deviation > 2.0) { // degrees C threshold\*\*
+
+            \*\*cout<<"\\\[TEMP ALERT] Node "<<ts.node<<" temp="<<ts.tempC<<" target="<<ts.targetC<<" dev="<<ts.deviation<<"\\\\n";\*\*
+
+            \*\*// find shipments in transit to node -> we will scan shipments array and flag re-route (simple)\*\*
+
+            \*\*for(int i=0;i<shipmentsCount;i++) {\*\*
+
+                \*\*if(shipments\\\[i].dispatched \\\&\\\& shipments\\\[i].destNode == ts.node \\\&\\\& shipments\\\[i].cold) {\*\*
+
+                    \*\*cout<<"  -> Cold-chain shipment "<<shipments\\\[i].id<<" destined to node "<<ts.node<<" flagged for emergency reroute/hold.\\\\n";\*\*
+
+                    \*\*// in real system: hold at nearest cold warehouse\*\*
+
+                \*\*}\*\*
+
+            \*\*}\*\*
+
+        \*\*}\*\*
+
+        \*\*top = tempPop();\*\*
+
+    \*\*}\*\***
+
+
+
+}
+
+/* ---------------- Demo & run ---------------- */
+void buildDemo() {
+    **\*\*initGraph(12);\*\*
+
+    \*\*addEdge(0,1,5); addEdge(1,2,6); addEdge(2,3,8); addEdge(0,4,7);\*\*
+
+    \*\*addEdge(4,5,3); addEdge(5,6,5); addEdge(6,7,4); addEdge(3,8,7);\*\*
+
+    \*\*addEdge(7,9,6); addEdge(9,10,5); addEdge(10,11,4);\*\*
+
+    \*\*// warehouses\*\*
+
+    \*\*addWarehouse(101,"MainColdHub",2,true,200);\*\*
+
+    \*\*addWarehouse(102,"ZoneA\\\_WH",5,true,80);\*\*
+
+    \*\*addWarehouse(103,"ZoneB\\\_WH",9,false,150);\*\*
+
+    \*\*// trucks\*\*
+
+    \*\*addTruck(201,0,100,60); addTruck(202,4,80,50); addTruck(203,6,120,55);\*\*
+
+    \*\*// temp sensors (some nodes have sensors)\*\*
+
+    \*\*addTempSensor(2, -2.5, -4.0); // colder than target (e.g., freezer too warm?)\*\*
+
+    \*\*addTempSensor(5, 2.0, 2.0);\*\*
+
+    \*\*addTempSensor(9, 5.0, 2.0); // big deviation\*\*
+
+    \*\*// shipments (some cold)\*\*
+
+    \*\*addShipment(301,"COLD-AX1",2,9,30,true);\*\*
+
+    \*\*addShipment(302,"NORM-23B",4,11,50,false);\*\*
+
+    \*\*addShipment(303,"COLD-BX2",5,2,20,true);\*\*
+
+    \*\*// manifest sort demo\*\*
+
+    \*\*mergeSortManifest(0, manifestSize-1);\*\***
+
+
+
+}
+
+/* ---------------- Main ---------------- */
+int main() {
+    **\*\*cout<<"=== Industrial Logistics \\\& Cold-Chain Manager ===\\\\n";\*\*
+
+    \*\*buildDemo();\*\*
+
+    \*\*cout<<"\\\\n-- Dispatching highest priority shipments --\\\\n";\*\*
+
+    \*\*dispatchNextShipment();\*\*
+
+    \*\*dispatchNextShipment();\*\*
+
+    \*\*cout<<"\\\\n-- Checking temperature anomalies \\\& cold-chain alerts --\\\\n";\*\*
+
+    \*\*handleTemperatureAnomalies();\*\*
+
+    \*\*cout<<"\\\\n-- Network planner: Prim MST cost --\\\\n";\*\*
+
+    \*\*int cost = primMST();\*\*
+
+    \*\*cout<<"Prim MST total cost (approx): "<<cost<<"\\\\n";\*\*
+
+    \*\*cout<<"\\\\n-- Search shipments by tracking substring 'AX1' (KMP) --\\\\n";\*\*
+
+    \*\*for(int i=0;i<shipmentsCount;i++) if(KMPsearch(shipments\\\[i].tracking, "AX1")) cout<<"Found shipment id "<<shipments\\\[i].id<<" code "<<shipments\\\[i].tracking<<"\\\\n";\*\*
+
+    \*\*cout<<"\\\\nDemo complete.\\\\n";\*\*
+
+    \*\*return 0;\*\***
+
+
+
+}
+`,
+  flowchart: "image/flowchart10.png"
+  }
+};
+
+function openModal(key){
+  document.getElementById('modal').style.display = 'flex';
+  document.getElementById('title').innerText = data[key].title;
+  document.getElementById('desc').innerHTML = data[key].desc;
+  document.getElementById('code').innerText = data[key].code;
+  document.getElementById('code').style.display = 'none';
+
+  // set flowchart image
+  const img = document.getElementById('flowchartImg');
+  img.src = data[key].flowchart;   // e.g. "flowchart/waste.png"
+  img.style.display = 'none';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display = 'none';
+}
+
+function toggleCode(){
+  const c = document.getElementById('code');
+  c.style.display = (c.style.display === 'none') ? 'block' : 'none';
+}
+
+function toggleFlowchart(){
+  const img = document.getElementById('flowchartImg');
+  img.style.display = (img.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
+
